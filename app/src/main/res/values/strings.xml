@@ -7,6 +7,7 @@
     <string name="menu_lessons">Lessons</string>
     <string name="menu_lists">Lists</string>
     <string name="menu_about">About</string>
+    <string name="menu_help">Help</string>
     <string name="cd_logo">Logo</string>
     <string name="cd_menu">Menu</string>
     <string name="cd_quit">Quit</string>
@@ -17,6 +18,11 @@
     <string name="cd_toggle_mode">Toggle Mode</string>
     <string name="cd_previous_card">Previous Card</string>
     <string name="cd_next_card">Next Card</string>
+    <string name="cd_icon_settings">Settings Icon</string>
+    <string name="cd_icon_titles">Titles Icon</string>
+    <string name="cd_icon_flashcards">Flashcards Icon</string>
+    <string name="cd_icon_lessons">Lessons Icon</string>
+    <string name="cd_icon_lists">Lists Icon</string>
 
     <!-- About Screen -->
     <string name="about_screen_title">About</string>

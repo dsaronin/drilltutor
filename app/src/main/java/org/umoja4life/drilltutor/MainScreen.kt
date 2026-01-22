@@ -14,10 +14,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Help
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.RotateRight
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
@@ -53,7 +59,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -98,32 +103,43 @@ fun MainScreen() {
             ModalDrawerSheet {
                 DrawerHeader()
                 NavigationDrawerItem(
-                    label = { Text(stringResource(id = R.string.menu_settings), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
+                    label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text(stringResource(id = R.string.menu_titles), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    icon = { Icon(Icons.Default.Category, contentDescription = stringResource(id = R.string.cd_icon_titles)) },
+                    label = { Text(stringResource(id = R.string.menu_titles), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text(stringResource(id = R.string.menu_lessons), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
+                    label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text(stringResource(id = R.string.menu_lists), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
+                    label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text(stringResource(id = R.string.menu_about), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
+                    label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = {
                         scope.launch { drawerState.close() }
                         navController.navigate("about")
                     }
+                )
+                NavigationDrawerItem(
+                    icon = { Icon(Icons.AutoMirrored.Filled.Help, contentDescription = stringResource(id = R.string.menu_help)) },
+                    label = { Text(stringResource(id = R.string.menu_help), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurface) },
+                    selected = false,
+                    onClick = { /*TODO*/ }
                 )
             }
         }
