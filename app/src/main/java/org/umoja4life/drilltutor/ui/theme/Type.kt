@@ -1,55 +1,51 @@
 package org.umoja4life.drilltutor.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import org.umoja4life.drilltutor.R
 
 // Set of Material typography styles to start with
-val Typography = Typography(
-    displayLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Bold,
-        fontSize = 57.sp,
-        lineHeight = 64.sp,
-        letterSpacing = (-0.25).sp
-    ),
-    headlineMedium = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Bold,
-        fontSize = 28.sp,
-        lineHeight = 36.sp,
-        letterSpacing = 0.sp
-    ),
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Bold,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.25.sp
+val Typography: Typography
+    @Composable
+    get() = Typography(
+        displayLarge = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Bold,
+            fontSize = dimensionResource(id = R.dimen.font_size_display_large).value.sp,
+            lineHeight = dimensionResource(id = R.dimen.line_height_display_large).value.sp,
+            letterSpacing = dimensionResource(id = R.dimen.letter_spacing_display_large).value.sp
+        ),
+        headlineMedium = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Bold,
+            fontSize = dimensionResource(id = R.dimen.font_size_headline_medium).value.sp,
+            lineHeight = dimensionResource(id = R.dimen.line_height_headline_medium).value.sp,
+            letterSpacing = dimensionResource(id = R.dimen.letter_spacing_zero).value.sp
+        ),
+        titleLarge = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Bold,
+            fontSize = dimensionResource(id = R.dimen.font_size_title_large).value.sp,
+            lineHeight = dimensionResource(id = R.dimen.line_height_title_large).value.sp,
+            letterSpacing = dimensionResource(id = R.dimen.letter_spacing_zero).value.sp
+        ),
+        bodyLarge = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Medium,
+            fontSize = dimensionResource(id = R.dimen.font_size_body_large_default).value.sp,
+            lineHeight = dimensionResource(id = R.dimen.line_height_body_large).value.sp,
+            letterSpacing = dimensionResource(id = R.dimen.letter_spacing_body_large).value.sp
+        ),
+        bodyMedium = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Medium,
+            fontSize = dimensionResource(id = R.dimen.font_size_body_medium_default).value.sp,
+            lineHeight = dimensionResource(id = R.dimen.line_height_body_medium).value.sp,
+            letterSpacing = dimensionResource(id = R.dimen.letter_spacing_body_medium).value.sp
+        )
     )
-    /* Other default text styles to override
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
-)

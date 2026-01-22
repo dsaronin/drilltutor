@@ -47,7 +47,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -63,19 +65,19 @@ fun DrawerHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(150.dp)
+            .height(dimensionResource(id = R.dimen.drawer_header_height))
             .background(MaterialTheme.colorScheme.primary),
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
                 painter = painterResource(id = R.drawable.flash_icon_2),
-                contentDescription = "Logo",
-                modifier = Modifier.size(64.dp)
+                contentDescription = stringResource(id = R.string.cd_logo),
+                modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size_drawer_logo))
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
             Text(
-                text = "DrillTutor",
+                text = stringResource(id = R.string.app_name),
                 color = MaterialTheme.colorScheme.secondary,
                 fontWeight = FontWeight.Bold
             )
@@ -96,27 +98,27 @@ fun MainScreen() {
             ModalDrawerSheet {
                 DrawerHeader()
                 NavigationDrawerItem(
-                    label = { Text("Settings", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    label = { Text(stringResource(id = R.string.menu_settings), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text("Titles", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    label = { Text(stringResource(id = R.string.menu_titles), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text("Lessons", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    label = { Text(stringResource(id = R.string.menu_lessons), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text("Lists", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    label = { Text(stringResource(id = R.string.menu_lists), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = { /*TODO*/ }
                 )
                 NavigationDrawerItem(
-                    label = { Text("About", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
+                    label = { Text(stringResource(id = R.string.menu_about), fontSize = dimensionResource(id = R.dimen.font_size_menu_item).value.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface) },
                     selected = false,
                     onClick = {
                         scope.launch { drawerState.close() }
@@ -152,19 +154,19 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Image(
                             painter = painterResource(id = R.drawable.flash_icon_2),
-                            contentDescription = "Logo",
-                            modifier = Modifier.size(24.dp)
+                            contentDescription = stringResource(id = R.string.cd_logo),
+                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size_top_bar_logo))
                         )
-                        Spacer(modifier = Modifier.width(8.dp))
+                        Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.spacing_small)))
                         Text(
-                            "DrillTutor",
+                            stringResource(id = R.string.app_name),
                             color = MaterialTheme.colorScheme.secondary
                         )
                     }
                 },
                 navigationIcon = {
                     IconButton(onClick = onMenuClick) {
-                        Icon(Icons.Filled.Menu, contentDescription = "Menu")
+                        Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.cd_menu))
                     }
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -181,22 +183,22 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     IconButton(onClick = { /* quit */ }) {
-                        Icon(Icons.Filled.Stop, contentDescription = "Quit")
+                        Icon(Icons.Filled.Stop, contentDescription = stringResource(id = R.string.cd_quit))
                     }
                     IconButton(onClick = { /* gprev */ }) {
-                        Icon(Icons.Filled.SkipPrevious, contentDescription = "Group Previous")
+                        Icon(Icons.Filled.SkipPrevious, contentDescription = stringResource(id = R.string.cd_group_previous))
                     }
                     IconButton(onClick = { /* shfl */ }) {
-                        Icon(Icons.Filled.Shuffle, contentDescription = "Shuffle")
+                        Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
                     }
                     IconButton(onClick = { /* flip */ }) {
-                        Icon(Icons.Filled.RotateRight, contentDescription = "Flip Card")
+                        Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
                     }
                     IconButton(onClick = { /* gnext */ }) {
-                        Icon(Icons.Filled.SkipNext, contentDescription = "Group Next")
+                        Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
                     }
                     IconButton(onClick = { isRear = !isRear }) {
-                        Icon(Icons.Filled.Visibility, contentDescription = "Toggle Mode")
+                        Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
                     }
                 }
             }
@@ -215,7 +217,7 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IconButton(onClick = { /* Prev card */ }) {
-                    Icon(Icons.Filled.ChevronLeft, contentDescription = "Previous Card", modifier = Modifier.padding(8.dp))
+                    Icon(Icons.Filled.ChevronLeft, contentDescription = stringResource(id = R.string.cd_previous_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
                 }
                 Card(
                     modifier = Modifier
@@ -227,14 +229,14 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
                         contentAlignment = Alignment.Center
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text("Huge Text", style = MaterialTheme.typography.displayLarge)
-                            Text("Large Text", style = MaterialTheme.typography.displayMedium)
-                            Text("Normal Text", style = MaterialTheme.typography.bodyLarge)
+                            Text(stringResource(id = R.string.huge_text), style = MaterialTheme.typography.displayLarge)
+                            Text(stringResource(id = R.string.large_text), style = MaterialTheme.typography.displayMedium)
+                            Text(stringResource(id = R.string.normal_text), style = MaterialTheme.typography.bodyLarge)
                         }
                     }
                 }
                 IconButton(onClick = { /* Next card */ }) {
-                    Icon(Icons.Filled.ChevronRight, contentDescription = "Next Card", modifier = Modifier.padding(8.dp))
+                    Icon(Icons.Filled.ChevronRight, contentDescription = stringResource(id = R.string.cd_next_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
                 }
             }
         }

@@ -21,10 +21,10 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
 
@@ -34,12 +34,12 @@ fun AboutScreen(onNavigateBack: () -> Unit) {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text("About") },
+                title = { Text(stringResource(id = R.string.about_screen_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = stringResource(id = R.string.cd_back)
                         )
                     }
                 },
@@ -55,47 +55,47 @@ fun AboutScreen(onNavigateBack: () -> Unit) {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(16.dp)
+                .padding(dimensionResource(id = R.dimen.spacing_medium))
                 .verticalScroll(rememberScrollState())
         ) {
             Text(
-                text = "Welcome to DrillTutor™",
+                text = stringResource(id = R.string.about_welcome),
                 style = MaterialTheme.typography.headlineMedium
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
             Text(
                 text = stringResource(id = R.string.about_text_1),
-                fontSize = 18.sp,
+                fontSize = dimensionResource(id = R.dimen.font_size_body_large_about).value.sp,
                 fontWeight = FontWeight.Medium,
-                lineHeight = 24.sp
+                lineHeight = dimensionResource(id = R.dimen.line_height_body_large).value.sp
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
             Text(
                 text = stringResource(id = R.string.about_text_2),
-                fontSize = 18.sp,
+                fontSize = dimensionResource(id = R.dimen.font_size_body_large_about).value.sp,
                 fontWeight = FontWeight.Medium,
-                lineHeight = 24.sp
+                lineHeight = dimensionResource(id = R.dimen.line_height_body_large).value.sp
             )
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
             Text(
                 text = stringResource(id = R.string.about_text_3),
-                fontSize = 18.sp,
+                fontSize = dimensionResource(id = R.dimen.font_size_body_large_about).value.sp,
                 fontWeight = FontWeight.Medium,
-                lineHeight = 24.sp
+                lineHeight = dimensionResource(id = R.dimen.line_height_body_large).value.sp
             )
             Spacer(modifier = Modifier.weight(1f))
             Text(
-                text = "DrillTutor " + BuildConfig.VERSION_NAME,
+                text = stringResource(id = R.string.about_version_format, BuildConfig.VERSION_NAME),
                 color = Color(0xFF444444),
                 fontWeight = FontWeight.Normal,
-                fontSize = 14.sp,
+                fontSize = dimensionResource(id = R.dimen.font_size_footer).value.sp,
                 modifier = Modifier.fillMaxWidth()
             )
             Text(
-                text = "© Copyright 2026 David S. Anderson, All rights reserved",
+                text = stringResource(id = R.string.about_copyright),
                 color = Color(0xFF444444),
                 fontWeight = FontWeight.Normal,
-                fontSize = 14.sp,
+                fontSize = dimensionResource(id = R.dimen.font_size_footer).value.sp,
                 modifier = Modifier.fillMaxWidth()
             )
         }

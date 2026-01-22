@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Generic Spacing -->
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+
+    <!-- Icons -->
+    <dimen name="icon_size_top_bar_logo">24dp</dimen>
+    <dimen name="icon_size_drawer_logo">64dp</dimen>
+
+    <!-- Drawer -->
+    <dimen name="drawer_header_height">150dp</dimen>
+
+    <!-- Font Sizes -->
+    <dimen name="font_size_display_large">57sp</dimen>
+    <dimen name="font_size_headline_medium">28sp</dimen>
+    <dimen name="font_size_title_large">22sp</dimen>
+    <dimen name="font_size_body_large_about">18sp</dimen>
+    <dimen name="font_size_body_large_default">16sp</dimen>
+    <dimen name="font_size_body_medium_default">14sp</dimen>
+    <dimen name="font_size_menu_item">20sp</dimen>
+    <dimen name="font_size_footer">14sp</dimen>
+
+    <!-- Line Heights -->
+    <dimen name="line_height_display_large">64sp</dimen>
+    <dimen name="line_height_headline_medium">36sp</dimen>
+    <dimen name="line_height_title_large">28sp</dimen>
+    <dimen name="line_height_body_large">24sp</dimen>
+    <dimen name="line_height_body_medium">20sp</dimen>
+
+    <!-- Letter Spacing -->
+    <dimen name="letter_spacing_display_large">-0.25sp</dimen>
+    <dimen name="letter_spacing_zero">0sp</dimen>
+    <dimen name="letter_spacing_body_large">0.5sp</dimen>
+    <dimen name="letter_spacing_body_medium">0.25sp</dimen>
+</resources>
