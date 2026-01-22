@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DrillTutor</string>
+    <string name="about_text_1">DrillTutor uses your personal language notes to construct Flashcards or Lists which you use as drills to improve your language skills. Lesson summaries for any topic can refresh your understanding.</string>
+    <string name="about_text_2">DrillTutor is topics-based. Organize your notes around any topics which are meaningful to your study program: Grammatical (adverbs, adjectives, plurals) or Subject (careers, work, food, travel).</string>
+    <string name="about_text_3">DrillTutor source materials can be: Vocabulary, Sentences, Phrases, Opposites, Dialogs, Readings, Glossaries, and a Dictionary. Integrate them with audio recordings for playback during a drills.</string>
 </resources>

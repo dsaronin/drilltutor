@@ -8,10 +8,13 @@ val Blue500 = Color(0xFF3153B6)
 
 // Secondary Amber/Yellow Scale
 val Amber300 = Color(0xFFFFD54F)
+val Amber050 = Color(0xFFFFF8E1)
 
 // Grays
 val Gray700 = Color(0xFF455A64)
 val Gray050 = Color(0xFFECEFF1)
+val BGray800 = Color(0xFF37474F)
+val BGray900 = Color(0xFF263238)
 
 // Semantic
 val TurkiyeRed = Color(0xFFE30A17)
