@@ -1,5 +1,6 @@
 package org.umoja4life.drilltutor
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -35,7 +36,6 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -64,11 +64,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
 
@@ -180,9 +178,14 @@ fun MainScreen() {
     ) {
         NavHost(navController = navController, startDestination = "home") {
             composable("home") {
-                PortraitLayout(
-                    onMenuClick = { scope.launch { drawerState.open() } }
-                )
+                val configuration = LocalConfiguration.current
+                val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+                if (isLandscape) {
+                    LandscapeLayout(onMenuClick = { scope.launch { drawerState.open() } })
+                } else {
+                    PortraitLayout(onMenuClick = { scope.launch { drawerState.open() } })
+                }
             }
             composable("about") {
                 AboutScreen(onNavigateBack = { navController.popBackStack() })
