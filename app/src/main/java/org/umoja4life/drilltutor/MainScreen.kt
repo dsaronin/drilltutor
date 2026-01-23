@@ -255,11 +255,50 @@ private fun DrillTutorBottomBar() {
     }
 }
 
+@Composable
+private fun DrillTutorContent(paddingValues: PaddingValues) {
+    val screenHeight = LocalConfiguration.current.screenHeightDp.dp
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(paddingValues),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            IconButton(onClick = { /* Prev card */ }) {
+                Icon(Icons.Filled.ChevronLeft, contentDescription = stringResource(id = R.string.cd_previous_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
+            }
+            Card(
+                modifier = Modifier
+                    .height(screenHeight * 0.4f)
+                    .weight(1f)
+            ) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(stringResource(id = R.string.huge_text), style = MaterialTheme.typography.displayLarge)
+                        Text(stringResource(id = R.string.large_text), style = MaterialTheme.typography.displayMedium)
+                        Text(stringResource(id = R.string.normal_text), style = MaterialTheme.typography.bodyLarge)
+                    }
+                }
+            }
+            IconButton(onClick = { /* Next card */ }) {
+                Icon(Icons.Filled.ChevronRight, contentDescription = stringResource(id = R.string.cd_next_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreenContent(onMenuClick: () -> Unit) {
-    val screenHeight = LocalConfiguration.current.screenHeightDp.dp
-
     Scaffold(
         topBar = {
             DrillTutorTopBar(onMenuClick = onMenuClick)
@@ -268,42 +307,7 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
             DrillTutorBottomBar()
         }
     ) { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                IconButton(onClick = { /* Prev card */ }) {
-                    Icon(Icons.Filled.ChevronLeft, contentDescription = stringResource(id = R.string.cd_previous_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
-                }
-                Card(
-                    modifier = Modifier
-                        .height(screenHeight * 0.4f)
-                        .weight(1f)
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            Text(stringResource(id = R.string.huge_text), style = MaterialTheme.typography.displayLarge)
-                            Text(stringResource(id = R.string.large_text), style = MaterialTheme.typography.displayMedium)
-                            Text(stringResource(id = R.string.normal_text), style = MaterialTheme.typography.bodyLarge)
-                        }
-                    }
-                }
-                IconButton(onClick = { /* Next card */ }) {
-                    Icon(Icons.Filled.ChevronRight, contentDescription = stringResource(id = R.string.cd_next_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
-                }
-            }
-        }
+        DrillTutorContent(paddingValues = innerPadding)
     }
 }
 
