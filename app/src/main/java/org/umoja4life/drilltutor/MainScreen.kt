@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Help
 import androidx.compose.material.icons.automirrored.filled.List
@@ -97,75 +99,78 @@ fun MainScreen() {
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
+    val scrollState = rememberScrollState()
 
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
             ModalDrawerSheet {
-                DrawerHeader()
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
-                    label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = { /*TODO*/ },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                Column(modifier = Modifier.verticalScroll(scrollState)) {
+                    DrawerHeader()
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
+                        label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = { /*TODO*/ },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.Default.Category, contentDescription = stringResource(id = R.string.cd_icon_titles)) },
-                    label = { Text(stringResource(id = R.string.menu_titles), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = { /*TODO*/ },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Category, contentDescription = stringResource(id = R.string.cd_icon_titles)) },
+                        label = { Text(stringResource(id = R.string.menu_titles), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = { /*TODO*/ },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
-                    label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = { /*TODO*/ },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
+                        label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = { /*TODO*/ },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
-                    label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = { /*TODO*/ },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
+                        label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = { /*TODO*/ },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
-                    label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = {
-                        scope.launch { drawerState.close() }
-                        navController.navigate("about")
-                    },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
+                        label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = {
+                            scope.launch { drawerState.close() }
+                            navController.navigate("about")
+                        },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
-                NavigationDrawerItem(
-                    icon = { Icon(Icons.AutoMirrored.Filled.Help, contentDescription = stringResource(id = R.string.menu_help)) },
-                    label = { Text(stringResource(id = R.string.menu_help), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                    selected = false,
-                    onClick = { /*TODO*/ },
-                    colors = NavigationDrawerItemDefaults.colors(
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                        selectedIconColor = MaterialTheme.colorScheme.primary
+                    NavigationDrawerItem(
+                        icon = { Icon(Icons.AutoMirrored.Filled.Help, contentDescription = stringResource(id = R.string.menu_help)) },
+                        label = { Text(stringResource(id = R.string.menu_help), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                        selected = false,
+                        onClick = { /*TODO*/ },
+                        colors = NavigationDrawerItemDefaults.colors(
+                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                            selectedIconColor = MaterialTheme.colorScheme.primary
+                        )
                     )
-                )
+                }
             }
         }
     ) {
