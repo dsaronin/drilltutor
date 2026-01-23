@@ -317,6 +317,9 @@ private fun PortraitLayout(onMenuClick: () -> Unit) {
 
 @Composable
 private fun LandscapeLayout(onMenuClick: () -> Unit) {
+    val configuration = LocalConfiguration.current
+    val screenHeight = configuration.screenHeightDp.dp
+
     Row(
         modifier = Modifier
             .fillMaxSize()
@@ -329,15 +332,13 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
                 .width(dimensionResource(id = R.dimen.height_top_bar_landscape)),
             contentAlignment = Alignment.Center
         ) {
-            // Container for the rotated TopBar
+            // Rotated Container
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .rotate(-90f),
+                    .width(screenHeight) // Force width to match screen height
+                    .rotate(-90f),       // Rotate
                 contentAlignment = Alignment.Center
             ) {
-                // We force the bar to be wide enough to fill the vertical height
-                // The TopBar naturally fills max width, which becomes max height when rotated
                 DrillTutorTopBar(onMenuClick = onMenuClick)
             }
         }
@@ -358,9 +359,10 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
                 .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape)),
             contentAlignment = Alignment.Center
         ) {
+            // Rotated Container
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
+                    .width(screenHeight) // Force width to match screen height
                     .rotate(-90f),
                 contentAlignment = Alignment.Center
             ) {
