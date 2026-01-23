@@ -310,6 +310,12 @@ private fun PortraitLayout(onMenuClick: () -> Unit) {
     }
 }
 
+@Composable
+private fun LandscapeLayout(onMenuClick: () -> Unit) {
+    // Placeholder: Redirect to PortraitLayout until we build the real Row layout
+    PortraitLayout(onMenuClick = onMenuClick)
+}
+
 @Preview(showBackground = true, widthDp = 360, heightDp = 640)
 @Composable
 fun MainScreenPreview() {
