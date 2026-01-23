@@ -35,6 +35,7 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -63,9 +64,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
 
@@ -177,9 +180,9 @@ fun MainScreen() {
     ) {
         NavHost(navController = navController, startDestination = "home") {
             composable("home") {
-                HomeScreenContent(onMenuClick = {
-                    scope.launch { drawerState.open() }
-                })
+                PortraitLayout(
+                    onMenuClick = { scope.launch { drawerState.open() } }
+                )
             }
             composable("about") {
                 AboutScreen(onNavigateBack = { navController.popBackStack() })
@@ -298,14 +301,10 @@ private fun DrillTutorContent(paddingValues: PaddingValues) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreenContent(onMenuClick: () -> Unit) {
+private fun PortraitLayout(onMenuClick: () -> Unit) {
     Scaffold(
-        topBar = {
-            DrillTutorTopBar(onMenuClick = onMenuClick)
-        },
-        bottomBar = {
-            DrillTutorBottomBar()
-        }
+        topBar = { DrillTutorTopBar(onMenuClick = onMenuClick) },
+        bottomBar = { DrillTutorBottomBar() }
     ) { innerPadding ->
         DrillTutorContent(paddingValues = innerPadding)
     }
