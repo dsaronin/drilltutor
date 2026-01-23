@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -47,6 +48,7 @@ import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDrawerState
@@ -67,6 +69,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -319,56 +322,62 @@ private fun PortraitLayout(onMenuClick: () -> Unit) {
 @Composable
 private fun LandscapeLayout(onMenuClick: () -> Unit) {
     val configuration = LocalConfiguration.current
-    // In Landscape, the "Long Edge" is the Screen Width.
-    val sidebarLength = configuration.screenWidthDp.dp
+    // In Landscape, the vertical edge matches the screen height.
+    val sidebarLength = configuration.screenHeightDp.dp
 
-    Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
     ) {
-        // Left Sidebar (Masthead)
-        Box(
-            modifier = Modifier
-                .fillMaxHeight()
-                .width(dimensionResource(id = R.dimen.height_top_bar_landscape))
-                .clipToBounds(), // <--- PREVENTS OVERLAP TOUCH ISSUES
-            contentAlignment = Alignment.Center
-        ) {
+        Row(modifier = Modifier.fillMaxSize()) {
+            // Left Sidebar (Masthead)
             Box(
                 modifier = Modifier
-                    .width(sidebarLength) // <--- USES CORRECT LONG DIMENSION
-                    .rotate(-90f),
+                    .fillMaxHeight()
+                    .width(dimensionResource(id = R.dimen.height_top_bar_landscape))
+                    .zIndex(0f)
+                    .clipToBounds(),
                 contentAlignment = Alignment.Center
             ) {
-                DrillTutorTopBar(onMenuClick = onMenuClick)
+                // Rotated Container
+                Box(
+                    modifier = Modifier
+                        .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
+                        .rotate(-90f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    DrillTutorTopBar(onMenuClick = onMenuClick)
+                }
             }
-        }
 
-        // Center Content
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxHeight()
-        ) {
-            DrillTutorContent(paddingValues = PaddingValues(0.dp))
-        }
-
-        // Right Sidebar (Player)
-        Box(
-            modifier = Modifier
-                .fillMaxHeight()
-                .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape))
-                .clipToBounds(), // <--- PREVENTS OVERLAP TOUCH ISSUES
-            contentAlignment = Alignment.Center
-        ) {
+            // Center Content
             Box(
                 modifier = Modifier
-                    .width(sidebarLength) // <--- USES CORRECT LONG DIMENSION
-                    .rotate(-90f),
+                    .weight(1f)
+                    .fillMaxHeight()
+                    .zIndex(1f), // <--- Ensure content sits above any sidebar overlap
+            ) {
+                DrillTutorContent(paddingValues = PaddingValues(0.dp))
+            }
+
+            // Right Sidebar (Player)
+            Box(
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape))
+                    .zIndex(0f)
+                    .clipToBounds(),
                 contentAlignment = Alignment.Center
             ) {
-                DrillTutorBottomBar()
+                // Rotated Container
+                Box(
+                    modifier = Modifier
+                        .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
+                        .rotate(-90f),
+                    contentAlignment = Alignment.Center
+                ) {
+                    DrillTutorBottomBar()
+                }
             }
         }
     }
