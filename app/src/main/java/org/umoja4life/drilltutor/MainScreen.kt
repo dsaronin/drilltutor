@@ -190,42 +190,48 @@ fun MainScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
+    CenterAlignedTopAppBar(
+        title = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.flash_icon_2),
+                    contentDescription = stringResource(id = R.string.cd_logo),
+                    modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size_top_bar_logo))
+                )
+                Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.spacing_small)))
+                Text(
+                    stringResource(id = R.string.app_name),
+                    color = MaterialTheme.colorScheme.secondary,
+                    modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_content_vertical))
+                )
+            }
+        },
+        navigationIcon = {
+            IconButton(onClick = onMenuClick) {
+                Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.cd_menu))
+            }
+        },
+        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimary,
+            navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
+        )
+    )
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
 fun HomeScreenContent(onMenuClick: () -> Unit) {
     var isRear by remember { mutableStateOf(false) }
     val screenHeight = LocalConfiguration.current.screenHeightDp.dp
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.flash_icon_2),
-                            contentDescription = stringResource(id = R.string.cd_logo),
-                            modifier = Modifier.size(dimensionResource(id = R.dimen.icon_size_top_bar_logo))
-                        )
-                        Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.spacing_small)))
-                        Text(
-                            stringResource(id = R.string.app_name),
-                            color = MaterialTheme.colorScheme.secondary,
-                            modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_content_vertical))
-                        )
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onMenuClick) {
-                        Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.cd_menu))
-                    }
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
-                )
-            )
+            DrillTutorTopBar(onMenuClick = onMenuClick)
         },
         bottomBar = {
             BottomAppBar(
