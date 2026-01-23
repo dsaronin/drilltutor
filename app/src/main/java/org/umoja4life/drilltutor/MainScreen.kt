@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -57,6 +58,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
@@ -315,8 +317,57 @@ private fun PortraitLayout(onMenuClick: () -> Unit) {
 
 @Composable
 private fun LandscapeLayout(onMenuClick: () -> Unit) {
-    // Placeholder: Redirect to PortraitLayout until we build the real Row layout
-    PortraitLayout(onMenuClick = onMenuClick)
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+    ) {
+        // Left Sidebar (Masthead)
+        Box(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(dimensionResource(id = R.dimen.height_top_bar_landscape)),
+            contentAlignment = Alignment.Center
+        ) {
+            // Container for the rotated TopBar
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .rotate(-90f),
+                contentAlignment = Alignment.Center
+            ) {
+                // We force the bar to be wide enough to fill the vertical height
+                // The TopBar naturally fills max width, which becomes max height when rotated
+                DrillTutorTopBar(onMenuClick = onMenuClick)
+            }
+        }
+
+        // Center Content
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+        ) {
+            DrillTutorContent(paddingValues = PaddingValues(0.dp))
+        }
+
+        // Right Sidebar (Player)
+        Box(
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape)),
+            contentAlignment = Alignment.Center
+        ) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .rotate(-90f),
+                contentAlignment = Alignment.Center
+            ) {
+                DrillTutorBottomBar()
+            }
+        }
+    }
 }
 
 @Preview(showBackground = true, widthDp = 360, heightDp = 640)
