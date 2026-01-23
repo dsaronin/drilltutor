@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -197,7 +198,10 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
+                    ) {
                         Image(
                             painter = painterResource(id = R.drawable.flash_icon_2),
                             contentDescription = stringResource(id = R.string.cd_logo),
@@ -206,7 +210,8 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
                         Spacer(modifier = Modifier.width(dimensionResource(id = R.dimen.spacing_small)))
                         Text(
                             stringResource(id = R.string.app_name),
-                            color = MaterialTheme.colorScheme.secondary
+                            color = MaterialTheme.colorScheme.secondary,
+                            modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_bar_content_vertical))
                         )
                     }
                 },
@@ -223,7 +228,9 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
             )
         },
         bottomBar = {
-            BottomAppBar {
+            BottomAppBar(
+                contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
+            ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceAround
