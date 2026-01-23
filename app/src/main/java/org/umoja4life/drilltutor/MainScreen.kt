@@ -58,6 +58,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.dimensionResource
@@ -318,7 +319,8 @@ private fun PortraitLayout(onMenuClick: () -> Unit) {
 @Composable
 private fun LandscapeLayout(onMenuClick: () -> Unit) {
     val configuration = LocalConfiguration.current
-    val screenHeight = configuration.screenHeightDp.dp
+    // In Landscape, the "Long Edge" is the Screen Width.
+    val sidebarLength = configuration.screenWidthDp.dp
 
     Row(
         modifier = Modifier
@@ -329,14 +331,14 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
         Box(
             modifier = Modifier
                 .fillMaxHeight()
-                .width(dimensionResource(id = R.dimen.height_top_bar_landscape)),
+                .width(dimensionResource(id = R.dimen.height_top_bar_landscape))
+                .clipToBounds(), // <--- PREVENTS OVERLAP TOUCH ISSUES
             contentAlignment = Alignment.Center
         ) {
-            // Rotated Container
             Box(
                 modifier = Modifier
-                    .width(screenHeight) // Force width to match screen height
-                    .rotate(-90f),       // Rotate
+                    .width(sidebarLength) // <--- USES CORRECT LONG DIMENSION
+                    .rotate(-90f),
                 contentAlignment = Alignment.Center
             ) {
                 DrillTutorTopBar(onMenuClick = onMenuClick)
@@ -356,13 +358,13 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
         Box(
             modifier = Modifier
                 .fillMaxHeight()
-                .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape)),
+                .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape))
+                .clipToBounds(), // <--- PREVENTS OVERLAP TOUCH ISSUES
             contentAlignment = Alignment.Center
         ) {
-            // Rotated Container
             Box(
                 modifier = Modifier
-                    .width(screenHeight) // Force width to match screen height
+                    .width(sidebarLength) // <--- USES CORRECT LONG DIMENSION
                     .rotate(-90f),
                 contentAlignment = Alignment.Center
             ) {
@@ -371,6 +373,7 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
         }
     }
 }
+
 
 @Preview(showBackground = true, widthDp = 360, heightDp = 640)
 @Composable
