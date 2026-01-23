@@ -223,10 +223,41 @@ private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
     )
 }
 
+@Composable
+private fun DrillTutorBottomBar() {
+    var isRear by remember { mutableStateOf(false) }
+    BottomAppBar(
+        contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            IconButton(onClick = { /* quit */ }) {
+                Icon(Icons.Filled.Stop, contentDescription = stringResource(id = R.string.cd_quit))
+            }
+            IconButton(onClick = { /* gprev */ }) {
+                Icon(Icons.Filled.SkipPrevious, contentDescription = stringResource(id = R.string.cd_group_previous))
+            }
+            IconButton(onClick = { /* shfl */ }) {
+                Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
+            }
+            IconButton(onClick = { /* flip */ }) {
+                Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
+            }
+            IconButton(onClick = { /* gnext */ }) {
+                Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
+            }
+            IconButton(onClick = { isRear = !isRear }) {
+                Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreenContent(onMenuClick: () -> Unit) {
-    var isRear by remember { mutableStateOf(false) }
     val screenHeight = LocalConfiguration.current.screenHeightDp.dp
 
     Scaffold(
@@ -234,33 +265,7 @@ fun HomeScreenContent(onMenuClick: () -> Unit) {
             DrillTutorTopBar(onMenuClick = onMenuClick)
         },
         bottomBar = {
-            BottomAppBar(
-                contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ) {
-                    IconButton(onClick = { /* quit */ }) {
-                        Icon(Icons.Filled.Stop, contentDescription = stringResource(id = R.string.cd_quit))
-                    }
-                    IconButton(onClick = { /* gprev */ }) {
-                        Icon(Icons.Filled.SkipPrevious, contentDescription = stringResource(id = R.string.cd_group_previous))
-                    }
-                    IconButton(onClick = { /* shfl */ }) {
-                        Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
-                    }
-                    IconButton(onClick = { /* flip */ }) {
-                        Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
-                    }
-                    IconButton(onClick = { /* gnext */ }) {
-                        Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
-                    }
-                    IconButton(onClick = { isRear = !isRear }) {
-                        Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
-                    }
-                }
-            }
+            DrillTutorBottomBar()
         }
     ) { innerPadding ->
         Column(
