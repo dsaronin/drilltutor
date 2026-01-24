@@ -7,7 +7,7 @@ class DrillTutorApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // Wake up the Environment
-        Environment.init()
+        // Wake up the Environmentand give it the Context
+        Environment.init(this)
     }
 }
