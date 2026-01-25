@@ -34,6 +34,19 @@
     <string name="about_version_format">DrillTutor %s</string>
     <string name="about_copyright">© Copyright 2026 David S. Anderson, All rights reserved</string>
 
+    <!-- Settings Screen -->
+    <string name="settings_title">Flashcard Settings</string>
+    <string name="settings_label_topic">Topic for study</string>
+    <string name="settings_label_source">Source</string>
+    <string name="settings_label_order">Selection Order</string>
+    <string name="settings_label_size">Group Size</string>
+    <string name="settings_label_side">Side to Display</string>
+    <string name="settings_label_language">App Language</string>
+
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_start">Start »</string>
+
+
     <!-- Dummy content for cards -->
     <string name="huge_text">Huge Text</string>
     <string name="large_text">Large Text</string>

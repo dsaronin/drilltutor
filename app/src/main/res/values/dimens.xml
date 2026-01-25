@@ -32,4 +32,10 @@
     <!-- Landscape dimensions -->
     <dimen name="height_top_bar_landscape">64dp</dimen>
     <dimen name="height_bottom_bar_landscape">80dp</dimen>
+
+    <!-- UI Dimensions -->
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+    <dimen name="headline_spacing">12dp</dimen>
 </resources>
