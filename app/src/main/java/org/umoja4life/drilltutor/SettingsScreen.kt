@@ -6,6 +6,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
@@ -19,7 +20,8 @@ import org.umoja4life.drilltutor.ui.theme.TurkiyeRed
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel = viewModel(),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onNavigateBack: () -> Unit
 ) {
     val language by viewModel.currentLanguage.collectAsState()
     val topic by viewModel.currentTopic.collectAsState()
@@ -28,7 +30,10 @@ fun SettingsScreen(
     val size by viewModel.currentSize.collectAsState()
     val side by viewModel.currentSide.collectAsState()
 
-    val largeFontSize = 22.sp
+    val largeFontSize: TextUnit = with(LocalDensity.current) {
+        // Correct syntax: value.toSp()
+        dimensionResource(id = R.dimen.font_large).toSp()
+    }
 
     Scaffold(
         topBar = {
@@ -126,7 +131,7 @@ fun SettingsScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 // Cancel Button
-                TextButton(onClick = { /* TODO: Cancel */ }) {
+                TextButton(onClick = { onNavigateBack() }) {
                     Text(
                         text = stringResource(R.string.btn_cancel),
                         fontSize = largeFontSize,
@@ -136,7 +141,7 @@ fun SettingsScreen(
 
                 // Start Player Button
                 Button(
-                    onClick = { /* TODO: Start */ },
+                    onClick = { onNavigateBack() },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = TurkiyeRed,
                         contentColor = Gray050

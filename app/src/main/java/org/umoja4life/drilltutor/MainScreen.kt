@@ -119,7 +119,10 @@ fun MainScreen() {
                         icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
                         label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
                         selected = false,
-                        onClick = { /*TODO*/ },
+                        onClick = {
+                            scope.launch { drawerState.close() }
+                            navController.navigate("settings")
+                        },
                         colors = NavigationDrawerItemDefaults.colors(
                             unselectedIconColor = MaterialTheme.colorScheme.onSurface,
                             selectedIconColor = MaterialTheme.colorScheme.primary
@@ -195,6 +198,9 @@ fun MainScreen() {
             }
             composable("about") {
                 AboutScreen(onNavigateBack = { navController.popBackStack() })
+            }
+            composable("settings") {
+                SettingsScreen(onNavigateBack = { navController.popBackStack() })
             }
         }
     }
