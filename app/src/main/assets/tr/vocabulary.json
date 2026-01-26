@@ -1,0 +1,3516 @@
+{
+  "quantifiers": {
+    "fc_data": [
+      [
+        "az",
+        "few, slight (neg)"
+      ],
+      [
+        "bazen",
+        "sometimes"
+      ],
+      [
+        "bazı",
+        "some [thing]"
+      ],
+      [
+        "beraber",
+        "together with"
+      ],
+      [
+        "bir az",
+        "some, bit  (uncountable)"
+      ],
+      [
+        "bir bir yerde",
+        "somewhere, someplace"
+      ],
+      [
+        "bir kaç",
+        "some, few (countable)"
+      ],
+      [
+        "bir çok",
+        "many, lots"
+      ],
+      [
+        "bir önemli değil",
+        "no problem, not important"
+      ],
+      [
+        "bir şey değil",
+        "it’s nothing, anything"
+      ],
+      [
+        "biraz",
+        "some, a bit"
+      ],
+      [
+        "biri",
+        "someone, person"
+      ],
+      [
+        "bu kadar",
+        "this amount, so (much)"
+      ],
+      [
+        "bütün",
+        "whole, entire, all"
+      ],
+      [
+        "fazla",
+        "too much, many  (neg)"
+      ],
+      [
+        "gibi",
+        "like, similar to"
+      ],
+      [
+        "hakkında",
+        "about, approx"
+      ],
+      [
+        "her hangi bir yer",
+        "anywhere"
+      ],
+      [
+        "her hangi bir şey",
+        "something, anything"
+      ],
+      [
+        "her hangi biri",
+        "anybody"
+      ],
+      [
+        "her hangi",
+        "any, some"
+      ],
+      [
+        "her kes",
+        "everyone, everybody"
+      ],
+      [
+        "her şey",
+        "everything"
+      ],
+      [
+        "her",
+        "any, all, each"
+      ],
+      [
+        "hiç bir yerde",
+        "nowhere"
+      ],
+      [
+        "hiç bir şey",
+        "nothing"
+      ],
+      [
+        "hiç bir",
+        "neither"
+      ],
+      [
+        "hiç biri",
+        "none, neither"
+      ],
+      [
+        "hiç kimse…yok",
+        "nobody"
+      ],
+      [
+        "hiç",
+        "no, none, never"
+      ],
+      [
+        "ile",
+        "with, and"
+      ],
+      [
+        "kimse",
+        "nobody, anybody"
+      ],
+      [
+        "son",
+        "last, final, end"
+      ],
+      [
+        "sonra",
+        "later, then, after"
+      ],
+      [
+        "tane",
+        "many"
+      ],
+      [
+        "tüm",
+        "whole, entire"
+      ],
+      [
+        "çift",
+        "pair, couple of sth"
+      ],
+      [
+        "çok az",
+        "very little"
+      ],
+      [
+        "çok fazla",
+        "too much, many  (neg)"
+      ],
+      [
+        "önce",
+        "before"
+      ]
+    ]
+  },
+  "adverbs": {
+    "fc_data": [
+      [
+        "artık",
+        "from now on (poz), anymore (neg)"
+      ],
+      [
+        "asla",
+        "never"
+      ],
+      [
+        "aslında",
+        "actually, in fact"
+      ],
+      [
+        "bazen",
+        "sometimes"
+      ],
+      [
+        "benten daha",
+        "more sth… than me"
+      ],
+      [
+        "bile",
+        "even …"
+      ],
+      [
+        "bir kere daha",
+        "one more time"
+      ],
+      [
+        "biraz daha",
+        "more than sth"
+      ],
+      [
+        "bütün",
+        "all"
+      ],
+      [
+        "çoğunlukla",
+        "usually, mostly (habit/custom)"
+      ],
+      [
+        "daha",
+        "yet, more, than"
+      ],
+      [
+        "daha sonra",
+        "later"
+      ],
+      [
+        "en",
+        "most…, best"
+      ],
+      [
+        "genelde",
+        "usually, generally (timewise)"
+      ],
+      [
+        "gerçekten",
+        "really, totally"
+      ],
+      [
+        "genellikle",
+        "generally, usually"
+      ],
+      [
+        "göre",
+        "according to…, opinion"
+      ],
+      [
+        "hala",
+        "still…, yet (poz)"
+      ],
+      [
+        "henüz",
+        "still…, yet, so far (neg)"
+      ],
+      [
+        "hep",
+        "always"
+      ],
+      [
+        "kesinlikle",
+        "definitely, certainly"
+      ],
+      [
+        "nadiren",
+        "rarely, seldom"
+      ],
+      [
+        "neredeyse",
+        "almost, nearly"
+      ],
+      [
+        "oldukça",
+        "quite, rather, fairly"
+      ],
+      [
+        "özellikle",
+        "especially, particularly"
+      ],
+      [
+        "sonunda",
+        "finally, after, in the end"
+      ],
+      [
+        "tam olarak",
+        "exactly"
+      ],
+      [
+        "sadece",
+        "only, just"
+      ],
+      [
+        "sık sık",
+        "frequently, often"
+      ],
+      [
+        "tamamen",
+        "completely, totally"
+      ],
+      [
+        "tekrar",
+        "again, once more"
+      ],
+      [
+        "yine",
+        "again, once more"
+      ],
+      [
+        "yeterince",
+        "enough"
+      ],
+      [
+        "yeterli",
+        "sufficient"
+      ]
+    ]
+  },
+  "adjectives": {
+    "fc_data": [
+      [
+        "aç",
+        "hunger"
+      ],
+      [
+        "açık",
+        "open, clear"
+      ],
+      [
+        "aynı",
+        "same"
+      ],
+      [
+        "az",
+        "few"
+      ],
+      [
+        "başka",
+        "another, else"
+      ],
+      [
+        "büyük",
+        "big, large, great"
+      ],
+      [
+        "ciddi",
+        "serious"
+      ],
+      [
+        "çok",
+        "very, too, many"
+      ],
+      [
+        "diğer",
+        "other"
+      ],
+      [
+        "doğru",
+        "true, right, crct"
+      ],
+      [
+        "erken",
+        "early"
+      ],
+      [
+        "eski",
+        "old, (thg)"
+      ],
+      [
+        "farklı",
+        "different"
+      ],
+      [
+        "geç",
+        "late"
+      ],
+      [
+        "geleneksel",
+        "traditional"
+      ],
+      [
+        "genç",
+        "young"
+      ],
+      [
+        "geniş",
+        "wide"
+      ],
+      [
+        "güç",
+        "difficult"
+      ],
+      [
+        "güzel",
+        "pretty,  beautiful"
+      ],
+      [
+        "harika",
+        "excelnt, great"
+      ],
+      [
+        "hasta",
+        "sick, ill, patient"
+      ],
+      [
+        "hoş",
+        "beautiful, nice"
+      ],
+      [
+        "hızlı",
+        "quick, fast"
+      ],
+      [
+        "islak",
+        "wet, humid"
+      ],
+      [
+        "ilginç",
+        "interesting"
+      ],
+      [
+        "imkansız",
+        "impossible"
+      ],
+      [
+        "iyi",
+        "good"
+      ],
+      [
+        "kapalı",
+        "closed, off"
+      ],
+      [
+        "kendi",
+        "oneself, own"
+      ],
+      [
+        "kirli",
+        "dirty"
+      ],
+      [
+        "kolay",
+        "easy, simple"
+      ],
+      [
+        "kötü",
+        "bad, worse"
+      ],
+      [
+        "küçük",
+        "small, little, yng"
+      ],
+      [
+        "kuru",
+        "dry"
+      ],
+      [
+        "kısa",
+        "short"
+      ],
+      [
+        "lazım",
+        "need, must, req"
+      ],
+      [
+        "meşhur",
+        "famous"
+      ],
+      [
+        "modern",
+        "modern"
+      ],
+      [
+        "muhteşem",
+        "magnificent"
+      ],
+      [
+        "mümkün",
+        "possible doabl"
+      ],
+      [
+        "müsait",
+        "free, available"
+      ],
+      [
+        "mutlu",
+        "happy, elated"
+      ],
+      [
+        "mutsuz",
+        "unhappy"
+      ],
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "olası",
+        "potential,probl"
+      ],
+      [
+        "önemli",
+        "impt, signifnt"
+      ],
+      [
+        "özel",
+        "pvt, spl, prsnl"
+      ],
+      [
+        "pahalı",
+        "expensive"
+      ],
+      [
+        "popüler",
+        "popular"
+      ],
+      [
+        "resmi",
+        "official, formal"
+      ],
+      [
+        "sakin",
+        "calm"
+      ],
+      [
+        "sorumlu",
+        "responsible"
+      ],
+      [
+        "soğuk",
+        "cold "
+      ],
+      [
+        "sıcak",
+        "hot "
+      ],
+      [
+        "temiz",
+        "clean"
+      ],
+      [
+        "tok",
+        "full, satiated"
+      ],
+      [
+        "tuhaf",
+        "strange, weird"
+      ],
+      [
+        "ucuz",
+        "cheap"
+      ],
+      [
+        "uzakta",
+        "far (away)"
+      ],
+      [
+        "üzgün",
+        "sad, upset, sry"
+      ],
+      [
+        "uzun",
+        "long, tall"
+      ],
+      [
+        "üzücü",
+        "sad, upset"
+      ],
+      [
+        "yakın",
+        "close, soon, nr"
+      ],
+      [
+        "yakışıklı",
+        "handsome"
+      ],
+      [
+        "yalnız",
+        "alone, on own"
+      ],
+      [
+        "yanlış",
+        "wrong, false"
+      ],
+      [
+        "yasak",
+        "forbidden"
+      ],
+      [
+        "yavaş",
+        "slow"
+      ],
+      [
+        "yaşlı",
+        "old (ppl)"
+      ],
+      [
+        "yeni",
+        "new, recent"
+      ],
+      [
+        "yorgun",
+        "fatigued, tired"
+      ],
+      [
+        "yüksek",
+        "high"
+      ],
+      [
+        "zor",
+        "difficult, hard"
+      ]
+    ]
+  },
+  "post-positions": {
+    "fc_data": [
+      [
+        "alt",
+        "lower part, inferior"
+      ],
+      [
+        "ara",
+        "gap between"
+      ],
+      [
+        "arka",
+        "rear, behind, support"
+      ],
+      [
+        "başka",
+        "except, other"
+      ],
+      [
+        "beri",
+        "since, subsequent "
+      ],
+      [
+        "dolayı",
+        "because of"
+      ],
+      [
+        "doğru",
+        "towards"
+      ],
+      [
+        "dış",
+        "exterior, outside"
+      ],
+      [
+        "evvel",
+        "before (time)"
+      ],
+      [
+        "geçe",
+        "past sth"
+      ],
+      [
+        "gibi",
+        "like, similarity"
+      ],
+      [
+        "göre",
+        "according to"
+      ],
+      [
+        "hakkında  about, approximate"
+      ],
+      [
+        "hariç",
+        "except, excluding"
+      ],
+      [
+        "iç",
+        "interior, inside"
+      ],
+      [
+        "için",
+        "for, because of"
+      ],
+      [
+        "ile",
+        "with"
+      ],
+      [
+        "ileri",
+        "ahead, forward"
+      ],
+      [
+        "kadar",
+        "to, until, as…as"
+      ],
+      [
+        "kala",
+        "prior, at…to"
+      ],
+      [
+        "karşı",
+        "opposite side"
+      ],
+      [
+        "kenar",
+        "edge of, alongside"
+      ],
+      [
+        "nazaran",
+        "compared with"
+      ],
+      [
+        "niçin",
+        "ne için"
+      ],
+      [
+        "ön",
+        "front, before"
+      ],
+      [
+        "önce",
+        "before"
+      ],
+      [
+        "orta",
+        "center, mid"
+      ],
+      [
+        "rağmen ",
+        "despite"
+      ],
+      [
+        "sağ",
+        "right of "
+      ],
+      [
+        "sol",
+        "left of "
+      ],
+      [
+        "sonra",
+        "after"
+      ],
+      [
+        "sırasinda",
+        "during, while"
+      ],
+      [
+        "üst",
+        "upper part, superior"
+      ],
+      [
+        "üzere",
+        "upon"
+      ],
+      [
+        "üzeri",
+        "above/over"
+      ],
+      [
+        "yan",
+        "next/side"
+      ],
+      [
+        "yukarı",
+        "up/upward"
+      ],
+      [
+        "aşağı",
+        "down/downward"
+      ],
+      [
+        "dışarı",
+        "out/outward/outside"
+      ],
+      [
+        "içeri",
+        "in/inward/inside"
+      ],
+      [
+        ""
+      ]
+    ]
+  },
+  "participles": {
+    "fc_data": [
+      [
+        "akar su",
+        "running water"
+      ],
+      [
+        "okumuş bir adam",
+        "educated man"
+      ],
+      [
+        "gelecek sene",
+        "next year, coming year"
+      ],
+      [
+        "geçmiş zaman",
+        "passed time, past tense"
+      ],
+      [
+        "bitmez iş",
+        "endless task"
+      ],
+      [
+        "seni anlıyacak bir kız",
+        "understanding girl"
+      ],
+      [
+        "yazarın evi",
+        "the writer’s house"
+      ],
+      [
+        "olacak oldu",
+        "what was to happen happened"
+      ],
+      [
+        "giden",
+        "going, one who goes"
+      ],
+      [
+        "gitmiyen",
+        "not going"
+      ],
+      [
+        "bilen",
+        "knowing "
+      ],
+      [
+        "bilmiyen",
+        "not knowing"
+      ],
+      [
+        "anlıyan",
+        "understanding"
+      ],
+      [
+        "anlamıyan",
+        "not understanding"
+      ],
+      [
+        "istiyen",
+        "desiring"
+      ],
+      [
+        "istemiyen",
+        "not desiring"
+      ],
+      [
+        "oraya giden adamlar",
+        "men who go there"
+      ],
+      [
+        "ankaraya gidenler",
+        "those who go to ankara"
+      ],
+      [
+        "gittikten sonra",
+        "after going / having gone"
+      ],
+      [
+        "geldiğimde",
+        "when I come, came"
+      ],
+      [
+        "her gittiğimde",
+        "at my every going, whenever I go"
+      ],
+      [
+        "gelmediğinizden dolayı",
+        "because of your not coming"
+      ],
+      [
+        "gelen adam",
+        "man who is coming"
+      ],
+      [
+        "gelecek adam",
+        "man who will come"
+      ],
+      [
+        "akar su",
+        "water which flows, flowing water"
+      ],
+      [
+        "gördüğüm adam",
+        "man whom I saw"
+      ],
+      [
+        "kitabını aldığım adam",
+        "man whose book I took"
+      ],
+      [
+        "geldiğim gün",
+        "day when I came"
+      ],
+      [
+        "gitmediği halde",
+        "in event that he didn’t go"
+      ],
+      [
+        "geldiğim gibi",
+        "as soon as I came"
+      ],
+      [
+        "koşa",
+        "running"
+      ],
+      [
+        "güle",
+        "laughing"
+      ],
+      [
+        "diye",
+        "saying; spoken quotes, pretext that"
+      ]
+    ]
+  },
+  "interrogatives": {
+    "fc_data": [
+      [
+        "ne",
+        "what, so?"
+      ],
+      [
+        "nedir",
+        "what [factually]?"
+      ],
+      [
+        "neden",
+        "why (cause, reason)?"
+      ],
+      [
+        "ne zaman",
+        "when, whenever?"
+      ],
+      [
+        "niçin",
+        "why"
+      ],
+      [
+        "hangi, hangisi",
+        "which?"
+      ],
+      [
+        "nerelisin",
+        "where you from?"
+      ],
+      [
+        "neredesin",
+        "where are you?"
+      ],
+      [
+        "nerede",
+        "where?"
+      ],
+      [
+        "nereye",
+        "where?"
+      ],
+      [
+        "kim",
+        "who?"
+      ],
+      [
+        "kimin",
+        "whose?"
+      ],
+      [
+        "nasıl",
+        "how? what [type, kind]?"
+      ],
+      [
+        "ne kadar",
+        "how much?"
+      ],
+      [
+        "kaç tane",
+        "how many?"
+      ],
+      [
+        "kaç kişi",
+        "how many people?"
+      ]
+    ]
+  },
+  "conjunctions": {
+    "fc_data": [
+      [
+        "ama",
+        "but"
+      ],
+      [
+        "başka",
+        "another, else"
+      ],
+      [
+        "bu kadar",
+        "so, until, as…as"
+      ],
+      [
+        "çünkü",
+        "because"
+      ],
+      [
+        "da/de",
+        "too, also, as well"
+      ],
+      [
+        "hariç",
+        "except, excluding"
+      ],
+      [
+        "ikisi de",
+        "both, two of them"
+      ],
+      [
+        "İçin",
+        "for"
+      ],
+      [
+        "ne",
+        "what, so"
+      ],
+      [
+        "o zaman",
+        "then, so"
+      ],
+      [
+        "ve",
+        "and"
+      ],
+      [
+        "veya",
+        "IOR, this or that or both"
+      ],
+      [
+        "ya",
+        "what if"
+      ],
+      [
+        "yoksa…mx",
+        "XOR, if there is no other"
+      ],
+      [
+        "𝝙… ya X ya da Y",
+        "𝝙… either X or Y"
+      ],
+      [
+        "𝝙… hem X hem de Y",
+        "𝝙… both X and Y, at same time"
+      ],
+      [
+        "𝝙… ne X ne de Y",
+        "𝝙… neither X nor Y"
+      ]
+    ]
+  },
+  "time": {
+    "fc_data": [
+      [
+        "akşam",
+        "evening"
+      ],
+      [
+        "bu gece",
+        "tonight"
+      ],
+      [
+        "bugün",
+        "today: (this-day)"
+      ],
+      [
+        "bütün gün",
+        "all day"
+      ],
+      [
+        "dün",
+        "yesterday"
+      ],
+      [
+        "gece",
+        "night"
+      ],
+      [
+        "geleceği",
+        "(the) future"
+      ],
+      [
+        "gün",
+        "day"
+      ],
+      [
+        "günü",
+        "on ~days: (accusative)"
+      ],
+      [
+        "hafta",
+        "week"
+      ],
+      [
+        "ay",
+        "month: ayı, aydir"
+      ],
+      [
+        "her",
+        "all, each, every"
+      ],
+      [
+        "öğle",
+        "noon"
+      ],
+      [
+        "sabah",
+        "morning"
+      ],
+      [
+        "son",
+        "last, final, end"
+      ],
+      [
+        "son yıllarda",
+        "in recent years"
+      ],
+      [
+        "sonra",
+        "later, then, after"
+      ],
+      [
+        "tarih",
+        "date, history"
+      ],
+      [
+        "yarın",
+        "tomorrow"
+      ],
+      [
+        "yıl",
+        "year"
+      ],
+      [
+        "asır",
+        "century"
+      ],
+      [
+        "zaman",
+        "time"
+      ],
+      [
+        "şimdi",
+        "now"
+      ],
+      [
+        "mevsim",
+        "season"
+      ],
+      [
+        "ilkbahar",
+        "spring"
+      ],
+      [
+        "yaz",
+        "summer"
+      ],
+      [
+        "sonbahar",
+        "autumn"
+      ],
+      [
+        "kış",
+        "winter"
+      ],
+      [
+        "gün batımı",
+        "sunset"
+      ],
+      [
+        "gün geçmiş",
+        "sunrise"
+      ],
+      [
+        "doğum günü",
+        "birthday"
+      ],
+      [
+        "öğle yemeği",
+        "lunch"
+      ],
+      [
+        "öğleden sonra",
+        "in the afternoon"
+      ],
+      [
+        "akşam yemeği",
+        "dinner"
+      ],
+      [
+        "her zaman",
+        "always, ever"
+      ],
+      [
+        "bütün gün",
+        "all day"
+      ],
+      [
+        "her gün",
+        "daily"
+      ],
+      [
+        "saat",
+        "hour, o’clock"
+      ],
+      [
+        "dakika",
+        "minute"
+      ],
+      [
+        "saniye",
+        "second"
+      ],
+      [
+        "saati",
+        "clock"
+      ],
+      [
+        "saat kaçta?",
+        "at what time, o’clock?"
+      ],
+      [
+        "randevu",
+        "date, appointment"
+      ],
+      [
+        "geçe",
+        "past sth"
+      ],
+      [
+        "kala",
+        "before, at, to"
+      ],
+      [
+        "buçuk",
+        "half past x"
+      ],
+      [
+        "çeyrek geçiyor",
+        "quarter past x"
+      ],
+      [
+        "çeyrek var",
+        "quarter till x"
+      ],
+      [
+        "Pazartesi",
+        "Monday"
+      ],
+      [
+        "Salı",
+        "Tuesday"
+      ],
+      [
+        "Çarşamba",
+        "Wednesday"
+      ],
+      [
+        "Perşembe",
+        "Thursday"
+      ],
+      [
+        "Cuma",
+        "Friday"
+      ],
+      [
+        "Cumartesi",
+        "Saturday"
+      ],
+      [
+        "Pazar",
+        "Sunday"
+      ],
+      [
+        "Ocak",
+        "Jan"
+      ],
+      [
+        "Şubat",
+        "Feb"
+      ],
+      [
+        "Mart",
+        "Mar"
+      ],
+      [
+        "Nisan",
+        "Apr"
+      ],
+      [
+        "Mayıs",
+        "May"
+      ],
+      [
+        "Haziran",
+        "Jun"
+      ],
+      [
+        "Temmuz",
+        "Jul"
+      ],
+      [
+        "Ağustos",
+        "Aug"
+      ],
+      [
+        "Eylül",
+        "Sept"
+      ],
+      [
+        "Ekim",
+        "Oct"
+      ],
+      [
+        "Kasım",
+        "Nov"
+      ],
+      [
+        "Aralık",
+        "Dec"
+      ]
+    ]
+  },
+  "numbers": {
+    "fc_data": [
+      [
+        "sıfır",
+        "0"
+      ],
+      [
+        "bir",
+        "1"
+      ],
+      [
+        "iki",
+        "2"
+      ],
+      [
+        "üç",
+        "3"
+      ],
+      [
+        "dört",
+        "4"
+      ],
+      [
+        "beş",
+        "5"
+      ],
+      [
+        "altı",
+        "6"
+      ],
+      [
+        "yedi",
+        "7"
+      ],
+      [
+        "sekiz",
+        "8"
+      ],
+      [
+        "dokuz",
+        "9"
+      ],
+      [
+        "on",
+        "10"
+      ],
+      [
+        "yirmi",
+        "20"
+      ],
+      [
+        "otuz",
+        "30"
+      ],
+      [
+        "kırk",
+        "40"
+      ],
+      [
+        "elli",
+        "50"
+      ],
+      [
+        "altmış",
+        "60"
+      ],
+      [
+        "yetmiş",
+        "70"
+      ],
+      [
+        "seksen",
+        "80"
+      ],
+      [
+        "doksan",
+        "90"
+      ],
+      [
+        "yüz",
+        "100"
+      ],
+      [
+        "bin",
+        "1,000"
+      ],
+      [
+        "azınlık",
+        "minority"
+      ],
+      [
+        "çoğunluk",
+        "majority"
+      ],
+      [
+        "geçen",
+        "last"
+      ],
+      [
+        "ilk",
+        "primary, the first"
+      ],
+      [
+        "ikisi(ni)",
+        "both"
+      ],
+      [
+        "kadar",
+        "to [towards?]"
+      ],
+      [
+        "kere",
+        "times"
+      ],
+      [
+        "kez",
+        "times"
+      ],
+      [
+        "sayı",
+        "number"
+      ],
+      [
+        "son",
+        "last, final"
+      ],
+      [
+        "tane",
+        "many [count]"
+      ],
+      [
+        "toplam",
+        "[in] total"
+      ],
+      [
+        "yarım",
+        "half"
+      ],
+      [
+        "yaşı",
+        "age [years old]"
+      ],
+      [
+        "yeterli",
+        "enough"
+      ],
+      [
+        "yüzde",
+        "percent, %"
+      ]
+    ]
+  },
+  "food": {
+    "fc_data": [
+      [
+        "bira",
+        "beer"
+      ],
+      [
+        "çay",
+        "tea"
+      ],
+      [
+        "çilek",
+        "strawberry"
+      ],
+      [
+        "çorba",
+        "soup"
+      ],
+      [
+        "domates",
+        "tomato"
+      ],
+      [
+        "ekmek",
+        "bread"
+      ],
+      [
+        "elma",
+        "apple"
+      ],
+      [
+        "et",
+        "meat"
+      ],
+      [
+        "kahve",
+        "coffee"
+      ],
+      [
+        "limon",
+        "lemon"
+      ],
+      [
+        "makarna",
+        "pasta"
+      ],
+      [
+        "mutfağını",
+        "cuisine, kitchen"
+      ],
+      [
+        "meyve",
+        "fruit"
+      ],
+      [
+        "pasta",
+        "cake"
+      ],
+      [
+        "peynir",
+        "cheese"
+      ],
+      [
+        "portakal",
+        "orange"
+      ],
+      [
+        "sandviç",
+        "sandwich"
+      ],
+      [
+        "su",
+        "water"
+      ],
+      [
+        "süt",
+        "milk"
+      ],
+      [
+        "tuz",
+        "salt"
+      ],
+      [
+        "yağ",
+        "oil"
+      ],
+      [
+        "yoğurdu",
+        "yogurt"
+      ],
+      [
+        "yumurta",
+        "egg"
+      ],
+      [
+        "şarap",
+        "wine"
+      ],
+      [
+        "şeker",
+        "sugar"
+      ]
+    ]
+  },
+  "animals": {
+    "fc_data": [
+      [
+        "aslan",
+        "lion"
+      ],
+      [
+        "at",
+        "horse"
+      ],
+      [
+        "ayı",
+        "bear"
+      ],
+      [
+        "balık",
+        "fish 🐠"
+      ],
+      [
+        "baykuş",
+        "owl"
+      ],
+      [
+        "eşek",
+        "donkey"
+      ],
+      [
+        "fare",
+        "mouse"
+      ],
+      [
+        "fil",
+        "elephant"
+      ],
+      [
+        "hindi",
+        "turkey"
+      ],
+      [
+        "inek",
+        "cow"
+      ],
+      [
+        "yengeç",
+        "crab"
+      ],
+      [
+        "kaplumbağa",
+        "turtle"
+      ],
+      [
+        "kedi",
+        "cat 😺"
+      ],
+      [
+        "köpek",
+        "dog 🐕"
+      ],
+      [
+        "koyun",
+        "sheep"
+      ],
+      [
+        "kurbağa",
+        "frog"
+      ],
+      [
+        "kuzu",
+        "lamb 🐑"
+      ],
+      [
+        "kuş",
+        "bird 🐦"
+      ],
+      [
+        "ördek",
+        "duck"
+      ],
+      [
+        "örümcek",
+        "spider"
+      ],
+      [
+        "tavuk",
+        "chicken"
+      ],
+      [
+        "tavşan",
+        "rabbit"
+      ],
+      [
+        "hayvanat bahçesi",
+        "zoo"
+      ]
+    ]
+  },
+  "people": {
+    "fc_data": [
+      [
+        "arkadaş",
+        "friend"
+      ],
+      [
+        "erkek arkadaş",
+        "boyfriend"
+      ],
+      [
+        "kız arkadaş",
+        "girlfriend"
+      ],
+      [
+        "oda arkadaşi",
+        "roommate"
+      ],
+      [
+        "ad",
+        "name"
+      ],
+      [
+        "adam",
+        "man"
+      ],
+      [
+        "bebek",
+        "baby"
+      ],
+      [
+        "bey",
+        "mister"
+      ],
+      [
+        "beyefendi",
+        "sir, gentleman"
+      ],
+      [
+        "birey",
+        "individual"
+      ],
+      [
+        "çocuk",
+        "child"
+      ],
+      [
+        "dişi",
+        "female"
+      ],
+      [
+        "düşman",
+        "enemy"
+      ],
+      [
+        "erkek",
+        "male"
+      ],
+      [
+        "erkek çocuk",
+        "boy"
+      ],
+      [
+        "grup",
+        "group"
+      ],
+      [
+        "halk",
+        "public, society"
+      ],
+      [
+        "hanım",
+        "ms"
+      ],
+      [
+        "hanımefendi",
+        "lady, madam"
+      ],
+      [
+        "hırsız",
+        "thief"
+      ],
+      [
+        "insan",
+        "human"
+      ],
+      [
+        "kadın",
+        "woman"
+      ],
+      [
+        "kişi",
+        "people"
+      ],
+      [
+        "komitesi",
+        "committee"
+      ],
+      [
+        "komşu",
+        "neighbor"
+      ],
+      [
+        "kurban",
+        "victim"
+      ],
+      [
+        "kız",
+        "girl"
+      ],
+      [
+        "misafir",
+        "guest"
+      ],
+      [
+        "müşteri",
+        "customer"
+      ],
+      [
+        "nüfusu",
+        "population"
+      ],
+      [
+        "oğlan",
+        "boy"
+      ],
+      [
+        "satıcı",
+        "vendor, seller"
+      ],
+      [
+        "sevgil",
+        "lover, boyfriend, girlfriend"
+      ],
+      [
+        "şahid",
+        "witness"
+      ],
+      [
+        "şehir",
+        "city, town"
+      ],
+      [
+        "üye",
+        "member"
+      ],
+      [
+        "vatandaş",
+        "citizen"
+      ],
+      [
+        "yetişkin",
+        "adult"
+      ]
+    ]
+  },
+  "family": {
+    "fc_data": [
+      [
+        "amca",
+        "uncle (paternal)"
+      ],
+      [
+        "hala",
+        "aunt   (paternal)"
+      ],
+      [
+        "dede",
+        "grandpa"
+      ],
+      [
+        "babaanne",
+        "grandma (paternal)"
+      ],
+      [
+        "dayı",
+        "uncle (maternal) "
+      ],
+      [
+        "teyze",
+        "aunt (maternal) "
+      ],
+      [
+        "anneanne",
+        "grandma (maternal)"
+      ],
+      [
+        "annebaba",
+        "grandpa (maternal)"
+      ],
+      [
+        "abi",
+        "older brother"
+      ],
+      [
+        "abla",
+        "older sister"
+      ],
+      [
+        "aile",
+        "family"
+      ],
+      [
+        "anne",
+        "mother"
+      ],
+      [
+        "ağabeyi",
+        "older brother"
+      ],
+      [
+        "baba",
+        "father"
+      ],
+      [
+        "kardeş",
+        "sibling, bro"
+      ],
+      [
+        "kuzen",
+        "cousin"
+      ],
+      [
+        "kız evlat",
+        "daughter"
+      ],
+      [
+        "oğul",
+        "son"
+      ],
+      [
+        "yeğen",
+        "niece/nephew"
+      ],
+      [
+        "bekar",
+        "single"
+      ],
+      [
+        "evli",
+        "married"
+      ],
+      [
+        "eşi",
+        "spouse"
+      ],
+      [
+        "karı",
+        "wife"
+      ],
+      [
+        "koca",
+        "husband"
+      ],
+      [
+        "büyükanne",
+        "grandmother"
+      ],
+      [
+        "büyükbaba",
+        "grandfather"
+      ],
+      [
+        "torun",
+        "grandchild"
+      ]
+    ]
+  },
+  "careers": {
+    "fc_data": [
+      [
+        "asker",
+        "soldier"
+      ],
+      [
+        "avukat",
+        "lawyer, advice"
+      ],
+      [
+        "aşçı",
+        "cook"
+      ],
+      [
+        "başkan",
+        "president"
+      ],
+      [
+        "bekçi",
+        "guard"
+      ],
+      [
+        "çiftçi",
+        "farmer"
+      ],
+      [
+        "doktor",
+        "doctor"
+      ],
+      [
+        "garson",
+        "waiter, server"
+      ],
+      [
+        "iş",
+        "job, work, business"
+      ],
+      [
+        "işçi",
+        "worker"
+      ],
+      [
+        "işim",
+        "my job"
+      ],
+      [
+        "işin",
+        "your job"
+      ],
+      [
+        "işsiz",
+        "jobless"
+      ],
+      [
+        "kaptan",
+        "captain"
+      ],
+      [
+        "kariyeri",
+        "career"
+      ],
+      [
+        "memur",
+        "civil servant, officer"
+      ],
+      [
+        "mesleği",
+        "job, profession"
+      ],
+      [
+        "mimar",
+        "architect"
+      ],
+      [
+        "mühendis",
+        "engineer"
+      ],
+      [
+        "oyuncu",
+        "actor, player"
+      ],
+      [
+        "öğrenci",
+        "student"
+      ],
+      [
+        "öğretmen",
+        "teacher"
+      ],
+      [
+        "patron",
+        "boss"
+      ],
+      [
+        "personel",
+        "staff"
+      ],
+      [
+        "polis memur",
+        "political officer"
+      ],
+      [
+        "profesyonel",
+        "professer"
+      ],
+      [
+        "ressam",
+        "painter"
+      ],
+      [
+        "sanatçı",
+        "artist, singer"
+      ],
+      [
+        "sekreteri",
+        "secretary"
+      ],
+      [
+        "yargıç",
+        "judge"
+      ],
+      [
+        "yazarın",
+        "author"
+      ],
+      [
+        "yönetmen",
+        "director, producer"
+      ],
+      [
+        "şarkıcı",
+        "singer"
+      ]
+    ]
+  },
+  "education": {
+    "fc_data": [
+      [
+        "açıklam",
+        "explain, statement"
+      ],
+      [
+        "alfabesinde",
+        "alphabet"
+      ],
+      [
+        "alıştırma",
+        "exercise, practice"
+      ],
+      [
+        "amacı",
+        "purpose, aim"
+      ],
+      [
+        "anlamı",
+        "meaning of"
+      ],
+      [
+        "başvuru",
+        "application"
+      ],
+      [
+        "bilgi",
+        "information, knowledge"
+      ],
+      [
+        "biyoloji",
+        "biology"
+      ],
+      [
+        "bölüm",
+        "department"
+      ],
+      [
+        "cümle",
+        "sentence"
+      ],
+      [
+        "coğrafya",
+        "geography"
+      ],
+      [
+        "çalışmalar",
+        "studies"
+      ],
+      [
+        "dersi",
+        "class, lesson"
+      ],
+      [
+        "evrak",
+        "document"
+      ],
+      [
+        "fizik",
+        "physics"
+      ],
+      [
+        "harf(li)",
+        "letter"
+      ],
+      [
+        "hata",
+        "err, mistake"
+      ],
+      [
+        "kalem",
+        "pen"
+      ],
+      [
+        "kelime",
+        "word"
+      ],
+      [
+        "kimya",
+        "chemistry"
+      ],
+      [
+        "konferans",
+        "conference"
+      ],
+      [
+        "konu",
+        "topic, subject"
+      ],
+      [
+        "kursu",
+        "course"
+      ],
+      [
+        "kütüphane",
+        "library"
+      ],
+      [
+        "matematik",
+        "math"
+      ],
+      [
+        "not",
+        "notes, grade"
+      ],
+      [
+        "ödevi",
+        "homework"
+      ],
+      [
+        "örnek",
+        "example"
+      ],
+      [
+        "öğrenmek",
+        "learn"
+      ],
+      [
+        "öğretmek",
+        "teach"
+      ],
+      [
+        "profesör",
+        "professor"
+      ],
+      [
+        "program",
+        "schedule"
+      ],
+      [
+        "raporu",
+        "report"
+      ],
+      [
+        "sayfa",
+        "page, sheet"
+      ],
+      [
+        "sınav",
+        "exam, test"
+      ],
+      [
+        "sınıf",
+        "classroom"
+      ],
+      [
+        "sunum",
+        "presentation"
+      ],
+      [
+        "üniversite",
+        "university, college"
+      ],
+      [
+        "ünite",
+        "section, unit"
+      ]
+    ]
+  },
+  "travel": {
+    "fc_data": [
+      [
+        "araba",
+        "car"
+      ],
+      [
+        "bavul",
+        "suitcase"
+      ],
+      [
+        "bilet",
+        "ticket"
+      ],
+      [
+        "bisiklet",
+        "bicycle"
+      ],
+      [
+        "dağ",
+        "mountain"
+      ],
+      [
+        "dolmuş",
+        "shared taxi"
+      ],
+      [
+        "durak",
+        "[bus] stop"
+      ],
+      [
+        "ehliyet",
+        "driver license"
+      ],
+      [
+        "gemi",
+        "ship"
+      ],
+      [
+        "göl",
+        "lake"
+      ],
+      [
+        "harıta",
+        "map"
+      ],
+      [
+        "hostesi",
+        "stewardess"
+      ],
+      [
+        "kamyon",
+        "truck"
+      ],
+      [
+        "kat(ta)",
+        "floor (on the)"
+      ],
+      [
+        "metro",
+        "subway"
+      ],
+      [
+        "okyanus",
+        "ocean"
+      ],
+      [
+        "otobus",
+        "bus"
+      ],
+      [
+        "pasaport",
+        "passport"
+      ],
+      [
+        "rehber",
+        "guide"
+      ],
+      [
+        "rezervasyon",
+        "reservation"
+      ],
+      [
+        "seyahat",
+        "trip, journey"
+      ],
+      [
+        "taraf(da)",
+        "side, direction"
+      ],
+      [
+        "tatil",
+        "holiday"
+      ],
+      [
+        "tren",
+        "train"
+      ],
+      [
+        "turist",
+        "tourist"
+      ],
+      [
+        "uçak",
+        "airplane"
+      ],
+      [
+        "uçuş",
+        "flight"
+      ],
+      [
+        "yol",
+        "road"
+      ],
+      [
+        "yolcu",
+        "traveler"
+      ],
+      [
+        "yolculuk",
+        "journey, trip"
+      ],
+      [
+        "yolu",
+        "way"
+      ]
+    ]
+  },
+  "places": {
+    "fc_data": [
+      [
+        "ada",
+        "island"
+      ],
+      [
+        "bahçe",
+        "garden"
+      ],
+      [
+        "bakkal",
+        "grocery store"
+      ],
+      [
+        "banka",
+        "bank"
+      ],
+      [
+        "banyo",
+        "bathroom"
+      ],
+      [
+        "bar",
+        "bar"
+      ],
+      [
+        "camisi",
+        "mosque"
+      ],
+      [
+        "deniz",
+        "sea"
+      ],
+      [
+        "ev",
+        "house"
+      ],
+      [
+        "hastane",
+        "hospital"
+      ],
+      [
+        "havalimanı",
+        "airport"
+      ],
+      [
+        "havuz",
+        "pool"
+      ],
+      [
+        "istasyon",
+        "station"
+      ],
+      [
+        "kahvaltı",
+        "breakfast"
+      ],
+      [
+        "kale",
+        "castle"
+      ],
+      [
+        "kilise",
+        "church"
+      ],
+      [
+        "köy",
+        "village"
+      ],
+      [
+        "kumsal",
+        "beach"
+      ],
+      [
+        "liman",
+        "port"
+      ],
+      [
+        "mahalle",
+        "neighborhood"
+      ],
+      [
+        "mutfak",
+        "kitchen"
+      ],
+      [
+        "müze",
+        "museum"
+      ],
+      [
+        "oda",
+        "room"
+      ],
+      [
+        "ofis",
+        "office"
+      ],
+      [
+        "okul",
+        "school"
+      ],
+      [
+        "okyanus",
+        "ocean"
+      ],
+      [
+        "otel",
+        "hotel"
+      ],
+      [
+        "park",
+        "park"
+      ],
+      [
+        "pastane",
+        "patisserie"
+      ],
+      [
+        "postane",
+        "post office"
+      ],
+      [
+        "restoran",
+        "restaurant"
+      ],
+      [
+        "saray",
+        "palace"
+      ],
+      [
+        "sinema",
+        "movie theater"
+      ],
+      [
+        "süpermaket",
+        "supermarket"
+      ],
+      [
+        "taksi",
+        "taxi"
+      ],
+      [
+        "tuvalet",
+        "toilet"
+      ],
+      [
+        "sol",
+        "left"
+      ],
+      [
+        "sağ",
+        "right"
+      ],
+      [
+        "kuzey",
+        "north"
+      ],
+      [
+        "güney",
+        "south"
+      ],
+      [
+        "doğu",
+        "east"
+      ],
+      [
+        "batı",
+        "west"
+      ],
+      [
+        "batıda",
+        "in the west"
+      ],
+      [
+        "batısı",
+        "west of sth"
+      ],
+      [
+        "batṡında",
+        "west of sth"
+      ]
+    ]
+  },
+  "objects": {
+    "fc_data": [
+      [
+        "anahtar",
+        "key"
+      ],
+      [
+        "bardak",
+        "drink glass"
+      ],
+      [
+        "bayrak",
+        "flag"
+      ],
+      [
+        "bilgi",
+        "information, knowledge"
+      ],
+      [
+        "bilgisayar",
+        "computer"
+      ],
+      [
+        "bıçak",
+        "knife"
+      ],
+      [
+        "cam",
+        "glass"
+      ],
+      [
+        "çanta",
+        "purse, bag"
+      ],
+      [
+        "çarşaflar",
+        "bedsheets"
+      ],
+      [
+        "çatal",
+        "fork"
+      ],
+      [
+        "çatı",
+        "roof"
+      ],
+      [
+        "cep",
+        "pocket"
+      ],
+      [
+        "cep telefonu",
+        "cell phone"
+      ],
+      [
+        "cüzdan",
+        "wallet"
+      ],
+      [
+        "duvar",
+        "wall"
+      ],
+      [
+        "fincan",
+        "cup"
+      ],
+      [
+        "fotoğraf",
+        "photograph"
+      ],
+      [
+        "havlu",
+        "towel"
+      ],
+      [
+        "hediye",
+        "gift"
+      ],
+      [
+        "kanepe",
+        "sofa, couch"
+      ],
+      [
+        "kapı",
+        "door"
+      ],
+      [
+        "kaşık",
+        "spoon"
+      ],
+      [
+        "kutu",
+        "box"
+      ],
+      [
+        "lamba",
+        "lamp"
+      ],
+      [
+        "makas",
+        "scissors"
+      ],
+      [
+        "masa",
+        "table"
+      ],
+      [
+        "mektup",
+        "letter"
+      ],
+      [
+        "pencere",
+        "window"
+      ],
+      [
+        "radyo",
+        "radio"
+      ],
+      [
+        "sandalye",
+        "chair"
+      ],
+      [
+        "şemsiye",
+        "umbrella"
+      ],
+      [
+        "şişe",
+        "bottle"
+      ],
+      [
+        "tabak",
+        "plate"
+      ],
+      [
+        "tava",
+        "pan"
+      ],
+      [
+        "tencere",
+        "pot"
+      ],
+      [
+        "televizyon",
+        "tv"
+      ],
+      [
+        "ülke",
+        "country"
+      ],
+      [
+        "yatak",
+        "bed"
+      ],
+      [
+        "yer",
+        "floor, space"
+      ],
+      [
+        "çay kaşığı",
+        "teaspoon"
+      ],
+      [
+        "kapı kom",
+        "nextdoor neighbor"
+      ]
+    ]
+  },
+  "clothing": {
+    "fc_data": [
+      [
+        "çift",
+        "pair, couple of sth"
+      ],
+      [
+        "ayakkabı",
+        "shoe"
+      ],
+      [
+        "gömlek",
+        "shirt"
+      ],
+      [
+        "elbise",
+        "dress"
+      ],
+      [
+        "etek",
+        "skirt"
+      ],
+      [
+        "pantolon",
+        "pants"
+      ],
+      [
+        "gözlük",
+        "glasses"
+      ],
+      [
+        "takım elbise",
+        "suit"
+      ],
+      [
+        "şapka",
+        "hat"
+      ],
+      [
+        "ceketi",
+        "jacket, coat"
+      ]
+    ]
+  },
+  "colors": {
+    "fc_data": [
+      [
+        "beyaz",
+        "white"
+      ],
+      [
+        "gri",
+        "gray"
+      ],
+      [
+        "kahverengi",
+        "brown"
+      ],
+      [
+        "kırmızı",
+        "red"
+      ],
+      [
+        "mavi",
+        "blue"
+      ],
+      [
+        "mor",
+        "purple"
+      ],
+      [
+        "pembe",
+        "pink, rose"
+      ],
+      [
+        "sarı",
+        "yellow"
+      ],
+      [
+        "siyah",
+        "black"
+      ],
+      [
+        "turuncu",
+        "orange"
+      ],
+      [
+        "yeşil",
+        "green"
+      ],
+      [
+        "rengarenk",
+        "colorful"
+      ]
+    ]
+  },
+  "abstracts": {
+    "fc_data": [
+      [
+        "hayat",
+        "lifetime"
+      ],
+      [
+        "sevgi",
+        "love"
+      ],
+      [
+        "sorun",
+        "problem"
+      ],
+      [
+        "duygu",
+        "feeling"
+      ],
+      [
+        "ask",
+        "love, eros"
+      ],
+      [
+        "can",
+        "spirit, life"
+      ],
+      [
+        "canım",
+        "my dear"
+      ],
+      [
+        "görüş",
+        "viewpoint"
+      ],
+      [
+        "sistem",
+        "system"
+      ],
+      [
+        "tür",
+        "type, class"
+      ],
+      [
+        "fikir",
+        "opinion"
+      ],
+      [
+        "tip",
+        "type"
+      ],
+      [
+        "hizmet",
+        "service"
+      ],
+      [
+        "bakış",
+        "look, view"
+      ],
+      [
+        "servis",
+        "service"
+      ],
+      [
+        "düşünce",
+        "thought, idea"
+      ],
+      [
+        "liste",
+        "list"
+      ],
+      [
+        "kontrol",
+        "control, check"
+      ],
+      [
+        "durum",
+        "situation, issue"
+      ],
+      [
+        "yardım",
+        "help"
+      ],
+      [
+        "değişik",
+        "different, change"
+      ],
+      [
+        "emir",
+        "orders"
+      ]
+    ]
+  },
+  "politics": {
+    "fc_data": [
+      [
+        "aday",
+        "candidate"
+      ],
+      [
+        "bakan",
+        "minister"
+      ],
+      [
+        "barış",
+        "peace"
+      ],
+      [
+        "başbakan",
+        "prime minister"
+      ],
+      [
+        "belediye",
+        "city hall, council"
+      ],
+      [
+        "cumhur-başkanı",
+        "president"
+      ],
+      [
+        "dava",
+        "lawsuit"
+      ],
+      [
+        "devlet",
+        "the state"
+      ],
+      [
+        "gazeteci",
+        "journalist"
+      ],
+      [
+        "görevi",
+        "task, duty"
+      ],
+      [
+        "güvenliği",
+        "security"
+      ],
+      [
+        "halka",
+        "the public"
+      ],
+      [
+        "hizmet",
+        "service"
+      ],
+      [
+        "hukuki",
+        "legal"
+      ],
+      [
+        "hükümet",
+        "government"
+      ],
+      [
+        "iddia",
+        "claims, allegations"
+      ],
+      [
+        "kural",
+        "rule"
+      ],
+      [
+        "lideri",
+        "leader"
+      ],
+      [
+        "mecliste",
+        "parliament"
+      ],
+      [
+        "millet-vekili",
+        "member parliament"
+      ],
+      [
+        "oy",
+        "vote"
+      ],
+      [
+        "parti",
+        "pol party"
+      ],
+      [
+        "politikacı",
+        "politician"
+      ],
+      [
+        "rüşvet",
+        "bribery"
+      ],
+      [
+        "seçim",
+        "election, choice"
+      ],
+      [
+        "vali",
+        "governor"
+      ],
+      [
+        "yasa",
+        "law"
+      ],
+      [
+        "yolsuzluk",
+        "corruption"
+      ]
+    ]
+  },
+  "health": {
+    "fc_data": [
+      [
+        "acil",
+        "emergence"
+      ],
+      [
+        "ambulans",
+        "ambulance"
+      ],
+      [
+        "ateşi",
+        "temp, fire"
+      ],
+      [
+        "ayak",
+        "foot"
+      ],
+      [
+        "ağrı",
+        "pain"
+      ],
+      [
+        "ağız",
+        "mouth"
+      ],
+      [
+        "başı",
+        "head"
+      ],
+      [
+        "boy",
+        "height"
+      ],
+      [
+        "boyun",
+        "neck"
+      ],
+      [
+        "boğaz",
+        "throat"
+      ],
+      [
+        "burun",
+        "nose"
+      ],
+      [
+        "cilt",
+        "skin"
+      ],
+      [
+        "diş",
+        "tooth"
+      ],
+      [
+        "el",
+        "hand"
+      ],
+      [
+        "göz",
+        "eye"
+      ],
+      [
+        "hastalık",
+        "disease, ill"
+      ],
+      [
+        "ilaç",
+        "medicine"
+      ],
+      [
+        "kalp krizi",
+        "heart attack"
+      ],
+      [
+        "kan",
+        "blood"
+      ],
+      [
+        "kan grubun",
+        "blood type"
+      ],
+      [
+        "kanser",
+        "cancer"
+      ],
+      [
+        "kaza",
+        "accident"
+      ],
+      [
+        "kulak",
+        "ear"
+      ],
+      [
+        "kusma",
+        "vomit"
+      ],
+      [
+        "nöbet",
+        "seizure"
+      ],
+      [
+        "sağlıklı",
+        "healthy"
+      ],
+      [
+        "ses",
+        "voice"
+      ],
+      [
+        "sırt",
+        "back, ridge"
+      ],
+      [
+        "vücud",
+        "body"
+      ],
+      [
+        "yüz",
+        "face"
+      ]
+    ]
+  },
+  "nature": {
+    "fc_data": [
+      [
+        "ay",
+        "moon"
+      ],
+      [
+        "ağaç",
+        "tree"
+      ],
+      [
+        "bölgede",
+        "area"
+      ],
+      [
+        "bulutlar",
+        "clouds"
+      ],
+      [
+        "buz",
+        "ice"
+      ],
+      [
+        "çevre",
+        "environment"
+      ],
+      [
+        "çiçek",
+        "flower"
+      ],
+      [
+        "dağ",
+        "mountain"
+      ],
+      [
+        "dolu",
+        "hail"
+      ],
+      [
+        "doğa",
+        "nature"
+      ],
+      [
+        "dünya",
+        "earth"
+      ],
+      [
+        "evren",
+        "universe"
+      ],
+      [
+        "fırtına",
+        "storm"
+      ],
+      [
+        "gezegen",
+        "planet, globe"
+      ],
+      [
+        "gökyüzü",
+        "sky"
+      ],
+      [
+        "gül",
+        "rose"
+      ],
+      [
+        "güneş",
+        "sun"
+      ],
+      [
+        "hava",
+        "air, weather"
+      ],
+      [
+        "işık",
+        "light"
+      ],
+      [
+        "iklim",
+        "climate"
+      ],
+      [
+        "kar",
+        "snow"
+      ],
+      [
+        "kum",
+        "sand"
+      ],
+      [
+        "lale",
+        "tulip"
+      ],
+      [
+        "nehrin",
+        "river"
+      ],
+      [
+        "orman",
+        "forest"
+      ],
+      [
+        "rüzgar",
+        "wind"
+      ],
+      [
+        "sis",
+        "fog"
+      ],
+      [
+        "taş",
+        "stone"
+      ],
+      [
+        "yaprak",
+        "leaf"
+      ],
+      [
+        "yağmur",
+        "rain"
+      ],
+      [
+        "yıldız",
+        "star"
+      ]
+    ]
+  },
+  "arts-sports": {
+    "fc_data": [
+      [
+        "dizi",
+        "tv series"
+      ],
+      [
+        "edebiyat",
+        "literature"
+      ],
+      [
+        "film",
+        "movie"
+      ],
+      [
+        "gitarı",
+        "guitar"
+      ],
+      [
+        "keman",
+        "violin"
+      ],
+      [
+        "müzik",
+        "music"
+      ],
+      [
+        "piyanist",
+        "pianist"
+      ],
+      [
+        "rolü",
+        "role"
+      ],
+      [
+        "sahneye",
+        "the stage"
+      ],
+      [
+        "tiyatro",
+        "theater"
+      ],
+      [
+        "şair",
+        "poet"
+      ],
+      [
+        "şarkı",
+        "song"
+      ],
+      [
+        "şiir",
+        "poem"
+      ],
+      [
+        "takım",
+        "team"
+      ],
+      [
+        "top",
+        "ball"
+      ],
+      [
+        "oyun",
+        "game"
+      ],
+      [
+        "futbolcu",
+        "fütball player"
+      ],
+      [
+        "gol",
+        "goal"
+      ],
+      [
+        "maçta",
+        "match"
+      ]
+    ]
+  },
+  "science": {
+    "fc_data": [
+      [
+        "araştırma",
+        "research"
+      ],
+      [
+        "bilim",
+        "science"
+      ],
+      [
+        "bilimsel",
+        "scientific"
+      ],
+      [
+        "buluş",
+        "invention"
+      ],
+      [
+        "deney",
+        "experimnt"
+      ],
+      [
+        "derece",
+        "degree"
+      ],
+      [
+        "enerji",
+        "energy"
+      ],
+      [
+        "etki",
+        "effect"
+      ],
+      [
+        "evrim",
+        "evolution"
+      ],
+      [
+        "gerçekler",
+        "facts"
+      ],
+      [
+        "laboratuvar",
+        "laboratory"
+      ],
+      [
+        "makale",
+        "article"
+      ],
+      [
+        "özellik",
+        "feature"
+      ],
+      [
+        "sıcaklık",
+        "temperature, heat"
+      ],
+      [
+        "teknoloji",
+        "technology"
+      ],
+      [
+        "teori",
+        "theory"
+      ]
+    ]
+  },
+  "business": {
+    "fc_data": [
+      [
+        "altın",
+        "gold"
+      ],
+      [
+        "ameliyat",
+        "operation"
+      ],
+      [
+        "bütçe",
+        "budget"
+      ],
+      [
+        "ekonomi",
+        "the economy"
+      ],
+      [
+        "endüstri",
+        "industry"
+      ],
+      [
+        "firma",
+        "the firm"
+      ],
+      [
+        "fiyat",
+        "price"
+      ],
+      [
+        "gelir",
+        "income"
+      ],
+      [
+        "masrafı",
+        "expense"
+      ],
+      [
+        "para",
+        "money"
+      ],
+      [
+        "piyasa",
+        "the market"
+      ],
+      [
+        "proje",
+        "project"
+      ],
+      [
+        "risk",
+        "risk"
+      ],
+      [
+        "satış",
+        "sales"
+      ],
+      [
+        "sigorta",
+        "insurance"
+      ],
+      [
+        "ticareti",
+        "trade"
+      ],
+      [
+        "üretim",
+        "production"
+      ],
+      [
+        "ürün",
+        "product"
+      ],
+      [
+        "vergi",
+        "taxes"
+      ],
+      [
+        "şirket",
+        "company"
+      ]
+    ]
+  },
+  "basic": {
+    "fc_data": [
+      [
+        "tbd",
+        "tbd"
+      ]
+    ]
+  },
+  "general": {
+    "fc_data": [
+      [
+        "tbd",
+        "tbd"
+      ]
+    ]
+  }
+}

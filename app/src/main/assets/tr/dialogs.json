@@ -1,0 +1,1016 @@
+{
+  "markette": {
+    "fc_data": [
+      [
+        "_: B markette alışveriş yapıyor…",
+        "_: B is shopping at the market…",
+        0
+      ],
+      [
+        "A: Merhaba, kolay gelsin.",
+        "A: Hello, take it easy.",
+        0
+      ],
+      [
+        "B: Merhaba, hoş geldiniz efendim, buyurun.",
+        "B: Hello, welcome sir, come in.",
+        0
+      ],
+      [
+        "A: Tuzsuz zeytin var mı?",
+        "A: Are there any unsalted olives?",
+        0
+      ],
+      [
+        "B: Evet efendim, var.",
+        "B: Yes sir, there is.",
+        0
+      ],
+      [
+        "A: Kilosu ne kadar?",
+        "A: How much does it weigh?",
+        0
+      ],
+      [
+        "B: 50 lira.",
+        "B: 50 liras.",
+        0
+      ],
+      [
+        "A: Tamam, 500 gram istiyorum.",
+        "A: Ok, I want 500 grams.",
+        0
+      ],
+      [
+        "B: Buyurun, başka bir şey ister misiniz?",
+        "B: Here you go, do you want something else?",
+        0
+      ],
+      [
+        "A: Evet, yağsız beyaz peynir var mı?",
+        "A: Yes, is there any fat-free feta cheese?",
+        0
+      ],
+      [
+        "B: Maalesef yağsız yok Ama bu yağlı beyaz peynir çok güzel, denemek ister misiniz?",
+        "B: Sorry, there is no fat free But this fatty feta cheese is very good, would you like to try it?",
+        0
+      ],
+      [
+        "A: Hayır, teşekkürler.",
+        "A: No, thanks.",
+        0
+      ],
+      [
+        "B: Başka bir şey var mı?",
+        "B: Anything else?",
+        0
+      ],
+      [
+        "A: Yoğurtlar nerede, göremedim ?",
+        "A: Where are the yogurts, I didn't see it?",
+        0
+      ],
+      [
+        "B: Şurada hemen Sütlerin yanında.",
+        "B: Right there next to the Milks.",
+        0
+      ],
+      [
+        "A: Tamam, teşekkür ederim. Hepsi ne kadar?",
+        "A: Ok, thank you. How much all of it?",
+        0
+      ],
+      [
+        "B: 500 gram zeytin 25 lira, yoğurt 15 lira. Toplam 40 lira.",
+        "B: 500 grams of olives are 25 liras, yoghurt is 15 liras. Total 40 pounds.",
+        0
+      ],
+      [
+        "A: Buyurun şuradan alın lütfen.",
+        "A: Take it from here, please.",
+        0
+      ],
+      [
+        "B: Teşekkürler, buyurun bu da para üstünüz, yine bekleriz",
+        "B: Thank you, here is your change, we are waiting for you again",
+        0
+      ],
+      [
+        "A: iyi günler kolay gelsin.",
+        "A: Have a nice day.",
+        0
+      ]
+    ]
+  },
+  "mavi_turizm": {
+    "fc_data": [
+      [
+        "_: GÖREVLİ ve DAUDI uçak bileti almak için acentaya telefon eder…",
+        "_: A Travel Agent and DAUDI call the agency to buy plane tickets…",
+        0
+      ],
+      [
+        "A: Mavi turizm, buyurun. Size nasıl yardımcı olabilirim?",
+        "A: Blue tourism, here you go. How can I help you?",
+        0
+      ],
+      [
+        "B: Merhaba, kolay gelsin. Bir uçak bileti almak istiyorum.",
+        "B: Hello, take it easy. I want to buy a plane ticket.",
+        0
+      ],
+      [
+        "A: Tabii, efendim. Yolculuğunuz Nereye olacak ?",
+        "A: Sure, sir. Where will your journey be?",
+        0
+      ],
+      [
+        "B: İzmir’e lütfen",
+        "B: To Izmir please",
+        0
+      ],
+      [
+        "A: Hangi tarihte gitmek istiyorsunuz?",
+        "A: What date do you want to go?",
+        0
+      ],
+      [
+        "B: 17 Temmuz’da. Sabah saatlerinde uçuş var mı?",
+        "B: On July 17. Are there flights in the morning?",
+        0
+      ],
+      [
+        "A: Hemen bakıyorum efendim, bir saniye lütfen. evet, Sabah 7.30 ve 9.00’da  var ama 9 uçuşu için uçakta yer kalmadı maalesef.",
+        "A: I'm looking right now, sir, one second please. yes, it is available at 7.30 and 9.00 in the morning, but unfortunately there is no room left on the plane for the 9 flight.",
+        0
+      ],
+      [
+        "B: hmmm Anladım. O zaman saat 7.30 uçuşu için rezervasyon yapabilir misiniz?",
+        "B: hmm, got it. Then can you book the 7.30 am flight?",
+        0
+      ],
+      [
+        "A: Peki efendim, adınızı alabilir miyim?",
+        "A: Well, sir, can I have your name?",
+        0
+      ],
+      [
+        "B: Daudi Majozi",
+        "B: Daudi Majozi",
+        0
+      ],
+      [
+        "A: Teşekkürler Daudi bey, rezervasyon işleminiz tamamlandı.  Mavi turizm olarak, İyi yolculuklar dileriz.",
+        "A: Thank you Mr. Daudi, your reservation has been completed. As blue tourism, we wish you a good trip.",
+        0
+      ]
+    ]
+  },
+  "okul_arkadaşim": {
+    "fc_data": [
+      [
+        "_: Gül ve Elif telefonda okul hakkında konuşuyorlar.",
+        "_: Gul and Elif are talking on the phone about school.",
+        0
+      ],
+      [
+        "A: Merhaba B:! Nasılsın?",
+        "A: Hello B:! How are you?",
+        0
+      ],
+      [
+        "B: İyiyim, ya sen?",
+        "B: I'm fine, and you?",
+        0
+      ],
+      [
+        "A: Ben de iyiyim. Sen okulda mısın?",
+        "A: I'm fine too. Are you at school?",
+        0
+      ],
+      [
+        "B: Evet, okuldayım. Sen neredesin?",
+        "B: Yes, I am at school. Where are you?",
+        0
+      ],
+      [
+        "A: Ben yoldayım. Bugün ders saat kaçta?",
+        "A: I'm on the way. What time is the lesson today?",
+        0
+      ],
+      [
+        "B: Saat dokuzda.",
+        "B: At nine o'clock.",
+        0
+      ],
+      [
+        "A: Okulda kim var?",
+        "A: Who is in school?",
+        0
+      ],
+      [
+        "B: Herkes var. Ben sınıftayım. Diğer arkadaşlar kantinde ya da bahçede.",
+        "B: Everyone has. I am in class. Other friends are in the canteen or in the garden.",
+        0
+      ],
+      [
+        "A: Öğretmen de sınıfta mı?",
+        "A: Is the teacher in the classroom too?",
+        0
+      ],
+      [
+        "B: Hayır, o sınıfta değil, ofiste.",
+        "B: No, he's not in the classroom, he's in the office.",
+        0
+      ],
+      [
+        "A: Tamam, ben geliyorum. Görüşürüz.",
+        "A: Ok, I'm coming. See you later.",
+        0
+      ],
+      [
+        "B: Görüşürüz.",
+        "B: See you later.",
+        0
+      ]
+    ]
+  },
+  "profillere_bakıyordum": {
+    "fc_data": [
+      [
+        "_: A, B ile çevrimiçi profili hakkında sohbet ediyor…",
+        "_: A is chatting with B about his online profile…",
+        0
+      ],
+      [
+        "A: Merhaba, öylesine profillere bakıyordum. Türkçe yazı gördüm. Nasılsın?",
+        "A: Hi, I was just looking at profiles. I saw a Turkish article. How are you?",
+        0
+      ],
+      [
+        "B: Merhaba, ben iyiyim teşekkürler ... Sen nasılsın?",
+        "B: Hello, I'm fine thanks ... How are you?",
+        0
+      ],
+      [
+        "A: Fena değil.",
+        "A: Not bad.",
+        0
+      ],
+      [
+        "B: Benim adım Daudi.",
+        "B: My name is Daudi.",
+        0
+      ],
+      [
+        "A: İlker ben de.",
+        "A: İlker, me too.",
+        0
+      ],
+      [
+        "B: Memnun oldum İlker. Nerelisin?",
+        "B: I'm glad, İlker. Where are you from?",
+        0
+      ],
+      [
+        "A: Türkiye… İstanbul. Aslen nerelisin?",
+        "A: Türkiye… Istanbul. Where are you from originally?",
+        0
+      ],
+      [
+        "B: Kalifornya'lıyım.",
+        "B: I'm from California.",
+        0
+      ],
+      [
+        "A: Wow ne güzel! Peki ya Türkçeyi nerden öğrendin?",
+        "A: Wow, how nice! How about where did you learn Turkish?",
+        0
+      ],
+      [
+        "B: Geçen Ekim ayında Türkçeyi öğrenmeye başladım.",
+        "B: I started learning Turkish last October.",
+        0
+      ],
+      [
+        "A: Ne?? Çok iyisin.",
+        "A: What?? You are very good.",
+        0
+      ],
+      [
+        "B: Bir ay sonra İstanbul'a geleceğim.",
+        "B: I will come to Istanbul in a month.",
+        0
+      ],
+      [
+        "A: Denk geliriz belki. İstanbul'a gelince pratik yaparız.",
+        "A: Maybe we can meet. When we come to Istanbul, we practice.",
+        0
+      ],
+      [
+        "B: yaşa! Olur.  [tabii ki, peki, tamam, 0]",
+        "B: live! It is possible. [of course, well, okay]"
+      ],
+      [
+        "A: Ekonomi berbat ama 1 dolar = 17 TL olması çılgınlık. Buraya gelince çok rahat gezersin. Dolar Türkiye'de değerli çünkü.",
+        "A: The economy sucks, but $1 = $17 is crazy. You will be very comfortable when you come here. Because the dollar is valuable in Turkey.",
+        0
+      ],
+      [
+        "B: şu an dünyada her yer berbat. Kaliforniya'da bile enflasyon zarar veriyor. Gıda, petrol, şu an çok pahalı. Peki ya seftaliler, kayısılar, üzümler, ama kilo vereceğim ve biraz daha seksi bir vücuda sahip olacağım!",
+        "B: Everything in the world sucks right now. Even in California, inflation hurts. Food, oil, very expensive right now. What about peaches, apricots, grapes, but I'll lose weight and have a slightly sexier body!",
+        0
+      ],
+      [
+        "A: Haha. Türkiye'ye gelince zengin olacaksın. Bence pahalı şeyler yemelisin. Bana da ısmarlarsın belki.",
+        "A: Haha. You will be rich when you come to Turkey. I think you should eat expensive things. Maybe you can treat me too.",
+        0
+      ],
+      [
+        "B: Üzgünüm, şimdi bir toplantıya gitmem gerekiyor. Yarın sohbet edelim. Seninle konuşmaktan keyif duyuyorum. Yarın görüşürüz. İyi geceler.",
+        "B: Sorry, I have to go to a meeting now. Let's chat tomorrow. I enjoy talking to you. See you tomorrow. Goodnight.",
+        0
+      ],
+      [
+        "A: İyi çalışmalar.",
+        "A: Good work.",
+        0
+      ]
+    ]
+  },
+  "sen_neler_yaptın": {
+    "fc_data": [
+      [
+        "B: Evine döndün mü?",
+        "B: Have you returned home?",
+        0
+      ],
+      [
+        "A: Evet, İstanbul’a geldim. Sen neler yaptın?",
+        "A: Yes, I came to Istanbul. What have you done?",
+        0
+      ],
+      [
+        "_: Son birkaç günde neler yaptın?",
+        "_: What did you do in the last few days?",
+        0
+      ],
+      [
+        "B: Dün yemek hazırladım çünkü bugün dersten hemen sonra dayımlara gideceğim. 4 günde kamp yapıyorum. Bu hafta için dün yemek hazırladım.",
+        "B: I prepared dinner yesterday because I'm going to my uncle's right after class today. I camp in 4 days. I prepared dinner yesterday for this week.",
+        0
+      ],
+      [
+        "A: Ne yemek yaptın?",
+        "A: What did you cook?",
+        0
+      ],
+      [
+        "B: Ekmek ve yumurta pişirdim. Meyve suyu yaptım.",
+        "B: I cooked bread and eggs. I made juice.",
+        0
+      ],
+      [
+        "A: Hafta sonu neler yaptın?",
+        "A: What did you do at the weekend?",
+        0
+      ],
+      [
+        "B: Cumatersi günü, meditasyon grubumuza hizmet ettim. Cuma günü dersimizden sonra yazılımımı bitirdim. 2 yıl önce bilgisayar ve telefon için uygulama yapmaya başladım. Benim uygulamam çok dilli veritabanları arama programıdır.",
+        "B: On Saturday, I served our meditation group. I finished my software after our class on Friday. 2 years ago I started making applications for computers and phones. My application is a multilingual databases search program.",
+        0
+      ],
+      [
+        "A: Cuma günü dersimizi yapar mısın?",
+        "A: Will you do our lesson on Friday?",
+        0
+      ],
+      [
+        "B: Evet, muhtemelen bir sonraki dersi cuma günü yaparız.",
+        "B: Yes, we'll probably have the next lesson on Friday.",
+        0
+      ],
+      [
+        "A: Şimdi diyaloğa çalışalım mı?",
+        "A: Shall we work on the dialogue now?",
+        0
+      ],
+      [
+        "B: Tamam",
+        "B: OK",
+        0
+      ]
+    ]
+  },
+  "kahve_alma": {
+    "fc_data": [
+      [
+        "_: Kahvecite",
+        "_: Cafe",
+        0
+      ],
+      [
+        "A: Merhaba.",
+        "A: Hello.",
+        0
+      ],
+      [
+        "B: Merhaba",
+        "B: Hello",
+        0
+      ],
+      [
+        "A: Afedersin biraz geciktim. Metroda ters yöne binmişim. 2 durak sonra farkettim.",
+        "A: Sorry, I'm a little late. I got on the subway in the opposite direction. I realized it after 2 stops.",
+        0
+      ],
+      [
+        "B: Sorun değil ben de şimdi geldim.",
+        "B: It's okay, I just came here.",
+        0
+      ],
+      [
+        "A: İyi bari. Buna sevindim. Hadi girelim.",
+        "A: All right. I am pleased about that. Let's go in.",
+        0
+      ],
+      [
+        "_: Kahveciye girerler.",
+        "_: They enter the coffee shop.",
+        0
+      ],
+      [
+        "A: Sen ne (kahve) alacaksın?",
+        "A: What (coffee) will you buy?",
+        0
+      ],
+      [
+        "B: Filtre kahve. Orta boy.",
+        "B: Filter coffee. Medium size.",
+        0
+      ],
+      [
+        "A: Ben mocha çok seviyorum. Küçük boy mocha alacağım.",
+        "A: I like mocha very much. I'll have a small mocha.",
+        0
+      ],
+      [
+        "_: Kasada",
+        "_: At the checkout",
+        0
+      ],
+      [
+        "A: Merhaba; bir orta boy filtre kahve, bir tane de küçük boy mocha lütfen.",
+        "A: Hello; One medium filter coffee and one small mocha, please.",
+        0
+      ],
+      [
+        "garson: İsminiz nedir?",
+        "Waiter: What's your name?",
+        0
+      ],
+      [
+        "B: Daudi.",
+        "B: Daudi.",
+        0
+      ],
+      [
+        "A: İlker",
+        "A: Ilker",
+        0
+      ],
+      [
+        "garson: Ödeme nasıl olacak? Birlikte? Ayrı?",
+        "Waiter: How will the payment be? Together? Separate?",
+        0
+      ],
+      [
+        "A: Birlikte olsun. Bu karttan alabilirsiniz hepsini. Sana ben ısmarlıyorum. ;)",
+        "A: Let's get together. You can get them all from this card. I treat you. ;)",
+        0
+      ],
+      [
+        "B: Sorun değil öderdim.",
+        "B: No problem, I would pay.",
+        0
+      ],
+      [
+        "A: Olsun, problem değil.",
+        "A: Well, no problem.",
+        0
+      ],
+      [
+        "Bir sonrakine (sonraki sefer) sen öde madem. (ödersin)",
+        "If you pay for the next (next time). (you pay)",
+        0
+      ],
+      [
+        "B: Tamam o zaman, bir sonraki benden. ;)",
+        "B: Okay then, next me. ;)",
+        0
+      ],
+      [
+        "A: Tamamdır. Gel bir üst kata çıkalım.",
+        "A: All right. Let's go upstairs.",
+        0
+      ],
+      [
+        "_: Üst kattaki masaya otururlar.",
+        "_: They sit at the table upstairs.",
+        0
+      ],
+      [
+        "B: Burada olmak çok güzel. İstanbul'u çok özlemişim.",
+        "B: It's so nice to be here. I missed Istanbul so much.",
+        0
+      ],
+      [
+        "A: Senin adına sevindim. Tadını çıkar. ;)",
+        "A: I'm happy for you. Enjoy it. ;)",
+        0
+      ],
+      [
+        "B: Teşekkürler.",
+        "B: Thank you.",
+        0
+      ]
+    ]
+  },
+  "klinikta_hasta": {
+    "fc_data": [
+      [
+        "A: Merhaba",
+        "A: Hello",
+        0
+      ],
+      [
+        "B: Merhaba, buyurun.",
+        "B: Hello, here you go.",
+        0
+      ],
+      [
+        "A: Nasılsınız?",
+        "A: How are you?",
+        0
+      ],
+      [
+        "B: Teşekkür ederim, siz nasılsınız?",
+        "B: Thank you, how are you?",
+        0
+      ],
+      [
+        "A: İyiyim, teşekkürler.",
+        "A: I'm fine, thanks.",
+        0
+      ],
+      [
+        "B: Şikayetiniz nedir?",
+        "B: What is your complaint?",
+        0
+      ],
+      [
+        "A: Son birkaç gündür hasta hissediyorum. Çok fazla öksürüğüm var.",
+        "A: I have been feeling sick for the past few days. I have a lot of cough.",
+        0
+      ],
+      [
+        "_: Ahşap çubuğu hastanın boğazına sokar.",
+        "_: Inserts the wooden stick into the patient's throat.",
+        0
+      ],
+      [
+        "B: Sedyeye oturun lütfen, bakalım. Ağzınızı açar mısınız? Bir de sırtınızı dinleyelim. Omzunuza kadar açar mısınız sırtınızı?",
+        "B: Sit on the stretcher, please, let's see. Can you open your mouth? Let's listen to your back. Can you open your back up to your shoulder?",
+        0
+      ],
+      [
+        "A: Peki.",
+        "A: Okay.",
+        0
+      ],
+      [
+        "B: Derin derin nefes alın lütfen. Tamamdır. Size şimdi ilaç yazalım. İsminizi ve soy isminizi söyler misiniz?",
+        "B: Take a deep breath, please. Ok. Let's prescribe you medicine now. Can you tell me your name and surname?",
+        0
+      ],
+      [
+        "A: Daudi Majozi.  Neyim var? Bana hangi ilaçları yazacaksınız?",
+        "A: Daudi Majozi. what do i have? What drugs will you prescribe me?",
+        0
+      ],
+      [
+        "B: Soğuk algınlığınız var. Bademcikleriniz ve ciğerlerinizde biraz iltihaplanma var. Bunun için size soğuk algınlığı hapı Nurofen vereceğim. Boğazlarınız ve ciğerleriniz için iltihap söktürücü, bir de öksürüğünüz için öksürük şurubu yazıyorum.",
+        "B: You have a cold. You have some inflammation in your tonsils and lungs. For this, I will give you the cold pill Nurofen. I prescribe anti-inflammatory for your throat and lungs, and cough syrup for your cough.",
+        0
+      ],
+      [
+        "A: Tamamdır.",
+        "A: All right.",
+        0
+      ],
+      [
+        "B: Reçete numaranız bu kağıtta yazıyor, eczaneden direkt alabilirsiniz.",
+        "B: Your prescription number is written on this paper, you can get it directly from the pharmacy.",
+        0
+      ],
+      [
+        "A: Teşekkür ederim, iyi günler.",
+        "A: Thank you, have a nice day.",
+        0
+      ],
+      [
+        "B: Sağlıklı günler dilerim, iyi günler.",
+        "B: I wish you a good day, have a nice day.",
+        0
+      ]
+    ]
+  },
+  "müzik": {
+    "fc_data": [
+      [
+        "A: Merhaba",
+        "A: Hello",
+        0
+      ],
+      [
+        "B: Merhaba, nereye gidelim?",
+        "B: Hello, where should we go?",
+        0
+      ],
+      [
+        "A: İlk önce şuradaki kitapçıya gidelim. Bir kitaba bakacağım. Bulabilirsem alacağım.",
+        "A: Let's go to the bookstore over there first. I will look for a book. If I can find it, I'll take it.",
+        0
+      ],
+      [
+        "B: Tamamdır. Görüşmeyeli nasılsın?",
+        "B: All right. How have you been?",
+        0
+      ],
+      [
+        "A: İyiyim, sadece biraz yoğun. Çok fazla ödevim var.",
+        "A: I'm fine, just a little busy. I have a lot of homework.",
+        0
+      ],
+      [
+        "B: Ohh, kolay gelsin.",
+        "B: Ohh, take it easy.",
+        0
+      ],
+      [
+        "_: Kitapçının yanındaki mağazanın önünde dururlar. Mağazada müzik çalmaktadır.",
+        "_: They stop in front of the store next to the bookstore. Music is playing in the store.",
+        0
+      ],
+      [
+        "A: Bir saniye, bu müzik çok güzelmiş. Shazamlayacağım.",
+        "A: Wait a second, this music is beautiful. I will Shazam.",
+        0
+      ],
+      [
+        "B: Kulağa enteresan geliyor. Bu tarz rap müzikler mi dinlersin?",
+        "B: Sounds interesting. Do you listen to this kind of rap music?",
+        0
+      ],
+      [
+        "A: Çok fazla değil. Daha çok pop ve R&B dinlerim. Sen ne tarz müzikler dinlersin?",
+        "A: Not much. I listen mostly to pop and R&B. What kind of music do you listen to?",
+        0
+      ],
+      [
+        "B: Müzik zevkim biraz karışık. Klasik, metal, geleneksel, pop, rock. Kısacası ruh halime göre dinlerim.  Farklı müzik türleri hoşuma gidiyor.",
+        "B: My taste in music is a bit mixed. Classic, metal, traditional, pop, rock. In short, I listen according to my mood. I like different types of music.",
+        0
+      ],
+      [
+        "A: Ne hoş. Son zamanlarda ne dinliyorsun?",
+        "A: How nice. What have you been listening to lately?",
+        0
+      ],
+      [
+        "B: Klasik müzikler dinliyorum. Bach gibi. Bana iyi hissettiriyor.",
+        "B: I listen to classical music. like Bach. It makes me feel good.",
+        0
+      ],
+      [
+        "A: Hangi parçası favorin?",
+        "A: Which part is your favourite?",
+        0
+      ],
+      [
+        "B: Overtures (Suite) No: 2 in B Minor",
+        "B: Overtures (Suite) No: 2 in B Minor",
+        0
+      ],
+      [
+        "A: Bu parçada hangi enstrümanlar var?",
+        "A: What instruments are in this piece?",
+        0
+      ],
+      [
+        "B: Hatırladığım kadarıyla yan flüt ve piyano var. Bir de çello var sanırım.",
+        "B: As far as I remember, there is a flute and a piano. There's also a cello, I think.",
+        0
+      ],
+      [
+        "A: Wow, ne güzel bir harmoni.",
+        "A: Wow, what a beautiful harmony.",
+        0
+      ],
+      [
+        "B: Dinlemeni mutlaka tavsiye ederim.",
+        "B: I would definitely recommend you to listen to it.",
+        0
+      ],
+      [
+        "A: Eve gidince mutlaka bakacağım.",
+        "A: I will definitely check when I get home.",
+        0
+      ],
+      [
+        "B: Çalabildiğin bir enstrüman var mı?",
+        "B: Is there an instrument you can play?",
+        0
+      ],
+      [
+        "A: Evet, çok profesyonel değilim ama ukulele çalabiliyorum. Sen?",
+        "A: Yes, I'm not very professional, but I can play the ukulele. You?",
+        0
+      ],
+      [
+        "B: Ben iyi bir şekilde piyano çalıyorum. Birazcık da flüt.",
+        "B: I play the piano well. A little flute.",
+        0
+      ],
+      [
+        "A: Çok iyiymiş. Ben bir de zil çalabiliyorum. Onu söylemeyi unuttum.",
+        "A: It was very good. I can also ring a bell. I forgot to tell him.",
+        0
+      ],
+      [
+        "B: Aman Tanrım, hahaha. İnanamıyorum.",
+        "B: Oh my god, hahaha. I cant believe.",
+        0
+      ],
+      [
+        "A: Ben de. Öğrenmek çok zor oldu. Hahaha",
+        "A: Me too. It was very difficult to learn. Hahaha",
+        0
+      ],
+      [
+        "_: Kitapçıya girerler ve pikaptan  müzik çalmaktadır.",
+        "_: They enter the bookstore and the turntable is playing music.",
+        0
+      ],
+      [
+        "A: Şuna bak, bir pikap. Ne kadar nostaljik.",
+        "A: Look at that, a turntable. How nostalgic.",
+        0
+      ],
+      [
+        "B: Benim de bir pikabım var.  Plaktan müzik dinlemek çok güzel.",
+        "B: I also have a pickup truck. It is very nice to listen to music from the record.",
+        0
+      ],
+      [
+        "A: Ne hoş. Bu çalan müzik çok tanıdık. Adı neydi bu şarkının?",
+        "A: How nice. This music is very familiar. What was the name of this song?",
+        0
+      ],
+      [
+        "B: Sertab Erener",
+        "B: Sertab Erener",
+        0
+      ],
+      [
+        "B: Lal",
+        "B: Lal",
+        0
+      ],
+      [
+        "A: Evet, hatırladım. Bu sanatçının sesine bayılıyorum.",
+        "A: Yes, I remember. I love this artist's voice.",
+        0
+      ],
+      [
+        "B: Ben de öyle. Hangi kitabı arıyorsun?",
+        "B: Me too. Which book are you looking for?",
+        0
+      ],
+      [
+        "A: Oğuz Atay",
+        "A: Oguz Atay",
+        0
+      ],
+      [
+        "B: Oyunlarla Yaşayanlar",
+        "B: Those Who Live by Games",
+        0
+      ],
+      [
+        "A: Çok anlamlı bir kitap.",
+        "A: It is a very meaningful book.",
+        0
+      ],
+      [
+        "_: Kasaya giderler.",
+        "_: They go to the cash register.",
+        0
+      ],
+      [
+        "A: Afedersiniz, Oğuz Atay/ Oyunlarla Yaşayanlar kitabını arıyorum. Elinizde var mı?",
+        "A: Excuse me, I'm looking for the book Oğuz Atay/ Those Who Live With Games. Do you have it?",
+        0
+      ],
+      [
+        "C: Evet, bir tane gözüküyor. Hemen getireyim size.",
+        "A: Yes, there appears to be one. I'll bring it to you right now.",
+        0
+      ],
+      [
+        "A: Teşekkürler. Fiyatı ne kadar?",
+        "A: Thank you. What is the price?",
+        0
+      ],
+      [
+        "C: 67 lira.",
+        "A: 67 pounds.",
+        0
+      ],
+      [
+        "A: Kartla ödemek istiyorum.",
+        "A: I want to pay by card.",
+        0
+      ],
+      [
+        "C: Tabii. Şifrenizi girin lütfen.",
+        "A: Sure. Please enter your password.",
+        0
+      ],
+      [
+        "A: Teşekkürler, kolay gelsin.",
+        "A: Thanks, take it easy.",
+        0
+      ],
+      [
+        "C: Sağolun, iyi günler.",
+        "A: Thanks, good day.",
+        0
+      ]
+    ]
+  },
+  "mağazada": {
+    "fc_data": [
+      [
+        "_: Mağazada SATIŞ DANIŞMANI ve LINDY konuşuyorlar.",
+        "_: SALES CONSULTANT and LINDY are talking in the store.",
+        0
+      ],
+      [
+        "A: Hoş geldiniz efendim. Yardımcı olmamı ister misiniz?",
+        "A: Welcome, sir. Do you want me to help?",
+        0
+      ],
+      [
+        "B: Merhaba, bir gömlek almak istiyorum.",
+        "B: Hello, I want to buy a shirt.",
+        0
+      ],
+      [
+        "A: Tabii, ne renk olsun.",
+        "A: Sure, whatever color you get.",
+        0
+      ],
+      [
+        "B: Siyah ya da beyaz olabilir.",
+        "B: It can be black or white.",
+        0
+      ],
+      [
+        "A: Peki, kaç beden giyiyorsunuz?",
+        "A: Well, what size do you wear?",
+        0
+      ],
+      [
+        "B: 38.",
+        "B: 38.",
+        0
+      ],
+      [
+        "A: Bu gömlekler nasıl?",
+        "A: How are these shirts?",
+        0
+      ],
+      [
+        "B: Hmmm şu siyah olan güzelmiş. Deneyebilir miyim?",
+        "B: Hmmm that black one is beautiful. May I try?",
+        0
+      ],
+      [
+        "A: Tabii, deneme kabinlerimiz hemen şurada.",
+        "A: Sure, our trial cabins are right over there.",
+        0
+      ],
+      [
+        "_: Birkaç dakika sonra…",
+        "_: A few minutes later…",
+        0
+      ],
+      [
+        "A: Nasıl oldu, beğendiniz mi?",
+        "A: How was it, do you like it?",
+        0
+      ],
+      [
+        "B: Tam oldu, çok beğendim. Bu ne kadar?",
+        "B: It's perfect, I like it very much. How much is this?",
+        0
+      ],
+      [
+        "A: 240 lira, kredi kartına 3 taksit yapabiliriz.",
+        "A: 240 lira, we can make 3 installments on credit card.",
+        0
+      ],
+      [
+        "B: Nakitte indirim var mı?",
+        "B: Is there a discount on cash?",
+        0
+      ],
+      [
+        "A: Nakitte %10 indirim var.",
+        "A: There is a 10% discount on cash.",
+        0
+      ],
+      [
+        "B: Tamam o zaman alıyorum. Kasa nerede?",
+        "B: Ok then I'll take it. Where is the case?",
+        0
+      ],
+      [
+        "A: Kasalar sol tarafta. İyi günlerde kullanın.",
+        "A: The safes are on the left. Feel happy while using it.",
+        0
+      ],
+      [
+        "B: Teşekkürler, kolay gelsin.",
+        "B: Thanks, take it easy.",
+        0
+      ]
+    ]
+  },
+  "adverbs": {
+    "fc_data": [
+      [
+        "_: İlker ve Ahmet teknoloji hakkında tartışıyorlar.",
+        "_: İlker and Ahmet are discussing technology.",
+        0
+      ],
+      [
+        "A: Teknoloji çok gelişmiş, değil mi? Artık her şey mümkün gibi geliyor.",
+        "A: Technology is very advanced, isn't it? Everything seems possible now.",
+        4
+      ],
+      [
+        "B: Evet, gerçekten inanılmaz. Eskiden hayal bile edemediklerimiz şimdi gerçek oldu.",
+        "B: Yes, it's really incredible. What we couldn't even imagine before has now become reality.",
+        9
+      ],
+      [
+        "A: Örneğin, artık her zaman yanımızda bir telefon taşıyabiliriz. İnternete bağlanabilir, fotoğraf çekebilir ve video çekebilir, hatta arkadaşlarımızla konuşabiliriz.",
+        "A: For example, we can now always carry a phone with us. We can connect to the Internet, take photos and videos, and even talk to our friends.",
+        16
+      ],
+      [
+        "B: Ve sadece telefonlar değil. Bilgisayarlar da çok daha güçlü hale geldi. Artık her şeyi yapabiliriz, yazı yazabilir, resim yapabilir, müzik dinleyebilir, hatta oyun oynayabiliriz.",
+        "B: And not just phones. Computers have also become much more powerful. Now we can do anything, we can write, paint, listen to music, even play games.",
+        27
+      ],
+      [
+        "A: Teknoloji bizim yaşamımızı çok kolaylaştırdı. Artık her şeyi daha hızlı ve daha kolay yapabiliriz.",
+        "A: Technology has made our life much easier. Now we can do everything faster and easier.",
+        41
+      ],
+      [
+        "B: Evet, teknoloji bizim için çok faydalı bir araç. Ama dikkatli olmak da lazım. Teknolojiyi kötü amaçlar için kullanabilirler.",
+        "B: Yes, technology is a very useful tool for us. But you also have to be careful. They can use technology for malicious purposes.",
+        50
+      ],
+      [
+        "A: Bu doğru. Teknolojiyi sorumlu bir şekilde kullanmak lazım.",
+        "A: That's correct. Technology should be used responsibly.",
+        60
+      ],
+      [
+        "B: Bence teknoloji bizim için iyi bir şey. Hayatımızı daha kolay ve daha eğlenceli hale getiriyor.",
+        "B: I think technology is a good thing for us. It makes our life easier and more fun.",
+        66
+      ],
+      [
+        "A: Ben de katılıyorum. Teknoloji bizim için harika bir şey.",
+        "A: I also agree. Technology is a great thing for us.",
+        73
+      ]
+    ]
+  }
+}

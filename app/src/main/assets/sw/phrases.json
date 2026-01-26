@@ -1,0 +1,613 @@
+{
+  "daladala": {
+    "fc_data": [
+      [
+        "daladala njia dar",
+        "daladala lines"
+      ],
+      [
+        "banana <> kibeberu",
+        "ilala / mzinga"
+      ],
+      [
+        "banana <> kinyantira/shule",
+        "ilala / mzinga"
+      ],
+      [
+        "banana <> kitunda",
+        "ilala / kitunda kati"
+      ],
+      [
+        "banana <> kivule",
+        "ilala / yangeyanye"
+      ],
+      [
+        "banana <> machimbo",
+        "ilala / kpunguni-b"
+      ],
+      [
+        "banana <> magole",
+        "ilala / kivule"
+      ],
+      [
+        "banana <> mwanagati",
+        "ilala / mzinga"
+      ],
+      [
+        "banana/mombasa <> kwa moshi",
+        "ilala / kitunda kati"
+      ],
+      [
+        "buguruni <> kivukoni/mnazi mmoja -- ilala / kivukoni"
+      ],
+      [
+        "buguruni <> machimbo",
+        "ilala / lami ya mwisho"
+      ],
+      [
+        "buguruni <> makumbusho -- kinondoni"
+      ],
+      [
+        "buguruni <> masaki",
+        "kinondoni"
+      ],
+      [
+        "buguruni <> mbagala rangi 3",
+        "temeke"
+      ],
+      [
+        "buguruni <> muhimbili",
+        "ilala"
+      ],
+      [
+        "buguruni <> mvuti",
+        "ilala / mwembe bami"
+      ],
+      [
+        "buguruni <> yombo vituka/viwandani",
+        "ilala / kiwalani / yombo"
+      ],
+      [
+        "gongo la mboto <> buguruni",
+        "ilala / buguruni"
+      ],
+      [
+        "gongo la mboto <> chanika",
+        "ilala / chanika"
+      ],
+      [
+        "gongo la mboto <> kariakoo",
+        "ilala / kariakoo"
+      ],
+      [
+        "gongo la mboto <> kivukoni/mnazi mmoja",
+        "ilala / kivukoni"
+      ],
+      [
+        "gongo la mboto <> mbagala rangi 3",
+        "temeke / mbagala"
+      ],
+      [
+        "gongo la mboto <> mbezi",
+        "ubungo / mbezi magufuli bus"
+      ],
+      [
+        "gongo la mboto <> mtoni mtongani",
+        "temeke / mtoni"
+      ],
+      [
+        "gongo la mboto <> mwenge /sam nujoma rd ",
+        "kinondoni / mwenge"
+      ],
+      [
+        "gongo la mboto <> mwenge /uhuru/kawawa",
+        "kinondoni / mwenge"
+      ],
+      [
+        "gongo la mboto <> temeke",
+        "temeke / temeke mwisho"
+      ],
+      [
+        "gongo la mboto <> ubungo",
+        "ubungo / mawasiliano"
+      ],
+      [
+        "kawe <> kariakoo",
+        "kariakoo"
+      ],
+      [
+        "kawe <> ubungo",
+        "ubungo"
+      ],
+      [
+        "kigamboni <> kibada",
+        "kigamboni / nyakwale"
+      ],
+      [
+        "kigamboni <> kibugumo",
+        "kigamboni / kibugumo"
+      ],
+      [
+        "kigamboni <> kisiwani",
+        "kigamboni / mkwajuni"
+      ],
+      [
+        "kigamboni <> kongowe",
+        "temeke / kipala mpakani"
+      ],
+      [
+        "kigamboni <> ungindoni",
+        "kigamboni / ungindoni"
+      ],
+      [
+        "kigamboni <> vijibweni",
+        "kigamboni / kibene"
+      ],
+      [
+        "kimara mwisho <> bonyokwa",
+        "ubungo / bonyokwa"
+      ],
+      [
+        "kimara mwisho <> buguruni",
+        "ilala / buguruni"
+      ],
+      [
+        "kimara mwisho <> kariakoo",
+        "ilala / kariakoo msimbazi st"
+      ],
+      [
+        "kimara mwisho <> kivukoni",
+        "ilala / kivukoni"
+      ],
+      [
+        "kimara mwisho <> muhimbili",
+        "ilala / muhimbili"
+      ],
+      [
+        "kimara mwisho <> mwenge/makumbusho",
+        "kinondoni / mwenge"
+      ],
+      [
+        "kimara mwisho <> posta",
+        "ilala / posta"
+      ],
+      [
+        "mabibo mwisho <> kariakoo via moro rd",
+        "kariakoo"
+      ],
+      [
+        "mabibo mwisho <> makumbusho via moro rd",
+        "makumbusho"
+      ],
+      [
+        "mabibo mwisho <> mnazi mmoja via kigogo",
+        "mnazi mmoja"
+      ],
+      [
+        "mabibo mwisho <> muhimbili /kigogo",
+        "muhimbili"
+      ],
+      [
+        "mabibo mwisho via moro rd <> kivukoni",
+        "kivukoni"
+      ],
+      [
+        "machimbo <> kariakoo",
+        "kariakoo"
+      ],
+      [
+        "machimbo <> ubungo",
+        "ubungo"
+      ],
+      [
+        "makumbusho / ali hassan mwinyi <> posta",
+        "posta"
+      ],
+      [
+        "makumbusho <> bunju",
+        "bunju"
+      ],
+      [
+        "makumbusho <> kariakoo",
+        "kariakoo"
+      ],
+      [
+        "makumbusho <> kariakoo /kawawa road",
+        "kariakoo"
+      ],
+      [
+        "makumbusho <> kariakoo /shekilango rd",
+        "kariakoo"
+      ],
+      [
+        "makumbusho <> kivukoni/posta /mwanyamala",
+        "kivukoni"
+      ],
+      [
+        "makumbusho <> kunduchi",
+        "kunduchi"
+      ],
+      [
+        "makumbusho <> makongo juu",
+        "kinondoni / makongo"
+      ],
+      [
+        "makumbusho <> muhimbili /kawawa rd",
+        "muhimbili"
+      ],
+      [
+        "makumbusho <> posta /shekilango rd",
+        "posta"
+      ],
+      [
+        "makumbusho <> stesheni",
+        "stesheni"
+      ],
+      [
+        "makumbusho <> ununio",
+        "ununio"
+      ],
+      [
+        "manzese <> buguruni",
+        "ubungo / kagera morogoro rd"
+      ],
+      [
+        "masaki <> kariakoo",
+        "kariakoo"
+      ],
+      [
+        "masaki <> ubungo -- ubungo"
+      ],
+      [
+        "mbagala rangi 3 <> charambe",
+        "temeke / mbagala-sw"
+      ],
+      [
+        "mbagala rangi 3 <> kariakoo",
+        "kariakoo"
+      ],
+      [
+        "mbagala rangi 3 <> kawe",
+        "kawe"
+      ],
+      [
+        "mbagala rangi 3 <> kilungule",
+        "kilungule"
+      ],
+      [
+        "mbagala rangi 3 <> kongowe",
+        "temeke / kipala mpakani"
+      ],
+      [
+        "mbagala rangi 3 <> makumbusho",
+        "makumbusho"
+      ],
+      [
+        "mbagala rangi 3 <> mbande",
+        "temeke / kiponza"
+      ],
+      [
+        "mbagala rangi 3 <> mvuti",
+        "ilala / kimwani"
+      ],
+      [
+        "mbagala rangi 3 <> mwenge/makumbusho",
+        "mwenge"
+      ],
+      [
+        "mbagala rangi 3 <> posta",
+        "posta"
+      ],
+      [
+        "mbagala rangi 3 <> stesheni",
+        "stesheni"
+      ],
+      [
+        "mbagala rangi 3 <> temeke",
+        "temeke"
+      ],
+      [
+        "mbagala rangi 3 <> ubungo",
+        "ubungo"
+      ],
+      [
+        "mbagala zakhem <> kiburugwa",
+        "temeke / kiburugwa"
+      ],
+      [
+        "mbagala zakhem <> kwa mnyani",
+        "ilala / mnyamani"
+      ],
+      [
+        "mbagala zakhem <> mbagala kuu",
+        "temeke / mbagala"
+      ],
+      [
+        "mbande <> mtoni mtongani",
+        "temeke / mtoni"
+      ],
+      [
+        "mbezi <> buguruni",
+        "ilala / buguruni"
+      ],
+      [
+        "mbezi <> goba",
+        "ubungo / goba"
+      ],
+      [
+        "mbezi <> kariakoo",
+        "ilala / kariako"
+      ],
+      [
+        "mbezi <> kawe",
+        "kinondoni / kawe"
+      ],
+      [
+        "mbezi <> kivukoni/posta",
+        "ilala / kivukoni"
+      ],
+      [
+        "mbezi <> makumbusho",
+        "kinondoni / makumbusho"
+      ],
+      [
+        "mbezi <> muhimbili",
+        "ilala / muhimbili"
+      ],
+      [
+        "mbezi <> ubungo",
+        "ubungo / ubungo"
+      ],
+      [
+        "mnyamani <> mnazi mmoja",
+        "ilala / vingunguti"
+      ],
+      [
+        "mtoni mtongani <> mwenge / kawawa rd -- temeke / mtoni"
+      ],
+      [
+        "muhimbili <> mwenge/makumbusho",
+        "kinondoni / mwenge"
+      ],
+      [
+        "pugu <> kawe",
+        "kinondoni / kawe"
+      ],
+      [
+        "pugu <> masaki",
+        "kinondoni / masaki"
+      ],
+      [
+        "pugu kajiungeni <> buguruni/gongola mboto",
+        "ilala / bombani"
+      ],
+      [
+        "pugu kwalala <> shule ya uhuru/gongo la mboto",
+        "ilala / bombani"
+      ],
+      [
+        "pugu/chanika <> buguruni",
+        "ilala / bombani"
+      ],
+      [
+        "tabata cha_ng'ombe <> mnazi mmoja ",
+        "ilala / tabata"
+      ],
+      [
+        "tabata cha_ng'ombe <> buguruni",
+        "ilala / buguruni"
+      ],
+      [
+        "tabata cha_ng'ombe <> ubungo",
+        "ubungo"
+      ],
+      [
+        "tabata cha_ng'ombe <> vingunguti /via bakhresa",
+        "ilala / vingunguti"
+      ],
+      [
+        "tabata kimanga <> buguruni",
+        "ilala / buguruni"
+      ],
+      [
+        "tabata kimanga <> kivukoni/mnazi mmoja",
+        "ilala / kivukoni"
+      ],
+      [
+        "tabata kimanga <> makumbusho",
+        "kinondoni / makumbusho"
+      ],
+      [
+        "tabata kimanga <> mnazi mmoja",
+        "ilala / mnazi mmoja"
+      ],
+      [
+        "tabata kimanga <> temeke",
+        "temeke"
+      ],
+      [
+        "tabata kimanga <> ubungo",
+        "ubungo"
+      ],
+      [
+        "tabata segerea <> kinyerezi",
+        "ilala / kinyerezi"
+      ],
+      [
+        "tabata segerea <> makumbusho",
+        "kinondoni / makumbusho"
+      ],
+      [
+        "tabata segerea <> mnazi mmoja",
+        "ilala / mnazi mmoja"
+      ],
+      [
+        "tabata segerea <> temeke/tandika",
+        "temeke"
+      ],
+      [
+        "tabata segerea <> ubungo",
+        "ubungo"
+      ],
+      [
+        "tandika <> buza",
+        "ilala / buza"
+      ],
+      [
+        "tegeta <> madale",
+        "ubungo / matosa-goba "
+      ],
+      [
+        "tegeta <> mbweni",
+        "kinondoni / mweni"
+      ],
+      [
+        "tegeta <> posta",
+        "ilala / posta"
+      ],
+      [
+        "tegeta <> ununio",
+        "kinondoni / ununio"
+      ],
+      [
+        "tegeta nyuki <> mwenge/makumbusho",
+        "kinondoni / mwenge"
+      ],
+      [
+        "temeke <> charambe",
+        "ilala / "
+      ],
+      [
+        "temeke <> kariakoo /kilwa road",
+        "ilala / "
+      ],
+      [
+        "temeke <> makumbusho"
+      ],
+      [
+        "temeke <> mbagala kuu"
+      ],
+      [
+        "temeke <> mtoni kijichi"
+      ],
+      [
+        "temeke <> muhimbili /changombe rd",
+        "ilala / "
+      ],
+      [
+        "temeke <> mwenge /via kawawa rd/makumbusho"
+      ],
+      [
+        "temeke <> nzasa",
+        "ilala / "
+      ],
+      [
+        "temeke <> stesheni",
+        "ilala / "
+      ],
+      [
+        "temeke <> ubungo"
+      ],
+      [
+        "temeke <> vingunguti",
+        "ilala / "
+      ],
+      [
+        "temeke/mtongani <> kawe",
+        "/ "
+      ],
+      [
+        "temeke <> kongowe ",
+        "temeke / kipala mpakani"
+      ],
+      [
+        "ubungo <> buguruni",
+        "/ "
+      ],
+      [
+        "ubungo <> changanyikieni",
+        "ubungo / goba-makongo"
+      ],
+      [
+        "ubungo <> kariakoo",
+        "/ "
+      ],
+      [
+        "ubungo <> kivukoni/mnazi mmoja",
+        "/ "
+      ],
+      [
+        "ubungo <> makumbusho",
+        "/ "
+      ],
+      [
+        "ubungo <> makumbusho/chuo kikuu",
+        "/ "
+      ],
+      [
+        "ubungo <> mnazi mmoja/mandela rd",
+        "/ "
+      ],
+      [
+        "ubungo <> mtoni mtongani",
+        "/ "
+      ],
+      [
+        "ubungo <> muhimbili",
+        "/ "
+      ],
+      [
+        "ubungo <> posta",
+        "/ "
+      ],
+      [
+        "ubungo <> tegeta",
+        "/ "
+      ],
+      [
+        "ukonga madafu <> buguruni rozana",
+        "ilala / ukonga  "
+      ],
+      [
+        "ukonga madafu <> mnazi mmoja",
+        "ilala / ukonga  "
+      ],
+      [
+        "ukonga madafu <> mtoni mtongani",
+        "ilala / ukonga  "
+      ],
+      [
+        "ukonga madafu <> shule ya uhuru",
+        "ilala / ukonga  "
+      ],
+      [
+        "ukonga minazi mirefu <> shule ya uhuru",
+        "ilala / ukonga  "
+      ],
+      [
+        "vingunguti <> kivukoni",
+        "/ "
+      ],
+      [
+        "vingunguti <> makumbusho",
+        "/ "
+      ],
+      [
+        "vingunguti <> sinza",
+        "/ "
+      ],
+      [
+        "vingunguti <> ubungo",
+        "/ "
+      ],
+      [
+        "yombo vituka <> muhimbili",
+        "/ "
+      ],
+      [
+        "yombo vituka <> ubungo",
+        "/ "
+      ]
+    ]
+  }
+}

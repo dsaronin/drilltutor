@@ -1,0 +1,2028 @@
+{
+  "kanda-za-mikoa": {
+    "fc_data": [
+      [
+        "kanda ya ziwa",
+        "kagera, geita, shinyanga, simiyu, mara, mwanza"
+      ],
+      [
+        "kanda ya kaskazini",
+        "arusha, kilimanjaro, manyara, tanga"
+      ],
+      [
+        "kanda ya pwani",
+        "pwani, lindi, mtwara, morogoro, dar es salaam"
+      ],
+      [
+        "kanda ya nyanda za juu kusini",
+        "rukwa, songwe, mbeya, iringa, njombe, ruvuma"
+      ],
+      [
+        "kanda ya magharibi",
+        "kigoma, katavi"
+      ],
+      [
+        "kanda ya kati",
+        "tabora, singida, dodoma"
+      ],
+      [
+        "kanda ya zanzibar",
+        "mjini magharibi, pemba kaskazini, pemba kusini, unguja kaskazini, unguja kusini"
+      ]
+    ]
+  },
+  "mkoa-wa-kanda": {
+    "fc_data": [
+      [
+        "dodoma",
+        "kati"
+      ],
+      [
+        "singida",
+        "kati"
+      ],
+      [
+        "tabora",
+        "kati"
+      ],
+      [
+        "dar es salaam",
+        "pwani"
+      ],
+      [
+        "lindi",
+        "pwani"
+      ],
+      [
+        "morogoro",
+        "pwani"
+      ],
+      [
+        "mtwara",
+        "pwani"
+      ],
+      [
+        "pwani",
+        "pwani"
+      ],
+      [
+        "geita",
+        "ziwa"
+      ],
+      [
+        "kagera",
+        "ziwa"
+      ],
+      [
+        "mara",
+        "ziwa"
+      ],
+      [
+        "mwanza",
+        "ziwa"
+      ],
+      [
+        "shinyanga",
+        "ziwa"
+      ],
+      [
+        "simiyu",
+        "ziwa"
+      ],
+      [
+        "arusha",
+        "kaskazini"
+      ],
+      [
+        "kilimanjaro",
+        "kaskazini"
+      ],
+      [
+        "manyara",
+        "kaskazini"
+      ],
+      [
+        "tanga",
+        "kaskazini"
+      ],
+      [
+        "iringa",
+        "nyanda za juu kusini"
+      ],
+      [
+        "mbeya",
+        "nyanda za juu kusini"
+      ],
+      [
+        "njombe",
+        "nyanda za juu kusini"
+      ],
+      [
+        "rukwa",
+        "nyanda za juu kusini"
+      ],
+      [
+        "ruvuma",
+        "nyanda za juu kusini"
+      ],
+      [
+        "songwe",
+        "nyanda za juu kusini"
+      ],
+      [
+        "katavi, kigoma",
+        "magharibi"
+      ],
+      [
+        "kigoma",
+        "magharibi"
+      ]
+    ]
+  },
+  "mikoa-ya-wilaya": {
+    "fc_data": [
+      [
+        "arusha",
+        "monduli, longido, meru, ngorongoro, karatu, arusha*"
+      ],
+      [
+        "dar es salaam",
+        "kinondoni, temeke, kigamboni, ubungo, ilala*"
+      ],
+      [
+        "dodoma",
+        " bahi, chamwino, chemba, kondoa, kongwa, mpwapwa, dodoma*"
+      ],
+      [
+        "geita",
+        "bukombe, chato, mbogwe, nyang'hwale, geita*"
+      ],
+      [
+        "iringa",
+        "mufindi, kilolo, mafinga, iringa*"
+      ],
+      [
+        "kagera",
+        "misenyi, muleba, karagwe, ngara, biharamulo, kyerwa, bukoba*"
+      ],
+      [
+        "katavi",
+        "mlele, nsimbo, tanganyika, mpimbwe, mpanda*"
+      ],
+      [
+        "kigoma",
+        "kasulu, kibondo, buhigwe, kakonko, uvinza, kigoma*"
+      ],
+      [
+        "kilimanjaro",
+        "hai, mwanga, rombo, same, siha, moshi*"
+      ],
+      [
+        "lindi",
+        "mtama, kilwa, nachingwea, liwale, ruangwa, lindi*"
+      ],
+      [
+        "manyara",
+        "hanang, mbulu , simanjiro, kiteto, babati*"
+      ],
+      [
+        "mara",
+        "bunda , serengeti, tarime , rorya, butiama, musoma*"
+      ],
+      [
+        "mbeya",
+        "rungwe, kyela, ileje, mbozi, chunya, momba, mbarali, mbeya*"
+      ],
+      [
+        "morogoro",
+        "gairo, kilosa, malinyi, mlimba, mvomero, ulanga, morogoro*"
+      ],
+      [
+        "mtwara",
+        "masasi , nanyamba, nanyumbu, newala, tandahimba, mtwara / mikindani*"
+      ],
+      [
+        "mwanza",
+        "ukerewe, magu, sengerema, buchosa, misungwi, kwimba, nyamagana, ilemela, mwanza*"
+      ],
+      [
+        "njombe",
+        "makambako, makete, ludewa, wanging'ombe, njombe*"
+      ],
+      [
+        "pwani",
+        "bagamoyo, chalinze, kisarawe, mkuranga, mafia, rufiji, kibiti, kibaha*"
+      ],
+      [
+        "rukwa",
+        "nkasi, kalambo, sumbawanga*"
+      ],
+      [
+        "ruvuma",
+        "nyasa, tunduru, madaba, mbinga, namtumbo, songea*"
+      ],
+      [
+        "shinyanga",
+        "kahama, ushetu, msalala, kishapu, shinyanga*"
+      ],
+      [
+        "simiyu",
+        "busega, maswa, meatu, itilima, bariadi*"
+      ],
+      [
+        "singida",
+        " iramba, manyoni, ikungi, itigi, mkalama, singida*"
+      ],
+      [
+        "songwe",
+        "tunduma, ileje, mbozi, momba, songwe*"
+      ],
+      [
+        "tabora",
+        "nzega, igunga, uyui, urambo, sikonge, kaliua, tabora*"
+      ],
+      [
+        "tanga",
+        "bumbuli, handeni, kilindi, korogwe, lushoto, mkinga, muheza, pangani, tanga*"
+      ],
+      [
+        "mjini magharibi",
+        "magharibi_a, magharibi_b, jiji_la_zanzibar*"
+      ],
+      [
+        "pemba kaskazini",
+        "micheweni, wete*"
+      ],
+      [
+        "pemba kusini",
+        "mkoani, chake chake*"
+      ],
+      [
+        "unguja kaskazini",
+        "unguja_a, unguja_b, mkokotoni*"
+      ],
+      [
+        "unguja kusini",
+        "kati, kusini, koani*"
+      ]
+    ]
+  },
+  "wilaya-za-mkoa": {
+    "fc_data": [
+      [
+        "monduli",
+        "arusha"
+      ],
+      [
+        "longido",
+        "arusha"
+      ],
+      [
+        "meru",
+        "arusha"
+      ],
+      [
+        "ngorongoro",
+        "arusha"
+      ],
+      [
+        "karatu",
+        "arusha"
+      ],
+      [
+        "ilala",
+        "dar es salaam"
+      ],
+      [
+        "kinondoni",
+        "dar es salaam"
+      ],
+      [
+        "temeke",
+        "dar es salaam"
+      ],
+      [
+        "kigamboni",
+        "dar es salaam"
+      ],
+      [
+        "ubungo",
+        "dar es salaam"
+      ],
+      [
+        "bahi",
+        "dodoma"
+      ],
+      [
+        "chamwino",
+        "dodoma"
+      ],
+      [
+        "chemba",
+        "dodoma"
+      ],
+      [
+        "kondoa",
+        "dodoma"
+      ],
+      [
+        "kongwa",
+        "dodoma"
+      ],
+      [
+        "mpwapwa",
+        "dodoma"
+      ],
+      [
+        "bukombe",
+        "geita"
+      ],
+      [
+        "chato",
+        "geita"
+      ],
+      [
+        "mbogwe",
+        "geita"
+      ],
+      [
+        "nyang'hwale",
+        "geita"
+      ],
+      [
+        "mufindi",
+        "iringa"
+      ],
+      [
+        "kilolo",
+        "iringa"
+      ],
+      [
+        "mafinga",
+        "iringa"
+      ],
+      [
+        "bukoba",
+        "kagera"
+      ],
+      [
+        "misenyi",
+        "kagera"
+      ],
+      [
+        "muleba",
+        "kagera"
+      ],
+      [
+        "karagwe",
+        "kagera"
+      ],
+      [
+        "ngara",
+        "kagera"
+      ],
+      [
+        "biharamulo",
+        "kagera"
+      ],
+      [
+        "kyerwa",
+        "kagera"
+      ],
+      [
+        "mlele",
+        "katavi"
+      ],
+      [
+        "nsimbo",
+        "katavi"
+      ],
+      [
+        "mpanda",
+        "katavi"
+      ],
+      [
+        "tanganyika",
+        "katavi"
+      ],
+      [
+        "mpimbwe",
+        "katavi"
+      ],
+      [
+        "kasulu",
+        "kigoma"
+      ],
+      [
+        "kibondo",
+        "kigoma"
+      ],
+      [
+        "buhigwe",
+        "kigoma"
+      ],
+      [
+        "kakonko",
+        "kigoma"
+      ],
+      [
+        "uvinza",
+        "kigoma"
+      ],
+      [
+        "hai",
+        "kilimanjaro"
+      ],
+      [
+        "mwanga",
+        "kilimanjaro"
+      ],
+      [
+        "rombo",
+        "kilimanjaro"
+      ],
+      [
+        "same",
+        "kilimanjaro"
+      ],
+      [
+        "siha",
+        "kilimanjaro"
+      ],
+      [
+        "lindi",
+        "lindi"
+      ],
+      [
+        "mtama",
+        "lindi"
+      ],
+      [
+        "kilwa",
+        "lindi"
+      ],
+      [
+        "nachingwea",
+        "lindi"
+      ],
+      [
+        "liwale",
+        "lindi"
+      ],
+      [
+        "ruangwa",
+        "lindi"
+      ],
+      [
+        "babati",
+        "manyara"
+      ],
+      [
+        "babati",
+        "manyara"
+      ],
+      [
+        "hanang",
+        "manyara"
+      ],
+      [
+        "mbulu",
+        "manyara"
+      ],
+      [
+        "simanjiro",
+        "manyara"
+      ],
+      [
+        "kiteto",
+        "manyara"
+      ],
+      [
+        "bunda",
+        "mara"
+      ],
+      [
+        "serengeti",
+        "mara"
+      ],
+      [
+        "tarime",
+        "mara"
+      ],
+      [
+        "rorya",
+        "mara"
+      ],
+      [
+        "butiama",
+        "mara"
+      ],
+      [
+        "musoma",
+        "mara"
+      ],
+      [
+        "rungwe",
+        "mbeya"
+      ],
+      [
+        "kyela",
+        "mbeya"
+      ],
+      [
+        "ileje",
+        "mbeya"
+      ],
+      [
+        "mbozi",
+        "mbeya"
+      ],
+      [
+        "chunya",
+        "mbeya"
+      ],
+      [
+        "momba",
+        "mbeya"
+      ],
+      [
+        "mbarali",
+        "mbeya"
+      ],
+      [
+        "gairo",
+        "morogoro"
+      ],
+      [
+        "kilosa",
+        "morogoro"
+      ],
+      [
+        "malinyi",
+        "morogoro"
+      ],
+      [
+        "mlimba",
+        "morogoro"
+      ],
+      [
+        "mvomero",
+        "morogoro"
+      ],
+      [
+        "ulanga",
+        "morogoro"
+      ],
+      [
+        "mikindani",
+        "mtwara"
+      ],
+      [
+        "masasi",
+        "mtwara"
+      ],
+      [
+        "nanyamba",
+        "mtwara"
+      ],
+      [
+        "nanyumbu",
+        "mtwara"
+      ],
+      [
+        "newala",
+        "mtwara"
+      ],
+      [
+        "tandahimba",
+        "mtwara"
+      ],
+      [
+        "ukerewe",
+        "mwanza"
+      ],
+      [
+        "magu",
+        "mwanza"
+      ],
+      [
+        "sengerema",
+        "mwanza"
+      ],
+      [
+        "buchosa",
+        "mwanza"
+      ],
+      [
+        "misungwi",
+        "mwanza"
+      ],
+      [
+        "kwimba",
+        "mwanza"
+      ],
+      [
+        "nyamagana",
+        "mwanza"
+      ],
+      [
+        "ilemela",
+        "mwanza"
+      ],
+      [
+        "makambako",
+        "njombe"
+      ],
+      [
+        "makete",
+        "njombe"
+      ],
+      [
+        "ludewa",
+        "njombe"
+      ],
+      [
+        "wanging'ombe",
+        "njombe"
+      ],
+      [
+        "bagamoyo",
+        "pwani"
+      ],
+      [
+        "chalinze",
+        "pwani"
+      ],
+      [
+        "kibaha",
+        "pwani"
+      ],
+      [
+        "kisarawe",
+        "pwani"
+      ],
+      [
+        "mkuranga",
+        "pwani"
+      ],
+      [
+        "mafia",
+        "pwani"
+      ],
+      [
+        "rufiji",
+        "pwani"
+      ],
+      [
+        "kibiti",
+        "pwani"
+      ],
+      [
+        "sumbawanga",
+        "rukwa"
+      ],
+      [
+        "nkasi",
+        "rukwa"
+      ],
+      [
+        "kalambo",
+        "rukwa"
+      ],
+      [
+        "songea",
+        "ruvuma"
+      ],
+      [
+        "tunduru",
+        "ruvuma"
+      ],
+      [
+        "madaba",
+        "ruvuma"
+      ],
+      [
+        "mbinga",
+        "ruvuma"
+      ],
+      [
+        "namtumbo",
+        "ruvuma"
+      ],
+      [
+        "kahama",
+        "shinyanga"
+      ],
+      [
+        "ushetu",
+        "shinyanga"
+      ],
+      [
+        "msalala",
+        "shinyanga"
+      ],
+      [
+        "kishapu",
+        "shinyanga"
+      ],
+      [
+        "bariadi",
+        "simiyu"
+      ],
+      [
+        "busega",
+        "simiyu"
+      ],
+      [
+        "maswa",
+        "simiyu"
+      ],
+      [
+        "meatu",
+        "simiyu"
+      ],
+      [
+        "itilima",
+        "simiyu"
+      ],
+      [
+        "iramba",
+        "singida"
+      ],
+      [
+        "manyoni",
+        "singida"
+      ],
+      [
+        "ikungi",
+        "singida"
+      ],
+      [
+        "itigi",
+        "singida"
+      ],
+      [
+        "mkalama",
+        "singida"
+      ],
+      [
+        "tunduma",
+        "songwe"
+      ],
+      [
+        "ileje",
+        "songwe"
+      ],
+      [
+        "mbozi",
+        "songwe"
+      ],
+      [
+        "momba",
+        "songwe"
+      ],
+      [
+        "nzega",
+        "tabora"
+      ],
+      [
+        "igunga",
+        "tabora"
+      ],
+      [
+        "uyui",
+        "tabora"
+      ],
+      [
+        "urambo",
+        "tabora"
+      ],
+      [
+        "sikonge",
+        "tabora"
+      ],
+      [
+        "kaliua",
+        "tabora"
+      ],
+      [
+        "bumbuli",
+        "tanga"
+      ],
+      [
+        "handeni",
+        "tanga"
+      ],
+      [
+        "kilindi",
+        "tanga"
+      ],
+      [
+        "korogwe",
+        "tanga"
+      ],
+      [
+        "lushoto",
+        "tanga"
+      ],
+      [
+        "mkinga",
+        "tanga"
+      ],
+      [
+        "muheza",
+        "tanga"
+      ],
+      [
+        "pangani",
+        "tanga"
+      ]
+    ]
+  },
+  "makabila-ya-mikoa": {
+    "fc_data": [
+      [
+        "arusha",
+        "maasai, iraqw, meru, arusha"
+      ],
+      [
+        "dar es salaam",
+        "zigua, sukuma, nyamwezi, makonde, zaramo"
+      ],
+      [
+        "dodoma",
+        "gogo, kaguru, maasai, hehe"
+      ],
+      [
+        "geita",
+        "sukuma, zanaki, sumbwa, longo, zinza"
+      ],
+      [
+        "iringa",
+        "hehe, sangu, makonde, bena, kinga, pangwa, wanji, gogo"
+      ],
+      [
+        "kagera",
+        "haya, waha, tutsi, nyambo"
+      ],
+      [
+        "katavi",
+        "bende, holoholo, konongo, pimbwe, tongwe, vinza, fipa"
+      ],
+      [
+        "kigoma",
+        "waha, manyema, bembe, tongwe, vinza, nyamwezi, sukuma, fipa, ziba"
+      ],
+      [
+        "kilimanjaro",
+        "chagga, pare, gweno, maasai, kamba"
+      ],
+      [
+        "lindi",
+        "machinga, mwera, malaba, matumbi, ngindo"
+      ],
+      [
+        "manyara",
+        "maasai, iraqw, ,bigwe. gprpwa. barbaig"
+      ],
+      [
+        "mara",
+        "kurya, luo, sukuma, jita, ruri, zanaki, kabwa, kiroba, simbiti, ngoreme, kwaya, ikomka, nata"
+      ],
+      [
+        "mbeya",
+        "nyakyusa, kimbu, sangu, bungu, ishio, nyiha"
+      ],
+      [
+        "morogoro",
+        "luguru, doe, kwere, ngulu, kagulu, sagala, pogolo, ndamba, bena, mbungu, kutu, vidunda"
+      ],
+      [
+        "mtwara",
+        "makonde, mwera"
+      ],
+      [
+        "mwanza",
+        "sukuma, zinza, kerewe, kara, jita, zanaki"
+      ],
+      [
+        "njombe",
+        "bena, kinga, pangwa"
+      ],
+      [
+        "pwani",
+        "kwere, zaramo, ndengereko, nyagatwa, zigua, doe, rufiji"
+      ],
+      [
+        "rukwa",
+        "fipa, mambwe, wanda, nyamwanga, sukuma, nyamwezi, maasai"
+      ],
+      [
+        "ruvuma",
+        "ngoni;, matengo, yao, ndendeule, manda, nyasa, poto, bena, ndengereko"
+      ],
+      [
+        "shinyanga",
+        "nyamwezi, sukuma, sumbwa"
+      ],
+      [
+        "simiyu",
+        "sukuma, nyamwezi"
+      ],
+      [
+        "singida",
+        "nyaturu, iraqw, nyiramba, gogo, nyisanzu"
+      ],
+      [
+        "songwe",
+        "nyakyusa, kimbu"
+      ],
+      [
+        "tabora",
+        "sukuma, nyamwezi"
+      ],
+      [
+        "tanga",
+        "sambaa, bondei, pare, zigua, bondei, digo, taita, mbugu, segeju, nago"
+      ],
+      [
+        "zanzibar",
+        "swahili, shiraz"
+      ]
+    ]
+  },
+  "misitu_nfr": {
+    "fc_data": [
+      [
+        "hifadhi ya msitu asili",
+        "nature forest reserve (nfr)"
+      ],
+      [
+        "mashamba ya miti  -- forest plantation  (fp)"
+      ],
+      [
+        "amani nfr",
+        "tanga"
+      ],
+      [
+        "biharamulo fp",
+        "geita, kagera"
+      ],
+      [
+        "buhindi fp",
+        "mwanza"
+      ],
+      [
+        "chome nfr",
+        "pwani"
+      ],
+      [
+        "iyondo mswima fp",
+        "songwe"
+      ],
+      [
+        "kawetire fp",
+        "mbeya"
+      ],
+      [
+        "kilombero fp",
+        "morogoro"
+      ],
+      [
+        "kipo fp",
+        "iringa"
+      ],
+      [
+        "korogwe fp",
+        "tanga / handeni"
+      ],
+      [
+        "longuza fp",
+        "tanga / usambara mtns"
+      ],
+      [
+        "magamba nfr",
+        "tanga"
+      ],
+      [
+        "mbizi fp",
+        "rukwa"
+      ],
+      [
+        "meru/usa fp",
+        "arusha / mt meru"
+      ],
+      [
+        "minziro nfr",
+        "kagera"
+      ],
+      [
+        "mkingu nfr",
+        "tanga"
+      ],
+      [
+        "morogoro fp",
+        "morogoro"
+      ],
+      [
+        "mpepo fp",
+        "ruvuma / nyasa"
+      ],
+      [
+        "mt hanang nfr",
+        "manyara"
+      ],
+      [
+        "mt longido nfr",
+        "arusha"
+      ],
+      [
+        "mt rungwe nfr",
+        "mbeya"
+      ],
+      [
+        "mtibwa fp",
+        "morogoro / mvomero nguu mtns"
+      ],
+      [
+        "nilo nfr",
+        "mbeya"
+      ],
+      [
+        "north kilimanjaro fp",
+        "kilimanjaro"
+      ],
+      [
+        "north ruvu fp",
+        "pwani / kibaha, bagamoyo"
+      ],
+      [
+        "rondo nfr",
+        "lindi"
+      ],
+      [
+        "rubare fp",
+        "kagera / bukoba"
+      ],
+      [
+        "rubya fp",
+        "mwanza / ukerewe"
+      ],
+      [
+        "sao-hill fp",
+        "iringa / mufindi"
+      ],
+      [
+        "shume fp",
+        "tanga / lushoto"
+      ],
+      [
+        "ukaguru fp",
+        "morogoro / ukaguru mtns"
+      ],
+      [
+        "uluguru nfr",
+        "morogoro / kidatu uluguru mtns"
+      ],
+      [
+        "uzungwa scarp nfr",
+        "iringa"
+      ],
+      [
+        "west kilimanjaro fp",
+        "kilimanjaro"
+      ],
+      [
+        "wino fp",
+        "ruvuma / madaba"
+      ]
+    ]
+  },
+  "bee-reserves": {
+    "fc_data": [
+      [
+        "mashamba ya nyuki",
+        "national bees reserves (nbr)"
+      ],
+      [
+        "malinga nbr",
+        "songwe / momba"
+      ],
+      [
+        "shinji nbr",
+        "songwe / ileje"
+      ],
+      [
+        "kwenyunga-magiri nbr",
+        "tanga / handeni"
+      ],
+      [
+        "kang’ata nbr",
+        "tanga / handeni"
+      ],
+      [
+        "mialo kwamtoro nbr",
+        "dodoma / chemba"
+      ],
+      [
+        "maganzemzaree nbr",
+        "dodoma / chemba"
+      ],
+      [
+        "songolo nbr",
+        "dodoma / chemba"
+      ],
+      [
+        "lebbajumbe nbr",
+        "dodoma / chemba"
+      ],
+      [
+        "aghondi nbr",
+        "singida / manyoni"
+      ]
+    ]
+  },
+  "wanyamapori": {
+    "fc_data": [
+      [
+        "hifadhi ya mawindo",
+        "hunting reserve (hr)"
+      ],
+      [
+        "eneo lenye udhibiti wa wanyamapori",
+        "game controlled area (gca)"
+      ],
+      [
+        "endulen gca",
+        "arusha"
+      ],
+      [
+        "handeni gca",
+        "tanga"
+      ],
+      [
+        "kalimawe gca",
+        "singida"
+      ],
+      [
+        "masailand gca",
+        "manyara"
+      ],
+      [
+        "kitwai gca",
+        "katavi"
+      ],
+      [
+        "mapori ya akiba  -- game reserve; hifadhi ya wanyamapori (gr)"
+      ],
+      [
+        "biharamulo gr",
+        "geita"
+      ],
+      [
+        "burigi gr",
+        "kagera"
+      ],
+      [
+        "ikorongo na grumet gr",
+        "mara"
+      ],
+      [
+        "kigosi gr",
+        "simiyu"
+      ],
+      [
+        "kijereshi gr",
+        "simiyu"
+      ],
+      [
+        "kingera-mpanya gr",
+        "njombe"
+      ],
+      [
+        "kipengere mpanga gr",
+        "njombe"
+      ],
+      [
+        "kizigo gr",
+        "singida"
+      ],
+      [
+        "luafi gr",
+        "katavi"
+      ],
+      [
+        "lukwata-lumesale gr",
+        "mtwara"
+      ],
+      [
+        "lukwati gr",
+        "rukwa"
+      ],
+      [
+        "lukwati na piti gr",
+        "songwe"
+      ],
+      [
+        "maswa gr",
+        "simiyu"
+      ],
+      [
+        "mkungunero gr",
+        "dodoma"
+      ],
+      [
+        "moyowosi gr",
+        "manyara, kigoma"
+      ],
+      [
+        "msanjesi gr",
+        "mtwara"
+      ],
+      [
+        "muhesi gr",
+        "singida"
+      ],
+      [
+        "n kahama gr",
+        "shinyaga"
+      ],
+      [
+        "pande gr",
+        "dar es salaam"
+      ],
+      [
+        "rukwa gr",
+        "rukwa"
+      ],
+      [
+        "rungwa gr",
+        "singida"
+      ],
+      [
+        "swagaswaga gr",
+        "dodoma"
+      ],
+      [
+        "usungu gr",
+        "mbeya"
+      ],
+      [
+        "uwanda gr",
+        "rukwa, songwe"
+      ]
+    ]
+  },
+  "mbuga_pori": {
+    "fc_data": [
+      [
+        "mbuga za taifa la tanzania",
+        "national park (np)"
+      ],
+      [
+        "eneo la uhifadhi",
+        "conservation area"
+      ],
+      [
+        "ngorongoro",
+        "mkoa: arusha"
+      ],
+      [
+        "arusha np",
+        "arusha"
+      ],
+      [
+        "burigi-chato np",
+        "kagera"
+      ],
+      [
+        "gombe np",
+        "kigoma"
+      ],
+      [
+        "ibanda-kyerwa np",
+        "mbeya"
+      ],
+      [
+        "jozani chwaka [ghuba ya] np",
+        "zanzibar"
+      ],
+      [
+        "katavi np",
+        "rukwa"
+      ],
+      [
+        "kilimanjaro [mlima] np",
+        "kilimanjaro"
+      ],
+      [
+        "kitulo np",
+        "mbeya"
+      ],
+      [
+        "mahale [milima ya] np",
+        "kigoma"
+      ],
+      [
+        "manyara [ziwa] np",
+        "manyara"
+      ],
+      [
+        "mikumi np",
+        "morogoro"
+      ],
+      [
+        "mkomazi np",
+        "tanga"
+      ],
+      [
+        "ngorongoro np",
+        "arusha"
+      ],
+      [
+        "nyerere np",
+        "lindi, morogoro"
+      ],
+      [
+        "ruaha np",
+        "iringa"
+      ],
+      [
+        "rubondo [kisiwa cha]  np",
+        "mwanza"
+      ],
+      [
+        "rumanyika-karagwe np",
+        "kagera"
+      ],
+      [
+        "saadani np",
+        "pwani"
+      ],
+      [
+        "saanane [kisiwa cha]  np",
+        "mtwara"
+      ],
+      [
+        "serengeti np",
+        "mara, simiyu"
+      ],
+      [
+        "tarangire np",
+        "manyara"
+      ],
+      [
+        "udzungwa [milima ya] np",
+        "iringa"
+      ]
+    ]
+  },
+  "mbuga-bahari": {
+    "fc_data": [
+      [
+        "hifadhi za bahari",
+        "marine preserve (mp)"
+      ],
+      [
+        "mafia island mp",
+        "pwani"
+      ],
+      [
+        "tanga coelacanth mp",
+        "tanga"
+      ],
+      [
+        "dar es salaam mp",
+        "dar es salaam"
+      ],
+      [
+        "mnazi bay-ruvumba estuary mp",
+        "mtwara"
+      ],
+      [
+        "bongoyo maeneo tengefu",
+        "dar es salaam"
+      ],
+      [
+        "mbudya maeneo tengefu",
+        "dar es salaam"
+      ]
+    ]
+  },
+  "milima": {
+    "fc_data": [
+      [
+        "udzungwa mtns",
+        "iringa"
+      ],
+      [
+        "uluguru mtns",
+        "morogoro"
+      ],
+      [
+        "rungwe mtn",
+        "mbeya"
+      ],
+      [
+        "usambara mtns",
+        "tanga"
+      ],
+      [
+        "malundwe mtns",
+        "morogoro"
+      ],
+      [
+        "rubeho mtns",
+        "dodoma"
+      ],
+      [
+        "longido mtn",
+        "mara"
+      ],
+      [
+        "kilimanjaro mtn",
+        "kilimanjaro"
+      ],
+      [
+        "meru mtn",
+        "arusha"
+      ],
+      [
+        "pare mtns",
+        "kilimanjaro"
+      ],
+      [
+        "kipengere mtns",
+        "njombe"
+      ],
+      [
+        "mahenge mtns",
+        "morogoro"
+      ],
+      [
+        "nguru mtns",
+        "morogoro"
+      ],
+      [
+        "ukaguru mtns",
+        "morogoro"
+      ],
+      [
+        "lukwangule plateau",
+        "morogoro"
+      ],
+      [
+        "makonde plateau",
+        "mtwara"
+      ],
+      [
+        "lorujouj plateau",
+        "arusha"
+      ],
+      [
+        "shira plateau",
+        "kilimanjaro"
+      ],
+      [
+        "ufipa plateau",
+        "rukwa"
+      ]
+    ]
+  },
+  "ziwa": {
+    "fc_data": [
+      [
+        "ziwa victoria",
+        "kanda ya ziwa"
+      ],
+      [
+        "ziwa tanganyika",
+        "kigoma, katavi, rukwa"
+      ],
+      [
+        "ziwa rukwa",
+        "rukwa"
+      ],
+      [
+        "ziwa nyasa",
+        "njombe, ruvuma"
+      ],
+      [
+        "ziwa manyara",
+        "manyara"
+      ],
+      [
+        "ziwa natron",
+        "mara"
+      ],
+      [
+        "ziwa eyasi",
+        "arusha"
+      ],
+      [
+        "ziwa burigi",
+        "kagera"
+      ],
+      [
+        "ziwa babati",
+        "manyara"
+      ],
+      [
+        "ziwa sulunga ",
+        "dodoma"
+      ]
+    ]
+  },
+  "mito": {
+    "fc_data": [
+      [
+        "rufiji mto",
+        "pwani"
+      ],
+      [
+        "ruvuma mto",
+        "ruvuma"
+      ],
+      [
+        "kagera mto",
+        "kagera"
+      ],
+      [
+        "pangani mto",
+        "tanga"
+      ],
+      [
+        "wami mto",
+        "morogoro, pwani"
+      ],
+      [
+        "malagarasi mto",
+        "kigoma"
+      ],
+      [
+        "mara mto",
+        "mara"
+      ],
+      [
+        "mori mto",
+        "mara"
+      ],
+      [
+        "bandarini mto",
+        "dar"
+      ],
+      [
+        "kimanga mto",
+        "dar"
+      ],
+      [
+        "kimani mto",
+        "dar"
+      ],
+      [
+        "kinyenyele mto",
+        "dar"
+      ],
+      [
+        "kurasini mto",
+        "dar"
+      ],
+      [
+        "kwangula mto",
+        "dar"
+      ],
+      [
+        "luhanga mto",
+        "dar"
+      ],
+      [
+        "makulamula mto",
+        "dar"
+      ],
+      [
+        "mambizi mto",
+        "dar"
+      ],
+      [
+        "manyema mto",
+        "dar"
+      ],
+      [
+        "masika mto",
+        "dar"
+      ],
+      [
+        "mazizini mto",
+        "dar"
+      ],
+      [
+        "mbezi mto",
+        "dar"
+      ],
+      [
+        "mborohadi mto",
+        "dar"
+      ],
+      [
+        "mgigawa mto",
+        "dar"
+      ],
+      [
+        "minyonyoni mto",
+        "dar"
+      ],
+      [
+        "mironge mto",
+        "dar"
+      ],
+      [
+        "mnguvia mto",
+        "dar"
+      ],
+      [
+        "moshibar mto",
+        "dar"
+      ],
+      [
+        "mpiji mto",
+        "dar"
+      ],
+      [
+        "msimbazi mto",
+        "dar"
+      ],
+      [
+        "mulalakuwa mto",
+        "dar"
+      ],
+      [
+        "mzinga mto",
+        "dar"
+      ],
+      [
+        "nyakasangwe mto",
+        "dar"
+      ],
+      [
+        "quarter mto",
+        "dar"
+      ],
+      [
+        "sinza mto",
+        "dar"
+      ],
+      [
+        "tegeta mto",
+        "dar"
+      ],
+      [
+        "ubungo mto",
+        "dar"
+      ],
+      [
+        "ukooni mto",
+        "dar"
+      ],
+      [
+        "uvumba mto",
+        "dar"
+      ],
+      [
+        "zimbire mto",
+        "dar"
+      ]
+    ]
+  },
+  "njia-reli": {
+    "fc_data": [
+      [
+        "central line",
+        "dar es salaam, ruvu [jct tanga line], morogoro , kilosa [jct kidatu line], gulwe, igandu, dodoma, manyoni [jct singida line], itigi, ikungu, tabora [jct mwanza line], kaliua [jct mpanda line], kigoma"
+      ],
+      [
+        "kidatu line",
+        "kilosa [jct central line], kidatu [jct tazara line]"
+      ],
+      [
+        "mwanza line",
+        "tabora [jct central line], bukene, isaka [dry port], shinyanga, mwanza"
+      ],
+      [
+        "mpanda line",
+        "kaliua [jct central line], mpanda"
+      ],
+      [
+        "singida line",
+        "manyoni [jct central line], issuna, ikungi, puma, singida"
+      ],
+      [
+        "link line",
+        "morogoro [jct central line], ruvu [jct central line], kitonga, sadani, hale - [mruazi jct tanga line], korogwe [jct tanga line]"
+      ],
+      [
+        "tanga line",
+        "tanga, korogwe [jct link line], mkomazi, same, moshi [jct kenya], arusha"
+      ],
+      [
+        "sgr line",
+        "dar es salaam, pugu, soga, ruvu, morogoro, mkata, kilosa, igandu, dodoma, bahi, makutupora, tabora, bukene, nzubuka, isaka, mwanza, kigoma"
+      ],
+      [
+        "mtwara line [proposed]",
+        "mtwara, lindi, nachingwea, mchuchuma, songea, mbamba bay"
+      ],
+      [
+        "tazara line",
+        "dar es salaam, mzenga, kisaki, kidatu [jct kidatu line], mang'ula, kiberege, ifakara, lwipa, mbingu, mngeta, chita, mlimba, makambako, chimala, mbeya, mbozi, vwawa, tunduma [border], zambia mkushi, kasama"
+      ]
+    ]
+  },
+  "gen-hydro": {
+    "fc_data": [
+      [
+        "kidatu hydro",
+        "morogoro"
+      ],
+      [
+        "kihansi hydro",
+        "morogoro"
+      ],
+      [
+        "mtera hydro",
+        "iringa"
+      ],
+      [
+        "pangani falls hydro",
+        "tanga"
+      ],
+      [
+        "hale hydro",
+        "kilimanjaro"
+      ],
+      [
+        "uwemba hydro",
+        "rukwa"
+      ],
+      [
+        "nyumba ya mungu hydro",
+        "iringa"
+      ],
+      [
+        "nyerere hydro",
+        "pwani"
+      ]
+    ]
+  },
+  "gen-thermal": {
+    "fc_data": [
+      [
+        "kinyerezi power-gen",
+        "dar es salaam"
+      ],
+      [
+        "ubungo power-gen",
+        "dar es salaam"
+      ],
+      [
+        "tegeta power-gen",
+        "dar es salaam"
+      ],
+      [
+        "somanga power-gen",
+        "pwani"
+      ],
+      [
+        "mtwara power-gen",
+        "mtwara"
+      ],
+      [
+        "zuzu dodoma power-gen",
+        "dodoma"
+      ],
+      [
+        "nyakato power-gen",
+        "mwanza"
+      ],
+      [
+        "ngara power-gen",
+        "kagera"
+      ],
+      [
+        "biharamulo power-gen",
+        "kagera"
+      ],
+      [
+        "songea power-gen",
+        "ruvuma"
+      ],
+      [
+        "mbina power-gen",
+        "mbeya"
+      ],
+      [
+        "ludewa power-gen",
+        "iringa"
+      ],
+      [
+        "amtumbo power-gen",
+        "tanga"
+      ],
+      [
+        "liwale power-gen",
+        "lindi"
+      ],
+      [
+        "tunduru power-gen",
+        "ruvuma"
+      ],
+      [
+        "madaba power-gen",
+        "songwe"
+      ]
+    ]
+  },
+  "kata-za-dar": {
+    "fc_data": [
+      [
+        "kinondoni",
+        "bunju, hananasif, kawe, kigogo, kijitonyama, kinondoni, kunduchi, mabwepande, makongo, makumbusho, makurumla, mbezi, mbezi juu, mbweni, mikocheni, msasani, mwananyamala, mzimuni, ndugumbi, saranga, tandale, wazo"
+      ],
+      [
+        "ubungo",
+        "goba, kibamba, kimara, kwembe, mabibo, magomeni, makuburi, makurumla, manzese, mburahati, msigani, saranga, sinza, ubungo"
+      ],
+      [
+        "ilala",
+        "buguruni, chanika, gerezani, gongo la mboto, ilala, jangwani, kariakoo, kimanga, kinyerezi, kipawa, kisutu, kitunda, kivukoni, kivule, kiwalani, majohe, mchafukoge, mchikichini, msongola, pugu, segerea, tabata, ukonga, upanga magharibi, upanga mashariki, vingunguti"
+      ],
+      [
+        "temeke",
+        "azimio, buza, chamazi, chang'ombe, charambe, keko, kiburugwa, kijichi, kilakala, kurasini, makangarawe, mbagala, mbagala kuu, mianzini, miburani, mtoni, sandali, tandika, temeke, toangoma, yombo vituka"
+      ],
+      [
+        "kigamboni",
+        "kibada, kigamboni, kimbiji, kisarawe ii, mjimwema, pembamnazi, somangila, tungi, vijibweni "
+      ]
+    ]
+  },
+  "maporomoko-maji": {
+    "fc_data": [
+      [
+        "maporomoko ya maji",
+        "waterfalls"
+      ],
+      [
+        "kalambo",
+        "rukwa / mpanda; mbizi nfr"
+      ],
+      [
+        "marangu",
+        "kilimanjaro / moshi; kilimanjaro np"
+      ],
+      [
+        "materuni",
+        "kilimanjaro / moshi; mt meru ca"
+      ],
+      [
+        "sanje",
+        "morogoro / mikumi; udzungwa mountains np"
+      ],
+      [
+        "nduruma",
+        "arusha / arusha; mt meru nfr"
+      ],
+      [
+        "napuru",
+        "arusha / arusha; mt meru ca"
+      ],
+      [
+        "ndoro",
+        "kilimanjaro / moshi; mount kilimanjaro np"
+      ],
+      [
+        "kisasa",
+        "tanga / lushoto; west usambara mountain reserve"
+      ],
+      [
+        "choma",
+        "morogoro / morogoro; mikumi np"
+      ],
+      [
+        "ngere sero",
+        "arusha / arusha; lake natron"
+      ],
+      [
+        "kapotogwe",
+        "mbeya / mbeya"
+      ],
+      [
+        "mbokomu",
+        "kilimanjaro / moshi"
+      ]
+    ]
+  },
+  "masoko-dar": {
+    "fc_data": [
+      [
+        "masoko ya dar",
+        "open air markets in dar"
+      ],
+      [
+        "kariakoo",
+        "ilala"
+      ],
+      [
+        "mabibo",
+        "mabibo"
+      ],
+      [
+        "ilala",
+        "ilala"
+      ],
+      [
+        "mwananyamala",
+        "mwananyamala"
+      ],
+      [
+        "mbagala",
+        "mbagala"
+      ],
+      [
+        "kivukoni",
+        "kariakoo"
+      ],
+      [
+        "magomeni",
+        "temeke"
+      ],
+      [
+        "tandika",
+        "temeke"
+      ],
+      [
+        "pugu kajiungeni",
+        "pugu"
+      ],
+      [
+        "africa sana",
+        "kijitonyama, shekilango road"
+      ],
+      [
+        "bunju b",
+        "bunju b"
+      ],
+      [
+        "tegeta nyuki",
+        "tegeta nyuki"
+      ],
+      [
+        "gongalamboto",
+        "gongalamboto"
+      ]
+    ]
+  },
+  "bridges": {
+    "fc_data": [
+      [
+        "madaraja",
+        "bridges"
+      ],
+      [
+        "tanzanite",
+        "dar es salaam, dar es salaam / msimbazi river"
+      ],
+      [
+        "nyerere",
+        "dar, kigamboni / gulf of dar"
+      ],
+      [
+        "kigongo-busisi",
+        "mwanza, mwanza / gulf of mwanza"
+      ],
+      [
+        "mkapa",
+        "pwani, ikwiri / rufiji river"
+      ],
+      [
+        "unity",
+        "mtwara, mtambaswala / ruvuma river"
+      ],
+      [
+        "kilombero",
+        "morogoro, ifakara / mnyera river"
+      ],
+      [
+        "kyaka",
+        "kagera, kyaka / kagera river"
+      ],
+      [
+        "songwe",
+        "mbeya, malawi / songwe river"
+      ],
+      [
+        "kikwete",
+        "kigoma, uvinza / malagarasi river"
+      ]
+    ]
+  }
+}
