@@ -3,12 +3,11 @@ package org.umoja4life.drilltutor
 /**
  * OppositesType
  * Handler for Opposites flashcards.
- *
- * Inherits display behavior (Raw Front/Back) from interface.
- * Overrides only the Mining behavior.
  */
-class OppositesType : AbstractFlashcardType {
+class OppositesType : AbstractFlashcardType() {
 
+    // TODO: Restore these overrides once AbstractFlashcardType supports Search/Mining interfaces.
+    /*
     override fun getSearchableText(data: FlashcardData): String {
         return "" // Not searchable
     }
@@ -16,4 +15,5 @@ class OppositesType : AbstractFlashcardType {
     override fun supportsMining(): Boolean {
         return false // Legacy behavior: Disabled
     }
+    */
 }

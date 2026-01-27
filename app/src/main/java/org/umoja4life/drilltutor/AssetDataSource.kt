@@ -8,7 +8,9 @@ import java.io.IOException
 
 class AssetDataSource(private val context: Context) : FlashcardDataSource {
 
-    private val TAG = "AssetDataSource"
+    companion object {
+        private const val TAG = "AssetDataSource"
+    }
 
     // Configure JSON parser
     private val jsonParser = Json {
@@ -16,7 +18,7 @@ class AssetDataSource(private val context: Context) : FlashcardDataSource {
         isLenient = true         // Allow slightly malformed JSON
     }
 
-    override suspend fun loadFile(languageCode: String, sourceType: SourceType): Map<String, TopicData>? {
+    override suspend fun loadFile(languageCode: String, sourceType: FlashcardSource): Map<String, TopicData>? {
         return withContext(Dispatchers.IO) {
             // Map Enum to filename: VOCABULARY -> "vocabulary.json"
             val filename = "${sourceType.id.lowercase()}.json"
@@ -33,12 +35,12 @@ class AssetDataSource(private val context: Context) : FlashcardDataSource {
                     val data = jsonParser.decodeFromString<Map<String, TopicData>>(jsonString)
 
                     // LOGGING: Calculate total records for verification
-                    val totalRecords = data.values.sumOf { it.fc_data.size }
+                    val totalRecords = data.values.sumOf { it.fcData.size }
                     Environment.logInfo("$TAG: SUCCESS: Loaded $path. Found ${data.size} topics, $totalRecords total cards.")
 
                     return@withContext data
                 }
-            } catch (e: IOException) {
+            } catch (_: IOException) {
                 // Expected for optional files (e.g. if dictionary.json doesn't exist)
                 Environment.logWarn("$TAG: File not found (Optional): $path")
                 null

@@ -1,9 +1,10 @@
 package org.umoja4life.drilltutor
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-// Enum remains unchanged
-enum class SourceType(val id: String) {
+// FIX 1: Renamed from SourceType to FlashcardSource
+enum class FlashcardSource(val id: String) {
     VOCABULARY("Vocabulary"),
     SENTENCES("Sentences"),
     OPPOSITES("Opposites"),
@@ -15,21 +16,22 @@ enum class SourceType(val id: String) {
     UNKNOWN("Unknown");
 
     companion object {
-        fun fromId(id: String): SourceType = entries.find { it.id.equals(id, ignoreCase = true) } ?: UNKNOWN
+        // Updated return type to FlashcardSource
+        fun fromId(id: String): FlashcardSource = entries.find { it.id.equals(id, ignoreCase = true) } ?: UNKNOWN
     }
 }
 
-// FIX: This class models the VALUE inside the map.
-// matches: { "fc_data": [ ["front", "back"], ... ] }
+// FIX 3: Added @SerialName to handle the JSON key "fc_data" while keeping Kotlin variable clean.
 @Serializable
 data class TopicData(
-    val fc_data: List<List<String>> = emptyList()
+    @SerialName("fc_data")
+    val fcData: List<List<String>> = emptyList()
 )
 
-// Internal App Data Class (Unchanged)
+// Internal App Data Class
 data class FlashcardData(
     val id: String = "",
-    val source: SourceType = SourceType.UNKNOWN,
+    val source: FlashcardSource = FlashcardSource.UNKNOWN, // Now matches the Enum name above
     val topic: String = "",
     val front: String = "",
     val back: String = "",

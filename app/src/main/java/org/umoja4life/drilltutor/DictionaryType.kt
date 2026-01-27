@@ -13,4 +13,4 @@ package org.umoja4life.drilltutor
  * - Uses Standard behavior (returning raw data if available).
  * - Serves as a stub for future expansion.
  */
-class DictionaryType : AbstractFlashcardType
+class DictionaryType : AbstractFlashcardType() { }

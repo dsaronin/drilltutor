@@ -2,6 +2,9 @@ package org.umoja4life.drilltutor
 
 import android.content.Context
 import android.util.Log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * Environment
@@ -34,6 +37,24 @@ object Environment {
         settings = SettingsRepository(context)
 
         logInfo("Version: $VERSION_NAME (Build $VERSION_CODE)")
+
+        // --- START TEST HARNESS ---
+        CoroutineScope(Dispatchers.IO).launch {
+            logInfo("--- STARTING SMOKE TEST ---")
+            val testSource = AssetDataSource(context)
+
+            // Test 1: List Languages
+            testSource.getAvailableLanguages()
+
+            // Test 2: Load Vocabulary (Expect Success if tr/vocabulary.json exists)
+            testSource.loadFile("tr", FlashcardSource.VOCABULARY)
+
+            // Test 3: Load Unknown (Expect Failure/Null)
+            testSource.loadFile("tr", FlashcardSource.DICTIONARY)
+
+            logInfo("--- SMOKE TEST COMPLETE ---")
+        }
+        // --- END TEST HARNESS ---
     }
 
     // --- LOGGING UTILITIES ---

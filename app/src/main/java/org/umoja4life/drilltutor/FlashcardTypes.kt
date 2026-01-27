@@ -1,26 +1,9 @@
 package org.umoja4life.drilltutor
 
-import androidx.annotation.StringRes
-
 /**
  * FlashcardSource
  * Represents the category of the flashcard deck.
  */
-enum class FlashcardSource(val id: String) {
-    VOCABULARY("Vocabulary"),
-    OPPOSITES("Opposites"),
-    SENTENCES("Sentences"),
-    PHRASES("Phrases"),
-    DIALOGS("Dialogs"),
-    READINGS("Readings"),
-    GLOSSARIES("Glossaries"),
-    DICTIONARY("Dictionary");
-
-    // Helper to find by ID (safe lookup)
-    companion object {
-        fun fromId(id: String): FlashcardSource = entries.find { it.id == id } ?: VOCABULARY
-    }
-}
 
 /**
  * SelectorType

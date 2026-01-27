@@ -49,5 +49,5 @@ class SettingsViewModel : ViewModel() {
     val availableSides = CardSide.entries
     val availableSizes = SettingsRepository.VALID_GROUP_SIZES
 
-    val availableLanguages = listOf("en", "sw", "tk")
+    val availableLanguages = listOf("en", "sw", "tr")
 }

@@ -15,21 +15,19 @@ object FlashcardTypeSelection {
      * selectCardType
      * Returns the correct Behavior Type for the given Data Source.
      */
-    fun selectCardType(source: SourceType): AbstractFlashcardType {
+    fun selectCardType(source: FlashcardSource): AbstractFlashcardType {
         return when (source) {
-            SourceType.OPPOSITES -> oppositesType
-            SourceType.DICTIONARY -> dictionaryType
+            FlashcardSource.OPPOSITES -> oppositesType
+            FlashcardSource.DICTIONARY -> dictionaryType
 
-            // All these share the Standard Behavior
-            SourceType.VOCABULARY,
-            SourceType.SENTENCES,
-            SourceType.PHRASES,
-            SourceType.DIALOGS,
-            SourceType.READINGS,
-            SourceType.GLOSSARIES,
-            SourceType.UNKNOWN -> standardType
+            FlashcardSource.VOCABULARY,
+            FlashcardSource.SENTENCES,
+            FlashcardSource.PHRASES,
+            FlashcardSource.DIALOGS,
+            FlashcardSource.READINGS,
+            FlashcardSource.GLOSSARIES,
+            FlashcardSource.UNKNOWN -> standardType
 
-            // Default fallback
             else -> standardType
         }
     }

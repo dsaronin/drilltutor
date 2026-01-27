@@ -1,46 +1,34 @@
 package org.umoja4life.drilltutor
 
-/**
- * AbstractFlashcardType
- * Defines the behavior contract for different flashcard types.
- *
- * Now includes DEFAULT implementations for standard behavior.
- * Sub-classes only need to override if they deviate from the raw data.
- */
-interface AbstractFlashcardType {
+abstract class AbstractFlashcardType {
 
-    // --- DISPLAY BEHAVIOR (Default: Return Raw Data) ---
+    /**
+     * Converts a raw list of strings (from JSON) into a structured FlashcardData object.
+     * Default implementation assumes [0] = Front, [1] = Back.
+     */
+    open fun createFlashcard(
+        rawData: List<String>,
+        topic: String,
+        source: FlashcardSource // FIX: Updated Enum
+    ): FlashcardData {
 
-    fun getFrontText(data: FlashcardData): String {
-        return data.rawFront
-    }
+        // FIX: Safe extraction of data (fixing the "Unresolved reference" errors)
+        val rawFront = rawData.getOrElse(0) { "" }
+        val rawBack  = rawData.getOrElse(1) { "" }
 
-    fun getBackText(data: FlashcardData): String {
-        return data.rawBack
-    }
-
-    fun getNotesText(data: FlashcardData): String {
-        return data.notes
-    }
-
-    // --- SEARCH/MINING BEHAVIOR (Default: Search Front) ---
-
-    fun getSearchableText(data: FlashcardData): String {
-        return data.rawFront
-    }
-
-    fun supportsMining(): Boolean = true
-
-    // --- DEFAULTS ---
-
-    fun getDefaultCard(): FlashcardData {
         return FlashcardData(
-            id = "default",
-            source = SourceType.UNKNOWN,
-            topic = "default",
-            front = "boş",
-            back = "tupu",
-            notes = "No Data"
+            id = generateId(topic, rawFront),
+            source = source,
+            topic = topic,
+            front = rawFront,
+            back = rawBack,
+            notes = ""
         )
+    }
+
+    // Helper to generate a consistent ID
+    protected fun generateId(topic: String, front: String): String {
+        // Simple sanitization to create a safe ID
+        return "${topic}_${front.take(10)}".replace(" ", "_").lowercase()
     }
 }
