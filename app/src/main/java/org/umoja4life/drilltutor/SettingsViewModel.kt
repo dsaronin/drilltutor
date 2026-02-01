@@ -8,40 +8,52 @@ import kotlinx.coroutines.flow.stateIn
 
 class SettingsViewModel : ViewModel() {
 
-    // Access the repository via the Singleton (Service Locator Pattern)
-    private val repository = Environment.settings
+    // Access the repositories via the Singleton (Service Locator Pattern)
+    private val settingsRepo = Environment.settings
+    private val flashcardRepo = Environment.flashcards
 
     // --- EXPOSED STATE ---
     // We convert the repository flows into "Hot" flows that the UI can safely watch.
     // "stateIn" ensures they only update when the UI is actually looking at them.
 
-    val currentLanguage: StateFlow<String> = repository.language
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "en")
+    val currentLanguage: StateFlow<String> = settingsRepo.language
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), "tr")
 
-    val currentTopic: StateFlow<String> = repository.topic
+    val currentTopic: StateFlow<String> = settingsRepo.topic
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), SettingsRepository.DEFAULT_TOPIC)
 
-    val currentSource: StateFlow<FlashcardSource> = repository.source
+    val currentSource: StateFlow<FlashcardSource> = settingsRepo.source
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), SettingsRepository.DEFAULT_SOURCE)
 
-    val currentSelector: StateFlow<SelectorType> = repository.selector
+    val currentSelector: StateFlow<SelectorType> = settingsRepo.selector
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), SettingsRepository.DEFAULT_SELECTOR)
 
-    val currentSize: StateFlow<Int> = repository.groupSize
+    val currentSize: StateFlow<Int> = settingsRepo.groupSize
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), SettingsRepository.DEFAULT_SIZE)
 
-    val currentSide: StateFlow<CardSide> = repository.cardSide
+    val currentSide: StateFlow<CardSide> = settingsRepo.cardSide
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), SettingsRepository.DEFAULT_SIDE)
+
+    // --- DYNAMIC DATA ---
+
+    // Expose the loaded topics to the UI
+    // We use a custom getter so it always retrieves the latest list from the Repo.
+    val availableTopics: List<String>
+        get() = flashcardRepo.getTopics()
 
     // --- ACTIONS ---
     // The UI calls these methods when the user changes a setting.
 
-    fun setLanguage(lang: String) = repository.setLanguage(lang)
-    fun setTopic(topic: String)   = repository.setTopic(topic)
-    fun setSource(source: FlashcardSource) = repository.setSource(source)
-    fun setSelector(selector: SelectorType) = repository.setSelector(selector)
-    fun setGroupSize(size: Int)   = repository.setGroupSize(size)
-    fun setCardSide(side: CardSide) = repository.setCardSide(side)
+    // When Language changes, we must reload the Data.
+    fun setLanguage(lang: String) {
+        settingsRepo.setLanguage(lang)         // 1. Save Preference
+        flashcardRepo.loadMasterData(lang)     // 2. Load Data & Build Topics
+    }
+    fun setTopic(topic: String)   = settingsRepo.setTopic(topic)
+    fun setSource(source: FlashcardSource) = settingsRepo.setSource(source)
+    fun setSelector(selector: SelectorType) = settingsRepo.setSelector(selector)
+    fun setGroupSize(size: Int)   = settingsRepo.setGroupSize(size)
+    fun setCardSide(side: CardSide) = settingsRepo.setCardSide(side)
 
     // Helper to get valid options for the UI (Dropdowns)
     val availableSources = FlashcardSource.entries

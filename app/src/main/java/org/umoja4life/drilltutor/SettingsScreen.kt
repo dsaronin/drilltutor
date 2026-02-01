@@ -12,6 +12,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import org.umoja4life.drilltutor.ui.theme.Gray050
 import org.umoja4life.drilltutor.ui.theme.Gray700
 import org.umoja4life.drilltutor.ui.theme.TurkiyeRed
@@ -64,14 +71,43 @@ fun SettingsScreen(
 
             // --- FORM FIELDS ---
 
-            // 1. Topic
-            OutlinedTextField(
-                value = topic,
-                onValueChange = { viewModel.setTopic(it) },
-                label = { Text(stringResource(R.string.settings_label_topic)) },
-                textStyle = LocalTextStyle.current.copy(fontSize = largeFontSize),
+            // --- TOPIC DROPDOWN ---
+            var expanded by remember { mutableStateOf(false) } // State to manage open/closed menu
+
+            ExposedDropdownMenuBox(
+                expanded = expanded,
+                onExpandedChange = { expanded = !expanded },
                 modifier = Modifier.fillMaxWidth()
-            )
+            ) {
+                OutlinedTextField(
+                    value = topic, // Binds to the current topic state
+                    onValueChange = {}, // Read-only, user must select from list
+                    readOnly = true,
+                    label = { Text(stringResource(R.string.settings_label_topic)) },
+                    textStyle = LocalTextStyle.current.copy(fontSize = largeFontSize),
+                    trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                    colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(), // Matches other fields style
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .menuAnchor() // REQUIRED: links the text field to the menu
+                )
+
+                ExposedDropdownMenu(
+                    expanded = expanded,
+                    onDismissRequest = { expanded = false }
+                ) {
+                    // Iterate through the topics from ViewModel
+                    viewModel.availableTopics.forEach { selectionOption ->
+                        DropdownMenuItem(
+                            text = { Text(text = selectionOption, fontSize = largeFontSize) },
+                            onClick = {
+                                viewModel.setTopic(selectionOption) // Save selection
+                                expanded = false // Close menu
+                            }
+                        )
+                    }
+                }
+            }
 
             // 2. Source
             SimpleDropdown(

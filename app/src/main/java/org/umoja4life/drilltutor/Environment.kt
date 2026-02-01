@@ -22,39 +22,29 @@ object Environment {
     val IS_DEBUG: Boolean = BuildConfig.DEBUG
 
     // --- LOGGING ---
-    private const val LOG_TAG = APP_NAME
+    private const val LOG_TAG = "App" + APP_NAME
 
     // --- SUBSYSTEMS ---
     // The "lateinit" means we promise to initialize this in init() before using it.
     lateinit var settings: SettingsRepository
         private set
+    lateinit var flashcards: FlashcardRepository
+        private set
 
     // --- INITIALIZATION ---
     fun init(context: Context) {
         logInfo("Environment Initializing...")
-
-        // Instantiate the subsystems
-        settings = SettingsRepository(context)
-
         logInfo("Version: $VERSION_NAME (Build $VERSION_CODE)")
 
-        // --- START TEST HARNESS ---
-        CoroutineScope(Dispatchers.IO).launch {
-            logInfo("--- STARTING SMOKE TEST ---")
-            val testSource = AssetDataSource(context)
+        // Instantiate Settings subsystem
+        settings = SettingsRepository(context)
 
-            // Test 1: List Languages
-            testSource.getAvailableLanguages()
+        // Instantiate Flashcard data subsystem
+        flashcards = FlashcardRepository(AssetDataSource(context))
 
-            // Test 2: Load Vocabulary (Expect Success if tr/vocabulary.json exists)
-            testSource.loadFile("tr", FlashcardSource.VOCABULARY)
+        // load master flashcard data for given language; assume "tr" for now
+        flashcards.loadMasterData("tr")
 
-            // Test 3: Load Unknown (Expect Failure/Null)
-            testSource.loadFile("tr", FlashcardSource.DICTIONARY)
-
-            logInfo("--- SMOKE TEST COMPLETE ---")
-        }
-        // --- END TEST HARNESS ---
     }
 
     // --- LOGGING UTILITIES ---
