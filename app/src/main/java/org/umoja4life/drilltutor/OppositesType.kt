@@ -6,14 +6,10 @@ package org.umoja4life.drilltutor
  */
 class OppositesType : AbstractFlashcardType() {
 
-    // TODO: Restore these overrides once AbstractFlashcardType supports Search/Mining interfaces.
-    /*
-    override fun getSearchableText(data: FlashcardData): String {
-        return "" // Not searchable
-    }
+    override fun getSourceId(): FlashcardSource = FlashcardSource.OPPOSITES
 
-    override fun supportsMining(): Boolean {
-        return false // Legacy behavior: Disabled
+    override fun processData(data: Map<String, TopicData>?): Map<String, TopicData> {
+        // Standard JSON handling (similar to Vocabulary)
+        return data ?: emptyMap()
     }
-    */
 }

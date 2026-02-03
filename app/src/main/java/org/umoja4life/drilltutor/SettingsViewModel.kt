@@ -39,7 +39,7 @@ class SettingsViewModel : ViewModel() {
     // Expose the loaded topics to the UI
     // We use a custom getter so it always retrieves the latest list from the Repo.
     val availableTopics: List<String>
-        get() = flashcardRepo.getTopics()
+        get() = flashcardRepo.getTopics(FlashcardSource.VOCABULARY)
 
     // --- ACTIONS ---
     // The UI calls these methods when the user changes a setting.

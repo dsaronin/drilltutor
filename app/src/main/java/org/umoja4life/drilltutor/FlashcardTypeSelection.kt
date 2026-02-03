@@ -2,33 +2,42 @@ package org.umoja4life.drilltutor
 
 /**
  * FlashcardTypeSelection
- * The "Factory" that decides which Behavior Type to use based on the SourceType.
+ * The "Factory" and Registry that holds the specific handlers for each source.
  */
 object FlashcardTypeSelection {
 
-    // Instantiate our types once (since they are stateless)
-    private val standardType = FlashcardType()
+    // --- Specialized Handlers ---
+    private val vocabularyType = VocabularyType()
     private val oppositesType = OppositesType()
     private val dictionaryType = DictionaryType()
 
+    // --- Standard Handlers (Reusable Class) ---
+    private val phrasesType   = StandardFlashcardType(FlashcardSource.PHRASES)
+    private val sentencesType = StandardFlashcardType(FlashcardSource.SENTENCES)
+    private val dialogsType   = StandardFlashcardType(FlashcardSource.DIALOGS)
+    private val readingsType  = StandardFlashcardType(FlashcardSource.READINGS)
+    private val glossariesType = StandardFlashcardType(FlashcardSource.GLOSSARIES)
+
+    // Fallback
+    private val standardType = StandardFlashcardType(FlashcardSource.UNKNOWN)
+
     /**
      * selectCardType
-     * Returns the correct Behavior Type for the given Data Source.
+     * Returns the singleton instance for the requested Source.
      */
     fun selectCardType(source: FlashcardSource): AbstractFlashcardType {
         return when (source) {
-            FlashcardSource.OPPOSITES -> oppositesType
+            FlashcardSource.VOCABULARY -> vocabularyType
+            FlashcardSource.OPPOSITES  -> oppositesType
             FlashcardSource.DICTIONARY -> dictionaryType
 
-            FlashcardSource.VOCABULARY,
-            FlashcardSource.SENTENCES,
-            FlashcardSource.PHRASES,
-            FlashcardSource.DIALOGS,
-            FlashcardSource.READINGS,
-            FlashcardSource.GLOSSARIES,
-            FlashcardSource.UNKNOWN -> standardType
+            FlashcardSource.PHRASES    -> phrasesType
+            FlashcardSource.SENTENCES  -> sentencesType
+            FlashcardSource.DIALOGS    -> dialogsType
+            FlashcardSource.READINGS   -> readingsType
+            FlashcardSource.GLOSSARIES -> glossariesType
 
-            else -> standardType
+            FlashcardSource.UNKNOWN -> standardType
         }
     }
 }

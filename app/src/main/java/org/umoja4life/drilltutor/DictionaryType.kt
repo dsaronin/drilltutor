@@ -13,4 +13,13 @@ package org.umoja4life.drilltutor
  * - Uses Standard behavior (returning raw data if available).
  * - Serves as a stub for future expansion.
  */
-class DictionaryType : AbstractFlashcardType() { }
+class DictionaryType : AbstractFlashcardType() {
+
+    override fun getSourceId(): FlashcardSource = FlashcardSource.DICTIONARY
+
+    override fun processData(data: Map<String, TopicData>?): Map<String, TopicData> {
+        // Placeholder: Dictionary logic (TXT parsing) is coming in a future phase.
+        // For now, return empty to prevent crashes.
+        return emptyMap()
+    }
+}
