@@ -1,5 +1,14 @@
 {
   "markette": {
+    "descriptions": [
+      "at the market"
+    ],
+    "level": "A2",
+    "recording": "dialog-markette.ogg",
+    "topics": [
+      "shopping",
+      "food"
+    ],
     "fc_data": [
       [
         "_: B markette alışveriş yapıyor…",
@@ -104,6 +113,15 @@
     ]
   },
   "mavi_turizm": {
+    "descriptions": [
+      "at the market"
+    ],
+    "level": "A2",
+    "recording": "dialog-mavi_turizm.ogg",
+    "topics": [
+      "shopping",
+      "travel"
+    ],
     "fc_data": [
       [
         "_: GÖREVLİ ve DAUDI uçak bileti almak için acentaya telefon eder…",
@@ -168,6 +186,15 @@
     ]
   },
   "okul_arkadaşim": {
+    "descriptions": [
+      "friends on phone about school"
+    ],
+    "level": "A1",
+    "recording": "dialog-okul_arkadaşim.ogg",
+    "topics": [
+      "friends",
+      "education"
+    ],
     "fc_data": [
       [
         "_: Gül ve Elif telefonda okul hakkında konuşuyorlar.",
@@ -237,6 +264,15 @@
     ]
   },
   "profillere_bakıyordum": {
+    "descriptions": [
+      "i saw your profile online"
+    ],
+    "level": "A2",
+    "recording": "dialog-profillere_bakıyordum.ogg",
+    "topics": [
+      "friends",
+      "social_media"
+    ],
     "fc_data": [
       [
         "_: A, B ile çevrimiçi profili hakkında sohbet ediyor…",
@@ -340,6 +376,14 @@
     ]
   },
   "sen_neler_yaptın": {
+    "descriptions": [
+      "i saw your profile online"
+    ],
+    "level": "A2",
+    "topics": [
+      "friends",
+      "social_media"
+    ],
     "fc_data": [
       [
         "B: Evine döndün mü?",
@@ -404,6 +448,15 @@
     ]
   },
   "kahve_alma": {
+    "descriptions": [
+      "friends meet up at cafe"
+    ],
+    "level": "A2",
+    "recording": "dialog-kahve_alma.ogg",
+    "topics": [
+      "friends",
+      "shopping"
+    ],
     "fc_data": [
       [
         "_: Kahvecite",
@@ -538,6 +591,15 @@
     ]
   },
   "klinikta_hasta": {
+    "descriptions": [
+      "visiting doctor with a cold"
+    ],
+    "level": "A2",
+    "recording": "dialog-klinikta_hasta.ogg",
+    "topics": [
+      "health",
+      "medical"
+    ],
     "fc_data": [
       [
         "A: Merhaba",
@@ -627,6 +689,14 @@
     ]
   },
   "müzik": {
+    "descriptions": [
+      "talking with friend about music"
+    ],
+    "level": "A2",
+    "topics": [
+      "friends",
+      "music"
+    ],
     "fc_data": [
       [
         "A: Merhaba",
@@ -861,6 +931,15 @@
     ]
   },
   "mağazada": {
+    "descriptions": [
+      "at the department store"
+    ],
+    "level": "A2",
+    "recording": "dialog-mağazada2.ogg",
+    "topics": [
+      "shopping",
+      "clothes"
+    ],
     "fc_data": [
       [
         "_: Mağazada SATIŞ DANIŞMANI ve LINDY konuşuyorlar.",
@@ -960,6 +1039,15 @@
     ]
   },
   "adverbs": {
+    "descriptions": [
+      "chatting about technology using adverbs"
+    ],
+    "level": "A2",
+    "recording": "dialog-adverbs.ogg",
+    "topics": [
+      "adverbs",
+      "technology"
+    ],
     "fc_data": [
       [
         "_: İlker ve Ahmet teknoloji hakkında tartışıyorlar.",

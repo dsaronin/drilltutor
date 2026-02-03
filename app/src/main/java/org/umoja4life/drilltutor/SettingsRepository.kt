@@ -77,7 +77,7 @@ class SettingsRepository(context: Context) {
             // 1. Load Raw Values
             val rawLang   = prefs[KEY_LANGUAGE] ?: "en"
             val rawTopic  = prefs[KEY_TOPIC]    ?: DEFAULT_TOPIC
-            val rawSource = prefs[KEY_SOURCE]   ?: DEFAULT_SOURCE.id
+            val rawSource = prefs[KEY_SOURCE]   ?: DEFAULT_SOURCE.sourceName
             val rawSelect = prefs[KEY_SELECTOR] ?: DEFAULT_SELECTOR.id
             val rawSize   = prefs[KEY_SIZE]     ?: DEFAULT_SIZE
             val rawSide   = prefs[KEY_SIDE]     ?: DEFAULT_SIDE.id
@@ -85,12 +85,12 @@ class SettingsRepository(context: Context) {
             // 2. Convert to Types (Safety Check)
             _language.value  = rawLang
             _topic.value     = rawTopic
-            _source.value    = FlashcardSource.fromId(rawSource)
+            _source.value    = FlashcardSource.fromSourceName(rawSource)
             _selector.value  = SelectorType.fromId(rawSelect)
             _groupSize.value = rawSize
             _cardSide.value  = CardSide.fromId(rawSide)
 
-            Environment.logInfo("$TAG: Loaded Settings: Lang=$rawLang, Source=${_source.value.id}")
+            Environment.logInfo("$TAG: Loaded Settings: Lang=$rawLang, Source=${_source.value.sourceName}")
         }
     }
 
@@ -101,7 +101,7 @@ class SettingsRepository(context: Context) {
 
     fun setSource(newVal: FlashcardSource) {
         _source.value = newVal
-        saveInternal(KEY_SOURCE, newVal.id)
+        saveInternal(KEY_SOURCE, newVal.sourceName)
     }
 
     fun setSelector(newVal: SelectorType) {

@@ -1,2027 +1,3515 @@
 {
-  "kanda-za-mikoa": {
+  "quantifiers": {
     "fc_data": [
       [
-        "kanda ya ziwa",
-        "kagera, geita, shinyanga, simiyu, mara, mwanza"
+        "az",
+        "few, slight (neg)"
       ],
       [
-        "kanda ya kaskazini",
-        "arusha, kilimanjaro, manyara, tanga"
+        "bazen",
+        "sometimes"
       ],
       [
-        "kanda ya pwani",
-        "pwani, lindi, mtwara, morogoro, dar es salaam"
+        "bazı",
+        "some [thing]"
       ],
       [
-        "kanda ya nyanda za juu kusini",
-        "rukwa, songwe, mbeya, iringa, njombe, ruvuma"
+        "beraber",
+        "together with"
       ],
       [
-        "kanda ya magharibi",
-        "kigoma, katavi"
+        "bir az",
+        "some, bit  (uncountable)"
       ],
       [
-        "kanda ya kati",
-        "tabora, singida, dodoma"
+        "bir bir yerde",
+        "somewhere, someplace"
       ],
       [
-        "kanda ya zanzibar",
-        "mjini magharibi, pemba kaskazini, pemba kusini, unguja kaskazini, unguja kusini"
+        "bir kaç",
+        "some, few (countable)"
+      ],
+      [
+        "bir çok",
+        "many, lots"
+      ],
+      [
+        "bir önemli değil",
+        "no problem, not important"
+      ],
+      [
+        "bir şey değil",
+        "it’s nothing, anything"
+      ],
+      [
+        "biraz",
+        "some, a bit"
+      ],
+      [
+        "biri",
+        "someone, person"
+      ],
+      [
+        "bu kadar",
+        "this amount, so (much)"
+      ],
+      [
+        "bütün",
+        "whole, entire, all"
+      ],
+      [
+        "fazla",
+        "too much, many  (neg)"
+      ],
+      [
+        "gibi",
+        "like, similar to"
+      ],
+      [
+        "hakkında",
+        "about, approx"
+      ],
+      [
+        "her hangi bir yer",
+        "anywhere"
+      ],
+      [
+        "her hangi bir şey",
+        "something, anything"
+      ],
+      [
+        "her hangi biri",
+        "anybody"
+      ],
+      [
+        "her hangi",
+        "any, some"
+      ],
+      [
+        "her kes",
+        "everyone, everybody"
+      ],
+      [
+        "her şey",
+        "everything"
+      ],
+      [
+        "her",
+        "any, all, each"
+      ],
+      [
+        "hiç bir yerde",
+        "nowhere"
+      ],
+      [
+        "hiç bir şey",
+        "nothing"
+      ],
+      [
+        "hiç bir",
+        "neither"
+      ],
+      [
+        "hiç biri",
+        "none, neither"
+      ],
+      [
+        "hiç kimse…yok",
+        "nobody"
+      ],
+      [
+        "hiç",
+        "no, none, never"
+      ],
+      [
+        "ile",
+        "with, and"
+      ],
+      [
+        "kimse",
+        "nobody, anybody"
+      ],
+      [
+        "son",
+        "last, final, end"
+      ],
+      [
+        "sonra",
+        "later, then, after"
+      ],
+      [
+        "tane",
+        "many"
+      ],
+      [
+        "tüm",
+        "whole, entire"
+      ],
+      [
+        "çift",
+        "pair, couple of sth"
+      ],
+      [
+        "çok az",
+        "very little"
+      ],
+      [
+        "çok fazla",
+        "too much, many  (neg)"
+      ],
+      [
+        "önce",
+        "before"
       ]
     ]
   },
-  "mkoa-wa-kanda": {
+  "adverbs": {
     "fc_data": [
       [
-        "dodoma",
-        "kati"
+        "artık",
+        "from now on (poz), anymore (neg)"
       ],
       [
-        "singida",
-        "kati"
+        "asla",
+        "never"
       ],
       [
-        "tabora",
-        "kati"
+        "aslında",
+        "actually, in fact"
       ],
       [
-        "dar es salaam",
-        "pwani"
+        "bazen",
+        "sometimes"
       ],
       [
-        "lindi",
-        "pwani"
+        "benten daha",
+        "more sth… than me"
       ],
       [
-        "morogoro",
-        "pwani"
+        "bile",
+        "even …"
       ],
       [
-        "mtwara",
-        "pwani"
+        "bir kere daha",
+        "one more time"
       ],
       [
-        "pwani",
-        "pwani"
+        "biraz daha",
+        "more than sth"
       ],
       [
-        "geita",
-        "ziwa"
+        "bütün",
+        "all"
       ],
       [
-        "kagera",
-        "ziwa"
+        "çoğunlukla",
+        "usually, mostly (habit/custom)"
       ],
       [
-        "mara",
-        "ziwa"
+        "daha",
+        "yet, more, than"
       ],
       [
-        "mwanza",
-        "ziwa"
+        "daha sonra",
+        "later"
       ],
       [
-        "shinyanga",
-        "ziwa"
+        "en",
+        "most…, best"
       ],
       [
-        "simiyu",
-        "ziwa"
+        "genelde",
+        "usually, generally (timewise)"
       ],
       [
-        "arusha",
-        "kaskazini"
+        "gerçekten",
+        "really, totally"
       ],
       [
-        "kilimanjaro",
-        "kaskazini"
+        "genellikle",
+        "generally, usually"
       ],
       [
-        "manyara",
-        "kaskazini"
+        "göre",
+        "according to…, opinion"
       ],
       [
-        "tanga",
-        "kaskazini"
+        "hala",
+        "still…, yet (poz)"
       ],
       [
-        "iringa",
-        "nyanda za juu kusini"
+        "henüz",
+        "still…, yet, so far (neg)"
       ],
       [
-        "mbeya",
-        "nyanda za juu kusini"
+        "hep",
+        "always"
       ],
       [
-        "njombe",
-        "nyanda za juu kusini"
+        "kesinlikle",
+        "definitely, certainly"
       ],
       [
-        "rukwa",
-        "nyanda za juu kusini"
+        "nadiren",
+        "rarely, seldom"
       ],
       [
-        "ruvuma",
-        "nyanda za juu kusini"
+        "neredeyse",
+        "almost, nearly"
       ],
       [
-        "songwe",
-        "nyanda za juu kusini"
+        "oldukça",
+        "quite, rather, fairly"
       ],
       [
-        "katavi, kigoma",
-        "magharibi"
+        "özellikle",
+        "especially, particularly"
       ],
       [
-        "kigoma",
-        "magharibi"
+        "sonunda",
+        "finally, after, in the end"
+      ],
+      [
+        "tam olarak",
+        "exactly"
+      ],
+      [
+        "sadece",
+        "only, just"
+      ],
+      [
+        "sık sık",
+        "frequently, often"
+      ],
+      [
+        "tamamen",
+        "completely, totally"
+      ],
+      [
+        "tekrar",
+        "again, once more"
+      ],
+      [
+        "yine",
+        "again, once more"
+      ],
+      [
+        "yeterince",
+        "enough"
+      ],
+      [
+        "yeterli",
+        "sufficient"
       ]
     ]
   },
-  "mikoa-ya-wilaya": {
+  "adjectives": {
     "fc_data": [
       [
-        "arusha",
-        "monduli, longido, meru, ngorongoro, karatu, arusha*"
+        "aç",
+        "hunger"
       ],
       [
-        "dar es salaam",
-        "kinondoni, temeke, kigamboni, ubungo, ilala*"
+        "açık",
+        "open, clear"
       ],
       [
-        "dodoma",
-        " bahi, chamwino, chemba, kondoa, kongwa, mpwapwa, dodoma*"
+        "aynı",
+        "same"
       ],
       [
-        "geita",
-        "bukombe, chato, mbogwe, nyang'hwale, geita*"
+        "az",
+        "few"
       ],
       [
-        "iringa",
-        "mufindi, kilolo, mafinga, iringa*"
+        "başka",
+        "another, else"
       ],
       [
-        "kagera",
-        "misenyi, muleba, karagwe, ngara, biharamulo, kyerwa, bukoba*"
+        "büyük",
+        "big, large, great"
       ],
       [
-        "katavi",
-        "mlele, nsimbo, tanganyika, mpimbwe, mpanda*"
+        "ciddi",
+        "serious"
       ],
       [
-        "kigoma",
-        "kasulu, kibondo, buhigwe, kakonko, uvinza, kigoma*"
+        "çok",
+        "very, too, many"
       ],
       [
-        "kilimanjaro",
-        "hai, mwanga, rombo, same, siha, moshi*"
+        "diğer",
+        "other"
       ],
       [
-        "lindi",
-        "mtama, kilwa, nachingwea, liwale, ruangwa, lindi*"
+        "doğru",
+        "true, right, crct"
       ],
       [
-        "manyara",
-        "hanang, mbulu , simanjiro, kiteto, babati*"
+        "erken",
+        "early"
       ],
       [
-        "mara",
-        "bunda , serengeti, tarime , rorya, butiama, musoma*"
+        "eski",
+        "old, (thg)"
       ],
       [
-        "mbeya",
-        "rungwe, kyela, ileje, mbozi, chunya, momba, mbarali, mbeya*"
+        "farklı",
+        "different"
       ],
       [
-        "morogoro",
-        "gairo, kilosa, malinyi, mlimba, mvomero, ulanga, morogoro*"
+        "geç",
+        "late"
       ],
       [
-        "mtwara",
-        "masasi , nanyamba, nanyumbu, newala, tandahimba, mtwara / mikindani*"
+        "geleneksel",
+        "traditional"
       ],
       [
-        "mwanza",
-        "ukerewe, magu, sengerema, buchosa, misungwi, kwimba, nyamagana, ilemela, mwanza*"
+        "genç",
+        "young"
       ],
       [
-        "njombe",
-        "makambako, makete, ludewa, wanging'ombe, njombe*"
+        "geniş",
+        "wide"
       ],
       [
-        "pwani",
-        "bagamoyo, chalinze, kisarawe, mkuranga, mafia, rufiji, kibiti, kibaha*"
+        "güç",
+        "difficult"
       ],
       [
-        "rukwa",
-        "nkasi, kalambo, sumbawanga*"
+        "güzel",
+        "pretty,  beautiful"
       ],
       [
-        "ruvuma",
-        "nyasa, tunduru, madaba, mbinga, namtumbo, songea*"
+        "harika",
+        "excelnt, great"
       ],
       [
-        "shinyanga",
-        "kahama, ushetu, msalala, kishapu, shinyanga*"
+        "hasta",
+        "sick, ill, patient"
       ],
       [
-        "simiyu",
-        "busega, maswa, meatu, itilima, bariadi*"
+        "hoş",
+        "beautiful, nice"
       ],
       [
-        "singida",
-        " iramba, manyoni, ikungi, itigi, mkalama, singida*"
+        "hızlı",
+        "quick, fast"
       ],
       [
-        "songwe",
-        "tunduma, ileje, mbozi, momba, songwe*"
+        "islak",
+        "wet, humid"
       ],
       [
-        "tabora",
-        "nzega, igunga, uyui, urambo, sikonge, kaliua, tabora*"
+        "ilginç",
+        "interesting"
       ],
       [
-        "tanga",
-        "bumbuli, handeni, kilindi, korogwe, lushoto, mkinga, muheza, pangani, tanga*"
+        "imkansız",
+        "impossible"
       ],
       [
-        "mjini magharibi",
-        "magharibi_a, magharibi_b, jiji_la_zanzibar*"
+        "iyi",
+        "good"
       ],
       [
-        "pemba kaskazini",
-        "micheweni, wete*"
+        "kapalı",
+        "closed, off"
       ],
       [
-        "pemba kusini",
-        "mkoani, chake chake*"
+        "kendi",
+        "oneself, own"
       ],
       [
-        "unguja kaskazini",
-        "unguja_a, unguja_b, mkokotoni*"
+        "kirli",
+        "dirty"
       ],
       [
-        "unguja kusini",
-        "kati, kusini, koani*"
+        "kolay",
+        "easy, simple"
+      ],
+      [
+        "kötü",
+        "bad, worse"
+      ],
+      [
+        "küçük",
+        "small, little, yng"
+      ],
+      [
+        "kuru",
+        "dry"
+      ],
+      [
+        "kısa",
+        "short"
+      ],
+      [
+        "lazım",
+        "need, must, req"
+      ],
+      [
+        "meşhur",
+        "famous"
+      ],
+      [
+        "modern",
+        "modern"
+      ],
+      [
+        "muhteşem",
+        "magnificent"
+      ],
+      [
+        "mümkün",
+        "possible doabl"
+      ],
+      [
+        "müsait",
+        "free, available"
+      ],
+      [
+        "mutlu",
+        "happy, elated"
+      ],
+      [
+        "mutsuz",
+        "unhappy"
+      ],
+      [
+        "normal",
+        "normal"
+      ],
+      [
+        "olası",
+        "potential,probl"
+      ],
+      [
+        "önemli",
+        "impt, signifnt"
+      ],
+      [
+        "özel",
+        "pvt, spl, prsnl"
+      ],
+      [
+        "pahalı",
+        "expensive"
+      ],
+      [
+        "popüler",
+        "popular"
+      ],
+      [
+        "resmi",
+        "official, formal"
+      ],
+      [
+        "sakin",
+        "calm"
+      ],
+      [
+        "sorumlu",
+        "responsible"
+      ],
+      [
+        "soğuk",
+        "cold "
+      ],
+      [
+        "sıcak",
+        "hot "
+      ],
+      [
+        "temiz",
+        "clean"
+      ],
+      [
+        "tok",
+        "full, satiated"
+      ],
+      [
+        "tuhaf",
+        "strange, weird"
+      ],
+      [
+        "ucuz",
+        "cheap"
+      ],
+      [
+        "uzakta",
+        "far (away)"
+      ],
+      [
+        "üzgün",
+        "sad, upset, sry"
+      ],
+      [
+        "uzun",
+        "long, tall"
+      ],
+      [
+        "üzücü",
+        "sad, upset"
+      ],
+      [
+        "yakın",
+        "close, soon, nr"
+      ],
+      [
+        "yakışıklı",
+        "handsome"
+      ],
+      [
+        "yalnız",
+        "alone, on own"
+      ],
+      [
+        "yanlış",
+        "wrong, false"
+      ],
+      [
+        "yasak",
+        "forbidden"
+      ],
+      [
+        "yavaş",
+        "slow"
+      ],
+      [
+        "yaşlı",
+        "old (ppl)"
+      ],
+      [
+        "yeni",
+        "new, recent"
+      ],
+      [
+        "yorgun",
+        "fatigued, tired"
+      ],
+      [
+        "yüksek",
+        "high"
+      ],
+      [
+        "zor",
+        "difficult, hard"
       ]
     ]
   },
-  "wilaya-za-mkoa": {
+  "post-positions": {
     "fc_data": [
       [
-        "monduli",
-        "arusha"
+        "alt",
+        "lower part, inferior"
       ],
       [
-        "longido",
-        "arusha"
+        "ara",
+        "gap between"
       ],
       [
-        "meru",
-        "arusha"
+        "arka",
+        "rear, behind, support"
       ],
       [
-        "ngorongoro",
-        "arusha"
+        "başka",
+        "except, other"
       ],
       [
-        "karatu",
-        "arusha"
+        "beri",
+        "since, subsequent "
       ],
       [
-        "ilala",
-        "dar es salaam"
+        "dolayı",
+        "because of"
       ],
       [
-        "kinondoni",
-        "dar es salaam"
+        "doğru",
+        "towards"
       ],
       [
-        "temeke",
-        "dar es salaam"
+        "dış",
+        "exterior, outside"
       ],
       [
-        "kigamboni",
-        "dar es salaam"
+        "evvel",
+        "before (time)"
       ],
       [
-        "ubungo",
-        "dar es salaam"
+        "geçe",
+        "past sth"
       ],
       [
-        "bahi",
-        "dodoma"
+        "gibi",
+        "like, similarity"
       ],
       [
-        "chamwino",
-        "dodoma"
+        "göre",
+        "according to"
       ],
       [
-        "chemba",
-        "dodoma"
+        "hakkında  about, approximate"
       ],
       [
-        "kondoa",
-        "dodoma"
+        "hariç",
+        "except, excluding"
       ],
       [
-        "kongwa",
-        "dodoma"
+        "iç",
+        "interior, inside"
       ],
       [
-        "mpwapwa",
-        "dodoma"
+        "için",
+        "for, because of"
       ],
       [
-        "bukombe",
-        "geita"
+        "ile",
+        "with"
       ],
       [
-        "chato",
-        "geita"
+        "ileri",
+        "ahead, forward"
       ],
       [
-        "mbogwe",
-        "geita"
+        "kadar",
+        "to, until, as…as"
       ],
       [
-        "nyang'hwale",
-        "geita"
+        "kala",
+        "prior, at…to"
       ],
       [
-        "mufindi",
-        "iringa"
+        "karşı",
+        "opposite side"
       ],
       [
-        "kilolo",
-        "iringa"
+        "kenar",
+        "edge of, alongside"
       ],
       [
-        "mafinga",
-        "iringa"
+        "nazaran",
+        "compared with"
       ],
       [
-        "bukoba",
-        "kagera"
+        "niçin",
+        "ne için"
       ],
       [
-        "misenyi",
-        "kagera"
+        "ön",
+        "front, before"
       ],
       [
-        "muleba",
-        "kagera"
+        "önce",
+        "before"
       ],
       [
-        "karagwe",
-        "kagera"
+        "orta",
+        "center, mid"
       ],
       [
-        "ngara",
-        "kagera"
+        "rağmen ",
+        "despite"
       ],
       [
-        "biharamulo",
-        "kagera"
+        "sağ",
+        "right of "
       ],
       [
-        "kyerwa",
-        "kagera"
+        "sol",
+        "left of "
       ],
       [
-        "mlele",
-        "katavi"
+        "sonra",
+        "after"
       ],
       [
-        "nsimbo",
-        "katavi"
+        "sırasinda",
+        "during, while"
       ],
       [
-        "mpanda",
-        "katavi"
+        "üst",
+        "upper part, superior"
       ],
       [
-        "tanganyika",
-        "katavi"
+        "üzere",
+        "upon"
       ],
       [
-        "mpimbwe",
-        "katavi"
+        "üzeri",
+        "above/over"
       ],
       [
-        "kasulu",
-        "kigoma"
+        "yan",
+        "next/side"
       ],
       [
-        "kibondo",
-        "kigoma"
+        "yukarı",
+        "up/upward"
       ],
       [
-        "buhigwe",
-        "kigoma"
+        "aşağı",
+        "down/downward"
       ],
       [
-        "kakonko",
-        "kigoma"
+        "dışarı",
+        "out/outward/outside"
       ],
       [
-        "uvinza",
-        "kigoma"
+        "içeri",
+        "in/inward/inside"
       ],
       [
-        "hai",
-        "kilimanjaro"
-      ],
-      [
-        "mwanga",
-        "kilimanjaro"
-      ],
-      [
-        "rombo",
-        "kilimanjaro"
-      ],
-      [
-        "same",
-        "kilimanjaro"
-      ],
-      [
-        "siha",
-        "kilimanjaro"
-      ],
-      [
-        "lindi",
-        "lindi"
-      ],
-      [
-        "mtama",
-        "lindi"
-      ],
-      [
-        "kilwa",
-        "lindi"
-      ],
-      [
-        "nachingwea",
-        "lindi"
-      ],
-      [
-        "liwale",
-        "lindi"
-      ],
-      [
-        "ruangwa",
-        "lindi"
-      ],
-      [
-        "babati",
-        "manyara"
-      ],
-      [
-        "babati",
-        "manyara"
-      ],
-      [
-        "hanang",
-        "manyara"
-      ],
-      [
-        "mbulu",
-        "manyara"
-      ],
-      [
-        "simanjiro",
-        "manyara"
-      ],
-      [
-        "kiteto",
-        "manyara"
-      ],
-      [
-        "bunda",
-        "mara"
-      ],
-      [
-        "serengeti",
-        "mara"
-      ],
-      [
-        "tarime",
-        "mara"
-      ],
-      [
-        "rorya",
-        "mara"
-      ],
-      [
-        "butiama",
-        "mara"
-      ],
-      [
-        "musoma",
-        "mara"
-      ],
-      [
-        "rungwe",
-        "mbeya"
-      ],
-      [
-        "kyela",
-        "mbeya"
-      ],
-      [
-        "ileje",
-        "mbeya"
-      ],
-      [
-        "mbozi",
-        "mbeya"
-      ],
-      [
-        "chunya",
-        "mbeya"
-      ],
-      [
-        "momba",
-        "mbeya"
-      ],
-      [
-        "mbarali",
-        "mbeya"
-      ],
-      [
-        "gairo",
-        "morogoro"
-      ],
-      [
-        "kilosa",
-        "morogoro"
-      ],
-      [
-        "malinyi",
-        "morogoro"
-      ],
-      [
-        "mlimba",
-        "morogoro"
-      ],
-      [
-        "mvomero",
-        "morogoro"
-      ],
-      [
-        "ulanga",
-        "morogoro"
-      ],
-      [
-        "mikindani",
-        "mtwara"
-      ],
-      [
-        "masasi",
-        "mtwara"
-      ],
-      [
-        "nanyamba",
-        "mtwara"
-      ],
-      [
-        "nanyumbu",
-        "mtwara"
-      ],
-      [
-        "newala",
-        "mtwara"
-      ],
-      [
-        "tandahimba",
-        "mtwara"
-      ],
-      [
-        "ukerewe",
-        "mwanza"
-      ],
-      [
-        "magu",
-        "mwanza"
-      ],
-      [
-        "sengerema",
-        "mwanza"
-      ],
-      [
-        "buchosa",
-        "mwanza"
-      ],
-      [
-        "misungwi",
-        "mwanza"
-      ],
-      [
-        "kwimba",
-        "mwanza"
-      ],
-      [
-        "nyamagana",
-        "mwanza"
-      ],
-      [
-        "ilemela",
-        "mwanza"
-      ],
-      [
-        "makambako",
-        "njombe"
-      ],
-      [
-        "makete",
-        "njombe"
-      ],
-      [
-        "ludewa",
-        "njombe"
-      ],
-      [
-        "wanging'ombe",
-        "njombe"
-      ],
-      [
-        "bagamoyo",
-        "pwani"
-      ],
-      [
-        "chalinze",
-        "pwani"
-      ],
-      [
-        "kibaha",
-        "pwani"
-      ],
-      [
-        "kisarawe",
-        "pwani"
-      ],
-      [
-        "mkuranga",
-        "pwani"
-      ],
-      [
-        "mafia",
-        "pwani"
-      ],
-      [
-        "rufiji",
-        "pwani"
-      ],
-      [
-        "kibiti",
-        "pwani"
-      ],
-      [
-        "sumbawanga",
-        "rukwa"
-      ],
-      [
-        "nkasi",
-        "rukwa"
-      ],
-      [
-        "kalambo",
-        "rukwa"
-      ],
-      [
-        "songea",
-        "ruvuma"
-      ],
-      [
-        "tunduru",
-        "ruvuma"
-      ],
-      [
-        "madaba",
-        "ruvuma"
-      ],
-      [
-        "mbinga",
-        "ruvuma"
-      ],
-      [
-        "namtumbo",
-        "ruvuma"
-      ],
-      [
-        "kahama",
-        "shinyanga"
-      ],
-      [
-        "ushetu",
-        "shinyanga"
-      ],
-      [
-        "msalala",
-        "shinyanga"
-      ],
-      [
-        "kishapu",
-        "shinyanga"
-      ],
-      [
-        "bariadi",
-        "simiyu"
-      ],
-      [
-        "busega",
-        "simiyu"
-      ],
-      [
-        "maswa",
-        "simiyu"
-      ],
-      [
-        "meatu",
-        "simiyu"
-      ],
-      [
-        "itilima",
-        "simiyu"
-      ],
-      [
-        "iramba",
-        "singida"
-      ],
-      [
-        "manyoni",
-        "singida"
-      ],
-      [
-        "ikungi",
-        "singida"
-      ],
-      [
-        "itigi",
-        "singida"
-      ],
-      [
-        "mkalama",
-        "singida"
-      ],
-      [
-        "tunduma",
-        "songwe"
-      ],
-      [
-        "ileje",
-        "songwe"
-      ],
-      [
-        "mbozi",
-        "songwe"
-      ],
-      [
-        "momba",
-        "songwe"
-      ],
-      [
-        "nzega",
-        "tabora"
-      ],
-      [
-        "igunga",
-        "tabora"
-      ],
-      [
-        "uyui",
-        "tabora"
-      ],
-      [
-        "urambo",
-        "tabora"
-      ],
-      [
-        "sikonge",
-        "tabora"
-      ],
-      [
-        "kaliua",
-        "tabora"
-      ],
-      [
-        "bumbuli",
-        "tanga"
-      ],
-      [
-        "handeni",
-        "tanga"
-      ],
-      [
-        "kilindi",
-        "tanga"
-      ],
-      [
-        "korogwe",
-        "tanga"
-      ],
-      [
-        "lushoto",
-        "tanga"
-      ],
-      [
-        "mkinga",
-        "tanga"
-      ],
-      [
-        "muheza",
-        "tanga"
-      ],
-      [
-        "pangani",
-        "tanga"
+        ""
       ]
     ]
   },
-  "makabila-ya-mikoa": {
+  "participles": {
     "fc_data": [
       [
-        "arusha",
-        "maasai, iraqw, meru, arusha"
+        "akar su",
+        "running water"
       ],
       [
-        "dar es salaam",
-        "zigua, sukuma, nyamwezi, makonde, zaramo"
+        "okumuş bir adam",
+        "educated man"
       ],
       [
-        "dodoma",
-        "gogo, kaguru, maasai, hehe"
+        "gelecek sene",
+        "next year, coming year"
       ],
       [
-        "geita",
-        "sukuma, zanaki, sumbwa, longo, zinza"
+        "geçmiş zaman",
+        "passed time, past tense"
       ],
       [
-        "iringa",
-        "hehe, sangu, makonde, bena, kinga, pangwa, wanji, gogo"
+        "bitmez iş",
+        "endless task"
       ],
       [
-        "kagera",
-        "haya, waha, tutsi, nyambo"
+        "seni anlıyacak bir kız",
+        "understanding girl"
       ],
       [
-        "katavi",
-        "bende, holoholo, konongo, pimbwe, tongwe, vinza, fipa"
+        "yazarın evi",
+        "the writer’s house"
       ],
       [
-        "kigoma",
-        "waha, manyema, bembe, tongwe, vinza, nyamwezi, sukuma, fipa, ziba"
+        "olacak oldu",
+        "what was to happen happened"
       ],
       [
-        "kilimanjaro",
-        "chagga, pare, gweno, maasai, kamba"
+        "giden",
+        "going, one who goes"
       ],
       [
-        "lindi",
-        "machinga, mwera, malaba, matumbi, ngindo"
+        "gitmiyen",
+        "not going"
       ],
       [
-        "manyara",
-        "maasai, iraqw, ,bigwe. gprpwa. barbaig"
+        "bilen",
+        "knowing "
       ],
       [
-        "mara",
-        "kurya, luo, sukuma, jita, ruri, zanaki, kabwa, kiroba, simbiti, ngoreme, kwaya, ikomka, nata"
+        "bilmiyen",
+        "not knowing"
       ],
       [
-        "mbeya",
-        "nyakyusa, kimbu, sangu, bungu, ishio, nyiha"
+        "anlıyan",
+        "understanding"
       ],
       [
-        "morogoro",
-        "luguru, doe, kwere, ngulu, kagulu, sagala, pogolo, ndamba, bena, mbungu, kutu, vidunda"
+        "anlamıyan",
+        "not understanding"
       ],
       [
-        "mtwara",
-        "makonde, mwera"
+        "istiyen",
+        "desiring"
       ],
       [
-        "mwanza",
-        "sukuma, zinza, kerewe, kara, jita, zanaki"
+        "istemiyen",
+        "not desiring"
       ],
       [
-        "njombe",
-        "bena, kinga, pangwa"
+        "oraya giden adamlar",
+        "men who go there"
       ],
       [
-        "pwani",
-        "kwere, zaramo, ndengereko, nyagatwa, zigua, doe, rufiji"
+        "ankaraya gidenler",
+        "those who go to ankara"
       ],
       [
-        "rukwa",
-        "fipa, mambwe, wanda, nyamwanga, sukuma, nyamwezi, maasai"
+        "gittikten sonra",
+        "after going / having gone"
       ],
       [
-        "ruvuma",
-        "ngoni;, matengo, yao, ndendeule, manda, nyasa, poto, bena, ndengereko"
+        "geldiğimde",
+        "when I come, came"
       ],
       [
-        "shinyanga",
-        "nyamwezi, sukuma, sumbwa"
+        "her gittiğimde",
+        "at my every going, whenever I go"
       ],
       [
-        "simiyu",
-        "sukuma, nyamwezi"
+        "gelmediğinizden dolayı",
+        "because of your not coming"
       ],
       [
-        "singida",
-        "nyaturu, iraqw, nyiramba, gogo, nyisanzu"
+        "gelen adam",
+        "man who is coming"
       ],
       [
-        "songwe",
-        "nyakyusa, kimbu"
+        "gelecek adam",
+        "man who will come"
       ],
       [
-        "tabora",
-        "sukuma, nyamwezi"
+        "akar su",
+        "water which flows, flowing water"
       ],
       [
-        "tanga",
-        "sambaa, bondei, pare, zigua, bondei, digo, taita, mbugu, segeju, nago"
+        "gördüğüm adam",
+        "man whom I saw"
       ],
       [
-        "zanzibar",
-        "swahili, shiraz"
+        "kitabını aldığım adam",
+        "man whose book I took"
+      ],
+      [
+        "geldiğim gün",
+        "day when I came"
+      ],
+      [
+        "gitmediği halde",
+        "in event that he didn’t go"
+      ],
+      [
+        "geldiğim gibi",
+        "as soon as I came"
+      ],
+      [
+        "koşa",
+        "running"
+      ],
+      [
+        "güle",
+        "laughing"
+      ],
+      [
+        "diye",
+        "saying; spoken quotes, pretext that"
       ]
     ]
   },
-  "misitu_nfr": {
+  "interrogatives": {
     "fc_data": [
       [
-        "hifadhi ya msitu asili",
-        "nature forest reserve (nfr)"
+        "ne",
+        "what, so?"
       ],
       [
-        "mashamba ya miti  -- forest plantation  (fp)"
+        "nedir",
+        "what [factually]?"
       ],
       [
-        "amani nfr",
-        "tanga"
+        "neden",
+        "why (cause, reason)?"
       ],
       [
-        "biharamulo fp",
-        "geita, kagera"
+        "ne zaman",
+        "when, whenever?"
       ],
       [
-        "buhindi fp",
-        "mwanza"
+        "niçin",
+        "why"
       ],
       [
-        "chome nfr",
-        "pwani"
+        "hangi, hangisi",
+        "which?"
       ],
       [
-        "iyondo mswima fp",
-        "songwe"
+        "nerelisin",
+        "where you from?"
       ],
       [
-        "kawetire fp",
-        "mbeya"
+        "neredesin",
+        "where are you?"
       ],
       [
-        "kilombero fp",
-        "morogoro"
+        "nerede",
+        "where?"
       ],
       [
-        "kipo fp",
-        "iringa"
+        "nereye",
+        "where?"
       ],
       [
-        "korogwe fp",
-        "tanga / handeni"
+        "kim",
+        "who?"
       ],
       [
-        "longuza fp",
-        "tanga / usambara mtns"
+        "kimin",
+        "whose?"
       ],
       [
-        "magamba nfr",
-        "tanga"
+        "nasıl",
+        "how? what [type, kind]?"
       ],
       [
-        "mbizi fp",
-        "rukwa"
+        "ne kadar",
+        "how much?"
       ],
       [
-        "meru/usa fp",
-        "arusha / mt meru"
+        "kaç tane",
+        "how many?"
       ],
       [
-        "minziro nfr",
-        "kagera"
-      ],
-      [
-        "mkingu nfr",
-        "tanga"
-      ],
-      [
-        "morogoro fp",
-        "morogoro"
-      ],
-      [
-        "mpepo fp",
-        "ruvuma / nyasa"
-      ],
-      [
-        "mt hanang nfr",
-        "manyara"
-      ],
-      [
-        "mt longido nfr",
-        "arusha"
-      ],
-      [
-        "mt rungwe nfr",
-        "mbeya"
-      ],
-      [
-        "mtibwa fp",
-        "morogoro / mvomero nguu mtns"
-      ],
-      [
-        "nilo nfr",
-        "mbeya"
-      ],
-      [
-        "north kilimanjaro fp",
-        "kilimanjaro"
-      ],
-      [
-        "north ruvu fp",
-        "pwani / kibaha, bagamoyo"
-      ],
-      [
-        "rondo nfr",
-        "lindi"
-      ],
-      [
-        "rubare fp",
-        "kagera / bukoba"
-      ],
-      [
-        "rubya fp",
-        "mwanza / ukerewe"
-      ],
-      [
-        "sao-hill fp",
-        "iringa / mufindi"
-      ],
-      [
-        "shume fp",
-        "tanga / lushoto"
-      ],
-      [
-        "ukaguru fp",
-        "morogoro / ukaguru mtns"
-      ],
-      [
-        "uluguru nfr",
-        "morogoro / kidatu uluguru mtns"
-      ],
-      [
-        "uzungwa scarp nfr",
-        "iringa"
-      ],
-      [
-        "west kilimanjaro fp",
-        "kilimanjaro"
-      ],
-      [
-        "wino fp",
-        "ruvuma / madaba"
+        "kaç kişi",
+        "how many people?"
       ]
     ]
   },
-  "bee-reserves": {
+  "conjunctions": {
     "fc_data": [
       [
-        "mashamba ya nyuki",
-        "national bees reserves (nbr)"
+        "ama",
+        "but"
       ],
       [
-        "malinga nbr",
-        "songwe / momba"
+        "başka",
+        "another, else"
       ],
       [
-        "shinji nbr",
-        "songwe / ileje"
+        "bu kadar",
+        "so, until, as…as"
       ],
       [
-        "kwenyunga-magiri nbr",
-        "tanga / handeni"
+        "çünkü",
+        "because"
       ],
       [
-        "kang’ata nbr",
-        "tanga / handeni"
+        "da/de",
+        "too, also, as well"
       ],
       [
-        "mialo kwamtoro nbr",
-        "dodoma / chemba"
+        "hariç",
+        "except, excluding"
       ],
       [
-        "maganzemzaree nbr",
-        "dodoma / chemba"
+        "ikisi de",
+        "both, two of them"
       ],
       [
-        "songolo nbr",
-        "dodoma / chemba"
+        "İçin",
+        "for"
       ],
       [
-        "lebbajumbe nbr",
-        "dodoma / chemba"
+        "ne",
+        "what, so"
       ],
       [
-        "aghondi nbr",
-        "singida / manyoni"
+        "o zaman",
+        "then, so"
+      ],
+      [
+        "ve",
+        "and"
+      ],
+      [
+        "veya",
+        "IOR, this or that or both"
+      ],
+      [
+        "ya",
+        "what if"
+      ],
+      [
+        "yoksa…mx",
+        "XOR, if there is no other"
+      ],
+      [
+        "𝝙… ya X ya da Y",
+        "𝝙… either X or Y"
+      ],
+      [
+        "𝝙… hem X hem de Y",
+        "𝝙… both X and Y, at same time"
+      ],
+      [
+        "𝝙… ne X ne de Y",
+        "𝝙… neither X nor Y"
       ]
     ]
   },
-  "wanyamapori": {
+  "time": {
     "fc_data": [
       [
-        "hifadhi ya mawindo",
-        "hunting reserve (hr)"
+        "akşam",
+        "evening"
       ],
       [
-        "eneo lenye udhibiti wa wanyamapori",
-        "game controlled area (gca)"
+        "bu gece",
+        "tonight"
       ],
       [
-        "endulen gca",
-        "arusha"
+        "bugün",
+        "today: (this-day)"
       ],
       [
-        "handeni gca",
-        "tanga"
+        "bütün gün",
+        "all day"
       ],
       [
-        "kalimawe gca",
-        "singida"
+        "dün",
+        "yesterday"
       ],
       [
-        "masailand gca",
-        "manyara"
+        "gece",
+        "night"
       ],
       [
-        "kitwai gca",
-        "katavi"
+        "geleceği",
+        "(the) future"
       ],
       [
-        "mapori ya akiba  -- game reserve; hifadhi ya wanyamapori (gr)"
+        "gün",
+        "day"
       ],
       [
-        "biharamulo gr",
-        "geita"
+        "günü",
+        "on ~days: (accusative)"
       ],
       [
-        "burigi gr",
-        "kagera"
+        "hafta",
+        "week"
       ],
       [
-        "ikorongo na grumet gr",
-        "mara"
+        "ay",
+        "month: ayı, aydir"
       ],
       [
-        "kigosi gr",
-        "simiyu"
+        "her",
+        "all, each, every"
       ],
       [
-        "kijereshi gr",
-        "simiyu"
+        "öğle",
+        "noon"
       ],
       [
-        "kingera-mpanya gr",
-        "njombe"
+        "sabah",
+        "morning"
       ],
       [
-        "kipengere mpanga gr",
-        "njombe"
+        "son",
+        "last, final, end"
       ],
       [
-        "kizigo gr",
-        "singida"
+        "son yıllarda",
+        "in recent years"
       ],
       [
-        "luafi gr",
-        "katavi"
+        "sonra",
+        "later, then, after"
       ],
       [
-        "lukwata-lumesale gr",
-        "mtwara"
+        "tarih",
+        "date, history"
       ],
       [
-        "lukwati gr",
-        "rukwa"
+        "yarın",
+        "tomorrow"
       ],
       [
-        "lukwati na piti gr",
-        "songwe"
+        "yıl",
+        "year"
       ],
       [
-        "maswa gr",
-        "simiyu"
+        "asır",
+        "century"
       ],
       [
-        "mkungunero gr",
-        "dodoma"
+        "zaman",
+        "time"
       ],
       [
-        "moyowosi gr",
-        "manyara, kigoma"
+        "şimdi",
+        "now"
       ],
       [
-        "msanjesi gr",
-        "mtwara"
+        "mevsim",
+        "season"
       ],
       [
-        "muhesi gr",
-        "singida"
+        "ilkbahar",
+        "spring"
       ],
       [
-        "n kahama gr",
-        "shinyaga"
+        "yaz",
+        "summer"
       ],
       [
-        "pande gr",
-        "dar es salaam"
+        "sonbahar",
+        "autumn"
       ],
       [
-        "rukwa gr",
-        "rukwa"
+        "kış",
+        "winter"
       ],
       [
-        "rungwa gr",
-        "singida"
+        "gün batımı",
+        "sunset"
       ],
       [
-        "swagaswaga gr",
-        "dodoma"
+        "gün geçmiş",
+        "sunrise"
       ],
       [
-        "usungu gr",
-        "mbeya"
+        "doğum günü",
+        "birthday"
       ],
       [
-        "uwanda gr",
-        "rukwa, songwe"
+        "öğle yemeği",
+        "lunch"
+      ],
+      [
+        "öğleden sonra",
+        "in the afternoon"
+      ],
+      [
+        "akşam yemeği",
+        "dinner"
+      ],
+      [
+        "her zaman",
+        "always, ever"
+      ],
+      [
+        "bütün gün",
+        "all day"
+      ],
+      [
+        "her gün",
+        "daily"
+      ],
+      [
+        "saat",
+        "hour, o’clock"
+      ],
+      [
+        "dakika",
+        "minute"
+      ],
+      [
+        "saniye",
+        "second"
+      ],
+      [
+        "saati",
+        "clock"
+      ],
+      [
+        "saat kaçta?",
+        "at what time, o’clock?"
+      ],
+      [
+        "randevu",
+        "date, appointment"
+      ],
+      [
+        "geçe",
+        "past sth"
+      ],
+      [
+        "kala",
+        "before, at, to"
+      ],
+      [
+        "buçuk",
+        "half past x"
+      ],
+      [
+        "çeyrek geçiyor",
+        "quarter past x"
+      ],
+      [
+        "çeyrek var",
+        "quarter till x"
+      ],
+      [
+        "Pazartesi",
+        "Monday"
+      ],
+      [
+        "Salı",
+        "Tuesday"
+      ],
+      [
+        "Çarşamba",
+        "Wednesday"
+      ],
+      [
+        "Perşembe",
+        "Thursday"
+      ],
+      [
+        "Cuma",
+        "Friday"
+      ],
+      [
+        "Cumartesi",
+        "Saturday"
+      ],
+      [
+        "Pazar",
+        "Sunday"
+      ],
+      [
+        "Ocak",
+        "Jan"
+      ],
+      [
+        "Şubat",
+        "Feb"
+      ],
+      [
+        "Mart",
+        "Mar"
+      ],
+      [
+        "Nisan",
+        "Apr"
+      ],
+      [
+        "Mayıs",
+        "May"
+      ],
+      [
+        "Haziran",
+        "Jun"
+      ],
+      [
+        "Temmuz",
+        "Jul"
+      ],
+      [
+        "Ağustos",
+        "Aug"
+      ],
+      [
+        "Eylül",
+        "Sept"
+      ],
+      [
+        "Ekim",
+        "Oct"
+      ],
+      [
+        "Kasım",
+        "Nov"
+      ],
+      [
+        "Aralık",
+        "Dec"
       ]
     ]
   },
-  "mbuga_pori": {
+  "numbers": {
     "fc_data": [
       [
-        "mbuga za taifa la tanzania",
-        "national park (np)"
+        "sıfır",
+        "0"
       ],
       [
-        "eneo la uhifadhi",
-        "conservation area"
+        "bir",
+        "1"
       ],
       [
-        "ngorongoro",
-        "mkoa: arusha"
+        "iki",
+        "2"
       ],
       [
-        "arusha np",
-        "arusha"
+        "üç",
+        "3"
       ],
       [
-        "burigi-chato np",
-        "kagera"
+        "dört",
+        "4"
       ],
       [
-        "gombe np",
-        "kigoma"
+        "beş",
+        "5"
       ],
       [
-        "ibanda-kyerwa np",
-        "mbeya"
+        "altı",
+        "6"
       ],
       [
-        "jozani chwaka [ghuba ya] np",
-        "zanzibar"
+        "yedi",
+        "7"
       ],
       [
-        "katavi np",
-        "rukwa"
+        "sekiz",
+        "8"
       ],
       [
-        "kilimanjaro [mlima] np",
-        "kilimanjaro"
+        "dokuz",
+        "9"
       ],
       [
-        "kitulo np",
-        "mbeya"
+        "on",
+        "10"
       ],
       [
-        "mahale [milima ya] np",
-        "kigoma"
+        "yirmi",
+        "20"
       ],
       [
-        "manyara [ziwa] np",
-        "manyara"
+        "otuz",
+        "30"
       ],
       [
-        "mikumi np",
-        "morogoro"
+        "kırk",
+        "40"
       ],
       [
-        "mkomazi np",
-        "tanga"
+        "elli",
+        "50"
       ],
       [
-        "ngorongoro np",
-        "arusha"
+        "altmış",
+        "60"
       ],
       [
-        "nyerere np",
-        "lindi, morogoro"
+        "yetmiş",
+        "70"
       ],
       [
-        "ruaha np",
-        "iringa"
+        "seksen",
+        "80"
       ],
       [
-        "rubondo [kisiwa cha]  np",
-        "mwanza"
+        "doksan",
+        "90"
       ],
       [
-        "rumanyika-karagwe np",
-        "kagera"
+        "yüz",
+        "100"
       ],
       [
-        "saadani np",
-        "pwani"
+        "bin",
+        "1,000"
       ],
       [
-        "saanane [kisiwa cha]  np",
-        "mtwara"
+        "azınlık",
+        "minority"
       ],
       [
-        "serengeti np",
-        "mara, simiyu"
+        "çoğunluk",
+        "majority"
       ],
       [
-        "tarangire np",
-        "manyara"
+        "geçen",
+        "last"
       ],
       [
-        "udzungwa [milima ya] np",
-        "iringa"
+        "ilk",
+        "primary, the first"
+      ],
+      [
+        "ikisi(ni)",
+        "both"
+      ],
+      [
+        "kadar",
+        "to [towards?]"
+      ],
+      [
+        "kere",
+        "times"
+      ],
+      [
+        "kez",
+        "times"
+      ],
+      [
+        "sayı",
+        "number"
+      ],
+      [
+        "son",
+        "last, final"
+      ],
+      [
+        "tane",
+        "many [count]"
+      ],
+      [
+        "toplam",
+        "[in] total"
+      ],
+      [
+        "yarım",
+        "half"
+      ],
+      [
+        "yaşı",
+        "age [years old]"
+      ],
+      [
+        "yeterli",
+        "enough"
+      ],
+      [
+        "yüzde",
+        "percent, %"
       ]
     ]
   },
-  "mbuga-bahari": {
+  "food": {
     "fc_data": [
       [
-        "hifadhi za bahari",
-        "marine preserve (mp)"
+        "bira",
+        "beer"
       ],
       [
-        "mafia island mp",
-        "pwani"
+        "çay",
+        "tea"
       ],
       [
-        "tanga coelacanth mp",
-        "tanga"
+        "çilek",
+        "strawberry"
       ],
       [
-        "dar es salaam mp",
-        "dar es salaam"
+        "çorba",
+        "soup"
       ],
       [
-        "mnazi bay-ruvumba estuary mp",
-        "mtwara"
+        "domates",
+        "tomato"
       ],
       [
-        "bongoyo maeneo tengefu",
-        "dar es salaam"
+        "ekmek",
+        "bread"
       ],
       [
-        "mbudya maeneo tengefu",
-        "dar es salaam"
+        "elma",
+        "apple"
+      ],
+      [
+        "et",
+        "meat"
+      ],
+      [
+        "kahve",
+        "coffee"
+      ],
+      [
+        "limon",
+        "lemon"
+      ],
+      [
+        "makarna",
+        "pasta"
+      ],
+      [
+        "mutfağını",
+        "cuisine, kitchen"
+      ],
+      [
+        "meyve",
+        "fruit"
+      ],
+      [
+        "pasta",
+        "cake"
+      ],
+      [
+        "peynir",
+        "cheese"
+      ],
+      [
+        "portakal",
+        "orange"
+      ],
+      [
+        "sandviç",
+        "sandwich"
+      ],
+      [
+        "su",
+        "water"
+      ],
+      [
+        "süt",
+        "milk"
+      ],
+      [
+        "tuz",
+        "salt"
+      ],
+      [
+        "yağ",
+        "oil"
+      ],
+      [
+        "yoğurdu",
+        "yogurt"
+      ],
+      [
+        "yumurta",
+        "egg"
+      ],
+      [
+        "şarap",
+        "wine"
+      ],
+      [
+        "şeker",
+        "sugar"
       ]
     ]
   },
-  "milima": {
+  "animals": {
     "fc_data": [
       [
-        "udzungwa mtns",
-        "iringa"
+        "aslan",
+        "lion"
       ],
       [
-        "uluguru mtns",
-        "morogoro"
+        "at",
+        "horse"
       ],
       [
-        "rungwe mtn",
-        "mbeya"
+        "ayı",
+        "bear"
       ],
       [
-        "usambara mtns",
-        "tanga"
+        "balık",
+        "fish 🐠"
       ],
       [
-        "malundwe mtns",
-        "morogoro"
+        "baykuş",
+        "owl"
       ],
       [
-        "rubeho mtns",
-        "dodoma"
+        "eşek",
+        "donkey"
       ],
       [
-        "longido mtn",
-        "mara"
+        "fare",
+        "mouse"
       ],
       [
-        "kilimanjaro mtn",
-        "kilimanjaro"
+        "fil",
+        "elephant"
       ],
       [
-        "meru mtn",
-        "arusha"
+        "hindi",
+        "turkey"
       ],
       [
-        "pare mtns",
-        "kilimanjaro"
+        "inek",
+        "cow"
       ],
       [
-        "kipengere mtns",
-        "njombe"
+        "yengeç",
+        "crab"
       ],
       [
-        "mahenge mtns",
-        "morogoro"
+        "kaplumbağa",
+        "turtle"
       ],
       [
-        "nguru mtns",
-        "morogoro"
+        "kedi",
+        "cat 😺"
       ],
       [
-        "ukaguru mtns",
-        "morogoro"
+        "köpek",
+        "dog 🐕"
       ],
       [
-        "lukwangule plateau",
-        "morogoro"
+        "koyun",
+        "sheep"
       ],
       [
-        "makonde plateau",
-        "mtwara"
+        "kurbağa",
+        "frog"
       ],
       [
-        "lorujouj plateau",
-        "arusha"
+        "kuzu",
+        "lamb 🐑"
       ],
       [
-        "shira plateau",
-        "kilimanjaro"
+        "kuş",
+        "bird 🐦"
       ],
       [
-        "ufipa plateau",
-        "rukwa"
+        "ördek",
+        "duck"
+      ],
+      [
+        "örümcek",
+        "spider"
+      ],
+      [
+        "tavuk",
+        "chicken"
+      ],
+      [
+        "tavşan",
+        "rabbit"
+      ],
+      [
+        "hayvanat bahçesi",
+        "zoo"
       ]
     ]
   },
-  "ziwa": {
+  "people": {
     "fc_data": [
       [
-        "ziwa victoria",
-        "kanda ya ziwa"
+        "arkadaş",
+        "friend"
       ],
       [
-        "ziwa tanganyika",
-        "kigoma, katavi, rukwa"
+        "erkek arkadaş",
+        "boyfriend"
       ],
       [
-        "ziwa rukwa",
-        "rukwa"
+        "kız arkadaş",
+        "girlfriend"
       ],
       [
-        "ziwa nyasa",
-        "njombe, ruvuma"
+        "oda arkadaşi",
+        "roommate"
       ],
       [
-        "ziwa manyara",
-        "manyara"
+        "ad",
+        "name"
       ],
       [
-        "ziwa natron",
-        "mara"
+        "adam",
+        "man"
       ],
       [
-        "ziwa eyasi",
-        "arusha"
+        "bebek",
+        "baby"
       ],
       [
-        "ziwa burigi",
-        "kagera"
+        "bey",
+        "mister"
       ],
       [
-        "ziwa babati",
-        "manyara"
+        "beyefendi",
+        "sir, gentleman"
       ],
       [
-        "ziwa sulunga ",
-        "dodoma"
+        "birey",
+        "individual"
+      ],
+      [
+        "çocuk",
+        "child"
+      ],
+      [
+        "dişi",
+        "female"
+      ],
+      [
+        "düşman",
+        "enemy"
+      ],
+      [
+        "erkek",
+        "male"
+      ],
+      [
+        "erkek çocuk",
+        "boy"
+      ],
+      [
+        "grup",
+        "group"
+      ],
+      [
+        "halk",
+        "public, society"
+      ],
+      [
+        "hanım",
+        "ms"
+      ],
+      [
+        "hanımefendi",
+        "lady, madam"
+      ],
+      [
+        "hırsız",
+        "thief"
+      ],
+      [
+        "insan",
+        "human"
+      ],
+      [
+        "kadın",
+        "woman"
+      ],
+      [
+        "kişi",
+        "people"
+      ],
+      [
+        "komitesi",
+        "committee"
+      ],
+      [
+        "komşu",
+        "neighbor"
+      ],
+      [
+        "kurban",
+        "victim"
+      ],
+      [
+        "kız",
+        "girl"
+      ],
+      [
+        "misafir",
+        "guest"
+      ],
+      [
+        "müşteri",
+        "customer"
+      ],
+      [
+        "nüfusu",
+        "population"
+      ],
+      [
+        "oğlan",
+        "boy"
+      ],
+      [
+        "satıcı",
+        "vendor, seller"
+      ],
+      [
+        "sevgil",
+        "lover, boyfriend, girlfriend"
+      ],
+      [
+        "şahid",
+        "witness"
+      ],
+      [
+        "şehir",
+        "city, town"
+      ],
+      [
+        "üye",
+        "member"
+      ],
+      [
+        "vatandaş",
+        "citizen"
+      ],
+      [
+        "yetişkin",
+        "adult"
       ]
     ]
   },
-  "mito": {
+  "family": {
     "fc_data": [
       [
-        "rufiji mto",
-        "pwani"
+        "amca",
+        "uncle (paternal)"
       ],
       [
-        "ruvuma mto",
-        "ruvuma"
+        "hala",
+        "aunt   (paternal)"
       ],
       [
-        "kagera mto",
-        "kagera"
+        "dede",
+        "grandpa"
       ],
       [
-        "pangani mto",
-        "tanga"
+        "babaanne",
+        "grandma (paternal)"
       ],
       [
-        "wami mto",
-        "morogoro, pwani"
+        "dayı",
+        "uncle (maternal) "
       ],
       [
-        "malagarasi mto",
-        "kigoma"
+        "teyze",
+        "aunt (maternal) "
       ],
       [
-        "mara mto",
-        "mara"
+        "anneanne",
+        "grandma (maternal)"
       ],
       [
-        "mori mto",
-        "mara"
+        "annebaba",
+        "grandpa (maternal)"
       ],
       [
-        "bandarini mto",
-        "dar"
+        "abi",
+        "older brother"
       ],
       [
-        "kimanga mto",
-        "dar"
+        "abla",
+        "older sister"
       ],
       [
-        "kimani mto",
-        "dar"
+        "aile",
+        "family"
       ],
       [
-        "kinyenyele mto",
-        "dar"
+        "anne",
+        "mother"
       ],
       [
-        "kurasini mto",
-        "dar"
+        "ağabeyi",
+        "older brother"
       ],
       [
-        "kwangula mto",
-        "dar"
+        "baba",
+        "father"
       ],
       [
-        "luhanga mto",
-        "dar"
+        "kardeş",
+        "sibling, bro"
       ],
       [
-        "makulamula mto",
-        "dar"
+        "kuzen",
+        "cousin"
       ],
       [
-        "mambizi mto",
-        "dar"
+        "kız evlat",
+        "daughter"
       ],
       [
-        "manyema mto",
-        "dar"
+        "oğul",
+        "son"
       ],
       [
-        "masika mto",
-        "dar"
+        "yeğen",
+        "niece/nephew"
       ],
       [
-        "mazizini mto",
-        "dar"
+        "bekar",
+        "single"
       ],
       [
-        "mbezi mto",
-        "dar"
+        "evli",
+        "married"
       ],
       [
-        "mborohadi mto",
-        "dar"
+        "eşi",
+        "spouse"
       ],
       [
-        "mgigawa mto",
-        "dar"
+        "karı",
+        "wife"
       ],
       [
-        "minyonyoni mto",
-        "dar"
+        "koca",
+        "husband"
       ],
       [
-        "mironge mto",
-        "dar"
+        "büyükanne",
+        "grandmother"
       ],
       [
-        "mnguvia mto",
-        "dar"
+        "büyükbaba",
+        "grandfather"
       ],
       [
-        "moshibar mto",
-        "dar"
-      ],
-      [
-        "mpiji mto",
-        "dar"
-      ],
-      [
-        "msimbazi mto",
-        "dar"
-      ],
-      [
-        "mulalakuwa mto",
-        "dar"
-      ],
-      [
-        "mzinga mto",
-        "dar"
-      ],
-      [
-        "nyakasangwe mto",
-        "dar"
-      ],
-      [
-        "quarter mto",
-        "dar"
-      ],
-      [
-        "sinza mto",
-        "dar"
-      ],
-      [
-        "tegeta mto",
-        "dar"
-      ],
-      [
-        "ubungo mto",
-        "dar"
-      ],
-      [
-        "ukooni mto",
-        "dar"
-      ],
-      [
-        "uvumba mto",
-        "dar"
-      ],
-      [
-        "zimbire mto",
-        "dar"
+        "torun",
+        "grandchild"
       ]
     ]
   },
-  "njia-reli": {
+  "careers": {
     "fc_data": [
       [
-        "central line",
-        "dar es salaam, ruvu [jct tanga line], morogoro , kilosa [jct kidatu line], gulwe, igandu, dodoma, manyoni [jct singida line], itigi, ikungu, tabora [jct mwanza line], kaliua [jct mpanda line], kigoma"
+        "asker",
+        "soldier"
       ],
       [
-        "kidatu line",
-        "kilosa [jct central line], kidatu [jct tazara line]"
+        "avukat",
+        "lawyer, advice"
       ],
       [
-        "mwanza line",
-        "tabora [jct central line], bukene, isaka [dry port], shinyanga, mwanza"
+        "aşçı",
+        "cook"
       ],
       [
-        "mpanda line",
-        "kaliua [jct central line], mpanda"
+        "başkan",
+        "president"
       ],
       [
-        "singida line",
-        "manyoni [jct central line], issuna, ikungi, puma, singida"
+        "bekçi",
+        "guard"
       ],
       [
-        "link line",
-        "morogoro [jct central line], ruvu [jct central line], kitonga, sadani, hale - [mruazi jct tanga line], korogwe [jct tanga line]"
+        "çiftçi",
+        "farmer"
       ],
       [
-        "tanga line",
-        "tanga, korogwe [jct link line], mkomazi, same, moshi [jct kenya], arusha"
+        "doktor",
+        "doctor"
       ],
       [
-        "sgr line",
-        "dar es salaam, pugu, soga, ruvu, morogoro, mkata, kilosa, igandu, dodoma, bahi, makutupora, tabora, bukene, nzubuka, isaka, mwanza, kigoma"
+        "garson",
+        "waiter, server"
       ],
       [
-        "mtwara line [proposed]",
-        "mtwara, lindi, nachingwea, mchuchuma, songea, mbamba bay"
+        "iş",
+        "job, work, business"
       ],
       [
-        "tazara line",
-        "dar es salaam, mzenga, kisaki, kidatu [jct kidatu line], mang'ula, kiberege, ifakara, lwipa, mbingu, mngeta, chita, mlimba, makambako, chimala, mbeya, mbozi, vwawa, tunduma [border], zambia mkushi, kasama"
+        "işçi",
+        "worker"
+      ],
+      [
+        "işim",
+        "my job"
+      ],
+      [
+        "işin",
+        "your job"
+      ],
+      [
+        "işsiz",
+        "jobless"
+      ],
+      [
+        "kaptan",
+        "captain"
+      ],
+      [
+        "kariyeri",
+        "career"
+      ],
+      [
+        "memur",
+        "civil servant, officer"
+      ],
+      [
+        "mesleği",
+        "job, profession"
+      ],
+      [
+        "mimar",
+        "architect"
+      ],
+      [
+        "mühendis",
+        "engineer"
+      ],
+      [
+        "oyuncu",
+        "actor, player"
+      ],
+      [
+        "öğrenci",
+        "student"
+      ],
+      [
+        "öğretmen",
+        "teacher"
+      ],
+      [
+        "patron",
+        "boss"
+      ],
+      [
+        "personel",
+        "staff"
+      ],
+      [
+        "polis memur",
+        "political officer"
+      ],
+      [
+        "profesyonel",
+        "professer"
+      ],
+      [
+        "ressam",
+        "painter"
+      ],
+      [
+        "sanatçı",
+        "artist, singer"
+      ],
+      [
+        "sekreteri",
+        "secretary"
+      ],
+      [
+        "yargıç",
+        "judge"
+      ],
+      [
+        "yazarın",
+        "author"
+      ],
+      [
+        "yönetmen",
+        "director, producer"
+      ],
+      [
+        "şarkıcı",
+        "singer"
       ]
     ]
   },
-  "gen-hydro": {
+  "education": {
     "fc_data": [
       [
-        "kidatu hydro",
-        "morogoro"
+        "açıklam",
+        "explain, statement"
       ],
       [
-        "kihansi hydro",
-        "morogoro"
+        "alfabesinde",
+        "alphabet"
       ],
       [
-        "mtera hydro",
-        "iringa"
+        "alıştırma",
+        "exercise, practice"
       ],
       [
-        "pangani falls hydro",
-        "tanga"
+        "amacı",
+        "purpose, aim"
       ],
       [
-        "hale hydro",
-        "kilimanjaro"
+        "anlamı",
+        "meaning of"
       ],
       [
-        "uwemba hydro",
-        "rukwa"
+        "başvuru",
+        "application"
       ],
       [
-        "nyumba ya mungu hydro",
-        "iringa"
+        "bilgi",
+        "information, knowledge"
       ],
       [
-        "nyerere hydro",
-        "pwani"
+        "biyoloji",
+        "biology"
+      ],
+      [
+        "bölüm",
+        "department"
+      ],
+      [
+        "cümle",
+        "sentence"
+      ],
+      [
+        "coğrafya",
+        "geography"
+      ],
+      [
+        "çalışmalar",
+        "studies"
+      ],
+      [
+        "dersi",
+        "class, lesson"
+      ],
+      [
+        "evrak",
+        "document"
+      ],
+      [
+        "fizik",
+        "physics"
+      ],
+      [
+        "harf(li)",
+        "letter"
+      ],
+      [
+        "hata",
+        "err, mistake"
+      ],
+      [
+        "kalem",
+        "pen"
+      ],
+      [
+        "kelime",
+        "word"
+      ],
+      [
+        "kimya",
+        "chemistry"
+      ],
+      [
+        "konferans",
+        "conference"
+      ],
+      [
+        "konu",
+        "topic, subject"
+      ],
+      [
+        "kursu",
+        "course"
+      ],
+      [
+        "kütüphane",
+        "library"
+      ],
+      [
+        "matematik",
+        "math"
+      ],
+      [
+        "not",
+        "notes, grade"
+      ],
+      [
+        "ödevi",
+        "homework"
+      ],
+      [
+        "örnek",
+        "example"
+      ],
+      [
+        "öğrenmek",
+        "learn"
+      ],
+      [
+        "öğretmek",
+        "teach"
+      ],
+      [
+        "profesör",
+        "professor"
+      ],
+      [
+        "program",
+        "schedule"
+      ],
+      [
+        "raporu",
+        "report"
+      ],
+      [
+        "sayfa",
+        "page, sheet"
+      ],
+      [
+        "sınav",
+        "exam, test"
+      ],
+      [
+        "sınıf",
+        "classroom"
+      ],
+      [
+        "sunum",
+        "presentation"
+      ],
+      [
+        "üniversite",
+        "university, college"
+      ],
+      [
+        "ünite",
+        "section, unit"
       ]
     ]
   },
-  "gen-thermal": {
+  "travel": {
     "fc_data": [
       [
-        "kinyerezi power-gen",
-        "dar es salaam"
+        "araba",
+        "car"
       ],
       [
-        "ubungo power-gen",
-        "dar es salaam"
+        "bavul",
+        "suitcase"
       ],
       [
-        "tegeta power-gen",
-        "dar es salaam"
+        "bilet",
+        "ticket"
       ],
       [
-        "somanga power-gen",
-        "pwani"
+        "bisiklet",
+        "bicycle"
       ],
       [
-        "mtwara power-gen",
-        "mtwara"
+        "dağ",
+        "mountain"
       ],
       [
-        "zuzu dodoma power-gen",
-        "dodoma"
+        "dolmuş",
+        "shared taxi"
       ],
       [
-        "nyakato power-gen",
-        "mwanza"
+        "durak",
+        "[bus] stop"
       ],
       [
-        "ngara power-gen",
-        "kagera"
+        "ehliyet",
+        "driver license"
       ],
       [
-        "biharamulo power-gen",
-        "kagera"
+        "gemi",
+        "ship"
       ],
       [
-        "songea power-gen",
-        "ruvuma"
+        "göl",
+        "lake"
       ],
       [
-        "mbina power-gen",
-        "mbeya"
+        "harıta",
+        "map"
       ],
       [
-        "ludewa power-gen",
-        "iringa"
+        "hostesi",
+        "stewardess"
       ],
       [
-        "amtumbo power-gen",
-        "tanga"
+        "kamyon",
+        "truck"
       ],
       [
-        "liwale power-gen",
-        "lindi"
+        "kat(ta)",
+        "floor (on the)"
       ],
       [
-        "tunduru power-gen",
-        "ruvuma"
+        "metro",
+        "subway"
       ],
       [
-        "madaba power-gen",
-        "songwe"
+        "okyanus",
+        "ocean"
+      ],
+      [
+        "otobus",
+        "bus"
+      ],
+      [
+        "pasaport",
+        "passport"
+      ],
+      [
+        "rehber",
+        "guide"
+      ],
+      [
+        "rezervasyon",
+        "reservation"
+      ],
+      [
+        "seyahat",
+        "trip, journey"
+      ],
+      [
+        "taraf(da)",
+        "side, direction"
+      ],
+      [
+        "tatil",
+        "holiday"
+      ],
+      [
+        "tren",
+        "train"
+      ],
+      [
+        "turist",
+        "tourist"
+      ],
+      [
+        "uçak",
+        "airplane"
+      ],
+      [
+        "uçuş",
+        "flight"
+      ],
+      [
+        "yol",
+        "road"
+      ],
+      [
+        "yolcu",
+        "traveler"
+      ],
+      [
+        "yolculuk",
+        "journey, trip"
+      ],
+      [
+        "yolu",
+        "way"
       ]
     ]
   },
-  "kata-za-dar": {
+  "places": {
     "fc_data": [
       [
-        "kinondoni",
-        "bunju, hananasif, kawe, kigogo, kijitonyama, kinondoni, kunduchi, mabwepande, makongo, makumbusho, makurumla, mbezi, mbezi juu, mbweni, mikocheni, msasani, mwananyamala, mzimuni, ndugumbi, saranga, tandale, wazo"
+        "ada",
+        "island"
       ],
       [
-        "ubungo",
-        "goba, kibamba, kimara, kwembe, mabibo, magomeni, makuburi, makurumla, manzese, mburahati, msigani, saranga, sinza, ubungo"
+        "bahçe",
+        "garden"
       ],
       [
-        "ilala",
-        "buguruni, chanika, gerezani, gongo la mboto, ilala, jangwani, kariakoo, kimanga, kinyerezi, kipawa, kisutu, kitunda, kivukoni, kivule, kiwalani, majohe, mchafukoge, mchikichini, msongola, pugu, segerea, tabata, ukonga, upanga magharibi, upanga mashariki, vingunguti"
+        "bakkal",
+        "grocery store"
       ],
       [
-        "temeke",
-        "azimio, buza, chamazi, chang'ombe, charambe, keko, kiburugwa, kijichi, kilakala, kurasini, makangarawe, mbagala, mbagala kuu, mianzini, miburani, mtoni, sandali, tandika, temeke, toangoma, yombo vituka"
+        "banka",
+        "bank"
       ],
       [
-        "kigamboni",
-        "kibada, kigamboni, kimbiji, kisarawe ii, mjimwema, pembamnazi, somangila, tungi, vijibweni "
+        "banyo",
+        "bathroom"
+      ],
+      [
+        "bar",
+        "bar"
+      ],
+      [
+        "camisi",
+        "mosque"
+      ],
+      [
+        "deniz",
+        "sea"
+      ],
+      [
+        "ev",
+        "house"
+      ],
+      [
+        "hastane",
+        "hospital"
+      ],
+      [
+        "havalimanı",
+        "airport"
+      ],
+      [
+        "havuz",
+        "pool"
+      ],
+      [
+        "istasyon",
+        "station"
+      ],
+      [
+        "kahvaltı",
+        "breakfast"
+      ],
+      [
+        "kale",
+        "castle"
+      ],
+      [
+        "kilise",
+        "church"
+      ],
+      [
+        "köy",
+        "village"
+      ],
+      [
+        "kumsal",
+        "beach"
+      ],
+      [
+        "liman",
+        "port"
+      ],
+      [
+        "mahalle",
+        "neighborhood"
+      ],
+      [
+        "mutfak",
+        "kitchen"
+      ],
+      [
+        "müze",
+        "museum"
+      ],
+      [
+        "oda",
+        "room"
+      ],
+      [
+        "ofis",
+        "office"
+      ],
+      [
+        "okul",
+        "school"
+      ],
+      [
+        "okyanus",
+        "ocean"
+      ],
+      [
+        "otel",
+        "hotel"
+      ],
+      [
+        "park",
+        "park"
+      ],
+      [
+        "pastane",
+        "patisserie"
+      ],
+      [
+        "postane",
+        "post office"
+      ],
+      [
+        "restoran",
+        "restaurant"
+      ],
+      [
+        "saray",
+        "palace"
+      ],
+      [
+        "sinema",
+        "movie theater"
+      ],
+      [
+        "süpermaket",
+        "supermarket"
+      ],
+      [
+        "taksi",
+        "taxi"
+      ],
+      [
+        "tuvalet",
+        "toilet"
+      ],
+      [
+        "sol",
+        "left"
+      ],
+      [
+        "sağ",
+        "right"
+      ],
+      [
+        "kuzey",
+        "north"
+      ],
+      [
+        "güney",
+        "south"
+      ],
+      [
+        "doğu",
+        "east"
+      ],
+      [
+        "batı",
+        "west"
+      ],
+      [
+        "batıda",
+        "in the west"
+      ],
+      [
+        "batısı",
+        "west of sth"
+      ],
+      [
+        "batṡında",
+        "west of sth"
       ]
     ]
   },
-  "maporomoko-maji": {
+  "objects": {
     "fc_data": [
       [
-        "maporomoko ya maji",
-        "waterfalls"
+        "anahtar",
+        "key"
       ],
       [
-        "kalambo",
-        "rukwa / mpanda; mbizi nfr"
+        "bardak",
+        "drink glass"
       ],
       [
-        "marangu",
-        "kilimanjaro / moshi; kilimanjaro np"
+        "bayrak",
+        "flag"
       ],
       [
-        "materuni",
-        "kilimanjaro / moshi; mt meru ca"
+        "bilgi",
+        "information, knowledge"
       ],
       [
-        "sanje",
-        "morogoro / mikumi; udzungwa mountains np"
+        "bilgisayar",
+        "computer"
       ],
       [
-        "nduruma",
-        "arusha / arusha; mt meru nfr"
+        "bıçak",
+        "knife"
       ],
       [
-        "napuru",
-        "arusha / arusha; mt meru ca"
+        "cam",
+        "glass"
       ],
       [
-        "ndoro",
-        "kilimanjaro / moshi; mount kilimanjaro np"
+        "çanta",
+        "purse, bag"
       ],
       [
-        "kisasa",
-        "tanga / lushoto; west usambara mountain reserve"
+        "çarşaflar",
+        "bedsheets"
       ],
       [
-        "choma",
-        "morogoro / morogoro; mikumi np"
+        "çatal",
+        "fork"
       ],
       [
-        "ngere sero",
-        "arusha / arusha; lake natron"
+        "çatı",
+        "roof"
       ],
       [
-        "kapotogwe",
-        "mbeya / mbeya"
+        "cep",
+        "pocket"
       ],
       [
-        "mbokomu",
-        "kilimanjaro / moshi"
+        "cep telefonu",
+        "cell phone"
+      ],
+      [
+        "cüzdan",
+        "wallet"
+      ],
+      [
+        "duvar",
+        "wall"
+      ],
+      [
+        "fincan",
+        "cup"
+      ],
+      [
+        "fotoğraf",
+        "photograph"
+      ],
+      [
+        "havlu",
+        "towel"
+      ],
+      [
+        "hediye",
+        "gift"
+      ],
+      [
+        "kanepe",
+        "sofa, couch"
+      ],
+      [
+        "kapı",
+        "door"
+      ],
+      [
+        "kaşık",
+        "spoon"
+      ],
+      [
+        "kutu",
+        "box"
+      ],
+      [
+        "lamba",
+        "lamp"
+      ],
+      [
+        "makas",
+        "scissors"
+      ],
+      [
+        "masa",
+        "table"
+      ],
+      [
+        "mektup",
+        "letter"
+      ],
+      [
+        "pencere",
+        "window"
+      ],
+      [
+        "radyo",
+        "radio"
+      ],
+      [
+        "sandalye",
+        "chair"
+      ],
+      [
+        "şemsiye",
+        "umbrella"
+      ],
+      [
+        "şişe",
+        "bottle"
+      ],
+      [
+        "tabak",
+        "plate"
+      ],
+      [
+        "tava",
+        "pan"
+      ],
+      [
+        "tencere",
+        "pot"
+      ],
+      [
+        "televizyon",
+        "tv"
+      ],
+      [
+        "ülke",
+        "country"
+      ],
+      [
+        "yatak",
+        "bed"
+      ],
+      [
+        "yer",
+        "floor, space"
+      ],
+      [
+        "çay kaşığı",
+        "teaspoon"
+      ],
+      [
+        "kapı kom",
+        "nextdoor neighbor"
       ]
     ]
   },
-  "masoko-dar": {
+  "clothing": {
     "fc_data": [
       [
-        "masoko ya dar",
-        "open air markets in dar"
+        "çift",
+        "pair, couple of sth"
       ],
       [
-        "kariakoo",
-        "ilala"
+        "ayakkabı",
+        "shoe"
       ],
       [
-        "mabibo",
-        "mabibo"
+        "gömlek",
+        "shirt"
       ],
       [
-        "ilala",
-        "ilala"
+        "elbise",
+        "dress"
       ],
       [
-        "mwananyamala",
-        "mwananyamala"
+        "etek",
+        "skirt"
       ],
       [
-        "mbagala",
-        "mbagala"
+        "pantolon",
+        "pants"
       ],
       [
-        "kivukoni",
-        "kariakoo"
+        "gözlük",
+        "glasses"
       ],
       [
-        "magomeni",
-        "temeke"
+        "takım elbise",
+        "suit"
       ],
       [
-        "tandika",
-        "temeke"
+        "şapka",
+        "hat"
       ],
       [
-        "pugu kajiungeni",
-        "pugu"
-      ],
-      [
-        "africa sana",
-        "kijitonyama, shekilango road"
-      ],
-      [
-        "bunju b",
-        "bunju b"
-      ],
-      [
-        "tegeta nyuki",
-        "tegeta nyuki"
-      ],
-      [
-        "gongalamboto",
-        "gongalamboto"
+        "ceketi",
+        "jacket, coat"
       ]
     ]
   },
-  "bridges": {
+  "colors": {
     "fc_data": [
       [
-        "madaraja",
-        "bridges"
+        "beyaz",
+        "white"
       ],
       [
-        "tanzanite",
-        "dar es salaam, dar es salaam / msimbazi river"
+        "gri",
+        "gray"
       ],
       [
-        "nyerere",
-        "dar, kigamboni / gulf of dar"
+        "kahverengi",
+        "brown"
       ],
       [
-        "kigongo-busisi",
-        "mwanza, mwanza / gulf of mwanza"
+        "kırmızı",
+        "red"
       ],
       [
-        "mkapa",
-        "pwani, ikwiri / rufiji river"
+        "mavi",
+        "blue"
       ],
       [
-        "unity",
-        "mtwara, mtambaswala / ruvuma river"
+        "mor",
+        "purple"
       ],
       [
-        "kilombero",
-        "morogoro, ifakara / mnyera river"
+        "pembe",
+        "pink, rose"
       ],
       [
-        "kyaka",
-        "kagera, kyaka / kagera river"
+        "sarı",
+        "yellow"
       ],
       [
-        "songwe",
-        "mbeya, malawi / songwe river"
+        "siyah",
+        "black"
       ],
       [
-        "kikwete",
-        "kigoma, uvinza / malagarasi river"
+        "turuncu",
+        "orange"
+      ],
+      [
+        "yeşil",
+        "green"
+      ],
+      [
+        "rengarenk",
+        "colorful"
+      ]
+    ]
+  },
+  "abstracts": {
+    "fc_data": [
+      [
+        "hayat",
+        "lifetime"
+      ],
+      [
+        "sevgi",
+        "love"
+      ],
+      [
+        "sorun",
+        "problem"
+      ],
+      [
+        "duygu",
+        "feeling"
+      ],
+      [
+        "ask",
+        "love, eros"
+      ],
+      [
+        "can",
+        "spirit, life"
+      ],
+      [
+        "canım",
+        "my dear"
+      ],
+      [
+        "görüş",
+        "viewpoint"
+      ],
+      [
+        "sistem",
+        "system"
+      ],
+      [
+        "tür",
+        "type, class"
+      ],
+      [
+        "fikir",
+        "opinion"
+      ],
+      [
+        "tip",
+        "type"
+      ],
+      [
+        "hizmet",
+        "service"
+      ],
+      [
+        "bakış",
+        "look, view"
+      ],
+      [
+        "servis",
+        "service"
+      ],
+      [
+        "düşünce",
+        "thought, idea"
+      ],
+      [
+        "liste",
+        "list"
+      ],
+      [
+        "kontrol",
+        "control, check"
+      ],
+      [
+        "durum",
+        "situation, issue"
+      ],
+      [
+        "yardım",
+        "help"
+      ],
+      [
+        "değişik",
+        "different, change"
+      ],
+      [
+        "emir",
+        "orders"
+      ]
+    ]
+  },
+  "politics": {
+    "fc_data": [
+      [
+        "aday",
+        "candidate"
+      ],
+      [
+        "bakan",
+        "minister"
+      ],
+      [
+        "barış",
+        "peace"
+      ],
+      [
+        "başbakan",
+        "prime minister"
+      ],
+      [
+        "belediye",
+        "city hall, council"
+      ],
+      [
+        "cumhur-başkanı",
+        "president"
+      ],
+      [
+        "dava",
+        "lawsuit"
+      ],
+      [
+        "devlet",
+        "the state"
+      ],
+      [
+        "gazeteci",
+        "journalist"
+      ],
+      [
+        "görevi",
+        "task, duty"
+      ],
+      [
+        "güvenliği",
+        "security"
+      ],
+      [
+        "halka",
+        "the public"
+      ],
+      [
+        "hizmet",
+        "service"
+      ],
+      [
+        "hukuki",
+        "legal"
+      ],
+      [
+        "hükümet",
+        "government"
+      ],
+      [
+        "iddia",
+        "claims, allegations"
+      ],
+      [
+        "kural",
+        "rule"
+      ],
+      [
+        "lideri",
+        "leader"
+      ],
+      [
+        "mecliste",
+        "parliament"
+      ],
+      [
+        "millet-vekili",
+        "member parliament"
+      ],
+      [
+        "oy",
+        "vote"
+      ],
+      [
+        "parti",
+        "pol party"
+      ],
+      [
+        "politikacı",
+        "politician"
+      ],
+      [
+        "rüşvet",
+        "bribery"
+      ],
+      [
+        "seçim",
+        "election, choice"
+      ],
+      [
+        "vali",
+        "governor"
+      ],
+      [
+        "yasa",
+        "law"
+      ],
+      [
+        "yolsuzluk",
+        "corruption"
+      ]
+    ]
+  },
+  "health": {
+    "fc_data": [
+      [
+        "acil",
+        "emergence"
+      ],
+      [
+        "ambulans",
+        "ambulance"
+      ],
+      [
+        "ateşi",
+        "temp, fire"
+      ],
+      [
+        "ayak",
+        "foot"
+      ],
+      [
+        "ağrı",
+        "pain"
+      ],
+      [
+        "ağız",
+        "mouth"
+      ],
+      [
+        "başı",
+        "head"
+      ],
+      [
+        "boy",
+        "height"
+      ],
+      [
+        "boyun",
+        "neck"
+      ],
+      [
+        "boğaz",
+        "throat"
+      ],
+      [
+        "burun",
+        "nose"
+      ],
+      [
+        "cilt",
+        "skin"
+      ],
+      [
+        "diş",
+        "tooth"
+      ],
+      [
+        "el",
+        "hand"
+      ],
+      [
+        "göz",
+        "eye"
+      ],
+      [
+        "hastalık",
+        "disease, ill"
+      ],
+      [
+        "ilaç",
+        "medicine"
+      ],
+      [
+        "kalp krizi",
+        "heart attack"
+      ],
+      [
+        "kan",
+        "blood"
+      ],
+      [
+        "kan grubun",
+        "blood type"
+      ],
+      [
+        "kanser",
+        "cancer"
+      ],
+      [
+        "kaza",
+        "accident"
+      ],
+      [
+        "kulak",
+        "ear"
+      ],
+      [
+        "kusma",
+        "vomit"
+      ],
+      [
+        "nöbet",
+        "seizure"
+      ],
+      [
+        "sağlıklı",
+        "healthy"
+      ],
+      [
+        "ses",
+        "voice"
+      ],
+      [
+        "sırt",
+        "back, ridge"
+      ],
+      [
+        "vücud",
+        "body"
+      ],
+      [
+        "yüz",
+        "face"
+      ]
+    ]
+  },
+  "nature": {
+    "fc_data": [
+      [
+        "ay",
+        "moon"
+      ],
+      [
+        "ağaç",
+        "tree"
+      ],
+      [
+        "bölgede",
+        "area"
+      ],
+      [
+        "bulutlar",
+        "clouds"
+      ],
+      [
+        "buz",
+        "ice"
+      ],
+      [
+        "çevre",
+        "environment"
+      ],
+      [
+        "çiçek",
+        "flower"
+      ],
+      [
+        "dağ",
+        "mountain"
+      ],
+      [
+        "dolu",
+        "hail"
+      ],
+      [
+        "doğa",
+        "nature"
+      ],
+      [
+        "dünya",
+        "earth"
+      ],
+      [
+        "evren",
+        "universe"
+      ],
+      [
+        "fırtına",
+        "storm"
+      ],
+      [
+        "gezegen",
+        "planet, globe"
+      ],
+      [
+        "gökyüzü",
+        "sky"
+      ],
+      [
+        "gül",
+        "rose"
+      ],
+      [
+        "güneş",
+        "sun"
+      ],
+      [
+        "hava",
+        "air, weather"
+      ],
+      [
+        "işık",
+        "light"
+      ],
+      [
+        "iklim",
+        "climate"
+      ],
+      [
+        "kar",
+        "snow"
+      ],
+      [
+        "kum",
+        "sand"
+      ],
+      [
+        "lale",
+        "tulip"
+      ],
+      [
+        "nehrin",
+        "river"
+      ],
+      [
+        "orman",
+        "forest"
+      ],
+      [
+        "rüzgar",
+        "wind"
+      ],
+      [
+        "sis",
+        "fog"
+      ],
+      [
+        "taş",
+        "stone"
+      ],
+      [
+        "yaprak",
+        "leaf"
+      ],
+      [
+        "yağmur",
+        "rain"
+      ],
+      [
+        "yıldız",
+        "star"
+      ]
+    ]
+  },
+  "arts-sports": {
+    "fc_data": [
+      [
+        "dizi",
+        "tv series"
+      ],
+      [
+        "edebiyat",
+        "literature"
+      ],
+      [
+        "film",
+        "movie"
+      ],
+      [
+        "gitarı",
+        "guitar"
+      ],
+      [
+        "keman",
+        "violin"
+      ],
+      [
+        "müzik",
+        "music"
+      ],
+      [
+        "piyanist",
+        "pianist"
+      ],
+      [
+        "rolü",
+        "role"
+      ],
+      [
+        "sahneye",
+        "the stage"
+      ],
+      [
+        "tiyatro",
+        "theater"
+      ],
+      [
+        "şair",
+        "poet"
+      ],
+      [
+        "şarkı",
+        "song"
+      ],
+      [
+        "şiir",
+        "poem"
+      ],
+      [
+        "takım",
+        "team"
+      ],
+      [
+        "top",
+        "ball"
+      ],
+      [
+        "oyun",
+        "game"
+      ],
+      [
+        "futbolcu",
+        "fütball player"
+      ],
+      [
+        "gol",
+        "goal"
+      ],
+      [
+        "maçta",
+        "match"
+      ]
+    ]
+  },
+  "science": {
+    "fc_data": [
+      [
+        "araştırma",
+        "research"
+      ],
+      [
+        "bilim",
+        "science"
+      ],
+      [
+        "bilimsel",
+        "scientific"
+      ],
+      [
+        "buluş",
+        "invention"
+      ],
+      [
+        "deney",
+        "experimnt"
+      ],
+      [
+        "derece",
+        "degree"
+      ],
+      [
+        "enerji",
+        "energy"
+      ],
+      [
+        "etki",
+        "effect"
+      ],
+      [
+        "evrim",
+        "evolution"
+      ],
+      [
+        "gerçekler",
+        "facts"
+      ],
+      [
+        "laboratuvar",
+        "laboratory"
+      ],
+      [
+        "makale",
+        "article"
+      ],
+      [
+        "özellik",
+        "feature"
+      ],
+      [
+        "sıcaklık",
+        "temperature, heat"
+      ],
+      [
+        "teknoloji",
+        "technology"
+      ],
+      [
+        "teori",
+        "theory"
+      ]
+    ]
+  },
+  "business": {
+    "fc_data": [
+      [
+        "altın",
+        "gold"
+      ],
+      [
+        "ameliyat",
+        "operation"
+      ],
+      [
+        "bütçe",
+        "budget"
+      ],
+      [
+        "ekonomi",
+        "the economy"
+      ],
+      [
+        "endüstri",
+        "industry"
+      ],
+      [
+        "firma",
+        "the firm"
+      ],
+      [
+        "fiyat",
+        "price"
+      ],
+      [
+        "gelir",
+        "income"
+      ],
+      [
+        "masrafı",
+        "expense"
+      ],
+      [
+        "para",
+        "money"
+      ],
+      [
+        "piyasa",
+        "the market"
+      ],
+      [
+        "proje",
+        "project"
+      ],
+      [
+        "risk",
+        "risk"
+      ],
+      [
+        "satış",
+        "sales"
+      ],
+      [
+        "sigorta",
+        "insurance"
+      ],
+      [
+        "ticareti",
+        "trade"
+      ],
+      [
+        "üretim",
+        "production"
+      ],
+      [
+        "ürün",
+        "product"
+      ],
+      [
+        "vergi",
+        "taxes"
+      ],
+      [
+        "şirket",
+        "company"
+      ]
+    ]
+  },
+  "basic": {
+    "fc_data": [
+      [
+        "tbd",
+        "tbd"
+      ]
+    ]
+  },
+  "general": {
+    "fc_data": [
+      [
+        "tbd",
+        "tbd"
       ]
     ]
   }

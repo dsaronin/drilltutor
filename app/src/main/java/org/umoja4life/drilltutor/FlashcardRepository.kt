@@ -4,51 +4,42 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class FlashcardRepository(private val dataSource: FlashcardDataSource) {
-
+@Singleton
+class FlashcardRepository @Inject constructor(
+    private val dataSource: FlashcardDataSource
+) {
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private val TAG = "FlashcardRepo"
 
-    /**
-     * loadMasterData
-     * Loops through ALL defined sources and triggers their specific load logic.
-     */
-    fun loadMasterData(languageCode: String) {
+    fun loadFlashcardData(languageCode: String) {
         scope.launch {
             Environment.logInfo("$TAG: Loading Master Data for $languageCode...")
 
-            // Iterate over all valid sources
             FlashcardSource.entries.forEach { source ->
                 if (source != FlashcardSource.UNKNOWN) {
-                    // 1. Get the handler (VocabularyType, PhrasesType, etc.)
+                    // Get the Singleton Handler from the Factory
                     val handler = FlashcardTypeSelection.selectCardType(source)
 
-                    // 2. Trigger the Template Method load
-                    handler.load(dataSource, languageCode)
+                    try {
+                        // Load data into that Handler instance
+                        handler.load(dataSource, languageCode, source)
+                    } catch (e: Exception) {
+                        Environment.logError("$TAG: Failed to load ${source.sourceName}: ${e.message}")
+                    }
                 }
             }
-
             Environment.logInfo("$TAG: Load Complete.")
         }
     }
 
-    /**
-     * getTopics
-     * Returns the topics for the requested source.
-     * (Defaults to VOCABULARY if no source is specified, to keep legacy calls working)
-     */
-    fun getTopics(source: FlashcardSource = FlashcardSource.VOCABULARY): List<String> {
+    // --- Accessors (Delegates to the Factory) ---
+
+    fun getTopics(source: FlashcardSource): List<String> {
         val handler = FlashcardTypeSelection.selectCardType(source)
         return handler.getTopics()
     }
 
-    /**
-     * getFlashcardData
-     * Helper to access the raw data map for a specific source.
-     */
-    fun getFlashcardData(source: FlashcardSource): Map<String, TopicData> {
-        val handler = FlashcardTypeSelection.selectCardType(source)
-        return handler.getData()
-    }
 }

@@ -47,7 +47,7 @@ class SettingsViewModel : ViewModel() {
     // When Language changes, we must reload the Data.
     fun setLanguage(lang: String) {
         settingsRepo.setLanguage(lang)         // 1. Save Preference
-        flashcardRepo.loadMasterData(lang)     // 2. Load Data & Build Topics
+        flashcardRepo.loadFlashcardData(lang)     // 2. Load Data & Build Topics
     }
     fun setTopic(topic: String)   = settingsRepo.setTopic(topic)
     fun setSource(source: FlashcardSource) = settingsRepo.setSource(source)

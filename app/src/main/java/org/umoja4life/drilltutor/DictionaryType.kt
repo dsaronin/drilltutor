@@ -15,7 +15,7 @@ package org.umoja4life.drilltutor
  */
 class DictionaryType : AbstractFlashcardType() {
 
-    override fun getSourceId(): FlashcardSource = FlashcardSource.DICTIONARY
+    override fun getSourceName(): FlashcardSource = FlashcardSource.DICTIONARY
 
     override fun processData(data: Map<String, TopicData>?): Map<String, TopicData> {
         // Placeholder: Dictionary logic (TXT parsing) is coming in a future phase.

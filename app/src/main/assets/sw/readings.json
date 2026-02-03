@@ -1,9 +1,337 @@
 {
-  "dummy": {
+  "kuyruk_acisi": {
+    "descriptions": [
+      "Kuyruk Acisi Hikayesi"
+    ],
+    "level": "A2",
+    "recording": "reading-kuyruk_acisi.ogg",
+    "topics": [
+      "story",
+      "children"
+    ],
     "fc_data": [
       [
-        "dummy",
-        "dummy"
+        "Kuyruk Acısı Hikayesi",
+        "Tail Anger Story"
+      ],
+      [
+        "Köyün birinde oğlu ile birlikte yaşayan yaşlı bir adam yaşarmış.",
+        "In a village lived an old man who lived with his son."
+      ],
+      [
+        "Köyünün karşısındaki dağın tepesinde ise bir kuyu varmış.",
+        "There was a well on the top of the mountain opposite his village."
+      ],
+      [
+        "Kuyunun içinde de bir yılan yaşarmış.",
+        "A snake lived in the well."
+      ],
+      [
+        "Bu yılan yaşlı adamın dostuymuş.",
+        "This snake was the old man's friend."
+      ],
+      [
+        "Yaşlı adam ne zaman gitse ona bir altın verirmiş.",
+        "Every time the old man went, he would give him a gold."
+      ],
+      [
+        "Bir gün yaşlı adam çok hastalanmış.",
+        "One day the old man fell very ill."
+      ],
+      [
+        "Oğlunu yanına çağırıp demiş ki:",
+        "He called his son and said:"
+      ],
+      [
+        "'Karşı dağın tepesinde bir kuyu var oğlum.",
+        "'There is a well on the top of the opposite mountain, my son."
+      ],
+      [
+        "Oraya git.",
+        "Go there."
+      ],
+      [
+        "Kuyunun içine ‘Yılan kardeş!’ diye seslen.",
+        "Call into the well, 'Snake brother!'"
+      ],
+      [
+        "İçeriden bir yılan çıkacaktır.",
+        "A snake will come out."
+      ],
+      [
+        "Durumumu anlat.",
+        "Tell me about my situation."
+      ],
+      [
+        "Sana bir altın verecektir.",
+        "He will give you a gold."
+      ],
+      [
+        "Onu al, getir.",
+        "Take it, bring it."
+      ],
+      [
+        "Oğlan, babasının dediği gibi kuyunun başına varıp yılan ile konuşmuş.",
+        "As his father had said, the boy went to the well and talked to the snake."
+      ],
+      [
+        "Yılan altın getirmek için kuyuya inmiş.",
+        "The snake went down to the well to bring gold."
+      ],
+      [
+        "Bu sırada oğlan şöyle düşünmüş:",
+        "Meanwhile, the boy thought:"
+      ],
+      [
+        "'Eğer yılanı öldürürsem kuyudaki bütün altınları alıp zengin olurum.'",
+        "'If I kill the snake, I will take all the gold from the well and become rich.'"
+      ],
+      [
+        "Yılan kuyudan çıkarken yerden aldığı taşı yılana fırlatmış.",
+        "While the snake was coming out of the well, he threw the stone he picked up from the ground to the snake."
+      ],
+      [
+        "Taş yılanın kuyruğuna gelmiş.",
+        "The stone has come to the tail of the snake."
+      ],
+      [
+        "Canı yanan yılan da bir anda oğlanı ısırmış.",
+        "The snake, which was hurting, bit the boy all of a sudden."
+      ],
+      [
+        "Oğlan zehirlenerek oracıkta ölmüş.",
+        "The boy was poisoned and died on the spot."
+      ],
+      [
+        "Aradan günler geçmiş.",
+        "Days have passed."
+      ],
+      [
+        "Yataktan kalkan yaşlı adam doğru kuyunun başına gelip yılana:",
+        "The old man, getting out of bed, went straight to the well and said to the snake:"
+      ],
+      [
+        "'Gel olanları unutalım, yine eskisi gibi dost kalalım,' demiş.",
+        "Come, let's forget what happened, let's stay friends like before, he said."
+      ],
+      [
+        "Yılan ise şöyle cevap vermiş:",
+        "The snake replied:"
+      ],
+      [
+        "'Bende kuyruk acısı, sende de evlat acısı olduktan sonra, biz artık dost olamayız.'",
+        "'Since I have tail pain and you have child pain, we can't be friends anymore.'"
+      ]
+    ]
+  },
+  "dilek_ve_uçurtması": {
+    "descriptions": [
+      "Dilek ve Uçurtması Hikayesi"
+    ],
+    "level": "A2",
+    "topics": [
+      "story",
+      "children"
+    ],
+    "fc_data": [
+      [
+        "Dilek ve Uçurtması Hikayesi",
+        "Dilek and the Kite Story"
+      ],
+      [
+        "Zamanın birinde Dilek adında küçük bir kız varmış.",
+        "Once upon a time, there was a little girl named Dilek."
+      ],
+      [
+        "Dilek ve ailesinin evi ormanın çok yakınındaymış.",
+        "Dilek and her family's house was very close to the forest."
+      ],
+      [
+        "Ailecek yürüyüşe çıktıklarında bazen yılkı atlarını, bazen geyikleri görüyorlarmış.",
+        "When they went out for a walk as a family, they sometimes saw the wild horses and sometimes the deer."
+      ],
+      [
+        "Günlerden bir gün Dilek bahçeye çıkmış ve oyun oynamaya başlamış.",
+        "One day, Dilek went out to the garden and started to play."
+      ],
+      [
+        "Oyun oynamaktan sıkılınca aklına babasının geçen gün aldığı uçurtma gelmiş.",
+        "When he got bored of playing games, he thought of the kite that his father bought the other day."
+      ],
+      [
+        "Hemen eve girmiş uçurtmayı almış ve başlamış uçurmaya.",
+        "He immediately entered the house, took the kite and started flying."
+      ],
+      [
+        "Uçurtma havalanmış, havalanmış, bir süre sonra ormanın içine düşmüş.",
+        "The kite took off, took off, and after a while fell into the forest."
+      ],
+      [
+        "Dilek koşarak ormanın içine girmiş ve uçurtmasını aramaya başlamış.",
+        "Dilek ran into the forest and started looking for her kite."
+      ],
+      [
+        "Dilek biraz dolandıktan sonra uçurtmasının ağacın dallarında asılı kaldığını görmüş.",
+        "After Dilek got around a bit, she saw that her kite was hanging on the branches of the tree."
+      ],
+      [
+        "Eline bir sopa almış ama yine de uçurtmaya erişememiş.",
+        "She grabbed a stick but still couldn't reach the kite."
+      ],
+      [
+        "Uçurtmayı alamayınca ağacın altında oturup ağlamaya başlamış.",
+        "When She couldn't get the kite, she sat under the tree and started to cry."
+      ],
+      [
+        "Ağlama sesini duyan geyiklerden biri sese doğru gitmiş ve küçük kızı ağacın altında ağlarken bulmuş.",
+        "Hearing the cry, one of the deer went towards the sound and found the little girl crying under the tree."
+      ],
+      [
+        "Cesaretini toplayıp kızın yanına gitmiş.",
+        "He gathered his courage and went to her."
+      ],
+      [
+        "Dilek geyiği görünce çığlık atmış.",
+        "Dilek screamed when she saw the deer."
+      ],
+      [
+        "Bunun üzerine geyik konuşmaya başlamış 'Merhaba küçük kız, lütfen benden korkma, sana asla zarar vermem.",
+        "Then the deer said, 'Hello little girl, please don't be afraid of me, I will never hurt you."
+      ],
+      [
+        "Sadece ağlama sesini duydum o yüzden geldim.' demiş.",
+        "I only heard the sound of crying so I came.' she said."
+      ],
+      [
+        "Dilek o an geyiğin zararsız olduğunu anlamış ve uçurmasının ağaca takıldığını söylemiş.",
+        "At that moment, Dilek realized that the deer was harmless and said that her flight got stuck in a tree."
+      ],
+      [
+        "Geyik 'Çok üzüldüm ama sana yardımcı olabilirim, biraz bekle olur mu?' demiş ve Dilek de kafasını sallayarak beklemeye başlamış.",
+        "Deer 'I'm so sorry, but I can help you, wait a minute, will you?' she said and Dilek started to wait by shaking her head."
+      ],
+      [
+        "Geyik çok yüksek bir sesle bağırmış ve bir kaç dakika sonra bir kuş uçarak geyiğin boynuzuna konmuş.",
+        "The deer cried out very loudly, and a few minutes later a bird flew and landed on the deer's antlers."
+      ],
+      [
+        "Geyik olanları kuşa anlatmış ve kuş hemen ağacın dalına uçmuş uçurmayı dallardan kurtararak Dilek’e getirmiş.",
+        "The deer told the bird what had happened, and the bird immediately flew to the branch of the tree and brought the bird to Dilek by freeing it from the branches."
+      ],
+      [
+        "Dilek uçurtmasına kavuştuğu için çok mutlu olmuş.",
+        "She was very happy to have her wish kite."
+      ],
+      [
+        "Kuşa ve geyiğe çok teşekkür etmiş.",
+        "He thanked the bird and the deer very much."
+      ],
+      [
+        "Kuş ve geyik kıza sarılarak vedalaşmışlar.",
+        "The bird and the deer hugged the girl and said goodbye."
+      ],
+      [
+        "O günden sonra Dilek, geyik ve kuş çok yakın arkadaş olmuşlar.",
+        "After that day, Dilek, deer and bird became very close friends."
+      ]
+    ]
+  },
+  "merhaba_arkadaşlar": {
+    "descriptions": [
+      "how to listen"
+    ],
+    "level": "A2",
+    "recording": "reading-merhaba_arkadaşlar.ogg",
+    "topics": [
+      "school",
+      "children"
+    ],
+    "fc_data": [
+      [
+        "Merhaba arkadaşlar,",
+        "Hello friends,"
+      ],
+      [
+        "Ben arkadaşlarımı, ailemi, öğretmenimi kısacası herkesi dinlerken aşağıdaki kuralları uyguluyorum.",
+        "I follow the rules below while listening to my friends, my family, my teacher, in short, everyone."
+      ],
+      [
+        "Böylece karşımdaki insanları daha iyi anlıyorum.",
+        "This way, I can better understand the people around me."
+      ],
+      [
+        "Dinlerken uyulması gereken kurallar:",
+        "Rules to follow while listening:"
+      ],
+      [
+        "Karşımdakinin sözünü kesmeden dinlerim.",
+        "I listen without interrupting the other person."
+      ],
+      [
+        "Bir kişi konuşurken söz alarak konuşurum.",
+        "When a person is speaking, I speak by taking the floor."
+      ],
+      [
+        "Konuşmacıyı izleyerek ve göz teması kurarak dinlerim.",
+        "I listen by watching the speaker and making eye contact."
+      ],
+      [
+        "Nezaket kurallarına uyarak dinlerim.",
+        "I listen by following the rules of courtesy."
+      ],
+      [
+        "Dikkatimi, dinlediklerime yoğunlaştırırım.",
+        "I focus my attention on what I am listening to."
+      ]
+    ]
+  },
+  "hak_ve_özgürlüklerimiz": {
+    "descriptions": [
+      "rights and freedoms"
+    ],
+    "level": "A2",
+    "recording": "reading-hak_ve_özgürlüklerimiz.ogg",
+    "topics": [
+      "school",
+      "children",
+      "rights"
+    ],
+    "fc_data": [
+      [
+        "Hak ve özgürlüklerimiz",
+        "Our rights and freedoms"
+      ],
+      [
+        "Toplum yaşamında yasaların herkese sağladığı birtakım haklar vardır.",
+        "In social life, there are certain rights that laws provide to everyone."
+      ],
+      [
+        "Yaşama hakkı, düşüncelerini özgürce açıklama hakkı gibi.",
+        "Like the right to life, the right to express one's thoughts freely."
+      ],
+      [
+        "Devlet, bireylerin hak ve özgürlüklerini yasalarla düzenler ve korur.",
+        "The state regulates and protects the rights and freedoms of individuals by laws."
+      ],
+      [
+        "Bu hak ve özgürlükler 'İnsan Hakları Evrensel Bildirgesi'nde belirtilmiştir.",
+        "These rights and freedoms are stated in the 'Universal Declaration of Human Rights'."
+      ],
+      [
+        "Yaşama, eğitim, sağlık, beslenme ve barınma bu haklardan bazılarıdır.",
+        "Some of these rights are to life, education, health, nutrition and shelter."
+      ],
+      [
+        "Çocuk Hakları Sözleşmesi'nde de çocukların sağlıklı gelişip yetiştirilmeleri benimsenmiştir.",
+        "The healthy development and upbringing of children is adopted in the 'Children's Rights Convention'."
+      ],
+      [
+        "Buna göre iyi beslenmek, eğitim görmek ve sağlıklı yaşamak çocukların doğal haklarıdır.",
+        "Accordingly, children's natural rights are to eat well, receive education and live healthy."
+      ],
+      [
+        "Devlet, her çocuğun eğitim, sevgi ve şefkat görmesi için gerekli önlemleri almakla yükümlüdür.",
+        "The state is obliged to take the necessary measures to ensure that every child receives education, love and compassion."
       ]
     ]
   }

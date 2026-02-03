@@ -1,43 +1,30 @@
 package org.umoja4life.drilltutor
 
+import java.util.concurrent.ConcurrentHashMap
+
 /**
  * FlashcardTypeSelection
  * The "Factory" and Registry that holds the specific handlers for each source.
  */
 object FlashcardTypeSelection {
 
-    // --- Specialized Handlers ---
-    private val vocabularyType = VocabularyType()
-    private val oppositesType = OppositesType()
-    private val dictionaryType = DictionaryType()
-
-    // --- Standard Handlers (Reusable Class) ---
-    private val phrasesType   = StandardFlashcardType(FlashcardSource.PHRASES)
-    private val sentencesType = StandardFlashcardType(FlashcardSource.SENTENCES)
-    private val dialogsType   = StandardFlashcardType(FlashcardSource.DIALOGS)
-    private val readingsType  = StandardFlashcardType(FlashcardSource.READINGS)
-    private val glossariesType = StandardFlashcardType(FlashcardSource.GLOSSARIES)
-
-    // Fallback
-    private val standardType = StandardFlashcardType(FlashcardSource.UNKNOWN)
+    // Cache to hold the singleton instances of our handlers.
+    // This replaces the long list of "private val xyzType = ..."
+    private val handlerCache = ConcurrentHashMap<FlashcardSource, AbstractFlashcardType>()
 
     /**
      * selectCardType
      * Returns the singleton instance for the requested Source.
      */
     fun selectCardType(source: FlashcardSource): AbstractFlashcardType {
-        return when (source) {
-            FlashcardSource.VOCABULARY -> vocabularyType
-            FlashcardSource.OPPOSITES  -> oppositesType
-            FlashcardSource.DICTIONARY -> dictionaryType
+        return handlerCache.getOrPut(source) {
+            // This block runs ONLY the first time a source is requested.
+            when (source) {
+                FlashcardSource.DICTIONARY -> DictionaryType()
 
-            FlashcardSource.PHRASES    -> phrasesType
-            FlashcardSource.SENTENCES  -> sentencesType
-            FlashcardSource.DIALOGS    -> dialogsType
-            FlashcardSource.READINGS   -> readingsType
-            FlashcardSource.GLOSSARIES -> glossariesType
-
-            FlashcardSource.UNKNOWN -> standardType
+                // STANDARD CASES: Everything else uses the Standard handler.
+                else -> StandardFlashcardType(source)
+            }
         }
     }
 }

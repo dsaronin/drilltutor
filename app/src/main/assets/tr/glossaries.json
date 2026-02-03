@@ -1,5 +1,9 @@
 {
   "health": {
+    "belongs_to": [
+      "Dialogs",
+      "klinikta_hasta"
+    ],
     "fc_data": [
       [
         "-sedye yatmak",
@@ -119,6 +123,10 @@
     ]
   },
   "müzik": {
+    "belongs_to": [
+      "Dialogs",
+      "müzik"
+    ],
     "fc_data": [
       [
         "zevk",
@@ -168,6 +176,10 @@
     ]
   },
   "adverbs": {
+    "belongs_to": [
+      "Dialogs",
+      "adverbs"
+    ],
     "fc_data": [
       [
         "gelişmiş",

@@ -1,5 +1,8 @@
 {
   "quantifiers": {
+    "topics": [
+      "quantifiers"
+    ],
     "fc_data": [
       [
         "Bütün kadınlar benim arkamda.",
@@ -204,6 +207,9 @@
     ]
   },
   "adverbs": {
+    "topics": [
+      "adverbs"
+    ],
     "fc_data": [
       [
         "Ablam hep etek giyer.",
@@ -464,6 +470,9 @@
     ]
   },
   "locatives": {
+    "topics": [
+      "locatives"
+    ],
     "fc_data": [
       [
         "Alex Türkiye'de.",
@@ -772,6 +781,9 @@
     ]
   },
   "time": {
+    "topics": [
+      "time"
+    ],
     "fc_data": [
       [
         "Akşam yemeği zamanı.",

@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.SupervisorJob
 
 /**
  * Environment
@@ -23,6 +23,10 @@ object Environment {
 
     // --- LOGGING ---
     private const val LOG_TAG = "App" + APP_NAME
+
+    // --- CONCURRENCY ---
+    // A global scope for the app environment.
+    val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     // --- SUBSYSTEMS ---
     // The "lateinit" means we promise to initialize this in init() before using it.
@@ -43,8 +47,8 @@ object Environment {
         flashcards = FlashcardRepository(AssetDataSource(context))
 
         // load master flashcard data for given language; assume "tr" for now
-        flashcards.loadMasterData("tr")
-
+        logInfo("Environment: Triggering eager data load for 'tr'...")
+        flashcards.loadFlashcardData("tr")
     }
 
     // --- LOGGING UTILITIES ---

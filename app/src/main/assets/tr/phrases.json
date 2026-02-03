@@ -1,5 +1,6 @@
 {
   "quantifiers": {
+    "level": "A1",
     "fc_data": [
       [
         "bana hiçbir şey söyleyemezsin.",
@@ -148,6 +149,7 @@
     ]
   },
   "adverbs": {
+    "level": "A1",
     "fc_data": [
       [
         "ama burayı çok sevdim",
@@ -248,6 +250,7 @@
     ]
   },
   "basic": {
+    "level": "A1",
     "fc_data": [
       [
         "açıkça söyle!",
@@ -552,6 +555,7 @@
     ]
   },
   "basic1": {
+    "level": "A1",
     "fc_data": [
       [
         "dayanabilirim.",
@@ -852,6 +856,7 @@
     ]
   },
   "basic2": {
+    "level": "A1",
     "fc_data": [
       [
         "kendi dünyasındadır",
@@ -1152,6 +1157,7 @@
     ]
   },
   "basic4": {
+    "level": "A1",
     "fc_data": [
       [
         "sen benim için tek kişidir.",
@@ -1419,6 +1425,7 @@
     ]
   },
   "interrogatives": {
+    "level": "A1",
     "fc_data": [
       [
         "nasıl oldu, beğendiniz mi?",

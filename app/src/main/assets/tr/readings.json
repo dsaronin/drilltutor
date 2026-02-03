@@ -1,5 +1,14 @@
 {
   "kuyruk_acisi": {
+    "descriptions": [
+      "Kuyruk Acisi Hikayesi"
+    ],
+    "level": "A2",
+    "recording": "reading-kuyruk_acisi.ogg",
+    "topics": [
+      "story",
+      "children"
+    ],
     "fc_data": [
       [
         "Kuyruk Acısı Hikayesi",
@@ -116,6 +125,14 @@
     ]
   },
   "dilek_ve_uçurtması": {
+    "descriptions": [
+      "Dilek ve Uçurtması Hikayesi"
+    ],
+    "level": "A2",
+    "topics": [
+      "story",
+      "children"
+    ],
     "fc_data": [
       [
         "Dilek ve Uçurtması Hikayesi",
@@ -220,6 +237,15 @@
     ]
   },
   "merhaba_arkadaşlar": {
+    "descriptions": [
+      "how to listen"
+    ],
+    "level": "A2",
+    "recording": "reading-merhaba_arkadaşlar.ogg",
+    "topics": [
+      "school",
+      "children"
+    ],
     "fc_data": [
       [
         "Merhaba arkadaşlar,",
@@ -260,6 +286,16 @@
     ]
   },
   "hak_ve_özgürlüklerimiz": {
+    "descriptions": [
+      "rights and freedoms"
+    ],
+    "level": "A2",
+    "recording": "reading-hak_ve_özgürlüklerimiz.ogg",
+    "topics": [
+      "school",
+      "children",
+      "rights"
+    ],
     "fc_data": [
       [
         "Hak ve özgürlüklerimiz",

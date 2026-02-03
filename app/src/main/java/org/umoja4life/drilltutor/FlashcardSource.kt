@@ -1,6 +1,6 @@
 package org.umoja4life.drilltutor
 
-enum class FlashcardSource(val id: String) {
+enum class FlashcardSource(val sourceName: String) {
     VOCABULARY("Vocabulary"),
     SENTENCES("Sentences"),
     OPPOSITES("Opposites"),
@@ -12,6 +12,6 @@ enum class FlashcardSource(val id: String) {
     UNKNOWN("Unknown");
 
     companion object {
-        fun fromId(id: String): FlashcardSource = entries.find { it.id.equals(id, ignoreCase = true) } ?: UNKNOWN
+        fun fromSourceName(sourceName: String): FlashcardSource = entries.find { it.sourceName.equals(sourceName, ignoreCase = true) } ?: UNKNOWN
     }
 }

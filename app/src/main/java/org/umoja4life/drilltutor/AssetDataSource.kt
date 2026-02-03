@@ -21,7 +21,7 @@ class AssetDataSource(private val context: Context) : FlashcardDataSource {
     override suspend fun loadFile(languageCode: String, sourceType: FlashcardSource): Map<String, TopicData>? {
         return withContext(Dispatchers.IO) {
             // Map Enum to filename: VOCABULARY -> "vocabulary.json"
-            val filename = "${sourceType.id.lowercase()}.json"
+            val filename = "${sourceType.sourceName.lowercase()}.json"
             val path = "$languageCode/$filename"
 
             Environment.logDebug("$TAG: Attempting to load: $path")

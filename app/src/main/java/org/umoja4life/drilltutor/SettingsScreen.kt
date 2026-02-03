@@ -112,9 +112,9 @@ fun SettingsScreen(
             // 2. Source
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_source),
-                currentValue = source.id,
+                currentValue = source.sourceName,
                 options = viewModel.availableSources,
-                optionLabel = { it.id },
+                optionLabel = { it.sourceName },
                 onOptionSelected = { viewModel.setSource(it) },
                 fontSize = largeFontSize
             )

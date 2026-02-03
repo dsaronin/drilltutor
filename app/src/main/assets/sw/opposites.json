@@ -1,9 +1,429 @@
 {
-  "dummy": {
+  "adjectives": {
     "fc_data": [
       [
-        "dummy",
-        "dummy"
+        "aç::tok",
+        "hunger"
+      ],
+      [
+        "açık::kapalı",
+        "open, clear"
+      ],
+      [
+        "acı::tatlı",
+        "pungent, sour, peppery, bitter "
+      ],
+      [
+        "aynı::farklı",
+        "same"
+      ],
+      [
+        "az::çok",
+        "few, a little, insufficient, less"
+      ],
+      [
+        "az::sık",
+        "few, a little, insufficient, less"
+      ],
+      [
+        "büyük::küçük",
+        "big, large, great"
+      ],
+      [
+        "çalışkan::tembel",
+        "hardworking "
+      ],
+      [
+        "cesur::korkak",
+        "brave "
+      ],
+      [
+        "çirkin::güzel",
+        "ugly "
+      ],
+      [
+        "çok::az",
+        "very, too, many"
+      ],
+      [
+        "dar::geniş",
+        "narrow"
+      ],
+      [
+        "derin::sığ",
+        "deep"
+      ],
+      [
+        "doğru::yanlış",
+        "true, right, correct"
+      ],
+      [
+        "erken::geç",
+        "early"
+      ],
+      [
+        "eş::karşıt",
+        "equal, similar, identical, duplicate, matching"
+      ],
+      [
+        "eski::yeni",
+        "old [thing]"
+      ],
+      [
+        "fakir::zengin",
+        "poor "
+      ],
+      [
+        "farklı::aynı",
+        "different"
+      ],
+      [
+        "geç::erken",
+        "late"
+      ],
+      [
+        "geleneksel::modern",
+        "traditional"
+      ],
+      [
+        "genç::yaşlı",
+        "young"
+      ],
+      [
+        "geniş::dar",
+        "wide"
+      ],
+      [
+        "halka::özel",
+        "the public"
+      ],
+      [
+        "hızlı::yavaş",
+        "quick, fast"
+      ],
+      [
+        "imkansız::mümkün",
+        "impossible"
+      ],
+      [
+        "iyi::kötü",
+        "good"
+      ],
+      [
+        "kapalı::açık",
+        "closed, off, sealed, shut"
+      ],
+      [
+        "karşıt::eş",
+        "opposite, contradictory, adverse, reverse"
+      ],
+      [
+        "kirli::temiz",
+        "dirty"
+      ],
+      [
+        "kısa::uzun",
+        "short"
+      ],
+      [
+        "kolay::zor",
+        "easy, simple"
+      ],
+      [
+        "kolay::güç",
+        "easy, simple"
+      ],
+      [
+        "kolay::çetin",
+        "easy, simple"
+      ],
+      [
+        "korkak::cesur",
+        "coward "
+      ],
+      [
+        "kötü::iyi",
+        "bad, worse"
+      ],
+      [
+        "küçük::büyük",
+        "small, little, young"
+      ],
+      [
+        "kuru::nem",
+        "dry"
+      ],
+      [
+        "manuel::otomatik",
+        "manual  "
+      ],
+      [
+        "meşgul::müsait",
+        "busy, occupied"
+      ],
+      [
+        "modern::geleneksel",
+        "modern"
+      ],
+      [
+        "mümkün::imkansız",
+        "possible, doable, likely, probable, feasible"
+      ],
+      [
+        "müsait::meşgul",
+        "free, available uygun"
+      ],
+      [
+        "mutlu::mutsuz",
+        "happy, elated"
+      ],
+      [
+        "mutsuz::mutlu",
+        "unhappy"
+      ],
+      [
+        "nem::kuru",
+        "damp, humidity, moisture, dampness"
+      ],
+      [
+        "otomatik::manuel",
+        "automatic  "
+      ],
+      [
+        "özel::halka",
+        "private"
+      ],
+      [
+        "pahalı::ucuz",
+        "expensive"
+      ],
+      [
+        "sıcak::soğuk",
+        "hot"
+      ],
+      [
+        "sığ::derin",
+        "shallow"
+      ],
+      [
+        "sık::az",
+        "frequent, often"
+      ],
+      [
+        "şişman::zayıf",
+        "fat "
+      ],
+      [
+        "soğuk::sıcak",
+        "cold"
+      ],
+      [
+        "tatlı::acı",
+        "sweet"
+      ],
+      [
+        "tehlikeli::güvenli",
+        "dangerously"
+      ],
+      [
+        "tembel::çalışkan",
+        "lazy "
+      ],
+      [
+        "temiz::kirli",
+        "clean"
+      ],
+      [
+        "tok::aç",
+        "full, satiated"
+      ],
+      [
+        "ucuz::pahalı",
+        "cheap, inexpensive"
+      ],
+      [
+        "uzak::yakın",
+        "far [away]"
+      ],
+      [
+        "uzun::kısa",
+        "long, tall"
+      ],
+      [
+        "yakın::uzakta",
+        "close, soon, near"
+      ],
+      [
+        "yanlış::doğru",
+        "wrong, false"
+      ],
+      [
+        "yaşlı::genç",
+        "old [humans]"
+      ],
+      [
+        "yavaş::hızlı",
+        "slow, slowly"
+      ],
+      [
+        "yeni::eski",
+        "new, recent  [things]"
+      ],
+      [
+        "zengin::fakir",
+        "rich, wealthy, generous, affluent"
+      ],
+      [
+        "zor::kolay",
+        "difficult, hard"
+      ]
+    ]
+  },
+  "verbs": {
+    "fc_data": [
+      [
+        "-yükle::-indir",
+        "upload "
+      ],
+      [
+        "-indir::-yükle",
+        "download"
+      ]
+    ]
+  },
+  "adverbs": {
+    "fc_data": [
+      [
+        "artık::önçe",
+        "from now on"
+      ],
+      [
+        "asla::her zaman",
+        "never"
+      ],
+      [
+        "aslında::pek değil",
+        "actually, in fact"
+      ],
+      [
+        "bazen::hiç",
+        "sometimes"
+      ],
+      [
+        "benden daha::benden daha az",
+        "more sth than me"
+      ],
+      [
+        "bile::bile değil",
+        "even"
+      ],
+      [
+        "bir kere daha::bir daha asla",
+        "one more time"
+      ],
+      [
+        "biraz daha::biraz daha az",
+        "more"
+      ],
+      [
+        "bütün::hiçbir",
+        "all"
+      ],
+      [
+        "çoğunlukla::nadiren",
+        "usual habit/custom"
+      ],
+      [
+        "daha::daha az",
+        "more than"
+      ],
+      [
+        "daha sonra::daha önce",
+        "later"
+      ],
+      [
+        "en::en az",
+        "most"
+      ],
+      [
+        "genelde::ender",
+        "usually"
+      ],
+      [
+        "gerçekten::belirsiz",
+        "really"
+      ],
+      [
+        "genellikle::alışılmadık bir şekilde",
+        "generally"
+      ],
+      [
+        "hala::zaten",
+        "still/yet pos verb"
+      ],
+      [
+        "henüz::zaten",
+        "still/yet neg verb"
+      ],
+      [
+        "hep::asla",
+        "always"
+      ],
+      [
+        "kesinlikle::süresiz olarak",
+        "definitely, certainly"
+      ],
+      [
+        "nadiren::sık sık",
+        "rarely, seldom"
+      ],
+      [
+        "neredeyse::hemen hemen hiç",
+        "almost, nearly"
+      ],
+      [
+        "oldukça::çok az",
+        "quite, rather, fairly"
+      ],
+      [
+        "özellikle::özellikle değil",
+        "especially, particularly"
+      ],
+      [
+        "sonunda::asla",
+        "finally, after, in the end"
+      ],
+      [
+        "tam olarak::belli belirsiz",
+        "exactly"
+      ],
+      [
+        "sadece::sadece değil",
+        "only, just"
+      ],
+      [
+        "sık sık::nadiren",
+        "frequently, often"
+      ],
+      [
+        "tamamen::kısmen",
+        "completely, totally"
+      ],
+      [
+        "tekrar::asla tekrar",
+        "again, once more"
+      ],
+      [
+        "yine::asla tekrar",
+        "again, once more"
+      ],
+      [
+        "yeterince::yetersiz",
+        "enough"
+      ],
+      [
+        "yeterli::yetersiz",
+        "sufficient"
       ]
     ]
   }
