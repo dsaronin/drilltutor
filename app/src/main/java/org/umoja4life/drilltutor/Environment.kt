@@ -34,6 +34,8 @@ object Environment {
         private set
     lateinit var flashcards: FlashcardRepository
         private set
+    lateinit var playerState: PlayerStateRepository
+        private set
 
     // --- INITIALIZATION ---
     fun init(context: Context) {
@@ -49,6 +51,10 @@ object Environment {
         // load master flashcard data for given language; assume "tr" for now
         logInfo("Environment: Triggering eager data load for 'tr'...")
         flashcards.loadFlashcardData("tr")
+
+        // load player state
+        playerState = PlayerStateRepository(context)
+        logInfo("Environment Initialized.")
     }
 
     // --- LOGGING UTILITIES ---
