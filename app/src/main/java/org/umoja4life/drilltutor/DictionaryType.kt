@@ -13,11 +13,27 @@ package org.umoja4life.drilltutor
  * - Uses Standard behavior (returning raw data if available).
  * - Serves as a stub for future expansion.
  */
-class DictionaryType : AbstractFlashcardType() {
+class DictionaryType(
+    source: FlashcardSource,
+    data: TopicData? = null
+) : AbstractFlashcardType(source) {
 
-    override fun getSourceName(): FlashcardSource = FlashcardSource.DICTIONARY
+    init {
+        this.topicData = data
+    }
 
-    override fun processData(data: Map<String, TopicData>?): Map<String, TopicData> {
+    override fun getSourceName(): FlashcardSource = source
+
+    /**
+     * createInstance
+     * Implementation for the Factory/Worker pattern.
+     * Returns a new DictionaryType bound to the specific topic data.
+     */
+    override fun createInstance(data: TopicData?): AbstractFlashcardType {
+        return DictionaryType(source, data)
+    }
+
+    fun processData(data: Map<String, TopicData>?): Map<String, TopicData> {
         // Placeholder: Dictionary logic (TXT parsing) is coming in a future phase.
         // For now, return empty to prevent crashes.
         return emptyMap()

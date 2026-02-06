@@ -22,10 +22,10 @@ private val Context.playerDataStore: DataStore<Preferences> by preferencesDataSt
  */
 @Serializable
 data class PlayerState(
-    val topicKey: String = "",
-    val curPtr: Int = -1,     // -1 indicates fresh/reset state
-    val groupDex: Int = 0,
-    val showRear: Boolean = true
+    var topicKey: String = "",
+    var curPtr: Int = -1,     // -1 indicates fresh/reset state
+    var groupDex: Int = 0,
+    var showRear: Boolean = true
 )
 
 class PlayerStateRepository(private val context: Context) {

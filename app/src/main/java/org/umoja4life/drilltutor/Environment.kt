@@ -5,6 +5,7 @@ import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 
 /**
  * Environment
@@ -34,26 +35,30 @@ object Environment {
         private set
     lateinit var flashcards: FlashcardRepository
         private set
-    lateinit var playerState: PlayerStateRepository
-        private set
 
+    lateinit var flashManager: FlashManager  // TEST HARNESS
+        private set
     // --- INITIALIZATION ---
     fun init(context: Context) {
+        // PREVENT MEMORY LEAK:
+        // We ensure we only hold the Application Context, not an Activity Context.
+        val appContext = context.applicationContext
+
         logInfo("Environment Initializing...")
         logInfo("Version: $VERSION_NAME (Build $VERSION_CODE)")
 
         // Instantiate Settings subsystem
-        settings = SettingsRepository(context)
+        settings = SettingsRepository(appContext)
 
         // Instantiate Flashcard data subsystem
-        flashcards = FlashcardRepository(AssetDataSource(context))
+        flashcards = FlashcardRepository(AssetDataSource(appContext))
 
         // load master flashcard data for given language; assume "tr" for now
-        logInfo("Environment: Triggering eager data load for 'tr'...")
-        flashcards.loadFlashcardData("tr")
+        scope.launch {
+            logInfo("Environment: Triggering eager data load for 'tr'...")
+            flashcards.loadFlashcardData("tr")
+        }
 
-        // load player state
-        playerState = PlayerStateRepository(context)
         logInfo("Environment Initialized.")
     }
 

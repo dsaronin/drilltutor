@@ -20,7 +20,7 @@ object FlashcardTypeSelection {
         return handlerCache.getOrPut(source) {
             // This block runs ONLY the first time a source is requested.
             when (source) {
-                FlashcardSource.DICTIONARY -> DictionaryType()
+                FlashcardSource.DICTIONARY -> DictionaryType(source)
 
                 // STANDARD CASES: Everything else uses the Standard handler.
                 else -> StandardFlashcardType(source)

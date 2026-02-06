@@ -8,78 +8,57 @@ import kotlin.random.Random
  * It manages indices and asks the Source for the card at a specific index.
  * It DOES NOT hold the data list.
  */
-class FlashManager {
+class FlashManager (
+    private var mySettings: SettingsRepository,
+    private var myState: PlayerState
+){
+    init {
+        updateConfig()  // restore/update the player state based off of current settings values
+    }
 
-    // STATE POINTERS
-    var curPtr: Int = -1  // -1 if first time only
-        private set
+    // *********************************************************************
+    // ********  LOCAL CONFIGURATION  **********************
+    // *********************************************************************
+    private var groupSize: Int = 5        // any init value is ok; updateConfig always sets
+    private var isOrdered: Boolean = true // any init value is ok; updateConfig always sets
+    private var maybeEntry: String? = null
+    private var side: String = "front"   // any init value is ok; updateConfig always sets
 
-    var groupDex: Int = 0
-        private set
 
-    var showRear: Boolean = true
-        private set
 
     // The working set of indices for the current group
     // It is this set which is either ordered or shuffled; never the
     // list of data itself.
     private var shuffleIndexes: MutableList<Int> = mutableListOf()
 
-
-    // CONFIGURATION
-    private var groupSize: Int = 5        // LINKAGE: SettingsRepository
-    private var isOrdered: Boolean = true // LINKAGE: SettingsRepository
-
-
-    // SOURCE REFERENCE
-    // "Source" is an object of AbstractFlashcardType which holds the
-    // data for the current topic and knows how to access it for the player.
-    // mySource.fc_data is a list of FlashcardData objects
-    private var mySettings: SettingsRepository? = null  // TODO: ensure never null
+    /**
+     * myHandler (The "Class" / Factory), Acts like the Class in Ruby
+     *   but is a kotlin singleton instance. Used to call class methods.
+     * mySource Is the Instantiated Object for a specific topic;
+     *   which we used to access the array of flashcards, and thus yield
+     *   a flashcard tuple for display.
+     */
     private var myHandler: AbstractFlashcardType? = null  // TODO: ensure never null
     private var mySource: AbstractFlashcardType? = null  // TODO: ensure never null
 
-    private var myTopicKey: String = ""
-    private var maybeEntry: String? = null
-
-    /**
-     * prepSerializeSettings
-     * Corresponds to Ruby: def prep_serialize_settings
-     */
-    fun prepSerializeSettings(): PlayerState {
-        return PlayerState(
-            topicKey = myTopicKey,
-            curPtr = curPtr,
-            groupDex = groupDex,
-            showRear = showRear,
-            shuffleIndexes = shuffleIndexes.toList()
-        )
-    }
+    // *********************************************************************
 
     /**
      * updateConfig
-     * Syncs working variables from SettingsRepository.
+     * restore/update the player state based off of current settings values
+     * invoked whenever Settings change
      */
-    fun updateConfig(settings: SettingsRepository, playerSettings: PlayerState) {
-        mySettings = settings
+    fun updateConfig() {
 
-        // TODO: formalized retrieval from settings
-        // curPtr = playerSettings.curPtr
-        // groupDex = playerSettings.groupDex
-        // showRear = playerSettings.showRear
-        // shuffleIndexes = playerSettings.shuffleIndexes.toMutableList()
-        // this.groupSize = settings.groupSize
-        // this.isOrdered = settings.selector == "ordered"
-        // myHandler = settings.source  // TODO: LINKAGE: AbstractFlashcardType
-        // myTopicKey = settings.topic
-        // maybeEntry = settings.entry
-    }
+        // grab local store of current Settings
+        groupSize = mySettings.groupSize.value
+        isOrdered = mySettings.selector.value == SelectorType.ORDERED
+        side = mySettings.cardSide.value.id
+        maybeEntry = null
 
-    /**
-     * initializeFlashManager
-     */
-    fun initializeFlashManager(settings: SettingsRepository) {
-        updateConfig(settings, PlayerState())
+        myHandler = FlashcardTypeSelection.selectCardType(mySettings.source.value)
+
+        setMySource(mySettings.topic.value)  // sets source; handler
     }
 
     /**
@@ -91,27 +70,28 @@ class FlashManager {
 
         // Assuming mySettings!!.currentTopic holds the default topic
         if (topic.matches(Regex("^def(ault)?$"))) {
-            topic = mySettings?.currentTopic ?: "" // Safety fallthrough
+            topic = mySettings.topic.value
         }
 
-        Environment.logInfo("FLASHMGR: source: ${mySettings?.currentSource}, topic: $topic, entry: $maybeEntry")
+        Environment.logInfo("FLASHMGR: source: ${mySettings.source.value}, topic: $topic, entry: $maybeEntry")
 
         // VocabularyType is the source of truth for all topics.
-        val validatedTopic = VocabularyType.findTopic(topic)
+        var validatedTopic = topic
+        val availableTopics = myHandler?.getTopics() ?: emptyList()
 
-        if (validatedTopic == null) {
+        if (!availableTopics.contains(topic)) {
             Environment.logError("Topic: $topic not found")
-            validatedTopic = VocabularyType.firstTopic()
+            validatedTopic = availableTopics.firstOrNull() ?: ""
         }
 
-        myTopicKey = validatedTopic
+        myState.topicKey = validatedTopic
 
         // myHandler is already the "Module", so we call findOrNew on it.
         // Note: findOrNew needs to return the specific handler instance for this topic
-        val sourceInstance = myHandler?.findOrNew(myTopicKey, maybeEntry)
+        val sourceInstance = myHandler?.findOrNew(myState.topicKey, maybeEntry)
 
         if (sourceInstance == null) {
-            Environment.logError("Source for topic: $myTopicKey not found")
+            Environment.logError("Source for topic: ${myState.topicKey} not found")
             // TODO: fail gracefully with a default source
         }
 
@@ -121,13 +101,12 @@ class FlashManager {
         resetIfStart()
     }
 
-
     /**
      * resetIfStart
-     *  resets internal state of indexes iff 1st time
+     * resets internal state of indexes iff 1st time
      */
     fun resetIfStart() {
-        if (curPtr == -1)) reset() else updateConfig()
+        if (myState.curPtr == -1) reset() else setIndexes()
     }
 
     /**
@@ -136,8 +115,8 @@ class FlashManager {
      */
     fun reset() {
         unshuffle()
-        groupDex = 0
-        showRear = true
+        myState.groupDex = 0
+        myState.showRear = true
     }
 
     /**
@@ -149,8 +128,7 @@ class FlashManager {
 
         // Ruby logic: @my_source.fc_data.length
         // We access the map entry to get the size of the list
-        val topicData = mySource?.getData()?.get(myTopicKey)
-        val maxLen = topicData?.fcData?.size ?: 0
+        val maxLen = mySource?.listSize() ?: 0
 
         if (maxLen == 0) return isOrdered
 
@@ -169,22 +147,12 @@ class FlashManager {
         return isOrdered
     }
 
-    // --- ADDITIONAL CONFIGURATION (From Settings) ---
-    // Ruby: :side => SIDE_TYPES[0] ("front")
-    // REQUIRED LINKAGE: SettingsRepository must provide the 'side' string (front/back/shuffle)
-    private var side: String = "front"
-
-
-    // ==========================================================
-    // INSTANCE METHODS (Translation)
-    // ==========================================================
-
     /**
      * unshuffle
      * Restores normal index order.
      */
     fun unshuffle() {
-        curPtr = 0
+        myState.curPtr = 0
         setIndexes() // Re-generates indexes based on isOrdered flag
     }
 
@@ -201,10 +169,10 @@ class FlashManager {
      * The Extractor.
      */
     fun currentCard(): FlashcardData {
-        val baseIndex = if (shuffleIndexes.isEmpty()) 0 else shuffleIndexes[curPtr]
+        val baseIndex = if (shuffleIndexes.isEmpty()) 0 else shuffleIndexes[myState.curPtr]
         // Forced non-null assertion (!!) as per return type requirement.
         // Assumes mySource is initialized and valid.
-        return mySource!!.getDataAtIndex((baseIndex + groupDex), side)
+        return mySource!!.getDataAtIndex((baseIndex + myState.groupDex), side)
     }
 
     /**
@@ -221,7 +189,7 @@ class FlashManager {
      */
     fun shuffleCards(): FlashcardData {
         shuffleIndexes.shuffle(Random.Default)
-        curPtr = 0
+        myState.curPtr = 0
         return currentCard()
     }
 
@@ -230,9 +198,9 @@ class FlashManager {
      */
     fun nextCard(): FlashcardData {
         // Ruby: if ( (@cur_ptr += 1) >= @my_settings[:sizer] )
-        curPtr += 1
-        if (curPtr >= groupSize) {
-            curPtr = 0
+        myState.curPtr += 1
+        if (myState.curPtr >= groupSize) {
+            myState.curPtr = 0
         }
         return currentCard()
     }
@@ -242,10 +210,10 @@ class FlashManager {
      */
     fun prevCard(): FlashcardData {
         // Ruby: if ( (@cur_ptr -= 1) < 0 )
-        curPtr -= 1
-        if (curPtr < 0) {
+        myState.curPtr -= 1
+        if (myState.curPtr < 0) {
             // Ruby: @cur_ptr = @my_settings[:sizer] - 1
-            curPtr = groupSize - 1
+            myState.curPtr = groupSize - 1
         }
         return currentCard()
     }
@@ -254,7 +222,7 @@ class FlashManager {
      * headCard
      */
     fun headCard(): FlashcardData {
-        curPtr = 0
+        myState.curPtr = 0
         return currentCard()
     }
 
@@ -274,13 +242,13 @@ class FlashManager {
             val size = groupSize
 
             // Ruby: if ( ((@group_dex += size) + size) > len) @group_dex = len - size end
-            groupDex += size
-            if ((groupDex + size) > len) {
-                groupDex = len - size
+            myState.groupDex += size
+            if ((myState.groupDex + size) > len) {
+                myState.groupDex = len - size
             }
         } // if ordered
 
-        curPtr = 0
+        myState.curPtr = 0
         return currentCard()
     }
 
@@ -293,19 +261,18 @@ class FlashManager {
         // Ruby: if set_indexes
         if (setIndexes()) {
             // Ruby: if ( (@group_dex -= @my_settings[:sizer]) < 0 )
-            groupDex -= groupSize
-            if (groupDex < 0) {
-                groupDex = 0
+            myState.groupDex -= groupSize
+            if (myState.groupDex < 0) {
+                myState.groupDex = 0
             }
         } // if ordered
 
-        curPtr = 0
+        myState.curPtr = 0
         return currentCard()
     }
 
-     private fun getListSize(): Int {
-    // TODO: LINKAGE with Settings
-        return groupSize // <-- temporary
+    private fun getListSize(): Int {
+        return mySource?.listSize() ?: 0
     }
 
     /**
@@ -319,7 +286,7 @@ class FlashManager {
     }
 
     // ==========================================================
-    // MISSING METHODS (Placeholders per Criticism 5)
+    // MISSING METHODS (Placeholders)
     // ==========================================================
 
     /**

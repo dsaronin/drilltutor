@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class SettingsViewModel : ViewModel() {
 
@@ -46,8 +47,10 @@ class SettingsViewModel : ViewModel() {
 
     // When Language changes, we must reload the Data.
     fun setLanguage(lang: String) {
-        settingsRepo.setLanguage(lang)         // 1. Save Preference
-        flashcardRepo.loadFlashcardData(lang)     // 2. Load Data & Build Topics
+        settingsRepo.setLanguage(lang)         // Save Preference
+        viewModelScope.launch {
+            flashcardRepo.loadFlashcardData(lang)     // Load Data & Build Topics
+        }
     }
     fun setTopic(topic: String)   = settingsRepo.setTopic(topic)
     fun setSource(source: FlashcardSource) = settingsRepo.setSource(source)
