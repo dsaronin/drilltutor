@@ -59,6 +59,6 @@ class DrillViewModel : ViewModel() {
         )
 
         // 2. Push initial state to UI
-        // _currentCard.value = flashManager?.currentCard() ?: FlashcardData()
+        _currentCard.value = flashManager?.currentCard() ?: FlashcardData()
     }
 }

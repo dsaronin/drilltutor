@@ -31,7 +31,9 @@ data class TopicData(
 data class FlashcardData(
     val front: String = "",
     val back: String = ""
-)
+)  {
+    fun flip(): FlashcardData = FlashcardData(front = back, back = front)
+}
 
 // --- CUSTOM SERIALIZER ---
 // Handles converting ["front", "back"] Array <-> FlashcardData Object

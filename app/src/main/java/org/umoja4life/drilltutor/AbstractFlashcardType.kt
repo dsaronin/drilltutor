@@ -155,7 +155,7 @@ abstract class AbstractFlashcardType(
      */
     private fun sideConversion(card: FlashcardData, side: String): FlashcardData {
         if (side == "back" || (side == "shuffle" && Random.nextBoolean())) {
-            return FlashcardData(card.back, card.front)
+            return card.flip()
         }
         return card
     }

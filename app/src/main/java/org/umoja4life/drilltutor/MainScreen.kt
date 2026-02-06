@@ -200,9 +200,15 @@ fun MainScreen(viewModel: DrillViewModel) {
                 val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
                 if (isLandscape) {
-                    LandscapeLayout(onMenuClick = { scope.launch { drawerState.open() } })
+                    LandscapeLayout(
+                        currentCard = currentCard,
+                        onMenuClick = { scope.launch { drawerState.open() } }
+                    )
                 } else {
-                    PortraitLayout(onMenuClick = { scope.launch { drawerState.open() } })
+                    PortraitLayout(
+                        currentCard = currentCard,
+                        onMenuClick = { scope.launch { drawerState.open() } }
+                    )
                 }
             }
             composable("about") {
@@ -283,7 +289,10 @@ private fun DrillTutorBottomBar() {
 }
 
 @Composable
-private fun DrillTutorContent(paddingValues: PaddingValues) {
+private fun DrillTutorContent(
+    paddingValues: PaddingValues,
+    card: FlashcardData // for accessing card content
+) {
     val screenHeight = LocalConfiguration.current.screenHeightDp.dp
     Column(
         modifier = Modifier
@@ -298,7 +307,11 @@ private fun DrillTutorContent(paddingValues: PaddingValues) {
             modifier = Modifier.fillMaxWidth()
         ) {
             IconButton(onClick = { /* Prev card */ }) {
-                Icon(Icons.Filled.ChevronLeft, contentDescription = stringResource(id = R.string.cd_previous_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
+                Icon(
+                    Icons.Filled.ChevronLeft,
+                    contentDescription = stringResource(id = R.string.cd_previous_card),
+                    modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
+                )
             }
             Card(
                 modifier = Modifier
@@ -310,100 +323,114 @@ private fun DrillTutorContent(paddingValues: PaddingValues) {
                     contentAlignment = Alignment.Center
                 ) {
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(stringResource(id = R.string.huge_text), style = MaterialTheme.typography.displayLarge)
-                        Text(stringResource(id = R.string.large_text), style = MaterialTheme.typography.displayMedium)
-                        Text(stringResource(id = R.string.normal_text), style = MaterialTheme.typography.bodyLarge)
+                        // Raw display of Front Data
+                        // We will tackle dynamic font sizing in Step 1.2
+                        Text(
+                            text = card.front,
+                            style = MaterialTheme.typography.displayMedium,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                        )
+                    }
+                }
+                IconButton(onClick = { /* Next card */ }) {
+                    Icon(
+                        Icons.Filled.ChevronRight,
+                        contentDescription = stringResource(id = R.string.cd_next_card),
+                        modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
+                    )
+                }
+            }
+        }
+    }
+}
+
+    @OptIn(ExperimentalMaterial3Api::class)
+    @Composable
+    private fun PortraitLayout(
+        currentCard: FlashcardData,
+        onMenuClick: () -> Unit
+    ) {
+        Scaffold(
+            topBar = { DrillTutorTopBar(onMenuClick = onMenuClick) },
+            bottomBar = { DrillTutorBottomBar() }
+        ) { innerPadding ->
+            DrillTutorContent(paddingValues = innerPadding, card = currentCard)
+        }
+    }
+
+    @Composable
+    private fun LandscapeLayout(
+        currentCard: FlashcardData,
+        onMenuClick: () -> Unit
+    ) {
+        val configuration = LocalConfiguration.current
+        // In Landscape, the vertical edge matches the screen height.
+        val sidebarLength = configuration.screenHeightDp.dp
+
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Row(modifier = Modifier.fillMaxSize()) {
+                // Left Sidebar (Masthead)
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .width(dimensionResource(id = R.dimen.height_top_bar_landscape))
+                        .zIndex(0f)
+                        .clipToBounds(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    // Rotated Container
+                    Box(
+                        modifier = Modifier
+                            .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
+                            .rotate(-90f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        DrillTutorTopBar(onMenuClick = onMenuClick)
+                    }
+                }
+
+                // Center Content
+                Box(
+                    modifier = Modifier
+                        .weight(1f)
+                        .fillMaxHeight()
+                        .zIndex(1f), // <--- Ensure content sits above any sidebar overlap
+                ) {
+                    DrillTutorContent(paddingValues = PaddingValues(0.dp), card = currentCard)
+                }
+
+                // Right Sidebar (Player)
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight()
+                        .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape))
+                        .zIndex(0f)
+                        .clipToBounds(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    // Rotated Container
+                    Box(
+                        modifier = Modifier
+                            .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
+                            .rotate(-90f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        DrillTutorBottomBar()
                     }
                 }
             }
-            IconButton(onClick = { /* Next card */ }) {
-                Icon(Icons.Filled.ChevronRight, contentDescription = stringResource(id = R.string.cd_next_card), modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small)))
-            }
         }
     }
-}
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun PortraitLayout(onMenuClick: () -> Unit) {
-    Scaffold(
-        topBar = { DrillTutorTopBar(onMenuClick = onMenuClick) },
-        bottomBar = { DrillTutorBottomBar() }
-    ) { innerPadding ->
-        DrillTutorContent(paddingValues = innerPadding)
-    }
-}
 
-@Composable
-private fun LandscapeLayout(onMenuClick: () -> Unit) {
-    val configuration = LocalConfiguration.current
-    // In Landscape, the vertical edge matches the screen height.
-    val sidebarLength = configuration.screenHeightDp.dp
-
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
-    ) {
-        Row(modifier = Modifier.fillMaxSize()) {
-            // Left Sidebar (Masthead)
-            Box(
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .width(dimensionResource(id = R.dimen.height_top_bar_landscape))
-                    .zIndex(0f)
-                    .clipToBounds(),
-                contentAlignment = Alignment.Center
-            ) {
-                // Rotated Container
-                Box(
-                    modifier = Modifier
-                        .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
-                        .rotate(-90f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    DrillTutorTopBar(onMenuClick = onMenuClick)
-                }
-            }
-
-            // Center Content
-            Box(
-                modifier = Modifier
-                    .weight(1f)
-                    .fillMaxHeight()
-                    .zIndex(1f), // <--- Ensure content sits above any sidebar overlap
-            ) {
-                DrillTutorContent(paddingValues = PaddingValues(0.dp))
-            }
-
-            // Right Sidebar (Player)
-            Box(
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .width(dimensionResource(id = R.dimen.height_bottom_bar_landscape))
-                    .zIndex(0f)
-                    .clipToBounds(),
-                contentAlignment = Alignment.Center
-            ) {
-                // Rotated Container
-                Box(
-                    modifier = Modifier
-                        .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
-                        .rotate(-90f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    DrillTutorBottomBar()
-                }
-            }
+    @Preview(showBackground = true, widthDp = 360, heightDp = 640)
+    @Composable
+    fun MainScreenPreview() {
+        DrillTutorTheme {
+            // MainScreen()
+            Text("Preview unavailable until state hoisting is implemented")
         }
     }
-}
-
-
-@Preview(showBackground = true, widthDp = 360, heightDp = 640)
-@Composable
-fun MainScreenPreview() {
-    DrillTutorTheme {
-        // MainScreen()
-        Text("Preview unavailable until state hoisting is implemented")
-    }
-}
