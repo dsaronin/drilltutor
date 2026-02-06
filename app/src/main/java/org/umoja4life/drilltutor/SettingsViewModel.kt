@@ -48,6 +48,9 @@ class SettingsViewModel : ViewModel() {
     // When Language changes, we must reload the Data.
     fun setLanguage(lang: String) {
         settingsRepo.setLanguage(lang)         // Save Preference
+
+        // FIRE-AND-FORGET: Trigger the reload.
+        // DrillViewModel will detect the 'Ready' signal and rebuild itself.
         viewModelScope.launch {
             flashcardRepo.loadFlashcardData(lang)     // Load Data & Build Topics
         }

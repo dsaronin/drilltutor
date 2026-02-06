@@ -35,9 +35,8 @@ object Environment {
         private set
     lateinit var flashcards: FlashcardRepository
         private set
+    lateinit var playerState: PlayerStateRepository
 
-    lateinit var flashManager: FlashManager  // TEST HARNESS
-        private set
     // --- INITIALIZATION ---
     fun init(context: Context) {
         // PREVENT MEMORY LEAK:
@@ -52,6 +51,8 @@ object Environment {
 
         // Instantiate Flashcard data subsystem
         flashcards = FlashcardRepository(AssetDataSource(appContext))
+
+        playerState = PlayerStateRepository(appContext)
 
         // load master flashcard data for given language; assume "tr" for now
         scope.launch {

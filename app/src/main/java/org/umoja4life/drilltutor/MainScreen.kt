@@ -75,6 +75,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import org.umoja4life.drilltutor.AboutScreen
+import org.umoja4life.drilltutor.R
+import org.umoja4life.drilltutor.SettingsScreen
 
 @Composable
 fun DrawerHeader() {
@@ -103,7 +108,11 @@ fun DrawerHeader() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(viewModel: DrillViewModel) {
+    // OBSERVE: These update automatically when ViewModel changes
+    val currentCard by viewModel.currentCard.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -394,6 +403,7 @@ private fun LandscapeLayout(onMenuClick: () -> Unit) {
 @Composable
 fun MainScreenPreview() {
     DrillTutorTheme {
-        MainScreen()
+        // MainScreen()
+        Text("Preview unavailable until state hoisting is implemented")
     }
 }

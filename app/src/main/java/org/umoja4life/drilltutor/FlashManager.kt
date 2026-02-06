@@ -12,10 +12,6 @@ class FlashManager (
     private var mySettings: SettingsRepository,
     private var myState: PlayerState
 ){
-    init {
-        updateConfig()  // restore/update the player state based off of current settings values
-    }
-
     // *********************************************************************
     // ********  LOCAL CONFIGURATION  **********************
     // *********************************************************************
@@ -41,6 +37,10 @@ class FlashManager (
     private var myHandler: AbstractFlashcardType? = null  // TODO: ensure never null
     private var mySource: AbstractFlashcardType? = null  // TODO: ensure never null
 
+    // *********************************************************************
+    init {
+        updateConfig()  // restore/update the player state based off of current settings values
+    }
     // *********************************************************************
 
     /**
