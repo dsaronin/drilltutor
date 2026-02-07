@@ -9,23 +9,74 @@ import kotlinx.coroutines.launch
 
 class DrillViewModel : ViewModel() {
 
+    // ***********************************************************************
     // --- UI STATE ---
     // The specific card content to display
     private val _currentCard = MutableStateFlow(FlashcardData("", ""))
     val currentCard: StateFlow<FlashcardData> = _currentCard.asStateFlow()
 
+    // Dynamic Font Sizing for Front Text
+    private val _fontSize = MutableStateFlow(CardFontSize.NORMAL)
+    val fontSize: StateFlow<CardFontSize> = _fontSize.asStateFlow()
+
     // The Loading Flag (True = Show Spinner, False = Show Card)
     private val _isLoading = MutableStateFlow(true)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
+    // ***********************************************************************
     // --- LOGIC ENGINE ---
     // Nullable because it is invalid while data is loading
     private var flashManager: FlashManager? = null
 
+    // ***********************************************************************
+    // Enum for Size Categories (Mapped to Dimens in UI)
+    // ***********************************************************************
+    enum class CardFontSize(val dimenResId: Int) {
+        HUGE(R.dimen.font_size_huge),
+        LARGE(R.dimen.font_size_large),
+        BIG1(R.dimen.font_size_big_1),
+        BIG2(R.dimen.font_size_big_2),
+        BIG3(R.dimen.font_size_big_3),
+        NORMAL(R.dimen.font_size_normal);
+
+        companion object {
+            /**
+             * lengthToFontSize
+             * Maps character count to font size category.
+             * Legacy Ruby: 1-5=Huge, 6-8=Large, 9-16=Big1, 17-39=Big2, 40-59=Big3, Else=Normal
+             */
+            fun lengthToFontSize(text: String): CardFontSize {
+                return when (text.length) {
+                    in 1..5   -> HUGE
+                    in 6..8   -> LARGE
+                    in 9..16  -> BIG1
+                    in 17..39 -> BIG2
+                    in 40..59 -> BIG3
+                    else      -> NORMAL
+                }
+            }
+        }
+    }
+    // ***********************************************************************
     init {
         monitorRepository()
     }
+    // ***********************************************************************
+    // *****  PUBLIC ACTIONS  ***********************************************
+    // ***********************************************************************
 
+    fun onNextClick() {
+        // Guard: Do nothing if manager isn't ready
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.nextCard())
+    }
+
+    fun onPrevClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.prevCard())
+    }
+
+    // ***********************************************************************
     private fun monitorRepository() {
         viewModelScope.launch {
             // OBSERVE: Listen to the Singleton Repository's status stream.
@@ -47,18 +98,23 @@ class DrillViewModel : ViewModel() {
         }
     }
 
+    private fun prepCardDisplay(card: FlashcardData) {
+        _fontSize.value = CardFontSize.lengthToFontSize(card.front)  // variable font size card display
+        _currentCard.value = card
+    }
+
     private suspend fun rebuildManager() {
         Environment.logInfo("VM: (Re)Building FlashManager...")
 
         val playState = Environment.playerState.loadPlayerState()
 
-        // 1. Instantiate the Logic Engine with fresh data
+        // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(
             Environment.settings,
             playState
         )
 
-        // 2. Push initial state to UI
-        _currentCard.value = flashManager?.currentCard() ?: FlashcardData()
+        prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
     }
+
 }

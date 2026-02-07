@@ -26,6 +26,15 @@
     <dimen name="letter_spacing_body_medium">0.25sp</dimen>
     <dimen name="font_large">22sp</dimen>
 
+    <!-- font sizes for variable Flashcard display -->
+    <dimen name="font_size_huge">96sp</dimen>
+    <dimen name="font_size_large">64sp</dimen>
+    <dimen name="font_size_big_1">48sp</dimen>
+    <dimen name="font_size_big_2">32sp</dimen>
+    <dimen name="font_size_big_3">24sp</dimen>
+    <dimen name="font_size_normal">16sp</dimen>
+
+
     <!-- Bar padding -->
     <dimen name="padding_bar_vertical">4dp</dimen>
     <dimen name="padding_bar_content_vertical">0dp</dimen>

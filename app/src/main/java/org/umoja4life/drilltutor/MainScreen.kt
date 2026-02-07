@@ -111,6 +111,7 @@ fun DrawerHeader() {
 fun MainScreen(viewModel: DrillViewModel) {
     // OBSERVE: These update automatically when ViewModel changes
     val currentCard by viewModel.currentCard.collectAsState()
+    val fontSize by viewModel.fontSize.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
 
     val navController = rememberNavController()
@@ -202,11 +203,17 @@ fun MainScreen(viewModel: DrillViewModel) {
                 if (isLandscape) {
                     LandscapeLayout(
                         currentCard = currentCard,
+                        fontSize = fontSize,
+                        onNext = { viewModel.onNextClick() },
+                        onPrev = { viewModel.onPrevClick() },
                         onMenuClick = { scope.launch { drawerState.open() } }
                     )
                 } else {
                     PortraitLayout(
                         currentCard = currentCard,
+                        fontSize = fontSize,
+                        onNext = { viewModel.onNextClick() },
+                        onPrev = { viewModel.onPrevClick() },
                         onMenuClick = { scope.launch { drawerState.open() } }
                     )
                 }
@@ -291,9 +298,15 @@ private fun DrillTutorBottomBar() {
 @Composable
 private fun DrillTutorContent(
     paddingValues: PaddingValues,
-    card: FlashcardData // for accessing card content
+    card: FlashcardData,   // for accessing card content
+    fontSize: DrillViewModel.CardFontSize,
+    onNext: () -> Unit,
+    onPrev: () -> Unit
 ) {
     val screenHeight = LocalConfiguration.current.screenHeightDp.dp
+    // HELPER: Convert Dp resource to Sp for Text
+    val density = androidx.compose.ui.platform.LocalDensity.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -306,7 +319,7 @@ private fun DrillTutorContent(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
         ) {
-            IconButton(onClick = { /* Prev card */ }) {
+            IconButton(onClick = onPrev) {
                 Icon(
                     Icons.Filled.ChevronLeft,
                     contentDescription = stringResource(id = R.string.cd_previous_card),
@@ -327,12 +340,21 @@ private fun DrillTutorContent(
                         // We will tackle dynamic font sizing in Step 1.2
                         Text(
                             text = card.front,
-                            style = MaterialTheme.typography.displayMedium,
+                            // Direct access to the encapsulated ID
+                            fontSize = with(density) {
+                                dimensionResource(id = fontSize.dimenResId).toSp()
+                            },
+                            lineHeight = with(density) {
+                                dimensionResource(id = fontSize.dimenResId).toSp()
+                            },
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            // style = MaterialTheme.typography.displayMedium,
                             textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                     }
                 }
-                IconButton(onClick = { /* Next card */ }) {
+            }
+                IconButton(onClick = onNext) {
                     Icon(
                         Icons.Filled.ChevronRight,
                         contentDescription = stringResource(id = R.string.cd_next_card),
@@ -342,25 +364,36 @@ private fun DrillTutorContent(
             }
         }
     }
-}
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     private fun PortraitLayout(
         currentCard: FlashcardData,
+        fontSize: DrillViewModel.CardFontSize,
+        onNext: () -> Unit,
+        onPrev: () -> Unit,
         onMenuClick: () -> Unit
     ) {
         Scaffold(
             topBar = { DrillTutorTopBar(onMenuClick = onMenuClick) },
             bottomBar = { DrillTutorBottomBar() }
         ) { innerPadding ->
-            DrillTutorContent(paddingValues = innerPadding, card = currentCard)
+            DrillTutorContent(
+                paddingValues = innerPadding,
+                card = currentCard,
+                fontSize = fontSize,
+                onNext = onNext,
+                onPrev = onPrev
+            )
         }
     }
 
     @Composable
     private fun LandscapeLayout(
         currentCard: FlashcardData,
+        fontSize: DrillViewModel.CardFontSize,
+        onNext: () -> Unit,
+        onPrev: () -> Unit,
         onMenuClick: () -> Unit
     ) {
         val configuration = LocalConfiguration.current
@@ -399,7 +432,13 @@ private fun DrillTutorContent(
                         .fillMaxHeight()
                         .zIndex(1f), // <--- Ensure content sits above any sidebar overlap
                 ) {
-                    DrillTutorContent(paddingValues = PaddingValues(0.dp), card = currentCard)
+                    DrillTutorContent(
+                        paddingValues = PaddingValues(0.dp),
+                        card = currentCard,
+                        fontSize = fontSize,
+                        onNext = onNext,
+                        onPrev = onPrev
+                    )
                 }
 
                 // Right Sidebar (Player)
