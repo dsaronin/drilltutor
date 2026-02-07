@@ -282,7 +282,7 @@ private fun DrillTutorBottomBar() {
             IconButton(onClick = { /* shfl */ }) {
                 Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
             }
-            IconButton(onClick = { /* flip */ }) {
+            IconButton(onClick = onFlip) {
                 Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
             }
             IconButton(onClick = { /* gnext */ }) {
