@@ -81,6 +81,11 @@ class DrillViewModel : ViewModel() {
         prepCardDisplay(manager.currentCard().flip())
     }
 
+    fun onFrontClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.currentCard())
+    }
+
     // ***********************************************************************
     private fun monitorRepository() {
         viewModelScope.launch {

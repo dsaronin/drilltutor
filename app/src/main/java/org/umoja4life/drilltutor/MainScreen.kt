@@ -35,6 +35,7 @@ import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material.icons.filled.Stop
+import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -81,6 +82,7 @@ data class DrillActions(
     val onNext: () -> Unit,
     val onPrev: () -> Unit,
     val onFlip: () -> Unit,
+    val onFront: () -> Unit,
     val onMenu: () -> Unit
     // We can easily add onShuffle, onGroupNext, etc. here later
 )
@@ -130,6 +132,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         onNext = { viewModel.onNextClick() },
         onPrev = { viewModel.onPrevClick() },
         onFlip = { viewModel.onFlipClick() },
+        onFront = { viewModel.onFrontClick() },
         onMenu = { scope.launch { drawerState.open() } }
     )
 
@@ -299,15 +302,19 @@ private fun DrillTutorBottomBar(actions: DrillActions) {
             IconButton(onClick = { /* gprev */ }) {
                 Icon(Icons.Filled.SkipPrevious, contentDescription = stringResource(id = R.string.cd_group_previous))
             }
-            IconButton(onClick = { /* shfl */ }) {
-                Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
-            }
             IconButton(onClick = actions.onFlip) {
                 Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
+            }
+            IconButton(onClick = actions.onFront) {
+                Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
             }
             IconButton(onClick = { /* gnext */ }) {
                 Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
             }
+            IconButton(onClick = { /* shfl */ }) {
+                Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
+            }
+
         }
     }
 }
