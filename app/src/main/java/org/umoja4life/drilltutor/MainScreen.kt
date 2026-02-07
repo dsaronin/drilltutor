@@ -3,6 +3,7 @@ package org.umoja4life.drilltutor
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -34,7 +35,6 @@ import androidx.compose.material.icons.filled.Shuffle
 import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material.icons.filled.Stop
-import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -53,11 +53,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -75,11 +73,19 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import org.umoja4life.drilltutor.AboutScreen
-import org.umoja4life.drilltutor.R
-import org.umoja4life.drilltutor.SettingsScreen
+
+// *****************************************************************
+// the Actions Container
+// *****************************************************************
+data class DrillActions(
+    val onNext: () -> Unit,
+    val onPrev: () -> Unit,
+    val onFlip: () -> Unit,
+    val onMenu: () -> Unit
+    // We can easily add onShuffle, onGroupNext, etc. here later
+)
+// *****************************************************************
+// *****************************************************************
 
 @Composable
 fun DrawerHeader() {
@@ -118,6 +124,14 @@ fun MainScreen(viewModel: DrillViewModel) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
+
+    // Inside MainScreen
+    val actions = DrillActions(
+        onNext = { viewModel.onNextClick() },
+        onPrev = { viewModel.onPrevClick() },
+        onFlip = { viewModel.onFlipClick() },
+        onMenu = { scope.launch { drawerState.open() } }
+    )
 
     ModalNavigationDrawer(
         drawerState = drawerState,
@@ -200,23 +214,30 @@ fun MainScreen(viewModel: DrillViewModel) {
                 val configuration = LocalConfiguration.current
                 val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
-                if (isLandscape) {
-                    LandscapeLayout(
-                        currentCard = currentCard,
-                        fontSize = fontSize,
-                        onNext = { viewModel.onNextClick() },
-                        onPrev = { viewModel.onPrevClick() },
-                        onMenuClick = { scope.launch { drawerState.open() } }
-                    )
+                // LOADING STATE CHECK
+                if (isLoading) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        androidx.compose.material3.CircularProgressIndicator()
+                    }
                 } else {
-                    PortraitLayout(
-                        currentCard = currentCard,
-                        fontSize = fontSize,
-                        onNext = { viewModel.onNextClick() },
-                        onPrev = { viewModel.onPrevClick() },
-                        onMenuClick = { scope.launch { drawerState.open() } }
-                    )
+                    if (isLandscape) {
+                        LandscapeLayout(
+                            currentCard = currentCard,
+                            fontSize = fontSize,
+                            actions = actions
+                        )
+                    } else {
+                        PortraitLayout(
+                            currentCard = currentCard,
+                            fontSize = fontSize,
+                            actions = actions
+                        )
+                    }
                 }
+
             }
             composable("about") {
                 AboutScreen(onNavigateBack = { navController.popBackStack() })
@@ -264,8 +285,7 @@ private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
 }
 
 @Composable
-private fun DrillTutorBottomBar() {
-    var isRear by remember { mutableStateOf(false) }
+private fun DrillTutorBottomBar(actions: DrillActions) {
     BottomAppBar(
         contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
     ) {
@@ -282,14 +302,11 @@ private fun DrillTutorBottomBar() {
             IconButton(onClick = { /* shfl */ }) {
                 Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
             }
-            IconButton(onClick = onFlip) {
+            IconButton(onClick = actions.onFlip) {
                 Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
             }
             IconButton(onClick = { /* gnext */ }) {
                 Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
-            }
-            IconButton(onClick = { isRear = !isRear }) {
-                Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
             }
         }
     }
@@ -300,8 +317,7 @@ private fun DrillTutorContent(
     paddingValues: PaddingValues,
     card: FlashcardData,   // for accessing card content
     fontSize: DrillViewModel.CardFontSize,
-    onNext: () -> Unit,
-    onPrev: () -> Unit
+    actions: DrillActions
 ) {
     val screenHeight = LocalConfiguration.current.screenHeightDp.dp
     // HELPER: Convert Dp resource to Sp for Text
@@ -319,7 +335,7 @@ private fun DrillTutorContent(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
         ) {
-            IconButton(onClick = onPrev) {
+            IconButton(onClick = actions.onPrev) {
                 Icon(
                     Icons.Filled.ChevronLeft,
                     contentDescription = stringResource(id = R.string.cd_previous_card),
@@ -330,6 +346,7 @@ private fun DrillTutorContent(
                 modifier = Modifier
                     .height(screenHeight * 0.4f)
                     .weight(1f)
+                    .clickable { actions.onFlip() }    // tap card to flip it!
             ) {
                 Box(
                     modifier = Modifier.fillMaxSize(),
@@ -347,14 +364,14 @@ private fun DrillTutorContent(
                             lineHeight = with(density) {
                                 dimensionResource(id = fontSize.dimenResId).toSp()
                             },
-                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontWeight = FontWeight.Bold,
                             // style = MaterialTheme.typography.displayMedium,
                             textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                     }
                 }
             }
-                IconButton(onClick = onNext) {
+                IconButton(onClick = actions.onNext) {
                     Icon(
                         Icons.Filled.ChevronRight,
                         contentDescription = stringResource(id = R.string.cd_next_card),
@@ -370,20 +387,17 @@ private fun DrillTutorContent(
     private fun PortraitLayout(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
-        onNext: () -> Unit,
-        onPrev: () -> Unit,
-        onMenuClick: () -> Unit
+        actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(onMenuClick = onMenuClick) },
-            bottomBar = { DrillTutorBottomBar() }
+            topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu) },
+            bottomBar = { DrillTutorBottomBar(actions = actions) }
         ) { innerPadding ->
             DrillTutorContent(
                 paddingValues = innerPadding,
                 card = currentCard,
                 fontSize = fontSize,
-                onNext = onNext,
-                onPrev = onPrev
+                actions = actions
             )
         }
     }
@@ -392,9 +406,7 @@ private fun DrillTutorContent(
     private fun LandscapeLayout(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
-        onNext: () -> Unit,
-        onPrev: () -> Unit,
-        onMenuClick: () -> Unit
+        actions: DrillActions
     ) {
         val configuration = LocalConfiguration.current
         // In Landscape, the vertical edge matches the screen height.
@@ -421,7 +433,7 @@ private fun DrillTutorContent(
                             .rotate(-90f),
                         contentAlignment = Alignment.Center
                     ) {
-                        DrillTutorTopBar(onMenuClick = onMenuClick)
+                        DrillTutorTopBar(onMenuClick = actions.onMenu)
                     }
                 }
 
@@ -436,8 +448,7 @@ private fun DrillTutorContent(
                         paddingValues = PaddingValues(0.dp),
                         card = currentCard,
                         fontSize = fontSize,
-                        onNext = onNext,
-                        onPrev = onPrev
+                        actions = actions
                     )
                 }
 
@@ -457,7 +468,7 @@ private fun DrillTutorContent(
                             .rotate(-90f),
                         contentAlignment = Alignment.Center
                     ) {
-                        DrillTutorBottomBar()
+                        DrillTutorBottomBar(actions = actions)
                     }
                 }
             }
