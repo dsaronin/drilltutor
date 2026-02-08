@@ -110,12 +110,21 @@ class DrillViewModel : ViewModel() {
     }
 
     // ***********************************************************************
+    // --- LIFECYCLE ---
+    // ***********************************************************************
+
+    override fun onCleared() {
+        super.onCleared()
+        saveCurrentState() // Trigger: App Closing / ViewModel Destruction
+    }
+
+    // ***********************************************************************
     // --- PERSISTENCE ---
     // ***********************************************************************
 
     fun saveCurrentState() {
         val state = playState ?: return
-        Environment.logInfo("VM: Saving PlayerState...")
+        Environment.logInfo("VM: Saving PlayerState: ${state.topicKey} -- Ptr=${state.curPtr} Grp=${state.groupDex}")
         viewModelScope.launch {
             Environment.playerState.savePlayerState(state)
         }
@@ -152,6 +161,7 @@ class DrillViewModel : ViewModel() {
         Environment.logInfo("VM: (Re)Building FlashManager...")
 
         playState = Environment.playerState.loadPlayerState()
+        Environment.logInfo("VM: Loading PlayerState: ${playState?.topicKey} -- Ptr=${playState?.curPtr} Grp=${playState?.groupDex}")
 
         // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(
@@ -160,9 +170,6 @@ class DrillViewModel : ViewModel() {
         )
 
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
-
-        // TEST HARNESS: Verify save works (check logs)
-        saveCurrentState()
     }
 
 }
