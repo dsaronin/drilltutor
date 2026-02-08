@@ -15,13 +15,29 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.serialization.Serializable
 
+// ****************************************************************
+// Unified State Container
+@Serializable
+data class SettingState(
+    val language: String = "en",
+    val topic: String = SettingsRepository.DEFAULT_TOPIC,
+    val source: FlashcardSource = SettingsRepository.DEFAULT_SOURCE,
+    val selector: SelectorType = SettingsRepository.DEFAULT_SELECTOR,
+    val groupSize: Int = SettingsRepository.DEFAULT_SIZE,
+    val cardSide: CardSide = SettingsRepository.DEFAULT_SIDE
+)
+
+// ****************************************************************
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+// ****************************************************************
 
 class SettingsRepository(context: Context) {
 
     private val TAG = "SettingsRepo"
 
+    // ****************************************************************
     companion object {
         // Defaults using Type Safety
         const val DEFAULT_TOPIC = "default"
@@ -33,6 +49,7 @@ class SettingsRepository(context: Context) {
         // Group sizes are numbers, so a simple List is fine here
         val VALID_GROUP_SIZES = listOf(5, 10, 15, 25, 50)
     }
+    // ****************************************************************
 
     // --- INFRASTRUCTURE ---
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -67,10 +84,10 @@ class SettingsRepository(context: Context) {
     val cardSide: StateFlow<CardSide> = _cardSide.asStateFlow()
 
     init {
-        loadSettings()
+        loadSettingState()
     }
 
-    private fun loadSettings() {
+    private fun loadSettingState() {
         scope.launch {
             val prefs = dataStore.data.first()
 
