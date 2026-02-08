@@ -83,6 +83,10 @@ data class DrillActions(
     val onPrev: () -> Unit,
     val onFlip: () -> Unit,
     val onFront: () -> Unit,
+    val onShuffle: () -> Unit,
+    val onNextGroup: () -> Unit,
+    val onPrevGroup: () -> Unit,
+    val onReset: () -> Unit,
     val onMenu: () -> Unit
     // We can easily add onShuffle, onGroupNext, etc. here later
 )
@@ -133,6 +137,10 @@ fun MainScreen(viewModel: DrillViewModel) {
         onPrev = { viewModel.onPrevClick() },
         onFlip = { viewModel.onFlipClick() },
         onFront = { viewModel.onFrontClick() },
+        onShuffle = { viewModel.onShuffleClick() },
+        onNextGroup = { viewModel.onNextGroupClick() },
+        onPrevGroup = { viewModel.onPrevGroupClick() },
+        onReset = { viewModel.onResetClick() },
         onMenu = { scope.launch { drawerState.open() } }
     )
 
@@ -296,10 +304,10 @@ private fun DrillTutorBottomBar(actions: DrillActions) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
-            IconButton(onClick = { /* quit */ }) {
+            IconButton(onClick = actions.onReset) {
                 Icon(Icons.Filled.Stop, contentDescription = stringResource(id = R.string.cd_quit))
             }
-            IconButton(onClick = { /* gprev */ }) {
+            IconButton(onClick = actions.onPrevGroup) {
                 Icon(Icons.Filled.SkipPrevious, contentDescription = stringResource(id = R.string.cd_group_previous))
             }
             IconButton(onClick = actions.onFlip) {
@@ -308,10 +316,10 @@ private fun DrillTutorBottomBar(actions: DrillActions) {
             IconButton(onClick = actions.onFront) {
                 Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
             }
-            IconButton(onClick = { /* gnext */ }) {
+            IconButton(onClick = actions.onNextGroup) {
                 Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
             }
-            IconButton(onClick = { /* shfl */ }) {
+            IconButton(onClick = actions.onShuffle) {
                 Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
             }
 

@@ -86,6 +86,26 @@ class DrillViewModel : ViewModel() {
         prepCardDisplay(manager.currentCard())
     }
 
+    fun onShuffleClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.shuffleCards() )
+    }
+
+    fun onNextGroupClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.nextGroupCard() )
+    }
+
+    fun onPrevGroupClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.prevGroupCard() )
+    }
+
+    fun onResetClick() {
+        val manager = flashManager ?: return
+        prepCardDisplay(manager.resetCards() )
+    }
+
     // ***********************************************************************
     private fun monitorRepository() {
         viewModelScope.launch {
