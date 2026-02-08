@@ -110,6 +110,18 @@ class DrillViewModel : ViewModel() {
     }
 
     // ***********************************************************************
+    // --- PERSISTENCE ---
+    // ***********************************************************************
+
+    fun saveCurrentState() {
+        val state = playState ?: return
+        Environment.logInfo("VM: Saving PlayerState...")
+        viewModelScope.launch {
+            Environment.playerState.savePlayerState(state)
+        }
+    }
+
+    // ***********************************************************************
     private fun monitorRepository() {
         viewModelScope.launch {
             // OBSERVE: Listen to the Singleton Repository's status stream.
@@ -148,6 +160,9 @@ class DrillViewModel : ViewModel() {
         )
 
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
+
+        // TEST HARNESS: Verify save works (check logs)
+        saveCurrentState()
     }
 
 }
