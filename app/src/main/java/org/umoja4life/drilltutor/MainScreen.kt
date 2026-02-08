@@ -334,7 +334,13 @@ private fun DrillTutorContent(
     fontSize: DrillViewModel.CardFontSize,
     actions: DrillActions
 ) {
-    val screenHeight = LocalConfiguration.current.screenHeightDp.dp
+    val configuration = LocalConfiguration.current
+    val screenHeight = configuration.screenHeightDp.dp
+    // ADJUST HEIGHT FRACTION BASED ON ORIENTATION
+    // Landscape: Use 85% of vertical space (since space is tight vertically).
+    // Portrait: Use 40% of vertical space (standard look).
+    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+    val cardHeightFraction = if (isLandscape) 0.85f else 0.6f
     // HELPER: Convert Dp resource to Sp for Text
     val density = androidx.compose.ui.platform.LocalDensity.current
 
@@ -359,7 +365,7 @@ private fun DrillTutorContent(
             }
             Card(
                 modifier = Modifier
-                    .height(screenHeight * 0.4f)
+                    .height(screenHeight * cardHeightFraction)
                     .weight(1f)
                     .clickable { actions.onFlip() }    // tap card to flip it!
             ) {

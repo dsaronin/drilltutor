@@ -28,6 +28,9 @@ class DrillViewModel : ViewModel() {
     // Nullable because it is invalid while data is loading
     private var flashManager: FlashManager? = null
 
+    // Retain reference to the state object for persistence
+    private var playState: PlayerState? = null
+
     // ***********************************************************************
     // Enum for Size Categories (Mapped to Dimens in UI)
     // ***********************************************************************
@@ -136,12 +139,12 @@ class DrillViewModel : ViewModel() {
     private suspend fun rebuildManager() {
         Environment.logInfo("VM: (Re)Building FlashManager...")
 
-        val playState = Environment.playerState.loadPlayerState()
+        playState = Environment.playerState.loadPlayerState()
 
         // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(
             Environment.settings,
-            playState
+            playState!!
         )
 
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
