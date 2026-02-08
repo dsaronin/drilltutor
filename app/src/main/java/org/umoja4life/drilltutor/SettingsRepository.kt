@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.CoroutineScope
@@ -16,12 +15,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 // ****************************************************************
 // Unified State Container
 @Serializable
 data class SettingState(
-    val language: String = "en",
+    val language: String = "tr",
     val topic: String = SettingsRepository.DEFAULT_TOPIC,
     val source: FlashcardSource = SettingsRepository.DEFAULT_SOURCE,
     val selector: SelectorType = SettingsRepository.DEFAULT_SELECTOR,
@@ -56,12 +57,10 @@ class SettingsRepository(context: Context) {
     private val dataStore: DataStore<Preferences> = context.dataStore
 
     // --- PERSISTENCE KEYS ---
-    private val KEY_LANGUAGE = stringPreferencesKey("language")
-    private val KEY_TOPIC    = stringPreferencesKey("topic")
-    private val KEY_SOURCE   = stringPreferencesKey("source")
-    private val KEY_SELECTOR = stringPreferencesKey("selector")
-    private val KEY_SIZE     = intPreferencesKey("size")
-    private val KEY_SIDE     = stringPreferencesKey("side")
+    // Single key for the entire state object
+    private val KEY_SETTINGS_STATE = stringPreferencesKey("settings_state_json")
+    // JSON Configuration
+    private val json = Json { ignoreUnknownKeys = true }
 
     // --- STATE FLOWS (Exposing Enums, not Strings) ---
 
@@ -87,71 +86,105 @@ class SettingsRepository(context: Context) {
         loadSettingState()
     }
 
+    /**
+     * loadSettingState
+     * Fetches stored JSON, decodes to object.
+     * Returns default instance if missing or error.
+     */
     private fun loadSettingState() {
         scope.launch {
             val prefs = dataStore.data.first()
+            val jsonString = prefs[KEY_SETTINGS_STATE]
 
-            // 1. Load Raw Values
-            val rawLang   = prefs[KEY_LANGUAGE] ?: "en"
-            val rawTopic  = prefs[KEY_TOPIC]    ?: DEFAULT_TOPIC
-            val rawSource = prefs[KEY_SOURCE]   ?: DEFAULT_SOURCE.sourceName
-            val rawSelect = prefs[KEY_SELECTOR] ?: DEFAULT_SELECTOR.id
-            val rawSize   = prefs[KEY_SIZE]     ?: DEFAULT_SIZE
-            val rawSide   = prefs[KEY_SIDE]     ?: DEFAULT_SIDE.id
+            val state = if (jsonString.isNullOrEmpty()) {
+                Environment.logInfo("$TAG: No saved state found. Using Defaults.")
+                SettingState() // Return Defaults
+            } else {
+                try {
+                    json.decodeFromString<SettingState>(jsonString)
+                } catch (e: Exception) {
+                    Environment.logError("$TAG: Load failed. ${e.message}")
+                    SettingState()
+                }
+            }
 
-            // 2. Convert to Types (Safety Check)
-            _language.value  = rawLang
-            _topic.value     = rawTopic
-            _source.value    = FlashcardSource.fromSourceName(rawSource)
-            _selector.value  = SelectorType.fromId(rawSelect)
-            _groupSize.value = rawSize
-            _cardSide.value  = CardSide.fromId(rawSide)
+            Environment.logInfo("$TAG: Loaded State: Topic=${state.topic}, Source=${state.source.sourceName}")
 
-            Environment.logInfo("$TAG: Loaded Settings: Lang=$rawLang, Source=${_source.value.sourceName}")
+            // --- THE BRIDGE ---
+            // Push values into the legacy flows so existing consumers work
+            _language.value  = state.language
+            _topic.value     = state.topic
+            _source.value    = state.source
+            _selector.value  = state.selector
+            _groupSize.value = state.groupSize
+            _cardSide.value  = state.cardSide
+        }
+    }
+
+    /**
+     * saveSettingState
+     * Serializes object to JSON, writes to disk.
+     * Persist the full object
+     */
+    private fun saveSettingState(state: SettingState) {
+        scope.launch {
+            try {
+                val jsonString = json.encodeToString(state)
+                dataStore.edit { prefs ->
+                    prefs[KEY_SETTINGS_STATE] = jsonString
+                }
+                Environment.logInfo("$TAG: Saved State: Topic=${state.topic}, Source=${state.source.sourceName}")
+            } catch (e: Exception) {
+                Environment.logError("$TAG: Save failed. ${e.message}")
+            }
         }
     }
 
     // --- SETTERS (Taking Enums) ---
+// --- SETTERS (Refactored to use SettingState) ---
 
-    fun setLanguage(newVal: String) = saveString(KEY_LANGUAGE, _language, newVal)
-    fun setTopic(newVal: String)    = saveString(KEY_TOPIC, _topic, newVal)
+    fun setLanguage(newVal: String) {
+        _language.value = newVal
+        saveCurrentStateSnapshot()
+    }
+
+    fun setTopic(newVal: String) {
+        _topic.value = newVal
+        saveCurrentStateSnapshot()
+    }
 
     fun setSource(newVal: FlashcardSource) {
         _source.value = newVal
-        saveInternal(KEY_SOURCE, newVal.sourceName)
+        saveCurrentStateSnapshot()
     }
 
     fun setSelector(newVal: SelectorType) {
         _selector.value = newVal
-        saveInternal(KEY_SELECTOR, newVal.id)
-    }
-
-    fun setCardSide(newVal: CardSide) {
-        _cardSide.value = newVal
-        saveInternal(KEY_SIDE, newVal.id)
+        saveCurrentStateSnapshot()
     }
 
     fun setGroupSize(newVal: Int) {
         _groupSize.value = newVal
-        scope.launch {
-            dataStore.edit { it[KEY_SIZE] = newVal }
-            Environment.logInfo("$TAG: Saved Size: $newVal")
-        }
+        saveCurrentStateSnapshot()
     }
 
-    // --- HELPERS ---
-
-    // Helper for simple strings
-    private fun saveString(key: Preferences.Key<String>, flow: MutableStateFlow<String>, newVal: String) {
-        flow.value = newVal
-        saveInternal(key, newVal)
+    fun setCardSide(newVal: CardSide) {
+        _cardSide.value = newVal
+        saveCurrentStateSnapshot()
     }
 
-    // Bottom-level saver
-    private fun saveInternal(key: Preferences.Key<String>, value: String) {
-        scope.launch {
-            dataStore.edit { it[key] = value }
-            Environment.logInfo("$TAG: Saved ${key.name}: $value")
-        }
+    // Helper to gather current values and save
+    private fun saveCurrentStateSnapshot() {
+        val newState = SettingState(
+            language  = _language.value,
+            topic     = _topic.value,
+            source    = _source.value,
+            selector  = _selector.value,
+            groupSize = _groupSize.value,
+            cardSide  = _cardSide.value
+        )
+        saveSettingState(newState)
     }
+
+
 }
