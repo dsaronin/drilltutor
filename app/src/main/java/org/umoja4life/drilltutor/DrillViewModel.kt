@@ -124,7 +124,7 @@ class DrillViewModel : ViewModel() {
 
     fun saveCurrentState() {
         val state = playState ?: return
-        Environment.logInfo("VM: Saving PlayerState: ${state.topicKey} -- Ptr=${state.curPtr} Grp=${state.groupDex}")
+
         viewModelScope.launch {
             Environment.playerState.savePlayerState(state)
         }
@@ -158,10 +158,9 @@ class DrillViewModel : ViewModel() {
     }
 
     private suspend fun rebuildManager() {
-        Environment.logInfo("VM: (Re)Building FlashManager...")
+        Environment.logInfo("DrillVM: (Re)Building FlashManager...")
 
         playState = Environment.playerState.loadPlayerState()
-        Environment.logInfo("VM: Loading PlayerState: ${playState?.topicKey} -- Ptr=${playState?.curPtr} Grp=${playState?.groupDex}")
 
         // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(

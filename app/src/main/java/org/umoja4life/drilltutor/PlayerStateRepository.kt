@@ -46,12 +46,15 @@ class PlayerStateRepository(private val context: Context) {
             val jsonString = preferences[KEY_PLAYER_STATE]
 
             if (jsonString.isNullOrEmpty()) {
+                Environment.logWarn("PlayerState: No saved state found.")
                 PlayerState() // Return Defaults
             } else {
-                json.decodeFromString<PlayerState>(jsonString)
+                val playState = json.decodeFromString<PlayerState>(jsonString)
+                Environment.logInfo("PlayerState: LoadPlayerState: ${playState.topicKey}, Ptr=${playState.curPtr} Grp=${playState.groupDex}")
+                playState
             }
         } catch (e: Exception) {
-            Environment.logError("PlayerStateRepo: Load failed. ${e.message}")
+            Environment.logError("PlayerState: Load failed. ${e.message}")
             PlayerState() // Fallback to defaults
         }
     }
@@ -61,13 +64,15 @@ class PlayerStateRepository(private val context: Context) {
      * Serializes object to JSON, writes to disk.
      */
     suspend fun savePlayerState(state: PlayerState) {
+        Environment.logInfo("PlayerState: SavePlayerState: ${state.topicKey} -- Ptr=${state.curPtr} Grp=${state.groupDex}")
+
         try {
             val jsonString = json.encodeToString(state)
             dataStore.edit { prefs ->
                 prefs[KEY_PLAYER_STATE] = jsonString
             }
         } catch (e: Exception) {
-            Environment.logError("PlayerStateRepo: Save failed. ${e.message}")
+            Environment.logError("PlayerState: Save failed. ${e.message}")
         }
     }
 }
