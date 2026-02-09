@@ -93,6 +93,10 @@ class FlashManager (
         }
 
         mySource = sourceInstance
+        // When the source changes, the old 'curPtr' (e.g., 4) is likely invalid
+        // for the new data (size 1). We must reset the pointer.
+        // Even if we don't fully reset(), we must clamp curPtr or set it to 0.
+        myState.curPtr = 0
 
         Environment.logInfo("FLASHMGR: source: ${mySettings.source}, topic: ${myState.topicKey}, entry: $maybeEntry")
 
@@ -212,7 +216,10 @@ class FlashManager (
         // Ruby: if ( (@cur_ptr += 1) >= @my_settings[:sizer] )
         isFlipped = false   // reset normal side showing
         myState.curPtr += 1
-        if (myState.curPtr >= groupSize) {
+        // FIX: Wrap based on actual available indices, not theoretical group size
+        val limit = if (shuffleIndexes.isNotEmpty()) shuffleIndexes.size else groupSize
+
+        if (myState.curPtr >= limit) {
             myState.curPtr = 0
         }
         return currentCard()
@@ -226,9 +233,9 @@ class FlashManager (
         // Ruby: if ( (@cur_ptr -= 1) < 0 )
         myState.curPtr -= 1
         if (myState.curPtr < 0) {
-            // Ruby: @cur_ptr = @my_settings[:sizer] - 1
-            myState.curPtr = groupSize - 1
-        }
+            // FIX: Wrap to the last actual index
+            val limit = if (shuffleIndexes.isNotEmpty()) shuffleIndexes.size else groupSize
+            myState.curPtr = limit - 1        }
         return currentCard()
     }
 

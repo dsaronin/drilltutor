@@ -164,9 +164,28 @@ class DrillViewModel : ViewModel() {
     // ***********************************************************************
     // Monitor changes in Settings and Loading Repository
     // ***********************************************************************
+    private var currentLanguage: String = ""  // track language state
     private fun monitorSettings() {
         viewModelScope.launch {
             Environment.settings.settingState.collect { state ->
+                // 1. Initialize tracker on first run
+                if (currentLanguage.isNullOrEmpty()) {
+                    currentLanguage = state.language
+                    // Do not return; let the logic below decide if we need to build
+                }
+
+                // 2. CRITICAL FIX: IGNORE LANGUAGE CHANGES
+                // If the language changed, a heavy Data Load is incoming.
+                // We MUST wait for 'monitorRepository' (DataStatus.Ready) to trigger the rebuild.
+                // If we rebuild now, we will be using the OLD data with the NEW settings.
+                if (state.language != currentLanguage) {
+                    Environment.logInfo("DrillVM: Language change detected (${currentLanguage} -> ${state.language}). Skipping config rebuild; waiting for Data Load.")
+                    currentLanguage = state.language
+                    return@collect
+                }
+
+                // 3. Handle Standard Config Changes (Topic, Size, etc.)
+                // These are safe to apply immediately because the Data is unchanged.
                 // [GUARD] Only rebuild if the Data is actually Ready.
                 // 1. Prevents double-build on App Startup (avoids racing monitorRepository).
                 // 2. Ensures we don't try to build a FlashManager with empty/loading data.
