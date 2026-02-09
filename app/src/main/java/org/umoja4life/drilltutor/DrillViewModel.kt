@@ -162,9 +162,9 @@ class DrillViewModel : ViewModel() {
 
         playState = Environment.playerState.loadPlayerState()
 
-        // Instantiate the Logic Engine with fresh data
+       // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(
-            Environment.settings,
+            Environment.settings.settingState.value,
             playState!!
         )
 

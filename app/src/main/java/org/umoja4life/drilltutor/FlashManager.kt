@@ -9,7 +9,7 @@ import kotlin.random.Random
  * It DOES NOT hold the data list.
  */
 class FlashManager (
-    private var mySettings: SettingsRepository,
+    private var mySettings: SettingState,
     private var myState: PlayerState
 ){
     // *********************************************************************
@@ -51,14 +51,14 @@ class FlashManager (
     fun updateConfig() {
 
         // grab local store of current Settings
-        groupSize = mySettings.groupSize.value
-        isOrdered = mySettings.selector.value == SelectorType.ORDERED
-        side = mySettings.cardSide.value.id
+        groupSize = mySettings.groupSize
+        isOrdered = mySettings.selector == SelectorType.ORDERED
+        side = mySettings.cardSide.id
         maybeEntry = null
 
-        myHandler = FlashcardTypeSelection.selectCardType(mySettings.source.value)
+        myHandler = FlashcardTypeSelection.selectCardType(mySettings.source)
 
-        setMySource(mySettings.topic.value)  // sets source; handler
+        setMySource(mySettings.topic)  // sets source; handler
     }
 
     /**
@@ -70,10 +70,10 @@ class FlashManager (
 
         // Assuming mySettings!!.currentTopic holds the default topic
         if (topic.matches(Regex("^def(ault)?$"))) {
-            topic = mySettings.topic.value
+            topic = mySettings.topic
         }
 
-        Environment.logInfo("FLASHMGR: source: ${mySettings.source.value}, topic: $topic, entry: $maybeEntry")
+        Environment.logInfo("FLASHMGR: source: ${mySettings.source}, topic: $topic, entry: $maybeEntry")
 
         // VocabularyType is the source of truth for all topics.
         var validatedTopic = topic

@@ -1,26 +1,42 @@
 package org.umoja4life.drilltutor
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.LocalTextStyle
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuDefaults
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import org.umoja4life.drilltutor.ui.theme.Gray050
-import org.umoja4life.drilltutor.ui.theme.Gray700
 import org.umoja4life.drilltutor.ui.theme.TurkiyeRed
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -30,12 +46,8 @@ fun SettingsScreen(
     modifier: Modifier = Modifier,
     onNavigateBack: () -> Unit
 ) {
-    val language by viewModel.currentLanguage.collectAsState()
-    val topic by viewModel.currentTopic.collectAsState()
-    val source by viewModel.currentSource.collectAsState()
-    val selector by viewModel.currentSelector.collectAsState()
-    val size by viewModel.currentSize.collectAsState()
-    val side by viewModel.currentSide.collectAsState()
+    // Observe the Unified State Object
+    val state by viewModel.settings.collectAsState()
 
     val largeFontSize: TextUnit = with(LocalDensity.current) {
         // Correct syntax: value.toSp()
@@ -80,7 +92,7 @@ fun SettingsScreen(
                 modifier = Modifier.fillMaxWidth()
             ) {
                 OutlinedTextField(
-                    value = topic, // Binds to the current topic state
+                    value = state.topic, // Binds to the current topic state
                     onValueChange = {}, // Read-only, user must select from list
                     readOnly = true,
                     label = { Text(stringResource(R.string.settings_label_topic)) },
@@ -112,7 +124,7 @@ fun SettingsScreen(
             // 2. Source
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_source),
-                currentValue = source.sourceName,
+                currentValue = state.source.name,
                 options = viewModel.availableSources,
                 optionLabel = { it.sourceName },
                 onOptionSelected = { viewModel.setSource(it) },
@@ -122,7 +134,7 @@ fun SettingsScreen(
             // 3. Selection Order
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_order),
-                currentValue = selector.id,
+                currentValue = state.selector.name,
                 options = viewModel.availableSelectors,
                 optionLabel = { it.id },
                 onOptionSelected = { viewModel.setSelector(it) },
@@ -132,7 +144,7 @@ fun SettingsScreen(
             // 4. Group Size
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_size),
-                currentValue = size.toString(),
+                currentValue = state.groupSize.toString(),
                 options = viewModel.availableSizes,
                 optionLabel = { it.toString() },
                 onOptionSelected = { viewModel.setGroupSize(it) },
@@ -142,7 +154,7 @@ fun SettingsScreen(
             // 5. Card Side
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_side),
-                currentValue = side.id,
+                currentValue = state.cardSide.name,
                 options = viewModel.availableSides,
                 optionLabel = { it.id },
                 onOptionSelected = { viewModel.setCardSide(it) },
@@ -152,7 +164,7 @@ fun SettingsScreen(
             // 6. Language
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_language),
-                currentValue = language.uppercase(),
+                currentValue = state.language.uppercase(),
                 options = viewModel.availableLanguages,
                 optionLabel = { it.uppercase() },
                 onOptionSelected = { viewModel.setLanguage(it) },
