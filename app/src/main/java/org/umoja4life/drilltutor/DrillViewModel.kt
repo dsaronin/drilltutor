@@ -62,7 +62,8 @@ class DrillViewModel : ViewModel() {
     }
     // ***********************************************************************
     init {
-        monitorRepository()
+        monitorRepository()  // Start monitoring flashcard repo loading
+        monitorSettings() // Start monitoring settings
     }
     // ***********************************************************************
     // *****  PUBLIC ACTIONS  ***********************************************
@@ -171,4 +172,17 @@ class DrillViewModel : ViewModel() {
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
     }
 
+    private fun monitorSettings() {
+        viewModelScope.launch {
+            Environment.settings.settingState.collect { state ->
+                // [GUARD] Only rebuild if the Data is actually Ready.
+                // 1. Prevents double-build on App Startup (avoids racing monitorRepository).
+                // 2. Ensures we don't try to build a FlashManager with empty/loading data.
+                if (Environment.flashcards.dataState.value == DataStatus.Ready) {
+                    Environment.logInfo("DrillVM: Settings changed ($state).")
+                    rebuildManager()
+                }
+            }
+        }
+    }
 }
