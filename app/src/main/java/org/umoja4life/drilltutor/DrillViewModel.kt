@@ -23,6 +23,8 @@ class DrillViewModel : ViewModel() {
     private val _isLoading = MutableStateFlow(true)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
+    private var isFirstLoad = true  // true if first time loading data
+
     // ***********************************************************************
     // --- LOGIC ENGINE ---
     // Nullable because it is invalid while data is loading
@@ -186,7 +188,15 @@ class DrillViewModel : ViewModel() {
                         _isLoading.value = true
                     }
                     DataStatus.Ready -> {
-                        rebuildManager(isConfigurationChange = false)
+                        // App Start (First Load) -> RESTORE old state (false).
+                        // Language Change (Subsequent Load) -> RESET state to defaults (true).
+                        if (isFirstLoad) {
+                            rebuildManager(isConfigurationChange = false)
+                            isFirstLoad = false
+                        } else {
+                            Environment.logInfo("DrillVM: Data Reloaded (Language Change). Resetting PlayerState.")
+                            rebuildManager(isConfigurationChange = true)
+                        }
                         _isLoading.value = false
                     }
                     DataStatus.Idle -> {

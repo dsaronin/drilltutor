@@ -45,13 +45,19 @@ class SettingsViewModel : ViewModel() {
     fun setSelector(newVal: SelectorType)  = updateSettings { it.copy(selector = newVal) }
     fun setGroupSize(newVal: Int)    = updateSettings { it.copy(groupSize = newVal) }
     fun setCardSide(newVal: CardSide) = updateSettings { it.copy(cardSide = newVal) }
-   fun setLanguage(newVal: String) {
-        updateSettings { it.copy(language = newVal) }         // Save Preference
+    fun setLanguage(newVal: String) {
+        // RESET LOGIC:
+        // Instead of 'it.copy()' (which keeps old junk), we create a FRESH State object.
+        // Because SettingState has default values in its constructor,
+        // this resets topic, source, groupSize, etc. to their defaults.
+        val resetState = SettingState(language = newVal)
 
-        // FIRE-AND-FORGET: Trigger the reload.
-        // DrillViewModel will detect the 'Ready' signal and rebuild itself.
-        viewModelScope.launch {
-            flashcardRepo.loadFlashcardData(newVal)     // Load Data & Build Topics
+        // Save this fresh state to persistence
+        updateSettings { resetState }
+
+        // Trigger the data load (using global scope to prevent cancellation)
+        Environment.scope.launch {
+            flashcardRepo.loadFlashcardData(newVal)
         }
     }
 

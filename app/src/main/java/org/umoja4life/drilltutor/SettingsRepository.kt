@@ -22,7 +22,7 @@ import kotlinx.serialization.json.Json
 // Unified State Container
 @Serializable
 data class SettingState(
-    val language: String = "tr",
+    val language: String = SettingsRepository.DEFAULT_LANGUAGE,
     val topic: String = SettingsRepository.DEFAULT_TOPIC,
     val source: FlashcardSource = SettingsRepository.DEFAULT_SOURCE,
     val selector: SelectorType = SettingsRepository.DEFAULT_SELECTOR,
@@ -36,6 +36,7 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 class SettingsRepository(context: Context) {
     companion object {
+        const val DEFAULT_LANGUAGE = "tr"
         const val DEFAULT_TOPIC = "default"
         val DEFAULT_SOURCE = FlashcardSource.VOCABULARY
         val DEFAULT_SELECTOR = SelectorType.ORDERED
@@ -44,7 +45,7 @@ class SettingsRepository(context: Context) {
         val VALID_GROUP_SIZES = listOf(5, 10, 15, 25, 50)
     }
 
-    private val TAG = "SettingsRepo"
+    private val TAG = "SettingState"
 
     // --- INFRASTRUCTURE ---
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -79,7 +80,7 @@ class SettingsRepository(context: Context) {
                 }
             }
 
-            Environment.logInfo("$TAG: Loaded State: Topic=${state.topic}, Source=${state.source.sourceName}")
+            Environment.logInfo("$TAG: Loaded State: Topic=${state.topic}, Source=${state.source.sourceName}, Lang=${state.language}")
             _settingState.value = state
         }
     }
@@ -97,10 +98,35 @@ class SettingsRepository(context: Context) {
                 dataStore.edit { prefs ->
                     prefs[KEY_SETTINGS_STATE] = jsonString
                 }
-                Environment.logInfo("$TAG: Saved State: Topic=${state.topic}, Source=${state.source.sourceName}")
+                Environment.logInfo("$TAG: Saving State: Topic=${state.topic}, Source=${state.source.sourceName}, Lang=${state.language}")
             } catch (e: Exception) {
                 Environment.logError("$TAG: Save failed. ${e.message}")
             }
         }
     }
+
+    /**
+     * awaitLanguageLoad
+     * Suspends until the DataStore has performed its first read from disk.
+     * Returns the persisted language code, or SettingsRepository.DEFAULT_LANGUAGE if new install.
+     */
+    suspend fun awaitLanguageLoad(): String {
+        // Read the raw preferences from disk (suspends until ready)
+        val prefs = dataStore.data.first()
+        val jsonString = prefs[KEY_SETTINGS_STATE]
+
+        return if (jsonString.isNullOrEmpty()) {
+            SettingsRepository.DEFAULT_LANGUAGE // Default fallback if really new
+        } else {
+            try {
+                // Decode just enough to get the language
+                val state = json.decodeFromString<SettingState>(jsonString)
+                state.language
+            } catch (e: Exception) {
+                Environment.logError("$TAG: Await failed. ${e.message}")
+                SettingsRepository.DEFAULT_LANGUAGE
+            }
+        }
+    }
+
 }

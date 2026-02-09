@@ -1,1583 +1,612 @@
 {
-  "quantifiers": {
-    "level": "A1",
+  "daladala": {
     "fc_data": [
       [
-        "bana hiçbir şey söyleyemezsin.",
-        "you can't tell me anything."
+        "daladala njia dar",
+        "daladala lines"
       ],
       [
-        "ben bir şey beğenmiyorum.",
-        "i don't like anything."
+        "banana <> kibeberu",
+        "ilala / mzinga"
       ],
       [
-        "biraz bekle olur mu?",
-        "wait a bit, okay?"
+        "banana <> kinyantira/shule",
+        "ilala / mzinga"
       ],
       [
-        "biraz işler yoğun da",
-        "bit busy also"
+        "banana <> kitunda",
+        "ilala / kitunda kati"
       ],
       [
-        "böyle bir şey nasıl oldu?",
-        "how did such a thing come about?"
+        "banana <> kivule",
+        "ilala / yangeyanye"
       ],
       [
-        "biri her zaman orada.",
-        "someone is always there."
+        "banana <> machimbo",
+        "ilala / kpunguni-b"
       ],
       [
-        "birkaç arkadasıma sorayım",
-        "let me ask my friend"
+        "banana <> magole",
+        "ilala / kivule"
       ],
       [
-        "biri mavi.",
-        "one is blue."
+        "banana <> mwanagati",
+        "ilala / mzinga"
       ],
       [
-        "birine patlamak",
-        "go off on someone"
+        "banana/mombasa <> kwa moshi",
+        "ilala / kitunda kati"
       ],
       [
-        "bir dene, beğenirsin.",
-        "just try it, you will like it."
+        "buguruni <> kivukoni/mnazi mmoja -- ilala / kivukoni"
       ],
       [
-        "beraber mutlu olurduk.",
-        "we used to be happy together."
+        "buguruni <> machimbo",
+        "ilala / lami ya mwisho"
       ],
       [
-        "beni daha sonra ara.",
-        "call me later."
+        "buguruni <> makumbusho -- kinondoni"
       ],
       [
-        "bu öyle bir şey değil.",
-        "it's nothing like that."
+        "buguruni <> masaki",
+        "kinondoni"
       ],
       [
-        "daha ne kadar",
-        "how much longer"
+        "buguruni <> mbagala rangi 3",
+        "temeke"
       ],
       [
-        "dişim çok ağrıyor, dayanamiyorum.",
-        "my tooth hurts a lot; i cannot stand it."
+        "buguruni <> muhimbili",
+        "ilala"
       ],
       [
-        "daha sonra bana hatırlat.",
-        "remind me later."
+        "buguruni <> mvuti",
+        "ilala / mwembe bami"
       ],
       [
-        "daha sonra halloldu.",
-        "it's settled then."
+        "buguruni <> yombo vituka/viwandani",
+        "ilala / kiwalani / yombo"
       ],
       [
-        "çok güzelmiş",
-        "response to i'm a software engineer"
+        "gongo la mboto <> buguruni",
+        "ilala / buguruni"
       ],
       [
-        "çok hoştu.",
-        "it was very nice."
+        "gongo la mboto <> chanika",
+        "ilala / chanika"
       ],
       [
-        "çok şanslısın.",
-        "you're very lucky."
+        "gongo la mboto <> kariakoo",
+        "ilala / kariakoo"
       ],
       [
-        "buradaki hiçbir şey benim değil.",
-        "nothing here is mine."
+        "gongo la mboto <> kivukoni/mnazi mmoja",
+        "ilala / kivukoni"
       ],
       [
-        "hiçbir şey doğru değil.",
-        "nothing feels right."
+        "gongo la mboto <> mbagala rangi 3",
+        "temeke / mbagala"
       ],
       [
-        "hiç duymadım",
-        "i've never heard of it."
+        "gongo la mboto <> mbezi",
+        "ubungo / mbezi magufuli bus"
       ],
       [
-        "hiç görmedim",
-        "i've never seen it."
+        "gongo la mboto <> mtoni mtongani",
+        "temeke / mtoni"
       ],
       [
-        "hic kamp yapmadim",
-        "i have never been camping"
+        "gongo la mboto <> mwenge /sam nujoma rd ",
+        "kinondoni / mwenge"
       ],
       [
-        "herkesi kurtaramazsın.",
-        "you cannot save everyone."
+        "gongo la mboto <> mwenge /uhuru/kawawa",
+        "kinondoni / mwenge"
       ],
       [
-        "her şey aynı.",
-        "everthing's the same."
+        "gongo la mboto <> temeke",
+        "temeke / temeke mwisho"
       ],
       [
-        "her şey karardı.",
-        "everthing went dark."
+        "gongo la mboto <> ubungo",
+        "ubungo / mawasiliano"
       ],
       [
-        "her şey nasıl?",
-        "how is everything"
+        "kawe <> kariakoo",
+        "kariakoo"
       ],
       [
-        "her şey normal.",
-        "everthing's normal."
+        "kawe <> ubungo",
+        "ubungo"
       ],
       [
-        "sen hiç birine aşık oldun mu?",
-        "have you ever fallen in love with anyone?"
+        "kigamboni <> kibada",
+        "kigamboni / nyakwale"
       ],
       [
-        "sen hiç merak etme",
-        "do not worry"
+        "kigamboni <> kibugumo",
+        "kigamboni / kibugumo"
       ],
       [
-        "her şey satıldı.",
-        "everything's sold out."
+        "kigamboni <> kisiwani",
+        "kigamboni / mkwajuni"
       ],
       [
-        "yapacak bir şey yok",
-        "nothing can be done; shikatta ga nai"
+        "kigamboni <> kongowe",
+        "temeke / kipala mpakani"
       ],
       [
-        "öyle bir şey istiyorum.",
-        "i love something like that."
+        "kigamboni <> ungindoni",
+        "kigamboni / ungindoni"
       ],
       [
-        "sana hiç güvenmiyorum.",
-        "i don't trust you at all."
-      ]
-    ]
-  },
-  "adverbs": {
-    "level": "A1",
-    "fc_data": [
-      [
-        "ama burayı çok sevdim",
-        "but i love this place"
-      ],
-      [
-        "anlayışın için çok sağol, ve bu durum için gerçekten çok özür dilerim.",
-        "thank you so much for your understanding, and i'm really sorry for this situation."
-      ],
-      [
-        "belki de bu gerçekten olur.",
-        "maybe it really happens."
-      ],
-      [
-        "onun için çok meşgulüz.",
-        "we are too busy for that."
-      ],
-      [
-        "belki ben olmuştum o zaman da",
-        "maybe I would become also then"
-      ],
-      [
-        "bunu bir daha sorma",
-        "do not ask again  (tech)"
-      ],
-      [
-        "sen çok akıllısın.",
-        "you're very smart."
-      ],
-      [
-        "sen en iyisisin.",
-        "you're the best."
-      ],
-      [
-        "sadece bana tutun.",
-        "just hold me."
-      ],
-      [
-        "sadece bir kez söyle",
-        "say it just once"
-      ],
-      [
-        "sadece erkeklerden hoşlanıyorum",
-        "i only like men"
-      ],
-      [
-        "sadece evli çiftler",
-        "married couples only"
-      ],
-      [
-        "sadece nasıl olduğunu bilmiyordum.",
-        "i just didn't know how."
-      ],
-      [
-        "hadi çıkalım.",
-        "so let's quit."
-      ],
-      [
-        "hadi içelim.",
-        "let's drink."
-      ],
-      [
-        "hadi oradan!",
-        "get out of there!"
-      ],
-      [
-        "bunu daha sonra öğrenelim",
-        "let's learn this another time"
-      ],
-      [
-        "belki bunu kendim yapabilirdim.",
-        "maybe i could have done this myself."
-      ],
-      [
-        "ben sadece onu mu söyledim.",
-        "did i just say that?"
-      ],
-      [
-        "belki tom hatalıydı.",
-        "maybe tom was wrong."
-      ],
-      [
-        "başka biri heyecanlı mı?",
-        "is anyone else excited?"
-      ],
-      [
-        "başka bir taraftan",
-        "from another side"
-      ],
-      [
-        "onun ne olduğunu ben bile söyleyemiyorum.",
-        "i caan't even tell what it is."
-      ],
-      [
-        "başka kim burada?",
-        "who else is here?"
-      ]
-    ]
-  },
-  "basic": {
-    "level": "A1",
-    "fc_data": [
-      [
-        "açıkça söyle!",
-        "say it frankly!"
-      ],
-      [
-        "affedersin, anlayamadım.",
-        "sorry, i could not understand."
-      ],
-      [
-        "akışına bırak",
-        "go with the flow"
-      ],
-      [
-        "aklımda",
-        "on my mind"
-      ],
-      [
-        "ama maalesef durum böyle",
-        "but that's how it is"
-      ],
-      [
-        "anca dönebildim",
-        "i was able to return"
-      ],
-      [
-        "anlaşıldı tamam",
-        "got it, ok"
-      ],
-      [
-        "anlayabiliyor musun?",
-        "can you understand?"
-      ],
-      [
-        "anlayamıyorum.",
-        "i cannot understand."
-      ],
-      [
-        "anlıyorum, tamam mı?",
-        "i got it, ok?"
-      ],
-      [
-        "arayabilir miyim",
-        "may i call you?"
-      ],
-      [
-        "babası çocuğu okula götürmeli.",
-        "the child's father should take him to school."
-      ],
-      [
-        "bana dağıt.",
-        "deal me out."
-      ],
-      [
-        "bana ne olduğunu sordu.",
-        "he asked me what was the matter with me."
-      ],
-      [
-        "bana tutun.",
-        "hold on to me."
-      ],
-      [
-        "banyoya gireceğim",
-        "i'm going to bathroom"
-      ],
-      [
-        "belediye başkanınızın adı ne?",
-        "what is the name of your mayor?"
-      ],
-      [
-        "ben ankara'dayken.",
-        "when I was in ankara."
-      ],
-      [
-        "ben ayasofya'yı ilk kez on beş yaşındayken gördüm.",
-        "i saw the hagia sophia for the first time when i was fifteen."
-      ],
-      [
-        "ben bir veganım.",
-        "i'm a vegan."
-      ],
-      [
-        "bence durum bundan ibaret.",
-        "i think this is the case."
-      ],
-      [
-        "ben domates yiyemem.",
-        "i cannot eat tomatoes."
-      ],
-      [
-        "ben ingilizce konuşuyorum",
-        "i speak english"
-      ],
-      [
-        "ben türkçe öğreniyorum",
-        "i am learning turkish"
-      ],
-      [
-        "ben yemek yapabilirim.",
-        "i can cook."
-      ],
-      [
-        "bilgin olsun",
-        "for your information"
-      ],
-      [
-        "bilmem ki",
-        "i do not know"
-      ],
-      [
-        "bilmez miyim",
-        "you're telling me!, tell me about it!"
-      ],
-      [
-        "bira içmeyi bırakmalıyım.",
-        "i should stop drinking beer."
-      ],
-      [
-        "bırakmalıyım.",
-        "i should quit."
-      ],
-      [
-        "bir irade eylemi anlamına geliyor",
-        "it means an act of will"
-      ],
-      [
-        "bir önerim var",
-        "i have a suggestion"
-      ],
-      [
-        "bir sunum yapmalısın.",
-        "you should do a presentation."
-      ],
-      [
-        "biz buraya aitiz.",
-        "we belong here."
-      ],
-      [
-        "biz devam etmek zorundayız!",
-        "we have to continue!"
-      ],
-      [
-        "bize katılmalısın.",
-        "you should join us."
-      ],
-      [
-        "biz güvendeyiz.",
-        "we're safe."
-      ],
-      [
-        "bizim de öyle",
-        "so do we"
-      ],
-      [
-        "boş verelim burayı",
-        "let's leave this here"
-      ],
-      [
-        "bu akşam sex yapmak isteyen yazsin",
-        "if you want to have sex tonight, write."
-      ],
-      [
-        "bu benim çok iyi bir arkadaşım.",
-        "this is a very good friend of mine."
-      ],
-      [
-        "bu bir evet ya da hayır sorusuydu.",
-        "it was a yes or no question."
-      ],
-      [
-        "bu bir ya ya da konusu.",
-        "it's a matter of either/or."
-      ],
-      [
-        "bu bulaşıcı.",
-        "this is contagious."
-      ],
-      [
-        "bu büyük olacak.",
-        "this will be huge."
-      ],
-      [
-        "bu doğru istasyon.",
-        "this is the right station."
-      ],
-      [
-        "bu elmayı yemek zorunda değilsin.",
-        "you do not have to eat this apple."
-      ],
-      [
-        "bu ferahlatıcı.",
-        "it's refreshing."
-      ],
-      [
-        "bugün temiz t-shirt giydim",
-        "today I wore a clean t-shirt"
-      ],
-      [
-        "bu, güzel bir soru.",
-        "that's a good question."
-      ],
-      [
-        "bu iyi bir zaman değil mi?",
-        "is this not a good time?"
-      ],
-      [
-        "bu konuda konuşurken dikkatli olmalısın.",
-        "you must be careful when talking about this subject."
-      ],
-      [
-        "bu ne anlamadım",
-        "i didn't understand what this is?"
-      ],
-      [
-        "bunu nasıl öğrendi?",
-        "how did she fined out about that?"
-      ],
-      [
-        "bunun burada olduğunu unuttum.",
-        "i forgot that this was here."
-      ],
-      [
-        "bunun için özür dilerim",
-        "i apologize for that"
-      ],
-      [
-        "bunu yapabiliriz!",
-        "we can do this!"
-      ],
-      [
-        "bunu yaptığımdan dolayı çok pişmanım",
-        "i am sorry for what i have done"
-      ],
-      [
-        "bu onun, değil mi?",
-        "it's his, isn't it?"
-      ],
-      [
-        "bu onun görüşü.",
-        "this is his opinion."
-      ],
-      [
-        "burada ağlayamazsın!",
-        "you cannot cry here!"
-      ],
-      [
-        "burada eğlendim.",
-        "i had fun here."
-      ],
-      [
-        "burada ne demek istediğini anlamadım",
-        "i don't understand what you mean here"
-      ],
-      [
-        "buraya gelmemeliydin.",
-        "you shouldn't have come here."
-      ],
-      [
-        "bu sene benim üniversitedeki son senem",
-        "this year is my last year at university"
-      ],
-      [
-        "bu tom'dandır.",
-        "this is from tom."
-      ],
-      [
-        "bu tom'unki mi?",
-        "is this tom's?"
-      ],
-      [
-        "bu ücretsiz.",
-        "this one is free."
-      ],
-      [
-        "buyrun hoşgeldiniz",
-        "here you are welcome"
-      ],
-      [
-        "çabuk hazırlanabilir misin?",
-        "can you get ready quickly?"
-      ],
-      [
-        "cevabı hatırlayamadın.",
-        "i cannot remember the answer."
-      ],
-      [
-        "cevap verir misin?",
-        "will you answer?"
-      ],
-      [
-        "çocuk bahçede oynarken yaralandı.",
-        "the child was injured while playing in the garden."
-      ],
-      [
-        "çocuklar yüzerken yağmur başladı.",
-        "the rain started while the children were swimming."
-      ],
-      [
-        "cumartesi günleri genellikle ne yapıyorsun?",
-        "what do you usually do on saturdays?"
-      ]
-    ]
-  },
-  "basic1": {
-    "level": "A1",
-    "fc_data": [
-      [
-        "dayanabilirim.",
-        "i can endure it."
-      ],
-      [
-        "değişiklik iyidir",
-        "change is good"
-      ],
-      [
-        "denemek ister misiniz?",
-        "do you want to try?"
-      ],
-      [
-        "dene ve sus.",
-        "try and calm down."
-      ],
-      [
-        "deneyebilir miyim?",
-        "may I try it?"
-      ],
-      [
-        "denk geliriz belki",
-        "maybe we'll run into each other"
-      ],
-      [
-        "devam etmelisin.",
-        "you must continue."
-      ],
-      [
-        "devlet önemlidir.",
-        "the state is important."
-      ],
-      [
-        "dikkatli olmalısın",
-        "you must be careful"
-      ],
-      [
-        "dilediğiniz zaman",
-        "whenever you want"
-      ],
-      [
-        "doğum gününde genellikle ne yapasın?",
-        "what do you generally do on your birthday?"
-      ],
-      [
-        "doğum günün ne zaman?",
-        "when is your birthday?"
-      ],
-      [
-        "dolaşırken onu gördüm.",
-        "i saw her while walking around."
-      ],
-      [
-        "duo beni severdi.",
-        "duo used to love me."
-      ],
-      [
-        "eğer bu doğruysa, [x]",
-        "if that's true, [x]"
-      ],
-      [
-        "eğer zamanın varsa",
-        "if you have the time"
-      ],
-      [
-        "eline sağlık",
-        "thx you for feed, bathg me [response to making food]"
-      ],
-      [
-        "elin temiz mi kirli mi?",
-        "is your hand clean or dirty?"
-      ],
-      [
-        "endişeli olduğunu biliyorum.",
-        "i know you're worried."
-      ],
-      [
-        "en sevdiğin içecek ne?",
-        "what's your favorite drink?"
-      ],
-      [
-        "en sevdiğin yemek ne?",
-        "what's your favorite food?"
-      ],
-      [
-        "et yemem",
-        "vegetarian, i do not eat meat"
-      ],
-      [
-        "evdeyim bir saat oldu eve geldim",
-        "i'm at home; it's been an hour since I came home"
-      ],
-      [
-        "evet, bence de öyle",
-        "yes i think so too"
-      ],
-      [
-        "evet olmaz mı",
-        "why not?"
-      ],
-      [
-        "fark etmez",
-        "it doesn't matter; it's all the same"
-      ],
-      [
-        "favori ayın hangisi? neden?",
-        "what's your favorite month? why?"
-      ],
-      [
-        "favori günün hangisi? neden?",
-        "what's your favorite day? why?"
-      ],
-      [
-        "favori sporun nedir?",
-        "what's your favorite sport?"
-      ],
-      [
-        "fena değil",
-        "not bad"
-      ],
-      [
-        "geçebilir miyim, lütfen?",
-        "could I get by, please?"
-      ],
-      [
-        "geçebilir miyim?",
-        "would you excuse me?"
-      ],
-      [
-        "gecen hayra galsın",
-        "have a great night"
-      ],
-      [
-        "geç gelebilirim.",
-        "i may come late."
-      ],
-      [
-        "gelebilirdik.",
-        "we could have come."
-      ],
-      [
-        "gel olanları unutalım",
-        "come let us forget what happened"
-      ],
-      [
-        "gençlere, genç görünümlü kişilere, cd ve feminenlere ilgi duymuyorum!",
-        "not attracted to young people, young-looking, cds and feminine"
-      ],
-      [
-        "gerçekten onu istiyorum.",
-        "i really want it."
-      ],
-      [
-        "gerçekten üzgünüm.",
-        "i'm truly sorry."
-      ],
-      [
-        "gezip eglenelim",
-        "let's sightsee and have fun"
-      ],
-      [
-        "gider gitmez",
-        "as soon as she left"
-      ],
-      [
-        "giderken hoşça kal dedim.",
-        "i said goodbye while i was leaving."
-      ],
-      [
-        "görüşelim mi?",
-        "shall we meet?"
-      ],
-      [
-        "görüşmek üzere",
-        "see you later"
-      ],
-      [
-        "gülecek bir şey yok.",
-        "it's not laughing matter."
-      ],
-      [
-        "gunduz sohbette, aksam yemekte, gece yatakta guzel zamanlar",
-        "chat days, eat eves, nights in bed = good times"
-      ],
-      [
-        "günlük konuşmalarda",
-        "in everyday conversation"
-      ],
-      [
-        "gün yeni başlıyor.",
-        "the day is just beginning."
-      ],
-      [
-        "güzel başlangıç.",
-        "beautiful start."
-      ],
-      [
-        "güzel fikir, hadi gidelim",
-        "good idea, let's go"
-      ],
-      [
-        "haftada iki ya da üç gün",
-        "two or three days a week"
-      ],
-      [
-        "hayır diyeceğim.",
-        "i'm going to say no."
-      ],
-      [
-        "hesabı alabilir miyim?",
-        "check, please"
-      ],
-      [
-        "hey, sana bir şey söyleyeyim.",
-        "hey, let me tell you something."
-      ],
-      [
-        "hey, sana yardım edeyim.",
-        "hey, let me help you."
-      ],
-      [
-        "içime gircen mi?",
-        "will you come/get inside me?"
-      ],
-      [
-        "ile konuşabilir miyim?",
-        "could I speak to?"
-      ],
-      [
-        "ilgin için teşekkürler.",
-        "thanks for your interest."
-      ],
-      [
-        "ilk defa gördüm ve duydum",
-        "first i have seen or heard of it"
-      ],
-      [
-        "iş için Ankara'dayken birçok yeri geziyorum.",
-        "while in Ankara on business, I am visiting a lot of places."
-      ],
-      [
-        "işini seviyor musun? neden?",
-        "do you like your work? why?"
-      ],
-      [
-        "işsizken çok kilo aldım.",
-        "i gained a lot of weight while i was unemloyed."
-      ],
-      [
-        "işsizken zaman yavaş geçiyor.",
-        "while unemployed, time passes slowly."
-      ],
-      [
-        "istanbulda küçük fincan gördüm",
-        "i saw small cup in istanbul"
-      ],
-      [
-        "işte misin?",
-        "are you at work?"
-      ],
-      [
-        "ister istemez",
-        "want to or not, willy-nilly"
-      ],
-      [
-        "iyi bir sonuç alamadım",
-        "i could not get a good result"
-      ],
-      [
-        "iyi ki varsın soruyorsun ben",
-        "'m glad you're asking about me"
-      ],
-      [
-        "iyi misin, tom?",
-        "are you okay, Tom?"
-      ],
-      [
-        "iyiyim teşekkür ederim umarım sen de iyisindir",
-        "i'm fine thank you; i hope you are fine too"
-      ],
-      [
-        "kaçabilirdin.",
-        "You could have run away."
-      ],
-      [
-        "kaç yaşındasın?",
-        "how old are you?"
-      ],
-      [
-        "kapıya sen bakabilir misin?",
-        "can you answer the door?"
-      ],
-      [
-        "kardeşlerin var mı?",
-        "do you have siblings?"
-      ]
-    ]
-  },
-  "basic2": {
-    "level": "A1",
-    "fc_data": [
-      [
-        "kendi dünyasındadır",
-        "in one's own world"
-      ],
-      [
-        "kendinden biraz anlat",
-        "tell a little about yourself"
-      ],
-      [
-        "kendine iyi bak",
-        "take care"
-      ],
-      [
-        "kendine yüklenme",
-        "don't worry burden yourself"
-      ],
-      [
-        "kendini bugün nasıl hissediyorsun?",
-        "how do you feel today?"
-      ],
-      [
-        "kesilmedim",
-        "i am uncut"
-      ],
-      [
-        "keşke burada olsaydın",
-        "i wish you were here"
-      ],
-      [
-        "kirlinin karşıtı nedir",
-        "what is the opposite of clean?"
-      ],
-      [
-        "kışın kar yağıyor",
-        "it's snowing in winter"
-      ],
-      [
-        "kolay gelsin",
-        "take it easy"
-      ],
-      [
-        "konu ne?",
-        "what's the matter?"
-      ],
-      [
-        "konuşabildim.",
-        "I could talk."
-      ],
-      [
-        "korkudan ödü patlamak",
-        "piss (oneself)"
-      ],
-      [
-        "koşma, düşersin!",
-        "don’t run, you will fall!"
-      ],
-      [
-        "kovulmanı istiyorum.",
-        "i want you fired."
-      ],
-      [
-        "kurtulamayacaksın.",
-        "you will not be able to escape."
-      ],
-      [
-        "lütfen beni affet.",
-        "please forgive me."
-      ],
-      [
-        "lütfen onu unut.",
-        "please forget it."
-      ],
-      [
-        "lütfen sadece dinle.",
-        "please just listen."
-      ],
-      [
-        "madde kullanan müptezeller",
-        "substance abusers, drug abusers"
-      ],
-      [
-        "memnun mu?",
-        "is she satisfied?"
-      ],
-      [
-        "meşgul gibi görünmüyorsun.",
-        "it doewn't look like you're busy."
-      ],
-      [
-        "misafirler için kahve yapmalıyım.",
-        "i must make coffee for the guests."
-      ],
-      [
-        "muhtemelen o doğru değil.",
-        "that's probably not true."
-      ],
-      [
-        "mümkün olabilir",
-        "might be possible [to do sth]"
-      ],
-      [
-        "mümkün olduğunca uzun süre oturun",
-        "sit as long as possible"
-      ],
-      [
-        "n'olacak yani!",
-        "big deal!"
-      ],
-      [
-        "o adamla beraber değilken daha mutluyuz.",
-        "we are happier when we are not together with that man."
-      ],
-      [
-        "o bir hüsrandı.",
-        "that was a disappointment."
-      ],
-      [
-        "o gün ne oldu?",
-        "what happened that day?"
+        "kigamboni <> vijibweni",
+        "kigamboni / kibene"
       ],
       [
-        "o kim acaba?",
-        "i wonder who she is?"
+        "kimara mwisho <> bonyokwa",
+        "ubungo / bonyokwa"
       ],
       [
-        "okullar tatil olduğu için",
-        "for school holidays"
+        "kimara mwisho <> buguruni",
+        "ilala / buguruni"
       ],
       [
-        "olan bir kazaydı.",
-        "what happened was an accident."
+        "kimara mwisho <> kariakoo",
+        "ilala / kariakoo msimbazi st"
       ],
       [
-        "olan oldu.",
-        "it happened."
+        "kimara mwisho <> kivukoni",
+        "ilala / kivukoni"
       ],
       [
-        "olgun cd feminen sanal ruh hastasi yalanci uymaz",
-        "older, cd, fem, imaginery, pyschopath, liars don't respond"
+        "kimara mwisho <> muhimbili",
+        "ilala / muhimbili"
       ],
       [
-        "olur öyle.",
-        "well it happens."
+        "kimara mwisho <> mwenge/makumbusho",
+        "kinondoni / mwenge"
       ],
       [
-        "ona hala gülebilirim.",
-        "i can still laugh at that."
+        "kimara mwisho <> posta",
+        "ilala / posta"
       ],
       [
-        "önce sen.",
-        "you first."
+        "mabibo mwisho <> kariakoo via moro rd",
+        "kariakoo"
       ],
       [
-        "önce tom buradaydı.",
-        "tom was here first."
+        "mabibo mwisho <> makumbusho via moro rd",
+        "makumbusho"
       ],
       [
-        "öne çıkan bilgiler",
-        "featured information"
+        "mabibo mwisho <> mnazi mmoja via kigogo",
+        "mnazi mmoja"
       ],
       [
-        "önemli olan sağladığı hizmet",
-        "it's what's on the inside that counts."
+        "mabibo mwisho <> muhimbili /kigogo",
+        "muhimbili"
       ],
       [
-        "önemsemiyorsun, değil mi?",
-        "you don't mind, do you?"
+        "mabibo mwisho via moro rd <> kivukoni",
+        "kivukoni"
       ],
       [
-        "onu benin için tut.",
-        "hold that for me."
+        "machimbo <> kariakoo",
+        "kariakoo"
       ],
       [
-        "onu bunu boşver",
-        "never mind that"
+        "machimbo <> ubungo",
+        "ubungo"
       ],
       [
-        "onu demek istiyorum.",
-        "i meant it."
+        "makumbusho / ali hassan mwinyi <> posta",
+        "posta"
       ],
       [
-        "onu geri al.",
-        "take it back."
+        "makumbusho <> bunju",
+        "bunju"
       ],
       [
-        "önümüzdeki hafta için planım buydu",
-        "i had plans for next week"
+        "makumbusho <> kariakoo",
+        "kariakoo"
       ],
       [
-        "onunla baş edebilir.",
-        "he can deal with it."
+        "makumbusho <> kariakoo /kawawa road",
+        "kariakoo"
       ],
       [
-        "onunla oynarken dikkatli ol!",
-        "be careful while you are playing with it!"
+        "makumbusho <> kariakoo /shekilango rd",
+        "kariakoo"
       ],
       [
-        "onun ne olduğunu bana sorma.",
-        "don't ask me what it was."
+        "makumbusho <> kivukoni/posta /mwanyamala",
+        "kivukoni"
       ],
       [
-        "o, onu yapmamalı.",
-        "she should not do that."
+        "makumbusho <> kunduchi",
+        "kunduchi"
       ],
       [
-        "öpüşme sevişme olmazsa olmazım",
-        "kissing, making love is a must"
+        "makumbusho <> makongo juu",
+        "kinondoni / makongo"
       ],
       [
-        "o şimdi iyi mi?",
-        "is that okay now?"
+        "makumbusho <> muhimbili /kawawa rd",
+        "muhimbili"
       ],
       [
-        "o tamam.",
-        "that one's ok."
+        "makumbusho <> posta /shekilango rd",
+        "posta"
       ],
       [
-        "o, tom kadar suçludur.",
-        "she is as guilty as tom."
+        "makumbusho <> stesheni",
+        "stesheni"
       ],
       [
-        "o, tom'nin boston'da olduğunu bilmeliydi.",
-        "he should have known that tom was in boston."
+        "makumbusho <> ununio",
+        "ununio"
       ],
       [
-        "öyle değil.",
-        "it is not so."
+        "manzese <> buguruni",
+        "ubungo / kagera morogoro rd"
       ],
       [
-        "öyle fakat burası bir başka",
-        "yes but this is something else"
+        "masaki <> kariakoo",
+        "kariakoo"
       ],
       [
-        "paran var mı?",
-        "do you have moneyu?"
+        "masaki <> ubungo -- ubungo"
       ],
       [
-        "pasta hazırlamalıyım.",
-        "should prepare cake."
+        "mbagala rangi 3 <> charambe",
+        "temeke / mbagala-sw"
       ],
       [
-        "pekala, olan oldu bir kere.",
-        "all right, what's done is done."
+        "mbagala rangi 3 <> kariakoo",
+        "kariakoo"
       ],
       [
-        "peki ya sen?",
-        "what about you?"
+        "mbagala rangi 3 <> kawe",
+        "kawe"
       ],
       [
-        "radyon yeni mi?",
-        "is your radio new?"
+        "mbagala rangi 3 <> kilungule",
+        "kilungule"
       ],
       [
-        "rahat evdesin",
-        "chilling at home"
+        "mbagala rangi 3 <> kongowe",
+        "temeke / kipala mpakani"
       ],
       [
-        "rahat gibi görünmüyorsun.",
-        "you don't look comfortable."
+        "mbagala rangi 3 <> makumbusho",
+        "makumbusho"
       ],
       [
-        "sana çarpıldım.",
-        "i used to have a crush on you."
+        "mbagala rangi 3 <> mbande",
+        "temeke / kiponza"
       ],
       [
-        "sana geri döneceğim",
-        "i'll get back to you"
+        "mbagala rangi 3 <> mvuti",
+        "ilala / kimwani"
       ],
       [
-        "sana güveniyorum.",
-        "i am counting on you."
+        "mbagala rangi 3 <> mwenge/makumbusho",
+        "mwenge"
       ],
       [
-        "sana içki alabilir miyim?",
-        "(can I) buy you a drink?"
+        "mbagala rangi 3 <> posta",
+        "posta"
       ],
       [
-        "sana ne diyeyim?",
-        "what do I call you?"
+        "mbagala rangi 3 <> stesheni",
+        "stesheni"
       ],
       [
-        "sanırım tom haklı.",
-        "i think that tom is right."
+        "mbagala rangi 3 <> temeke",
+        "temeke"
       ],
       [
-        "sanırım tom iyi yaptı.",
-        "i think tom did well."
+        "mbagala rangi 3 <> ubungo",
+        "ubungo"
       ],
       [
-        "seçtin mi?",
-        "have you chosen?"
+        "mbagala zakhem <> kiburugwa",
+        "temeke / kiburugwa"
       ],
       [
-        "şehir dışındaydım",
-        "i was out of town"
-      ]
-    ]
-  },
-  "basic4": {
-    "level": "A1",
-    "fc_data": [
-      [
-        "sen benim için tek kişidir.",
-        "you are the only person for me."
-      ],
-      [
-        "sen bunu al.",
-        "you take this one."
-      ],
-      [
-        "sen bunu bana kendin dedin",
-        "you told this to me yourself"
-      ],
-      [
-        "seni bu gece çok rahatsız ettim kusura bakma",
-        "sorry for bothering you tonight"
-      ],
-      [
-        "seni görebiliyorum.",
-        "i can see you."
-      ],
-      [
-        "seni hatırlayamadım.",
-        "i could not remember you."
-      ],
-      [
-        "senin içinde uygunsa",
-        "if it is okay with you"
-      ],
-      [
-        "seninle eğlenmeyi seviyorum.",
-        "i love having fun with you."
-      ],
-      [
-        "seninle konuşamam.",
-        "i cannot talk to you."
-      ],
-      [
-        "seninle tanıştığıma sevindim",
-        "i am glad to have met you"
-      ],
-      [
-        "seni önemsiyorum.",
-        "i care about you."
-      ],
-      [
-        "seni seviyorum Ayşe, gidemem!",
-        "i love you ayşe, i cannot go!"
-      ],
-      [
-        "sen kabasın.",
-        "you're rude."
-      ],
-      [
-        "sen onu kendin yapmak zorundasın.",
-        "you have to do it yourself."
-      ],
-      [
-        "sert ama adilsin.",
-        "you are tough but fair."
+        "mbagala zakhem <> kwa mnyani",
+        "ilala / mnyamani"
       ],
       [
-        "sevgilin var mı?",
-        "do you have a lover?"
+        "mbagala zakhem <> mbagala kuu",
+        "temeke / mbagala"
       ],
       [
-        "sevme, pişman olursun.",
-        "do not fall in love, you will regret it."
+        "mbande <> mtoni mtongani",
+        "temeke / mtoni"
       ],
       [
-        "sıkıntıdan patlamak",
-        "be bored shitless"
+        "mbezi <> buguruni",
+        "ilala / buguruni"
       ],
       [
-        "sıkıntı yok",
-        "no problem"
+        "mbezi <> goba",
+        "ubungo / goba"
       ],
       [
-        "şimdi karanlık.",
-        "it's dark now."
+        "mbezi <> kariakoo",
+        "ilala / kariako"
       ],
       [
-        "şimdi lütfen git.",
-        "now please go."
+        "mbezi <> kawe",
+        "kinondoni / kawe"
       ],
       [
-        "şimdi yalnızım.",
-        "i'm alone now."
+        "mbezi <> kivukoni/posta",
+        "ilala / kivukoni"
       ],
       [
-        "şimdi yanımda olsan",
-        "if you were now next to me"
+        "mbezi <> makumbusho",
+        "kinondoni / makumbusho"
       ],
       [
-        "siz konferansa katılmalıydınız.",
-        "you should have attended the conference."
+        "mbezi <> muhimbili",
+        "ilala / muhimbili"
       ],
       [
-        "sorun değil",
-        "no problem"
+        "mbezi <> ubungo",
+        "ubungo / ubungo"
       ],
       [
-        "söylediğin çoğu şeyi anladım",
-        "i understood most of what you said"
+        "mnyamani <> mnazi mmoja",
+        "ilala / vingunguti"
       ],
       [
-        "sunum hazırlamalı.",
-        "he must prepare a presentation."
+        "mtoni mtongani <> mwenge / kawawa rd -- temeke / mtoni"
       ],
       [
-        "suya girmeden önce",
-        "before entering the water"
+        "muhimbili <> mwenge/makumbusho",
+        "kinondoni / mwenge"
       ],
       [
-        "tabii, bu da mümkün.",
-        "of course this is also possible."
+        "pugu <> kawe",
+        "kinondoni / kawe"
       ],
       [
-        "takılırız mı?",
-        "are we hanging out?"
+        "pugu <> masaki",
+        "kinondoni / masaki"
       ],
       [
-        "tamam canım uykum geliyor yatayım; yarın konuşuruz ",
-        "ok dear i'm getting sleepy, we'll chat tomorrow"
+        "pugu kajiungeni <> buguruni/gongola mboto",
+        "ilala / bombani"
       ],
       [
-        "tamamdır anlaştık",
-        "ok agreed"
+        "pugu kwalala <> shule ya uhuru/gongo la mboto",
+        "ilala / bombani"
       ],
       [
-        "tam rayına oturmadı.",
-        "it didn't fit properly. = things didn't quite work out."
+        "pugu/chanika <> buguruni",
+        "ilala / bombani"
       ],
       [
-        "tanışdığımıza sevindim",
-        "i'm glad to meet you"
+        "tabata cha_ng'ombe <> mnazi mmoja ",
+        "ilala / tabata"
       ],
       [
-        "tatlı menüsünü alabilir miyim lütfen?",
-        "the dessert menu, please"
+        "tabata cha_ng'ombe <> buguruni",
+        "ilala / buguruni"
       ],
       [
-        "tatlı rüyalar",
-        "sweet dreams"
+        "tabata cha_ng'ombe <> ubungo",
+        "ubungo"
       ],
       [
-        "tavsiyeniz için teşekkürler.",
-        "thanks for your advice."
+        "tabata cha_ng'ombe <> vingunguti /via bakhresa",
+        "ilala / vingunguti"
       ],
       [
-        "teknik olarak doğrudur",
-        "is technically correct"
+        "tabata kimanga <> buguruni",
+        "ilala / buguruni"
       ],
       [
-        "telaffuz ettiğini duymak istiyorum",
-        "i want to listen to your pronunciation"
+        "tabata kimanga <> kivukoni/mnazi mmoja",
+        "ilala / kivukoni"
       ],
       [
-        "telaffuzunu taklit edirim",
-        "i mimic your pronunciation"
+        "tabata kimanga <> makumbusho",
+        "kinondoni / makumbusho"
       ],
       [
-        "tom 2.30'a kadar geri gelmedi.",
-        "tom didn't come back until 2:30."
+        "tabata kimanga <> mnazi mmoja",
+        "ilala / mnazi mmoja"
       ],
       [
-        "tom'a hayır demek zor.",
-        "it's hard to say no to tom."
+        "tabata kimanga <> temeke",
+        "temeke"
       ],
       [
-        "tom bile şimdi daha şaşkın.",
-        "tom is even more confused now."
+        "tabata kimanga <> ubungo",
+        "ubungo"
       ],
       [
-        "tom'un mu?",
-        "is that tom's?"
+        "tabata segerea <> kinyerezi",
+        "ilala / kinyerezi"
       ],
       [
-        "tom ve mary de odadaydılar.",
-        "tom and mary were also in the room."
+        "tabata segerea <> makumbusho",
+        "kinondoni / makumbusho"
       ],
       [
-        "umarım",
-        "i hope"
+        "tabata segerea <> mnazi mmoja",
+        "ilala / mnazi mmoja"
       ],
       [
-        "unut gitsin, tamam mı?  forget about it, ok?"
+        "tabata segerea <> temeke/tandika",
+        "temeke"
       ],
       [
-        "üzgünsün, değil mi?",
-        "you're worried, aren't you?"
+        "tabata segerea <> ubungo",
+        "ubungo"
       ],
       [
-        "üzüldum",
-        "i am sorry"
+        "tandika <> buza",
+        "ilala / buza"
       ],
       [
-        "x de doğdum ve büyüdüm",
-        "born and raised in x"
+        "tegeta <> madale",
+        "ubungo / matosa-goba "
       ],
       [
-        "ya harır derse?",
-        "what if he says no?"
+        "tegeta <> mbweni",
+        "kinondoni / mweni"
       ],
-      [
-        "yalnız hazırlanabilirim.",
-        "i can get ready on my own."
-      ],
-      [
-        "yanlış kelimeleri kullandım",
-        "I used the wrong words"
-      ],
-      [
-        "yapardım.",
-        "i used to do it."
-      ],
-      [
-        "yardıma ihtiyacım var",
-        "i need help"
-      ],
-      [
-        "yardımcı olabilecek?",
-        "can you help?"
-      ],
-      [
-        "yardımcı olmamı ister misin?",
-        "do you want me to help?"
-      ],
-      [
-        "yarınki yolculuk için bavulumu hazırlamalıyım.",
-        "i must prepare my suitcase for tomorrow's trip."
-      ],
-      [
-        "yarın sana bildireceğim",
-        "i will let you know tomorrow"
-      ],
-      [
-        "yasaya göre bu kadın bu çocuğu eve götürmeli.",
-        "according to the law, this woman must take this child home."
-      ],
-      [
-        "yaş fark etmez",
-        "age does not matter"
-      ],
-      [
-        "yazım yanlışlarını düzeltmemi ister misin?",
-        "do you want me to correct the typos?"
-      ],
-      [
-        "yeni bir yasa yolda.",
-        "a new law is on the way."
-      ],
-      [
-        "yine bekleriz",
-        "we are waiting for you to come again"
-      ],
-      [
-        "yoluma devam ettim",
-        "i continued on my way"
-      ],
-      [
-        "yorma kendini",
-        "don't tire yourself"
-      ]
-    ]
-  },
-  "interrogatives": {
-    "level": "A1",
-    "fc_data": [
       [
-        "nasıl oldu, beğendiniz mi?",
-        "how was it, did you like it?"
+        "tegeta <> posta",
+        "ilala / posta"
       ],
       [
-        "neden beni seçtin?",
-        "why did you pick me?"
+        "tegeta <> ununio",
+        "kinondoni / ununio"
       ],
       [
-        "neden burada yalnızsın?",
-        "why are you here alone?"
+        "tegeta nyuki <> mwenge/makumbusho",
+        "kinondoni / mwenge"
       ],
       [
-        "neden sen de gelmiyorsun.",
-        "why don't you come too?"
+        "temeke <> charambe",
+        "ilala / "
       ],
       [
-        "ne diyeyim ki",
-        "what can i say?"
+        "temeke <> kariakoo /kilwa road",
+        "ilala / "
       ],
       [
-        "ne düşünüyorsun?",
-        "what do you think?"
+        "temeke <> makumbusho"
       ],
       [
-        "ne hakkında?",
-        "about what?"
+        "temeke <> mbagala kuu"
       ],
       [
-        "ne haliniz varsa",
-        "what's your situation? whatever"
+        "temeke <> mtoni kijichi"
       ],
       [
-        "ne istediğini bilen",
-        "know what you want"
+        "temeke <> muhimbili /changombe rd",
+        "ilala / "
       ],
       [
-        "ne iş yapıyorsun?",
-        "what work do you do?"
+        "temeke <> mwenge /via kawawa rd/makumbusho"
       ],
       [
-        "ne? kim, ben mi?",
-        "what? who, me?"
+        "temeke <> nzasa",
+        "ilala / "
       ],
       [
-        "ne olmasını isterdiniz?",
-        "what would you like it to be?"
+        "temeke <> stesheni",
+        "ilala / "
       ],
       [
-        "nerden bileyim",
-        "how should i know?"
+        "temeke <> ubungo"
       ],
       [
-        "nerede yaşıyorsun?",
-        "where do you live?"
+        "temeke <> vingunguti",
+        "ilala / "
       ],
       [
-        "nereleri gezmeyi planliyorsun?",
-        "what places you planning to see?"
+        "temeke/mtongani <> kawe",
+        "/ "
       ],
       [
-        "nerelisin?",
-        "where are you from?"
+        "temeke <> kongowe ",
+        "temeke / kipala mpakani"
       ],
       [
-        "ne siklikla yapıyorsun?",
-        "how often do you do it?"
+        "ubungo <> buguruni",
+        "/ "
       ],
       [
-        "ne tarz müzik dinliyorsun?",
-        "what kind of music do you listen to?"
+        "ubungo <> changanyikieni",
+        "ubungo / goba-makongo"
       ],
       [
-        "net söyle!",
-        "say it clearly!"
+        "ubungo <> kariakoo",
+        "/ "
       ],
       [
-        "ne var ne yok, kardeş?",
-        "what's up brother?"
+        "ubungo <> kivukoni/mnazi mmoja",
+        "/ "
       ],
       [
-        "neye yarıyor? faydaları neler?",
-        "what is it for? what are the benefits?"
+        "ubungo <> makumbusho",
+        "/ "
       ],
       [
-        "ne zaman müsait olduğun zaman",
-        "whenever you are available"
+        "ubungo <> makumbusho/chuo kikuu",
+        "/ "
       ],
       [
-        "ne zaman vardın?",
-        "when did you arrive?"
+        "ubungo <> mnazi mmoja/mandela rd",
+        "/ "
       ],
       [
-        "ona ne olacak?",
-        "what will happen to her?"
+        "ubungo <> mtoni mtongani",
+        "/ "
       ],
       [
-        "önerin ne?",
-        "what is your suggestion?"
+        "ubungo <> muhimbili",
+        "/ "
       ],
       [
-        "o ne yapmayı severdi?",
-        "what did he used to like doing?"
+        "ubungo <> posta",
+        "/ "
       ],
       [
-        "o ne kadar güvenli?",
-        "how safe is that?"
+        "ubungo <> tegeta",
+        "/ "
       ],
       [
-        "sonra ne oldu?",
-        "then what happened?"
+        "ukonga madafu <> buguruni rozana",
+        "ilala / ukonga  "
       ],
       [
-        "soyadın ne?",
-        "what's your surname?"
+        "ukonga madafu <> mnazi mmoja",
+        "ilala / ukonga  "
       ],
       [
-        "ya sen neler seversin?",
-        "what things do you like?"
+        "ukonga madafu <> mtoni mtongani",
+        "ilala / ukonga  "
       ],
       [
-        "sen nasıl istersen",
-        "whatever you want"
+        "ukonga madafu <> shule ya uhuru",
+        "ilala / ukonga  "
       ],
       [
-        "sen neler yaptin?",
-        "what have you done?"
+        "ukonga minazi mirefu <> shule ya uhuru",
+        "ilala / ukonga  "
       ],
       [
-        "aç değil misin?",
-        "aren't you hungry?"
+        "vingunguti <> kivukoni",
+        "/ "
       ],
       [
-        "adil mi?",
-        "is that fair?"
+        "vingunguti <> makumbusho",
+        "/ "
       ],
       [
-        "adın ne?",
-        "what's your name?"
+        "vingunguti <> sinza",
+        "/ "
       ],
       [
-        "boş zamanlarında ne yapıyorsun?",
-        "what do you do in your free time?"
+        "vingunguti <> ubungo",
+        "/ "
       ],
       [
-        "bu kimin görevi?",
-        "whose duty is this?"
+        "yombo vituka <> muhimbili",
+        "/ "
       ],
       [
-        "bunu kim yapardı?",
-        "who used to do this?"
+        "yombo vituka <> ubungo",
+        "/ "
       ]
     ]
   }

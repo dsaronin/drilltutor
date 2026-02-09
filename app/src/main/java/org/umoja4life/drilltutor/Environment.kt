@@ -52,16 +52,32 @@ object Environment {
         // Instantiate Flashcard data subsystem
         flashcards = FlashcardRepository(AssetDataSource(appContext))
 
+        // Instantiate PlayerState subsystem
         playerState = PlayerStateRepository(appContext)
 
-        // load master flashcard data for given language; assume "tr" for now
         scope.launch {
-            logInfo("Environment: Triggering eager data load for 'tr'...")
-            flashcards.loadFlashcardData("tr")
+            getSettingsAndLoadData()  // get the settings, load the data
         }
 
         logInfo("Environment Initialized.")
     }
+
+    /**
+     * getSettingsAndLoadData
+     * Sequential startup logic:
+     * 1. Waists for Settings to be read from disk.
+     * 2. Loads the correct Flashcard data based on the saved language.
+     */
+    private suspend fun getSettingsAndLoadData() {
+        logInfo("Environment: Waiting for saved settings...")
+
+        // Suspend until DataStore is ready (approx 20-50ms)
+        val savedLanguage = settings.awaitLanguageLoad()
+
+        logInfo("Environment: Settings loaded ($savedLanguage). Triggering data load...")
+        flashcards.loadFlashcardData(savedLanguage)
+    }
+
 
     // --- LOGGING UTILITIES ---
     fun logInfo(msg: String) = Log.i(LOG_TAG, msg)

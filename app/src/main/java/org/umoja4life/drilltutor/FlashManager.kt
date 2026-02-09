@@ -70,34 +70,31 @@ class FlashManager (
     fun setMySource(topicKey: String) {
         var topic = topicKey.replace(":", "")
 
-        // Assuming mySettings!!.currentTopic holds the default topic
-        if (topic.matches(Regex("^def(ault)?$"))) {
-            topic = mySettings.topic
+        // GET MASTER LIST of availableTopics from Vocabulary
+        val availableTopics = Environment.flashcards.getTopics(FlashcardSource.VOCABULARY)
+
+        // VALIDATE & FALLBACK to first item in list
+        // Condition A: Request is "def" or "default" (Explicit default)
+        // Condition B: Request is not in the Master List (Invalid/Stale topic)
+        if (topic.matches(Regex("^(?i)def(ault)?$")) || !availableTopics.contains(topic)) {
+            val fallback = availableTopics.firstOrNull() ?: "default"
+            Environment.logInfo("FLASHMGR: Topic '$topic' invalid/default. Falling back to '$fallback'")
+            topic = fallback
         }
 
-        Environment.logInfo("FLASHMGR: source: ${mySettings.source}, topic: $topic, entry: $maybeEntry")
+        // UPDATE STATE
+        myState.topicKey = topic
 
-        // VocabularyType is the source of truth for all topics.
-        var validatedTopic = topic
-        val availableTopics = myHandler?.getTopics() ?: emptyList()
-
-        if (!availableTopics.contains(topic)) {
-            Environment.logError("Topic: $topic not found")
-            validatedTopic = availableTopics.firstOrNull() ?: ""
-        }
-
-        myState.topicKey = validatedTopic
-
-        // myHandler is already the "Module", so we call findOrNew on it.
-        // Note: findOrNew needs to return the specific handler instance for this topic
+        // Get the object corresponding to the topic
         val sourceInstance = myHandler?.findOrNew(myState.topicKey, maybeEntry)
 
         if (sourceInstance == null) {
-            Environment.logError("Source for topic: ${myState.topicKey} not found")
-            // TODO: fail gracefully with a default source
+            Environment.logError("FLASHMGR: Error - Could not get mySource for ${myState.topicKey}")
         }
 
         mySource = sourceInstance
+
+        Environment.logInfo("FLASHMGR: source: ${mySettings.source}, topic: ${myState.topicKey}, entry: $maybeEntry")
 
         // When source changes, we effectively start fresh
         resetIfStart()
