@@ -82,7 +82,7 @@ class DrillViewModel : ViewModel() {
 
     fun onFlipClick() {
         val manager = flashManager ?: return
-        prepCardDisplay(manager.currentCard().flip())
+        prepCardDisplay(manager.flipCard())
     }
 
     fun onFrontClick() {
@@ -132,36 +132,23 @@ class DrillViewModel : ViewModel() {
     }
 
     // ***********************************************************************
-    private fun monitorRepository() {
-        viewModelScope.launch {
-            // OBSERVE: Listen to the Singleton Repository's status stream.
-            // This fires on App Start AND when Settings changes the language.
-            Environment.flashcards.dataState.collect { status ->
-                when (status) {
-                    DataStatus.Loading -> {
-                        _isLoading.value = true
-                    }
-                    DataStatus.Ready -> {
-                        rebuildManager()
-                        _isLoading.value = false
-                    }
-                    DataStatus.Idle -> {
-                        // Do nothing, waiting for trigger
-                    }
-                }
-            }
-        }
-    }
+    // Start FlashManager and prep CurrentCard
+    // ***********************************************************************
 
     private fun prepCardDisplay(card: FlashcardData) {
         _fontSize.value = CardFontSize.lengthToFontSize(card.front)  // variable font size card display
         _currentCard.value = card
     }
 
-    private suspend fun rebuildManager() {
-        Environment.logInfo("DrillVM: (Re)Building FlashManager...")
+    private suspend fun rebuildManager(isConfigurationChange: Boolean) {
+        Environment.logInfo("DrillVM: ReBuilding FlashManager; ConfigChange: $isConfigurationChange ...")
 
-        playState = Environment.playerState.loadPlayerState()
+        // Reset state on config change; otherwise load from persistence
+        playState = if (isConfigurationChange) {
+            PlayerState() // Assumes default constructor creates a clean "zeroed" state
+        } else {
+            Environment.playerState.loadPlayerState()
+        }
 
        // Instantiate the Logic Engine with fresh data
         flashManager = FlashManager(
@@ -172,6 +159,9 @@ class DrillViewModel : ViewModel() {
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
     }
 
+    // ***********************************************************************
+    // Monitor changes in Settings and Loading Repository
+    // ***********************************************************************
     private fun monitorSettings() {
         viewModelScope.launch {
             Environment.settings.settingState.collect { state ->
@@ -180,9 +170,31 @@ class DrillViewModel : ViewModel() {
                 // 2. Ensures we don't try to build a FlashManager with empty/loading data.
                 if (Environment.flashcards.dataState.value == DataStatus.Ready) {
                     Environment.logInfo("DrillVM: Settings changed ($state).")
-                    rebuildManager()
+                    rebuildManager(isConfigurationChange = true)
                 }
             }
         }
     }
+
+    private fun monitorRepository() {
+        viewModelScope.launch {
+            // OBSERVE: Listen to the Singleton Repository's status stream.
+            // This fires on App Start AND when Settings changes the language.
+            Environment.flashcards.dataState.collect { status ->
+                when (status) {
+                    DataStatus.Loading -> {
+                        _isLoading.value = true
+                    }
+                    DataStatus.Ready -> {
+                        rebuildManager(isConfigurationChange = false)
+                        _isLoading.value = false
+                    }
+                    DataStatus.Idle -> {
+                        // Do nothing, waiting for trigger
+                    }
+                }
+            }
+        }
+    }
+
 }

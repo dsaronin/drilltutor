@@ -19,6 +19,7 @@ class FlashManager (
     private var isOrdered: Boolean = true // any init value is ok; updateConfig always sets
     private var maybeEntry: String? = null
     private var side: String = "front"   // any init value is ok; updateConfig always sets
+    private var isFlipped: Boolean = false // true if card one-off flipped; updateConfig always sets
 
 
 
@@ -55,6 +56,7 @@ class FlashManager (
         isOrdered = mySettings.selector == SelectorType.ORDERED
         side = mySettings.cardSide.id
         maybeEntry = null
+        isFlipped = false   // always normal side showing
 
         myHandler = FlashcardTypeSelection.selectCardType(mySettings.source)
 
@@ -115,6 +117,7 @@ class FlashManager (
      */
     fun reset() {
         unshuffle()
+        isFlipped = false   // reset normal side showing
         myState.groupDex = 0
         myState.showRear = true
     }
@@ -153,6 +156,7 @@ class FlashManager (
      */
     fun unshuffle() {
         myState.curPtr = 0
+        isFlipped = false   // reset normal side showing
         setIndexes() // Re-generates indexes based on isOrdered flag
     }
 
@@ -189,15 +193,27 @@ class FlashManager (
      */
     fun shuffleCards(): FlashcardData {
         shuffleIndexes.shuffle(Random.Default)
+        isFlipped = false   // reset normal side showing
         myState.curPtr = 0
         return currentCard()
     }
+
+    /**
+     * flipCard
+     * one-off flipping card toggle
+     */
+    fun flipCard(): FlashcardData {
+        isFlipped = !isFlipped  // Toggle the flag
+        return if (isFlipped) currentCard().flip() else currentCard()
+    }
+
 
     /**
      * nextCard
      */
     fun nextCard(): FlashcardData {
         // Ruby: if ( (@cur_ptr += 1) >= @my_settings[:sizer] )
+        isFlipped = false   // reset normal side showing
         myState.curPtr += 1
         if (myState.curPtr >= groupSize) {
             myState.curPtr = 0
@@ -209,6 +225,7 @@ class FlashManager (
      * prevCard
      */
     fun prevCard(): FlashcardData {
+        isFlipped = false   // reset normal side showing
         // Ruby: if ( (@cur_ptr -= 1) < 0 )
         myState.curPtr -= 1
         if (myState.curPtr < 0) {
@@ -222,6 +239,7 @@ class FlashManager (
      * headCard
      */
     fun headCard(): FlashcardData {
+        isFlipped = false   // reset normal side showing
         myState.curPtr = 0
         return currentCard()
     }
@@ -249,6 +267,7 @@ class FlashManager (
         } // if ordered
 
         myState.curPtr = 0
+        isFlipped = false   // reset normal side showing
         return currentCard()
     }
 
@@ -268,6 +287,7 @@ class FlashManager (
         } // if ordered
 
         myState.curPtr = 0
+        isFlipped = false   // reset normal side showing
         return currentCard()
     }
 
