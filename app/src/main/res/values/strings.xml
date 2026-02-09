@@ -23,10 +23,10 @@
     <string name="cd_icon_flashcards">Flashcards Icon</string>
     <string name="cd_icon_lessons">Lessons Icon</string>
     <string name="cd_icon_lists">Lists Icon</string>
+    <string name="cd_back">Back</string>
 
     <!-- About Screen -->
     <string name="about_screen_title">About</string>
-    <string name="cd_back">Back</string>
     <string name="about_welcome">Welcome to DrillTutor™</string>
     <string name="about_text_1">DrillTutor uses your personal language notes to construct Flashcards or Lists which you use as drills to improve your language skills. Lesson summaries for any topic can refresh your understanding.</string>
     <string name="about_text_2">DrillTutor is topics-based. Organize your notes around any topics which are meaningful to your study program: Grammatical (adverbs, adjectives, plurals) or Subject (careers, work, food, travel).</string>
