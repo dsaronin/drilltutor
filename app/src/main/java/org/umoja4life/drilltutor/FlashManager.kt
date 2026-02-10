@@ -17,7 +17,7 @@ class FlashManager (
     // *********************************************************************
     private var groupSize: Int = 5        // any init value is ok; updateConfig always sets
     private var isOrdered: Boolean = true // any init value is ok; updateConfig always sets
-    private var maybeEntry: String? = null
+    private var maybeEntry: String = ""  // related to mySetting.itemKey
     private var side: String = "front"   // any init value is ok; updateConfig always sets
     private var isFlipped: Boolean = false // true if card one-off flipped; updateConfig always sets
 
@@ -28,6 +28,7 @@ class FlashManager (
     // list of data itself.
     private var shuffleIndexes: MutableList<Int> = mutableListOf()
 
+    // *********************************************************************
     /**
      * myHandler (The "Class" / Factory), Acts like the Class in Ruby
      *   but is a kotlin singleton instance. Used to call class methods.
@@ -55,7 +56,7 @@ class FlashManager (
         groupSize = mySettings.groupSize
         isOrdered = mySettings.selector == SelectorType.ORDERED
         side = mySettings.cardSide.id
-        maybeEntry = null
+        maybeEntry = mySettings.entryKey
         isFlipped = false   // always normal side showing
 
         myHandler = FlashcardTypeSelection.selectCardType(mySettings.source)
@@ -317,35 +318,65 @@ class FlashManager (
      * mineExamples
      * Corresponds to Ruby: def mine_examples(key)
      */
-    fun mineExamples(key: String): List<String> {
-        // TODO: Implementation pending discussion
-        return emptyList()
-    }
-
     /**
-     * extractKey
-     * Corresponds to Ruby: def extract_key(str)
+     * mineExamples
+     * Corresponds to Ruby: def mine_examples(key)
+     * Search all available sources for usages of the given key (word/phrase).
      */
-    fun extractKey(str: String): String {
-        // TODO: Implementation pending discussion
-        return ""
+    fun mineExamples(key: String): List<String> {
+        if (key.isEmpty()) return emptyList()
+
+        val list = mutableListOf<String>()
+
+        // Case 1: If we are specifically in DICTIONARY mode, we only look there.
+        // (Assuming FlashcardSource.DICTIONARY exists in your Enum)
+        if (mySettings.source == FlashcardSource.DICTIONARY) {
+            val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.DICTIONARY)
+            list.addAll(handler.mineExamples(key))
+        }
+        // Case 2: Standard Study Mode - Mine ALL sources for examples.
+        else {
+            FlashcardSource.entries.forEach { source ->
+                val handler = FlashcardTypeSelection.selectCardType(source)
+                // We accumulate examples from every source (Sentences, Phrases, etc.)
+                list.addAll(handler.mineExamples(key))
+            }
+        }
+
+        return list
     }
 
     /**
      * textOrBullets
      * Corresponds to Ruby: def text_or_bullets
+     * Returns true if the content should be displayed as running text (no bullets).
+     * Ruby: TEXT_TYPES = %w{Dialogs Readings}
      */
     fun textOrBullets(): Boolean {
-        // TODO: Implementation pending discussion
-        return false
+        return when (mySettings.source) {
+            FlashcardSource.DIALOGS,
+            FlashcardSource.READINGS -> true
+            else -> false
+        }
     }
 
     /**
      * listable
      * Corresponds to Ruby: def listable?
+     * Returns true if the source supports listing/drilling behavior.
+     * Ruby: LIST_TYPES = %w{Vocabulary Sentences Phrases Opposites Readings Dialogs Glossaries}
+     * (Notably excludes DICTIONARY)
      */
     fun listable(): Boolean {
-        // TODO: Implementation pending discussion
-        return true
+        return when (mySettings.source) {
+            FlashcardSource.VOCABULARY,
+            FlashcardSource.SENTENCES,
+            FlashcardSource.PHRASES,
+            FlashcardSource.OPPOSITES,
+            FlashcardSource.READINGS,
+            FlashcardSource.DIALOGS,
+            FlashcardSource.GLOSSARIES -> true
+            else -> false // e.g. DICTIONARY
+        }
     }
 }

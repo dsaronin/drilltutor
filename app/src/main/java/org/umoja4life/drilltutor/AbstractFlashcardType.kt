@@ -160,6 +160,37 @@ abstract class AbstractFlashcardType(
         return card
     }
 
+    /**
+     * mineExamples
+     * Scans all loaded topics (instances) in the database for the first occurrence
+     * of the key in a Flashcard's "front" text.
+     * Returns a List containing the single match, or empty list.
+     */
+    fun mineExamples(key: String): List<String> {
+        // Ruby: keyrex = Regexp.new("^(#{key})|\\s(#{key})", Regexp::IGNORECASE)
+        // Kotlin: Matches start of string OR whitespace, followed by the key.
+        // We use Regex.escape(key) to ensure special chars in the key don't break the regex.
+        val regex = Regex("(^|\\s)${Regex.escape(key)}", RegexOption.IGNORE_CASE)
+
+        // Ruby: self.class_variable_get(:@@database).each do |key,obj|
+        // We iterate over the values (the instances) of the map.
+        for (instance in database.values) {
+
+            // Ruby: obj.fc_data.each do |front,rear|
+            for (card in instance.fcData()) {
+
+                // Ruby: if front.match keyrex
+                if (regex.containsMatchIn(card.front)) {
+                    // Ruby: return [front]
+                    return listOf(card.front)
+                }
+            }
+        }
+
+        // Ruby: return []
+        return emptyList()
+    }
+
     // ------------------------------------------------------------
     // ABSTRACT INTERFACE (Subclass Requirements)
     // ------------------------------------------------------------
