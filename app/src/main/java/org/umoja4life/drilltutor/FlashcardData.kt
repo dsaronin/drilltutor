@@ -22,7 +22,9 @@ data class TopicData(
     val topics: List<String>? = null,
 
     @SerialName("belongs_to")
-    val belongsTo: List<String>? = null
+    val belongsTo: List<String>? = null,
+    @SerialName("has_glossary")
+    val hasGlossary: String? = null
 )
 
 // --- THE APP CURRENCY (Simple Tuple) ---
