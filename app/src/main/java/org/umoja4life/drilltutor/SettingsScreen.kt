@@ -14,6 +14,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalTextStyle
@@ -34,6 +35,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.ui.unit.dp
 
 //import org.umoja4life.drilltutor.ui.theme.Gray050
 //import org.umoja4life.drilltutor.ui.theme.TurkiyeRed
@@ -138,6 +140,13 @@ fun SettingsScreen(
                     }
                 }
             }
+
+            // Visual break between Topic and Order logic
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.spacing_large)),
+                thickness = 1.dp,
+                color = MaterialTheme.colorScheme.outlineVariant
+            )
 
             // 3. Selection Order
             SimpleDropdown(
