@@ -129,6 +129,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val currentCard by viewModel.currentCard.collectAsState()
     val fontSize by viewModel.fontSize.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
+    val appTitle by viewModel.appTitle.collectAsState()
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -256,12 +257,14 @@ fun MainScreen(viewModel: DrillViewModel) {
                         LandscapeLayout(
                             currentCard = currentCard,
                             fontSize = fontSize,
+                            appTitle = appTitle,
                             actions = actions
                         )
                     } else {
                         PortraitLayout(
                             currentCard = currentCard,
                             fontSize = fontSize,
+                            appTitle = appTitle,
                             actions = actions
                         )
                     }
@@ -350,6 +353,7 @@ private fun DrillTutorContent(
     paddingValues: PaddingValues,
     card: FlashcardData,   // for accessing card content
     fontSize: DrillViewModel.CardFontSize,
+    appTitle: String,
     actions: DrillActions
 ) {
     val configuration = LocalConfiguration.current
@@ -369,6 +373,13 @@ private fun DrillTutorContent(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Orientation subheading at the top of the workspace
+        Text(
+            text = appTitle,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
+        )
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
@@ -426,6 +437,7 @@ private fun DrillTutorContent(
     private fun PortraitLayout(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
+        appTitle: String,
         actions: DrillActions
     ) {
         Scaffold(
@@ -436,6 +448,7 @@ private fun DrillTutorContent(
                 paddingValues = innerPadding,
                 card = currentCard,
                 fontSize = fontSize,
+                appTitle = appTitle,
                 actions = actions
             )
         }
@@ -445,6 +458,7 @@ private fun DrillTutorContent(
     private fun LandscapeLayout(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
+        appTitle: String,
         actions: DrillActions
     ) {
         val configuration = LocalConfiguration.current
@@ -487,6 +501,7 @@ private fun DrillTutorContent(
                         paddingValues = PaddingValues(0.dp),
                         card = currentCard,
                         fontSize = fontSize,
+                        appTitle = appTitle,
                         actions = actions
                     )
                 }
