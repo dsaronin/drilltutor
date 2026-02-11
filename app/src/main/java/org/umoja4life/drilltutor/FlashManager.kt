@@ -379,4 +379,37 @@ class FlashManager (
             else -> false // e.g. DICTIONARY
         }
     }
+
+    /**
+     * extractKey
+     * Extracts a meaningful keyword from a string to be used to search for examples.
+     */
+    fun extractKey(str: String): String {
+        // Dictionary: Pass-through
+        if (mySettings.source == FlashcardSource.DICTIONARY)  return str
+
+        // Filter Source: Only allow Vocabulary or Opposites
+        if (mySettings.source != FlashcardSource.VOCABULARY &&
+            mySettings.source != FlashcardSource.OPPOSITES) {
+            return ""
+        }
+
+        // Sanitize: Replace punctuation with space
+        // We escape the dash '-' to ensure it's treated as a literal inside the character class.
+        val punctuation = Regex("[:;.,\\-=+?!|~^$#@&*<>]")
+        val cleanStr = str.replace(punctuation, " ")
+
+        // Split: Break into words, ignoring multiple spaces
+        val keys = cleanStr.trim().split("\\s+".toRegex()).filter { it.isNotEmpty() }
+
+        // Constraints: Return empty if nothing left or too complex (> 6 words)
+        if (keys.isEmpty() || keys.size > 6) return ""
+
+        // Return original string if it's a short phrase (< 3 words)
+        if (keys.size < 3) return str
+
+        // Return the longest word
+        return keys.maxByOrNull { it.length } ?: ""
+    }
+
 }
