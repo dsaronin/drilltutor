@@ -14,6 +14,9 @@ class DrillViewModel : ViewModel() {
     // The specific card content to display
     private val _currentCard = MutableStateFlow(FlashcardData("", ""))
     val currentCard: StateFlow<FlashcardData> = _currentCard.asStateFlow()
+    // Window Title State
+    private val _appTitle = MutableStateFlow("")
+    val appTitle: StateFlow<String> = _appTitle.asStateFlow()
 
     // Dynamic Font Sizing for Front Text
     private val _fontSize = MutableStateFlow(CardFontSize.NORMAL)
@@ -138,8 +141,11 @@ class DrillViewModel : ViewModel() {
     // ***********************************************************************
 
     private fun prepCardDisplay(card: FlashcardData) {
-        _fontSize.value = CardFontSize.lengthToFontSize(card.front)  // variable font size card display
-        _currentCard.value = card
+        // Apply the source-specific formatting rules
+        val formattedCard = applyDisplayFormatting(card)
+        // variable font size card display
+        _fontSize.value = CardFontSize.lengthToFontSize(formattedCard.front)
+        _currentCard.value = formattedCard
     }
 
     private suspend fun rebuildManager(isConfigurationChange: Boolean) {
@@ -157,7 +163,8 @@ class DrillViewModel : ViewModel() {
             Environment.settings.settingState.value,
             playState!!
         )
-
+        // Update the title to reflect the new Source/Topic
+        _appTitle.value = formatTitle()
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
     }
 
@@ -223,6 +230,112 @@ class DrillViewModel : ViewModel() {
                     }
                 }
             }
+        }
+    }
+    // ***********************************************************************
+    // Display Prep & Formatting HELPERS
+    // ***********************************************************************
+    /**
+     * formatTitle
+     * Returns string: "Source • Topic"
+     * Separator: [En Space][Bullet][En Space]
+     */
+    private fun formatTitle(): String {
+        // Access .value because these are StateFlows
+        val source = Environment.settings.settingState.value.source
+        val topic = playState?.topicKey ?: ""
+
+        // \u2002 = En Space
+        // \u2022 = Bullet
+        return "$source\u2002\u2022\u2002$topic"
+    }
+    /**
+     * getParentSourcePath
+     * Returns "SOURCE__KEY" string if the passed TopicData object has a valid parent.
+     */
+    private fun getParentSourcePath(obj: TopicData): String? {
+        val list = obj.belongsTo
+        if (list.isNullOrEmpty() || list.size < 2) return null
+
+        val parentSourceName = list[0]
+        val parentKey = list[1]
+
+        if (parentKey.isEmpty()) return null
+
+        // Validate Parent Source Class
+        val parentSource = FlashcardSource.fromSourceName(parentSourceName)
+        if (parentSource == FlashcardSource.UNKNOWN) return null
+
+        // Validate Parent Entry Existence (The Cross-Reference Check)
+        // Ruby: Module.const_get(source).get_item(key).nil?
+        if (FlashcardTypeSelection.selectCardType(parentSource).getItem(parentKey) == null) return null
+
+        return "${parentSourceName}__$parentKey"
+    }
+
+    /**
+     * getGlossary
+     * Returns a TopicData object for a referenced glossary
+     */
+    private fun getGlossary(obj: TopicData): TopicData?  {
+        // Ruby: return nil if obj.has_glossary.nil?
+        val glossaryKey = obj.hasGlossary
+        if (glossaryKey.isNullOrEmpty()) return null  // no ref'd glossary
+
+        // Ruby: source = Glossaries.find_glossary( obj.has_glossary )
+        // We cast to GlossaryType to access the specific findGlossary method
+        val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.GLOSSARIES) as? GlossaryType
+        val glossaryObj = handler?.findGlossary(glossaryKey)
+
+        if (glossaryObj != null) {
+            return glossaryObj
+        }
+
+        // TODO:  "Glossary <#{obj.has_glossary}> not found; typo?"
+        return null
+    }
+
+    /**
+     * getGlossaryPath
+     * Returns "Glossaries__KEY" string if the passed TopicData object has a valid glossary.
+     */
+    private fun getGlossaryPath(obj: TopicData): String? {
+        return getGlossary(obj)?.let {
+            "Glossaries__${obj.hasGlossary}"
+        }
+    }
+
+    /**
+     * applyDisplayFormatting
+     * Applies source-specific formatting rules (Regex, substitution)
+     * to prepare the raw data for UI presentation.
+     */
+    private fun applyDisplayFormatting(rawCard: FlashcardData): FlashcardData {
+        val source = Environment.settings.settingState.value.source
+
+        return when (source) {
+            FlashcardSource.DIALOGS -> {
+                // Ruby: @front.gsub( /^.: / , "" )
+                // Removes "A: " or "B: " prefixes
+                val cleanFront = rawCard.front.replace(Regex("^.: "), "")
+                rawCard.copy(front = cleanFront)
+            }
+
+            FlashcardSource.OPPOSITES -> {
+                // Ruby: @front.gsub( /::/, " &harr; " )
+                // Replaces "::" with Left-Right Arrow
+                val formattedFront = rawCard.front.replace("::", " \u2194 ")
+                rawCard.copy(front = formattedFront)
+            }
+
+            FlashcardSource.DICTIONARY -> {
+                // Ruby: @rear.split( /; / )
+                // Kotlin: Convert "; " to newlines to simulate a list in a String field
+                val listRear = rawCard.back.replace("; ", "\n")
+                rawCard.copy(back = listRear)
+            }
+
+            else -> rawCard // No changes for other types
         }
     }
 
