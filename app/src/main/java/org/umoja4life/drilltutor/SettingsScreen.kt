@@ -168,7 +168,9 @@ fun SettingsScreen(
                         expanded = expandedSelection,
                         onDismissRequest = { expandedSelection = false }
                     ) {
-                        listOf("", "abstracts", "adjectives", "adverbs").forEach { selectionOption ->
+                        // Prepend the empty string for the "None" option
+                        val dynamicOptions = listOf("") + viewModel.availableSelections
+                        dynamicOptions.forEach { selectionOption ->
                             DropdownMenuItem(
                                 text = {
                                     Text(
@@ -185,7 +187,7 @@ fun SettingsScreen(
                     }
                 }
             }
-            
+
             // Visual break between Topic and Order logic
             HorizontalDivider(
                 modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.spacing_large)),

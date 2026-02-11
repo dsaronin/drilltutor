@@ -35,6 +35,18 @@ class SettingsViewModel : ViewModel() {
     val availableSides = CardSide.entries
     val availableSizes = SettingsRepository.VALID_GROUP_SIZES
     val availableLanguages = listOf("en", "sw", "tr")
+
+    /**
+     * availableSelections
+     * Resolves the subtype handler for the current source and fetches its specific topics.
+     */
+    val availableSelections: List<String>
+        get() {
+            val source = settings.value.source
+            val handler = FlashcardTypeSelection.selectCardType(source)
+            return handler.getTopics()
+        }
+
     // *******************************************************
 
     // *******************************************************
@@ -51,7 +63,12 @@ class SettingsViewModel : ViewModel() {
         }
 
     fun setTopic(newVal: String)     = updateSettings { it.copy(topic = newVal) }
-    fun setSource(newVal: FlashcardSource) = updateSettings { it.copy(source = newVal) }
+    fun setSource(newVal: FlashcardSource) = updateSettings {
+        it.copy(
+            source = newVal,
+            entryKey = SettingsRepository.DEFAULT_ITEMKEY // Reset selection on source change
+        )
+    }
     fun setEntryKey(newVal: String)  = updateSettings { it.copy(entryKey = newVal) }
     // Inside SettingState data class
     fun setSelector(newVal: SelectorType)  = updateSettings { it.copy(selector = newVal) }
