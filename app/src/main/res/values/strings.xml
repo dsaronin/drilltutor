@@ -42,6 +42,7 @@
     <string name="settings_label_size">Group Size</string>
     <string name="settings_label_side">Side to Display</string>
     <string name="settings_label_language">App Language</string>
+    <string name="settings_label_none">None</string>
 
     <string name="btn_cancel">Cancel</string>
     <string name="btn_start">Start »</string>

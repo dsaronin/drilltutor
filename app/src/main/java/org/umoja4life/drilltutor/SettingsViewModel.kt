@@ -40,6 +40,16 @@ class SettingsViewModel : ViewModel() {
     // *******************************************************
     // HELPERS
     // *******************************************************
+    /**
+     * isSelectionVisible
+     * The Selection dropdown is hidden for Vocabulary and Dictionary sources.
+     */
+    val isSelectionVisible: Boolean
+        get() {
+            val s = settings.value.source
+            return s != FlashcardSource.VOCABULARY && s != FlashcardSource.DICTIONARY
+        }
+
     fun setTopic(newVal: String)     = updateSettings { it.copy(topic = newVal) }
     fun setSource(newVal: FlashcardSource) = updateSettings { it.copy(source = newVal) }
     fun setEntryKey(newVal: String)  = updateSettings { it.copy(entryKey = newVal) }
