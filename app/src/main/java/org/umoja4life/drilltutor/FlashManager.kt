@@ -17,7 +17,7 @@ class FlashManager (
     // *********************************************************************
     private var groupSize: Int = 5        // any init value is ok; updateConfig always sets
     private var isOrdered: Boolean = true // any init value is ok; updateConfig always sets
-    private var maybeEntry: String = ""  // related to mySetting.itemKey
+    private var maybeEntry: String? = null  // related to mySetting.itemKey
     private var side: String = "front"   // any init value is ok; updateConfig always sets
     private var isFlipped: Boolean = false // true if card one-off flipped; updateConfig always sets
 
@@ -56,7 +56,7 @@ class FlashManager (
         groupSize = mySettings.groupSize
         isOrdered = mySettings.selector == SelectorType.ORDERED
         side = mySettings.cardSide.id
-        maybeEntry = mySettings.entryKey
+        maybeEntry = mySettings.entryKey.ifEmpty { null }
         isFlipped = false   // always normal side showing
 
         myHandler = FlashcardTypeSelection.selectCardType(mySettings.source)

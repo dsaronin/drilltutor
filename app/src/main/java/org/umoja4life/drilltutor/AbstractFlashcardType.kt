@@ -89,7 +89,7 @@ abstract class AbstractFlashcardType(
      */
     fun findOrNew(key: String, entry: String? = null): AbstractFlashcardType {
         // Ruby: use_key = ( entry.nil? ? key : entry )
-        val useKey = entry ?: key
+        val useKey = if (entry.isNullOrEmpty()) key else entry
 
         // Ruby: obj = db[use_key]
         var obj = database[useKey]
