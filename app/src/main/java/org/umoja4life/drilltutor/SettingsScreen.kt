@@ -141,19 +141,51 @@ fun SettingsScreen(
                 }
             }
 
-            // Part 3, Step 2: Conditional Visibility
+            // Part 3, Step 3: Localized ExposedDropdown for Selection
             if (viewModel.isSelectionVisible) {
+                var expandedSelection by remember { mutableStateOf(false) }
                 val noneLabel = stringResource(R.string.settings_label_none)
 
-                SimpleDropdown(
-                    label = stringResource(R.string.settings_label_selection),
-                    currentValue = state.entryKey,
-                    options = listOf("", "abstracts", "adjectives", "adverbs"),
-                    optionLabel = { if (it.isEmpty()) noneLabel else it }, // User-friendly label
-                    onOptionSelected = { viewModel.setEntryKey(it) },
-                    fontSize = largeFontSize
-                )
+                ExposedDropdownMenuBox(
+                    expanded = expandedSelection,
+                    onExpandedChange = { expandedSelection = !expandedSelection },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    OutlinedTextField(
+                        value = if (state.entryKey.isEmpty()) noneLabel else state.entryKey,
+                        onValueChange = {},
+                        readOnly = true,
+                        label = { Text(stringResource(R.string.settings_label_selection)) },
+                        textStyle = LocalTextStyle.current.copy(fontSize = largeFontSize),
+                        trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedSelection) },
+                        colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .menuAnchor()
+                    )
+
+                    ExposedDropdownMenu(
+                        expanded = expandedSelection,
+                        onDismissRequest = { expandedSelection = false }
+                    ) {
+                        listOf("", "abstracts", "adjectives", "adverbs").forEach { selectionOption ->
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        text = if (selectionOption.isEmpty()) noneLabel else selectionOption,
+                                        fontSize = largeFontSize
+                                    )
+                                },
+                                onClick = {
+                                    viewModel.setEntryKey(selectionOption)
+                                    expandedSelection = false
+                                }
+                            )
+                        }
+                    }
+                }
             }
+            
             // Visual break between Topic and Order logic
             HorizontalDivider(
                 modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.spacing_large)),
