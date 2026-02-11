@@ -41,6 +41,18 @@ abstract class AbstractFlashcardType(
     // ------------------------------------------------------------
     // CLASS METHODS (Factory Logic)
     // ------------------------------------------------------------
+    /**
+     * getItem
+     * Port of Ruby: def get_item( key )
+     * Retrieves the wrapper from the database and returns the raw TopicData.
+     */
+    fun getItem(key: String): TopicData? {
+        // 1. Look up the handler instance (The Wrapper)
+        val instance = database[key] ?: return null
+
+        // 2. Return the data inside (The Content)
+        return instance.topicData
+    }
 
     /**
      * load
