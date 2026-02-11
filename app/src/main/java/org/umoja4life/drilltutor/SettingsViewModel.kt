@@ -42,6 +42,8 @@ class SettingsViewModel : ViewModel() {
     // *******************************************************
     fun setTopic(newVal: String)     = updateSettings { it.copy(topic = newVal) }
     fun setSource(newVal: FlashcardSource) = updateSettings { it.copy(source = newVal) }
+    fun setEntryKey(newVal: String)  = updateSettings { it.copy(entryKey = newVal) }
+    // Inside SettingState data class
     fun setSelector(newVal: SelectorType)  = updateSettings { it.copy(selector = newVal) }
     fun setGroupSize(newVal: Int)    = updateSettings { it.copy(groupSize = newVal) }
     fun setCardSide(newVal: CardSide) = updateSettings { it.copy(cardSide = newVal) }

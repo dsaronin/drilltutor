@@ -141,6 +141,16 @@ fun SettingsScreen(
                 }
             }
 
+            // Part 3, Step 1: Test Harness for Entry Selection
+            SimpleDropdown(
+                label = stringResource(R.string.settings_label_selection), // Placeholder label
+                currentValue = state.entryKey,
+                options = listOf("abstracts", "adjectives", "adverbs"), // Temp fixed list
+                optionLabel = { it },
+                onOptionSelected = { viewModel.setEntryKey(it) }, // Assumes this exists in VM
+                fontSize = largeFontSize
+            )
+
             // Visual break between Topic and Order logic
             HorizontalDivider(
                 modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.spacing_large)),

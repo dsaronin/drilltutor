@@ -3,7 +3,6 @@
 
     <!-- Main Screen -->
     <string name="menu_settings">Settings</string>
-    <string name="menu_titles">Titles</string>
     <string name="menu_lessons">Lessons</string>
     <string name="menu_lists">Lists</string>
     <string name="menu_about">About</string>
@@ -37,7 +36,8 @@
     <!-- Settings Screen -->
     <string name="settings_title">Flashcard Settings</string>
     <string name="settings_label_topic">Topic for study</string>
-    <string name="settings_label_source">Source</string>
+    <string name="settings_label_source">Source Material</string>
+    <string name="settings_label_selection">Selection title</string>
     <string name="settings_label_order">Selection Order</string>
     <string name="settings_label_size">Group Size</string>
     <string name="settings_label_side">Side to Display</string>
