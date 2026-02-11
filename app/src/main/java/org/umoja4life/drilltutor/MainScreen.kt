@@ -182,16 +182,7 @@ fun MainScreen(viewModel: DrillViewModel) {
                             selectedIconColor = MaterialTheme.colorScheme.primary
                         )
                     )
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.Default.Category, contentDescription = stringResource(id = R.string.cd_icon_titles)) },
-                        label = { Text(stringResource(id = R.string.menu_titles), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = { /*TODO*/ },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
+
                     NavigationDrawerItem(
                         icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
                         label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },

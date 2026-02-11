@@ -50,6 +50,7 @@ fun SettingsScreen(
 
     val largeFontSize: TextUnit = with(LocalDensity.current) {
         // Correct syntax: value.toSp()
+
         dimensionResource(id = R.dimen.font_large).toSp()
     }
 
@@ -89,8 +90,18 @@ fun SettingsScreen(
         ) {
 
             // --- FORM FIELDS ---
+            // 1. Source
+            SimpleDropdown(
+                label = stringResource(R.string.settings_label_source),
+                currentValue = state.source.name,
+                options = viewModel.availableSources,
+                optionLabel = { it.sourceName },
+                onOptionSelected = { viewModel.setSource(it) },
+                fontSize = largeFontSize
+            )
 
-            // --- TOPIC DROPDOWN ---
+
+            // ---2. TOPIC DROPDOWN ---
             var expanded by remember { mutableStateOf(false) } // State to manage open/closed menu
 
             ExposedDropdownMenuBox(
@@ -127,16 +138,6 @@ fun SettingsScreen(
                     }
                 }
             }
-
-            // 2. Source
-            SimpleDropdown(
-                label = stringResource(R.string.settings_label_source),
-                currentValue = state.source.name,
-                options = viewModel.availableSources,
-                optionLabel = { it.sourceName },
-                onOptionSelected = { viewModel.setSource(it) },
-                fontSize = largeFontSize
-            )
 
             // 3. Selection Order
             SimpleDropdown(
