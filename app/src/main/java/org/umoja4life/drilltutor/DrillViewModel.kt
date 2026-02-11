@@ -338,5 +338,27 @@ class DrillViewModel : ViewModel() {
             else -> rawCard // No changes for other types
         }
     }
+    /**
+     * mineExamples
+     * Determines which side of the card to look at, extracts the key,
+     * and finds example sentences.
+     */
+    private fun mineExamples(card: FlashcardData): List<String> {
+        // Get the current side from Settings
+        val currentSide = Environment.settings.settingState.value.cardSide
 
+        val textToScan = when (currentSide) {  //  based on the side
+            CardSide.FRONT -> card.front
+            CardSide.BACK -> card.back
+            else -> ""
+        }
+
+        if (textToScan.isEmpty()) return emptyList()
+
+        // Extract the key
+        val key = flashManager?.extractKey(textToScan) ?: return emptyList()
+
+        // Return mined examples found
+        return flashManager?.mineExamples(key) ?: emptyList()
+    }
 }
