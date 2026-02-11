@@ -24,7 +24,7 @@ abstract class AbstractFlashcardType(
     // ------------------------------------------------------------
 
     // The specific data for this instance (Ruby: @fc_data via YAML load)
-    protected var topicData: TopicData? = null
+    internal var topicData: TopicData? = null
 
     // Ruby: attr_accessor :my_topic
     var myTopic: String = ""
