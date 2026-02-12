@@ -259,24 +259,22 @@ fun MainScreen(viewModel: DrillViewModel) {
                         androidx.compose.material3.CircularProgressIndicator()
                     }
                 } else {
+
+                    // Establish ScreenConfiguration object
+                    val screenConfig = ScreenConfiguration(
+                        appTitle = appTitle,
+                        isListMode = isListMode,
+                        isListIconVisible = isListIconVisible,
+                        isTextMode = false,
+                        fontSize = fontSize,
+                        currentCard = currentCard,
+                        listData = emptyList()
+                    )
+
                     if (isLandscape) {
-                        LandscapeLayout(
-                            currentCard = currentCard,
-                            fontSize = fontSize,
-                            appTitle = appTitle,
-                            isListMode = isListMode,
-                            isListIconVisible = isListIconVisible,
-                            actions = actions
-                        )
+                        LandscapeLayout(config = screenConfig, actions = actions)
                     } else {
-                        PortraitLayout(
-                            currentCard = currentCard,
-                            fontSize = fontSize,
-                            appTitle = appTitle,
-                            isListMode = isListMode,
-                            isListIconVisible = isListIconVisible,
-                            actions = actions
-                        )
+                        PortraitLayout(config = screenConfig, actions = actions)
                     }
                 }
 
@@ -328,9 +326,8 @@ private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
 
 @Composable
 private fun DrillTutorBottomBar(
-    actions: DrillActions,
-    isListMode: Boolean,
-    isListIconVisible: Boolean
+    config: ScreenConfiguration,
+    actions: DrillActions
 ) {
     BottomAppBar(
         contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
@@ -355,8 +352,8 @@ private fun DrillTutorBottomBar(
                 Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
             }
 
-            if (isListIconVisible) {
-                val tint = if (isListMode) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+            if (config.isListIconVisible) {
+                val tint = if (config.isListMode) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
 
                 IconButton(onClick = actions.onToggleList) {
                     Icon(
@@ -373,12 +370,7 @@ private fun DrillTutorBottomBar(
 
 @Composable
 private fun DrillTutorContent(
-    paddingValues: PaddingValues,
-    card: FlashcardData,   // for accessing card content
-    fontSize: DrillViewModel.CardFontSize,
-    appTitle: String,
-    isListMode: Boolean,
-    isListIconVisible: Boolean,
+    config: ScreenConfiguration,
     actions: DrillActions
 ) {
     val configuration = LocalConfiguration.current
@@ -394,13 +386,13 @@ private fun DrillTutorContent(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(paddingValues),
+            .padding(config.paddingValues),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         // Orientation subheading at the top of the workspace
         Text(
-            text = appTitle,
+            text = config.appTitle,
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
@@ -431,13 +423,13 @@ private fun DrillTutorContent(
                         // Raw display of Front Data
                         // We will tackle dynamic font sizing in Step 1.2
                         Text(
-                            text = card.front,
+                            text = config.currentCard.front,
                             // Direct access to the encapsulated ID
                             fontSize = with(density) {
-                                dimensionResource(id = fontSize.dimenResId).toSp()
+                                dimensionResource(id = config.fontSize.dimenResId).toSp()
                             },
                             lineHeight = with(density) {
-                                dimensionResource(id = fontSize.dimenResId).toSp()
+                                dimensionResource(id = config.fontSize.dimenResId).toSp()
                             },
                             fontWeight = FontWeight.Bold,
                             // style = MaterialTheme.typography.displayMedium,
@@ -460,28 +452,17 @@ private fun DrillTutorContent(
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     private fun PortraitLayout(
-        currentCard: FlashcardData,
-        fontSize: DrillViewModel.CardFontSize,
-        appTitle: String,
-        isListMode: Boolean,
-        isListIconVisible: Boolean,
+        config: ScreenConfiguration,
         actions: DrillActions
     ) {
         Scaffold(
             topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu) },
-            bottomBar = { DrillTutorBottomBar(
-                actions = actions,
-                isListMode = isListMode,
-                isListIconVisible = isListIconVisible
-            ) }
+            bottomBar = {
+                DrillTutorBottomBar(config = config, actions = actions)
+            }
         ) { innerPadding ->
             DrillTutorContent(
-                paddingValues = innerPadding,
-                card = currentCard,
-                fontSize = fontSize,
-                appTitle = appTitle,
-                isListMode = isListMode,
-                isListIconVisible = isListIconVisible,
+                config = config.copy(paddingValues = innerPadding),
                 actions = actions
             )
         }
@@ -489,11 +470,7 @@ private fun DrillTutorContent(
 
     @Composable
     private fun LandscapeLayout(
-        currentCard: FlashcardData,
-        fontSize: DrillViewModel.CardFontSize,
-        appTitle: String,
-        isListMode: Boolean,
-        isListIconVisible: Boolean,
+        config: ScreenConfiguration,
         actions: DrillActions
     ) {
         val configuration = LocalConfiguration.current
@@ -532,15 +509,7 @@ private fun DrillTutorContent(
                         .fillMaxHeight()
                         .zIndex(1f), // <--- Ensure content sits above any sidebar overlap
                 ) {
-                    DrillTutorContent(
-                        paddingValues = PaddingValues(0.dp),
-                        card = currentCard,
-                        fontSize = fontSize,
-                        appTitle = appTitle,
-                        isListMode = isListMode,
-                        isListIconVisible = isListIconVisible,
-                        actions = actions
-                    )
+                    DrillTutorContent(config = config, actions = actions)
                 }
 
                 // Right Sidebar (Player)
@@ -559,17 +528,12 @@ private fun DrillTutorContent(
                             .rotate(-90f),
                         contentAlignment = Alignment.Center
                     ) {
-                        DrillTutorBottomBar(
-                            actions = actions,
-                            isListMode = isListMode,
-                            isListIconVisible = isListIconVisible
-                        )
+                        DrillTutorBottomBar(config = config, actions = actions)
                     }
                 }
             }
         }
     }
-
 
     @Preview(showBackground = true, widthDp = 360, heightDp = 640)
     @Composable
