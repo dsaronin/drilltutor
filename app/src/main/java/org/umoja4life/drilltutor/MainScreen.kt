@@ -325,9 +325,6 @@ private fun DrillTutorBottomBar(actions: DrillActions) {
             IconButton(onClick = actions.onFlip) {
                 Icon(Icons.Filled.RotateRight, contentDescription = stringResource(id = R.string.cd_flip_card))
             }
-            IconButton(onClick = actions.onFront) {
-                Icon(Icons.Filled.Visibility, contentDescription = stringResource(id = R.string.cd_toggle_mode))
-            }
             IconButton(onClick = actions.onNextGroup) {
                 Icon(Icons.Filled.SkipNext, contentDescription = stringResource(id = R.string.cd_group_next))
             }
