@@ -32,6 +32,12 @@ class DrillViewModel : ViewModel() {
 
     private val _isListIconVisible = MutableStateFlow(false)
     val isListIconVisible: StateFlow<Boolean> = _isListIconVisible.asStateFlow()
+
+    private val _listData = MutableStateFlow<List<FlashcardData>>(emptyList())
+    val listData: StateFlow<List<FlashcardData>> = _listData.asStateFlow()
+
+    private val _isTextMode = MutableStateFlow(false)
+    val isTextMode: StateFlow<Boolean> = _isTextMode.asStateFlow()
     private var isFirstLoad = true  // true if first time loading data
 
     // ***********************************************************************
@@ -172,6 +178,11 @@ class DrillViewModel : ViewModel() {
             Environment.settings.settingState.value,
             playState!!
         )
+
+        // POPULATE LIST DATA ---
+        _listData.value = flashManager?.getListViewData() ?: emptyList()
+        _isTextMode.value = flashManager?.textOrBullets() ?: false
+
         // Update the title to reflect the new Source/Topic
         _appTitle.value = formatTitle()
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh

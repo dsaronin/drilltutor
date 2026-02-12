@@ -22,6 +22,8 @@ object Environment {
     val VERSION_CODE: String = BuildConfig.DRILLTUTOR_VERSION_CODE
     val IS_DEBUG: Boolean = BuildConfig.DEBUG
 
+    const val LIST_CLAMP = 80  // max length for list view
+
     // --- LOGGING ---
     private const val LOG_TAG = "App" + APP_NAME
 

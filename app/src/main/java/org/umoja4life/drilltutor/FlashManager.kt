@@ -412,4 +412,18 @@ class FlashManager (
         return keys.maxByOrNull { it.length } ?: ""
     }
 
+    /**
+     * getListViewData
+     * Returns the list of cards for the current topic.
+     * Clamps the result to (LIST_CLAMP + 1) items.
+     * Returns empty list if source is not listable or source is invalid.
+     */
+    fun getListViewData(): List<FlashcardData> {
+        // Guard: Check if listable and source exists
+        if (!listable() || mySource == null) return emptyList()
+
+        // Access internal data via AbstractFlashcardType interface
+        // Take the first (N + 1) items
+        return mySource!!.fcData().take(Environment.LIST_CLAMP + 1)
+    }
 }

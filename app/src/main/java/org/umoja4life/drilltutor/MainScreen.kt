@@ -90,8 +90,8 @@ data class DrillActions(
     val onNextGroup: () -> Unit,
     val onPrevGroup: () -> Unit,
     val onReset: () -> Unit,
-    val onMenu: () -> Unit
-    // We can easily add onShuffle, onGroupNext, etc. here later
+    val onMenu: () -> Unit,
+    val onToggleList: () -> Unit
 )
 // *****************************************************************
 // *****************************************************************
@@ -130,6 +130,9 @@ fun MainScreen(viewModel: DrillViewModel) {
     val isLoading by viewModel.isLoading.collectAsState()
     val appTitle by viewModel.appTitle.collectAsState()
 
+    val isListMode by viewModel.isListMode.collectAsState()
+    val isListIconVisible by viewModel.isListIconVisible.collectAsState()
+
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
@@ -158,7 +161,8 @@ fun MainScreen(viewModel: DrillViewModel) {
         onNextGroup = { viewModel.onNextGroupClick() },
         onPrevGroup = { viewModel.onPrevGroupClick() },
         onReset = { viewModel.onResetClick() },
-        onMenu = { scope.launch { drawerState.open() } }
+        onMenu = { scope.launch { drawerState.open() } },
+        onToggleList = { viewModel.onToggleListMode() }
     )
 
     ModalNavigationDrawer(
@@ -247,6 +251,8 @@ fun MainScreen(viewModel: DrillViewModel) {
                             currentCard = currentCard,
                             fontSize = fontSize,
                             appTitle = appTitle,
+                            isListMode = isListMode,
+                            isListIconVisible = isListIconVisible,
                             actions = actions
                         )
                     } else {
@@ -254,6 +260,8 @@ fun MainScreen(viewModel: DrillViewModel) {
                             currentCard = currentCard,
                             fontSize = fontSize,
                             appTitle = appTitle,
+                            isListMode = isListMode,
+                            isListIconVisible = isListIconVisible,
                             actions = actions
                         )
                     }
@@ -306,7 +314,11 @@ private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
 }
 
 @Composable
-private fun DrillTutorBottomBar(actions: DrillActions) {
+private fun DrillTutorBottomBar(
+    actions: DrillActions,
+    isListMode: Boolean,
+    isListIconVisible: Boolean
+) {
     BottomAppBar(
         contentPadding = PaddingValues(vertical = dimensionResource(id = R.dimen.padding_bar_vertical))
     ) {
@@ -330,6 +342,18 @@ private fun DrillTutorBottomBar(actions: DrillActions) {
                 Icon(Icons.Filled.Shuffle, contentDescription = stringResource(id = R.string.cd_shuffle))
             }
 
+            if (isListIconVisible) {
+                val tint = if (isListMode) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+
+                IconButton(onClick = actions.onToggleList) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.List,
+                        contentDescription = stringResource(id = R.string.cd_icon_lists),
+                        tint = tint
+                    )
+                }
+            }
+
         }
     }
 }
@@ -340,6 +364,8 @@ private fun DrillTutorContent(
     card: FlashcardData,   // for accessing card content
     fontSize: DrillViewModel.CardFontSize,
     appTitle: String,
+    isListMode: Boolean,
+    isListIconVisible: Boolean,
     actions: DrillActions
 ) {
     val configuration = LocalConfiguration.current
@@ -424,17 +450,25 @@ private fun DrillTutorContent(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
         appTitle: String,
+        isListMode: Boolean,
+        isListIconVisible: Boolean,
         actions: DrillActions
     ) {
         Scaffold(
             topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu) },
-            bottomBar = { DrillTutorBottomBar(actions = actions) }
+            bottomBar = { DrillTutorBottomBar(
+                actions = actions,
+                isListMode = isListMode,
+                isListIconVisible = isListIconVisible
+            ) }
         ) { innerPadding ->
             DrillTutorContent(
                 paddingValues = innerPadding,
                 card = currentCard,
                 fontSize = fontSize,
                 appTitle = appTitle,
+                isListMode = isListMode,
+                isListIconVisible = isListIconVisible,
                 actions = actions
             )
         }
@@ -445,6 +479,8 @@ private fun DrillTutorContent(
         currentCard: FlashcardData,
         fontSize: DrillViewModel.CardFontSize,
         appTitle: String,
+        isListMode: Boolean,
+        isListIconVisible: Boolean,
         actions: DrillActions
     ) {
         val configuration = LocalConfiguration.current
@@ -488,6 +524,8 @@ private fun DrillTutorContent(
                         card = currentCard,
                         fontSize = fontSize,
                         appTitle = appTitle,
+                        isListMode = isListMode,
+                        isListIconVisible = isListIconVisible,
                         actions = actions
                     )
                 }
@@ -508,7 +546,11 @@ private fun DrillTutorContent(
                             .rotate(-90f),
                         contentAlignment = Alignment.Center
                     ) {
-                        DrillTutorBottomBar(actions = actions)
+                        DrillTutorBottomBar(
+                            actions = actions,
+                            isListMode = isListMode,
+                            isListIconVisible = isListIconVisible
+                        )
                     }
                 }
             }
