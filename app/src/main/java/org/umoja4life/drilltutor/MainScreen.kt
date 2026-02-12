@@ -594,16 +594,6 @@ private fun AppDrawer(
                 )
             )
             NavigationDrawerItem(
-                icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
-                label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                selected = false,
-                onClick = { /*TODO*/ },
-                colors = NavigationDrawerItemDefaults.colors(
-                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                    selectedIconColor = MaterialTheme.colorScheme.primary
-                )
-            )
-            NavigationDrawerItem(
                 icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
                 label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
                 selected = false,
