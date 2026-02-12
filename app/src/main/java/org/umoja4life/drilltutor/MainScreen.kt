@@ -566,3 +566,71 @@ private fun DrillTutorContent(
             Text("Preview unavailable until state hoisting is implemented")
         }
     }
+
+// [INSERT AT BOTTOM OF FILE]
+
+@Composable
+private fun FlashcardListView(
+    listData: List<FlashcardData>,
+    isTextMode: Boolean
+) {
+    // Scrollable container
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+            .padding(dimensionResource(id = R.dimen.spacing_small))
+    ) {
+        if (isTextMode) {
+            // SINGLE COLUMN (Text Mode)
+            listData.forEach { card ->
+                Text(
+                    text = card.front,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+            }
+        } else {
+            // TWO COLUMNS (Bullet Mode)
+            // Split the list roughly in half
+            val splitIndex = (listData.size + 1) / 2
+            val leftList = listData.take(splitIndex)
+            val rightList = listData.drop(splitIndex)
+
+            Row(modifier = Modifier.fillMaxWidth()) {
+                // Left Column
+                Column(modifier = Modifier.weight(1f)) {
+                    leftList.forEach { card ->
+                        BulletItem(text = card.front)
+                    }
+                }
+                // Right Column (only if data exists)
+                if (rightList.isNotEmpty()) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        rightList.forEach { card ->
+                            BulletItem(text = card.front)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun BulletItem(text: String) {
+    Row(modifier = Modifier.padding(bottom = 4.dp)) {
+        Text(
+            stringResource(id = R.string.bullet_char), // Bullet character
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.padding(end = 8.dp)
+        )
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onSurface
+        )
+    }
+}

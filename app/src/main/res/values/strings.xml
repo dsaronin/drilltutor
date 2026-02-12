@@ -52,4 +52,6 @@
     <string name="huge_text">Huge Text</string>
     <string name="large_text">Large Text</string>
     <string name="normal_text">Normal Text</string>
+
+    <string name="bullet_char">&#8226;</string>
 </resources>
