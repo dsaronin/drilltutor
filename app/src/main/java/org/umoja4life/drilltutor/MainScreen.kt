@@ -140,7 +140,9 @@ fun DrawerHeader() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(viewModel: DrillViewModel) {
+    // ********************************************************
     // OBSERVE: These update automatically when ViewModel changes
+    // ********************************************************
     val currentCard by viewModel.currentCard.collectAsState()
     val fontSize by viewModel.fontSize.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
@@ -153,6 +155,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
 
+    // ********************************************************
     // Lifecycle Observer for App Backgrounding
     val lifecycleOwner = LocalLifecycleOwner.current
     DisposableEffect(lifecycleOwner) {
@@ -167,6 +170,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         }
     }
 
+    // ********************************************************
     // Inside MainScreen
     val actions = DrillActions(
         onNext = { viewModel.onNextClick() },
@@ -179,7 +183,23 @@ fun MainScreen(viewModel: DrillViewModel) {
         onMenu = { scope.launch { drawerState.open() } },
         onToggleList = { viewModel.onToggleListMode() }
     )
+    // ********************************************************
 
+    // Establish ScreenConfiguration object
+    val screenConfig = ScreenConfiguration(
+        appTitle = appTitle,
+        isListMode = isListMode,
+        isListIconVisible = isListIconVisible,
+        isTextMode = false,
+        fontSize = fontSize,
+        currentCard = currentCard,
+        listData = emptyList()
+    )
+    // ********************************************************
+
+    // ********************************************************
+
+    // ********************************************************
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -190,47 +210,12 @@ fun MainScreen(viewModel: DrillViewModel) {
             )
         }
     ) {
-        NavHost(navController = navController, startDestination = "home") {
-            composable("home") {
-                val configuration = LocalConfiguration.current
-                val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-
-                // LOADING STATE CHECK
-                if (isLoading) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        androidx.compose.material3.CircularProgressIndicator()
-                    }
-                } else {
-
-                    // Establish ScreenConfiguration object
-                    val screenConfig = ScreenConfiguration(
-                        appTitle = appTitle,
-                        isListMode = isListMode,
-                        isListIconVisible = isListIconVisible,
-                        isTextMode = false,
-                        fontSize = fontSize,
-                        currentCard = currentCard,
-                        listData = emptyList()
-                    )
-
-                    if (isLandscape) {
-                        LandscapeLayout(config = screenConfig, actions = actions)
-                    } else {
-                        PortraitLayout(config = screenConfig, actions = actions)
-                    }
-                }
-
-            }
-            composable("about") {
-                AboutScreen(onNavigateBack = { navController.popBackStack() })
-            }
-            composable("settings") {
-                SettingsScreen(onNavigateBack = { navController.popBackStack() })
-            }
-        }
+        DrillTutorNavHost(
+            navController = navController,
+            isLoading = isLoading,
+            screenConfig = screenConfig,
+            actions = actions
+        )
     }
 }
 
@@ -616,6 +601,44 @@ private fun AppDrawer(
                     selectedIconColor = MaterialTheme.colorScheme.primary
                 )
             )
+        }
+    }
+}
+
+@Composable
+private fun DrillTutorNavHost(
+    navController: NavHostController,
+    isLoading: Boolean,
+    screenConfig: ScreenConfiguration,
+    actions: DrillActions
+) {
+    NavHost(navController = navController, startDestination = "home") {
+        composable("home") {
+            val configuration = LocalConfiguration.current
+            val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+
+            // LOADING STATE CHECK
+            if (isLoading) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    androidx.compose.material3.CircularProgressIndicator()
+                }
+            } else {
+                if (isLandscape) {
+                    LandscapeLayout(config = screenConfig, actions = actions)
+                } else {
+                    PortraitLayout(config = screenConfig, actions = actions)
+                }
+            }
+
+        }
+        composable("about") {
+            AboutScreen(onNavigateBack = { navController.popBackStack() })
+        }
+        composable("settings") {
+            SettingsScreen(onNavigateBack = { navController.popBackStack() })
         }
     }
 }
