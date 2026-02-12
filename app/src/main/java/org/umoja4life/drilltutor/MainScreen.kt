@@ -150,6 +150,8 @@ fun MainScreen(viewModel: DrillViewModel) {
 
     val isListMode by viewModel.isListMode.collectAsState()
     val isListIconVisible by viewModel.isListIconVisible.collectAsState()
+    val listData by viewModel.listData.collectAsState()
+    val isTextMode by viewModel.isTextMode.collectAsState()
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -190,10 +192,10 @@ fun MainScreen(viewModel: DrillViewModel) {
         appTitle = appTitle,
         isListMode = isListMode,
         isListIconVisible = isListIconVisible,
-        isTextMode = false,
+        isTextMode = isTextMode,
         fontSize = fontSize,
         currentCard = currentCard,
-        listData = emptyList()
+        listData = listData
     )
     // ********************************************************
 
@@ -317,9 +319,19 @@ private fun DrillTutorContent(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
         )
-        // The Logic Switch (Currently just calls the Player)
-        FlashcardPlayerView(config = config, actions = actions)
 
+            // The Logic Switch
+        if (config.isListMode) {
+            FlashcardListView(
+                listData = config.listData,
+                isTextMode = config.isTextMode
+            )
+        } else {
+            FlashcardPlayerView(
+                config = config,
+                actions = actions
+            )
+        }
     }
 }
 
