@@ -26,6 +26,12 @@ class DrillViewModel : ViewModel() {
     private val _isLoading = MutableStateFlow(true)
     val isLoading: StateFlow<Boolean> = _isLoading.asStateFlow()
 
+    // --- LIST VIEW STATE ---
+    private val _isListMode = MutableStateFlow(false)
+    val isListMode: StateFlow<Boolean> = _isListMode.asStateFlow()
+
+    private val _isListIconVisible = MutableStateFlow(false)
+    val isListIconVisible: StateFlow<Boolean> = _isListIconVisible.asStateFlow()
     private var isFirstLoad = true  // true if first time loading data
 
     // ***********************************************************************
@@ -118,6 +124,9 @@ class DrillViewModel : ViewModel() {
     // ***********************************************************************
     // --- LIFECYCLE ---
     // ***********************************************************************
+    fun onToggleListMode() {
+        _isListMode.value = !_isListMode.value
+    }
 
     override fun onCleared() {
         super.onCleared()
@@ -175,6 +184,13 @@ class DrillViewModel : ViewModel() {
     private fun monitorSettings() {
         viewModelScope.launch {
             Environment.settings.settingState.collect { state ->
+                // RESET UI STATE
+                _isListMode.value = false
+
+                // Determine icon visibility
+                // List View is NOT available for Dictionary
+                _isListIconVisible.value = (state.source != FlashcardSource.DICTIONARY)
+
                 // 1. Initialize tracker on first run
                 if (currentLanguage.isNullOrEmpty()) {
                     currentLanguage = state.language
