@@ -78,6 +78,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
+import androidx.compose.material3.DrawerState
+import androidx.navigation.NavHostController
+
 // *****************************************************************
 // The Screen UI Configuration Object
 // Holds all data required to render the content area.
@@ -149,7 +152,6 @@ fun MainScreen(viewModel: DrillViewModel) {
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val scope = rememberCoroutineScope()
-    val scrollState = rememberScrollState()
 
     // Lifecycle Observer for App Backgrounding
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -181,68 +183,11 @@ fun MainScreen(viewModel: DrillViewModel) {
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            ModalDrawerSheet {
-                Column(modifier = Modifier.verticalScroll(scrollState)) {
-                    DrawerHeader()
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
-                        label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = {
-                            scope.launch { drawerState.close() }
-                            navController.navigate("settings")
-                        },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
-
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
-                        label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = { /*TODO*/ },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
-                        label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = { /*TODO*/ },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
-                        label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = {
-                            scope.launch { drawerState.close() }
-                            navController.navigate("about")
-                        },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
-                    NavigationDrawerItem(
-                        icon = { Icon(Icons.AutoMirrored.Filled.Help, contentDescription = stringResource(id = R.string.menu_help)) },
-                        label = { Text(stringResource(id = R.string.menu_help), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                        selected = false,
-                        onClick = { /*TODO*/ },
-                        colors = NavigationDrawerItemDefaults.colors(
-                            unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                            selectedIconColor = MaterialTheme.colorScheme.primary
-                        )
-                    )
-                }
-            }
+            AppDrawer(
+                drawerState = drawerState,
+                navController = navController,
+                scope = scope
+            )
         }
     ) {
         NavHost(navController = navController, startDestination = "home") {
@@ -609,5 +554,78 @@ private fun BulletItem(text: String) {
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface
         )
+    }
+}
+
+@Composable
+private fun AppDrawer(
+    drawerState: DrawerState,
+    navController: NavHostController,
+    scope: kotlinx.coroutines.CoroutineScope
+) {
+    // We move the scroll state here because it belongs to the drawer content
+    val scrollState = rememberScrollState()
+
+    ModalDrawerSheet {
+        Column(modifier = Modifier.verticalScroll(scrollState)) {
+            DrawerHeader()
+            NavigationDrawerItem(
+                icon = { Icon(Icons.Default.Settings, contentDescription = stringResource(id = R.string.cd_icon_settings)) },
+                label = { Text(stringResource(id = R.string.menu_settings), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = {
+                    scope.launch { drawerState.close() }
+                    navController.navigate("settings")
+                },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
+
+            NavigationDrawerItem(
+                icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
+                label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = { /*TODO*/ },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
+            NavigationDrawerItem(
+                icon = { Icon(Icons.AutoMirrored.Filled.List, contentDescription = stringResource(id = R.string.cd_icon_lists)) },
+                label = { Text(stringResource(id = R.string.menu_lists), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = { /*TODO*/ },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
+            NavigationDrawerItem(
+                icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
+                label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = {
+                    scope.launch { drawerState.close() }
+                    navController.navigate("about")
+                },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
+            NavigationDrawerItem(
+                icon = { Icon(Icons.AutoMirrored.Filled.Help, contentDescription = stringResource(id = R.string.menu_help)) },
+                label = { Text(stringResource(id = R.string.menu_help), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = { /*TODO*/ },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
+        }
     }
 }
