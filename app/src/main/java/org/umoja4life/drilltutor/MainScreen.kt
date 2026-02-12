@@ -78,7 +78,20 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
-
+// *****************************************************************
+// The Screen UI Configuration Object
+// Holds all data required to render the content area.
+// *****************************************************************
+data class ScreenConfiguration(
+    val appTitle: String = "",
+    val isListMode: Boolean = false,
+    val isListIconVisible: Boolean = false,
+    val isTextMode: Boolean = false,
+    val fontSize: DrillViewModel.CardFontSize = DrillViewModel.CardFontSize.NORMAL,
+    val paddingValues: PaddingValues = PaddingValues(0.dp), // Default to 0; updated by Scaffold
+    val currentCard: FlashcardData = FlashcardData(),
+    val listData: List<FlashcardData> = emptyList()
+)
 // *****************************************************************
 // the Actions Container
 // *****************************************************************
