@@ -303,16 +303,6 @@ private fun DrillTutorContent(
     config: ScreenConfiguration,
     actions: DrillActions
 ) {
-    val configuration = LocalConfiguration.current
-    val screenHeight = configuration.screenHeightDp.dp
-    // ADJUST HEIGHT FRACTION BASED ON ORIENTATION
-    // Landscape: Use 85% of vertical space (since space is tight vertically).
-    // Portrait: Use 40% of vertical space (standard look).
-    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
-    val cardHeightFraction = if (isLandscape) 0.85f else 0.6f
-    // HELPER: Convert Dp resource to Sp for Text
-    val density = androidx.compose.ui.platform.LocalDensity.current
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -327,57 +317,11 @@ private fun DrillTutorContent(
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
         )
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            IconButton(onClick = actions.onPrev) {
-                Icon(
-                    Icons.Filled.ChevronLeft,
-                    contentDescription = stringResource(id = R.string.cd_previous_card),
-                    modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
-                )
-            }
-            Card(
-                modifier = Modifier
-                    .height(screenHeight * cardHeightFraction)
-                    .weight(1f)
-                    .clickable { actions.onFlip() }    // tap card to flip it!
-            ) {
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                        // Raw display of Front Data
-                        // We will tackle dynamic font sizing in Step 1.2
-                        Text(
-                            text = config.currentCard.front,
-                            // Direct access to the encapsulated ID
-                            fontSize = with(density) {
-                                dimensionResource(id = config.fontSize.dimenResId).toSp()
-                            },
-                            lineHeight = with(density) {
-                                dimensionResource(id = config.fontSize.dimenResId).toSp()
-                            },
-                            fontWeight = FontWeight.Bold,
-                            // style = MaterialTheme.typography.displayMedium,
-                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
-                        )
-                    }
-                }
-            }
-                IconButton(onClick = actions.onNext) {
-                    Icon(
-                        Icons.Filled.ChevronRight,
-                        contentDescription = stringResource(id = R.string.cd_next_card),
-                        modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
-                    )
-                }
-            }
-        }
+        // The Logic Switch (Currently just calls the Player)
+        FlashcardPlayerView(config = config, actions = actions)
+
     }
+}
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -421,13 +365,7 @@ private fun DrillTutorContent(
                         .clipToBounds(),
                     contentAlignment = Alignment.Center
                 ) {
-                    // Rotated Container
-                    Box(
-                        modifier = Modifier
-                            .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
-                            .rotate(-90f),
-                        contentAlignment = Alignment.Center
-                    ) {
+                    RotatedSideBar(sidebarLength) {
                         DrillTutorTopBar(onMenuClick = actions.onMenu)
                     }
                 }
@@ -452,13 +390,11 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     // Rotated Container
-                    Box(
-                        modifier = Modifier
-                            .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
-                            .rotate(-90f),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        DrillTutorBottomBar(config = config, actions = actions)
+                    RotatedSideBar(sidebarLength) {
+                        DrillTutorBottomBar(
+                            config = config,
+                            actions = actions
+                        )
                     }
                 }
             }
@@ -639,6 +575,93 @@ private fun DrillTutorNavHost(
         }
         composable("settings") {
             SettingsScreen(onNavigateBack = { navController.popBackStack() })
+        }
+    }
+}
+
+@Composable
+private fun RotatedSideBar(
+    sidebarLength: androidx.compose.ui.unit.Dp,
+    content: @Composable () -> Unit
+) {
+    // Rotated Container
+    Box(
+        modifier = Modifier
+            .requiredWidth(sidebarLength) // <--- Use requiredWidth to ignore parent constraint
+            .rotate(-90f),
+        contentAlignment = Alignment.Center
+    ) {
+        content()
+    }
+
+}
+
+    /**
+     * Flashcard Player View
+     *     // ADJUST HEIGHT FRACTION BASED ON ORIENTATION
+     *     // Landscape: Use 85% of vertical space (since space is tight vertically).
+     *     // Portrait: Use 40% of vertical space (standard look).
+     *
+     */
+    @Composable
+private fun FlashcardPlayerView(
+    config: ScreenConfiguration,
+    actions: DrillActions
+) {
+    val configuration = LocalConfiguration.current
+    val screenHeight = configuration.screenHeightDp.dp
+    val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
+    val cardHeightFraction = if (isLandscape) 0.85f else 0.6f
+    // HELPER: Convert Dp resource to Sp for Text
+    val density = androidx.compose.ui.platform.LocalDensity.current
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        IconButton(onClick = actions.onPrev) {
+            Icon(
+                Icons.Filled.ChevronLeft,
+                contentDescription = stringResource(id = R.string.cd_previous_card),
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
+            )
+        }
+        Card(
+            modifier = Modifier
+                .height(screenHeight * cardHeightFraction)
+                .weight(1f)
+                .clickable { actions.onFlip() }    // tap card to flip it!
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    // Raw display of Front Data
+                    // We will tackle dynamic font sizing in Step 1.2
+                    Text(
+                        text = config.currentCard.front,
+                        // Direct access to the encapsulated ID
+                        fontSize = with(density) {
+                            dimensionResource(id = config.fontSize.dimenResId).toSp()
+                        },
+                        lineHeight = with(density) {
+                            dimensionResource(id = config.fontSize.dimenResId).toSp()
+                        },
+                        fontWeight = FontWeight.Bold,
+                        // style = MaterialTheme.typography.displayMedium,
+                        textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                    )
+                }
+            }
+        }
+        IconButton(onClick = actions.onNext) {
+            Icon(
+                Icons.Filled.ChevronRight,
+                contentDescription = stringResource(id = R.string.cd_next_card),
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.spacing_small))
+            )
         }
     }
 }
