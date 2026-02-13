@@ -104,6 +104,7 @@ private fun LessonNotes(notes: List<FlashcardData>) {
             ) {
                 Text(
                     text = stringResource(id = R.string.bullet_char),
+                    style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(end = 8.dp),
                     color = MaterialTheme.colorScheme.onSurface
                 )
@@ -112,13 +113,17 @@ private fun LessonNotes(notes: List<FlashcardData>) {
                     Text(
                         text = card.front,
                         fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyLarge.copy( // Increased size
+                            lineHeight = MaterialTheme.typography.bodyLarge.fontSize * 1.2f // Tighter line height
+                        )
                     )
                     Spacer(modifier = Modifier.width(16.dp)) // Simulated Tab
                     Text(
                         text = card.back,
                         fontStyle = FontStyle.Italic,
-                        style = MaterialTheme.typography.bodyMedium,
+                        style = MaterialTheme.typography.bodyLarge.copy( // Increased size
+                            lineHeight = MaterialTheme.typography.bodyLarge.fontSize * 1.2f // Tighter line height
+                        ),
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
