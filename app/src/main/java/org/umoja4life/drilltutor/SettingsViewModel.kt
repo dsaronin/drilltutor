@@ -30,7 +30,7 @@ class SettingsViewModel : ViewModel() {
     // *******************************************************
     // Helper to get valid options for the UI (Dropdowns)
     // *******************************************************
-    val availableSources = FlashcardSource.entries
+    val availableSources = FlashcardSource.getSourceList()
     val availableSelectors = SelectorType.entries
     val availableSides = CardSide.entries
     val availableSizes = SettingsRepository.VALID_GROUP_SIZES

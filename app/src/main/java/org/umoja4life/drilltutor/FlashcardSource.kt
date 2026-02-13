@@ -14,5 +14,7 @@ enum class FlashcardSource(val sourceName: String) {
 
     companion object {
         fun fromSourceName(sourceName: String): FlashcardSource = entries.find { it.sourceName.equals(sourceName, ignoreCase = true) } ?: UNKNOWN
+
+        fun getSourceList(): List<FlashcardSource> = entries.filter { it != LESSONS && it != UNKNOWN }
     }
 }
