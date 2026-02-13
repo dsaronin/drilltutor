@@ -9,6 +9,7 @@ enum class FlashcardSource(val sourceName: String) {
     READINGS("Readings"),
     GLOSSARIES("Glossaries"),
     DICTIONARY("Dictionary"),
+    LESSONS("Lessons"),
     UNKNOWN("Unknown");
 
     companion object {
