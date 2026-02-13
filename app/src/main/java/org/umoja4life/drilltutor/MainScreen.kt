@@ -57,6 +57,8 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -86,6 +88,7 @@ import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
 data class ScreenConfiguration(
     val appTitle: String = "",
     val isListMode: Boolean = false,
+    val isLessonMode: Boolean = false,
     val isListIconVisible: Boolean = false,
     val isTextMode: Boolean = false,
     val fontSize: DrillViewModel.CardFontSize = DrillViewModel.CardFontSize.NORMAL,
@@ -151,6 +154,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val isListIconVisible by viewModel.isListIconVisible.collectAsState()
     val listData by viewModel.listData.collectAsState()
     val isTextMode by viewModel.isTextMode.collectAsState()
+    var isLessonMode by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -183,7 +187,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         onReset = { viewModel.onResetClick() },
         onMenu = { scope.launch { drawerState.open() } },
         onToggleList = { viewModel.onToggleListMode() },
-        onLessonsClick = { Environment.logInfo("Lessons Clicked") }
+        onLessonsClick = { isLessonMode = !isLessonMode }
     )
     // ********************************************************
 
@@ -191,6 +195,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val screenConfig = ScreenConfiguration(
         appTitle = appTitle,
         isListMode = isListMode,
+        isLessonMode = isLessonMode,
         isListIconVisible = isListIconVisible,
         isTextMode = isTextMode,
         fontSize = fontSize,
@@ -223,7 +228,7 @@ fun MainScreen(viewModel: DrillViewModel) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DrillTutorTopBar(actions: DrillActions) {
+private fun DrillTutorTopBar(actions: DrillActions, isLessonMode: Boolean) {
     CenterAlignedTopAppBar(
         title = {
             Row(
@@ -253,7 +258,10 @@ private fun DrillTutorTopBar(actions: DrillActions) {
                 Icon(
                     imageVector = Icons.Filled.MenuBook,
                     contentDescription = stringResource(id = R.string.cd_icon_lessons),
-                    tint = MaterialTheme.colorScheme.onPrimary
+                    tint = if (isLessonMode)
+                            MaterialTheme.colorScheme.tertiary
+                        else
+                            MaterialTheme.colorScheme.onPrimary
                 )
             }
         },
@@ -261,7 +269,8 @@ private fun DrillTutorTopBar(actions: DrillActions) {
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.primary,
             titleContentColor = MaterialTheme.colorScheme.onPrimary,
-            navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
+            navigationIconContentColor = MaterialTheme.colorScheme.onPrimary,
+            actionIconContentColor = MaterialTheme.colorScheme.onPrimary
         )
     )
 }
@@ -330,17 +339,22 @@ private fun DrillTutorContent(
             modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
         )
 
-            // The Logic Switch
-        if (config.isListMode) {
-            FlashcardListView(
-                listData = config.listData,
-                isTextMode = config.isTextMode
-            )
+        if (config.isLessonMode) {
+            LessonsView(modifier = Modifier.padding(config.paddingValues))
         } else {
-            FlashcardPlayerView(
-                config = config,
-                actions = actions
-            )
+            // The Logic Switch
+            if (config.isListMode) {
+                FlashcardListView(
+                    listData = config.listData,
+                    isTextMode = config.isTextMode
+                )
+            } else {
+                FlashcardPlayerView(
+                    config = config,
+                    actions = actions
+                )
+            }
+
         }
     }
 }
@@ -352,7 +366,7 @@ private fun DrillTutorContent(
         actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(actions = actions) },
+            topBar = { DrillTutorTopBar(actions = actions, isLessonMode = config.isLessonMode) },
             bottomBar = {
                 DrillTutorBottomBar(config = config, actions = actions)
             }
@@ -388,7 +402,7 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     RotatedSideBar(sidebarLength) {
-                        DrillTutorTopBar(actions = actions)
+                        DrillTutorTopBar(actions = actions, isLessonMode = config.isLessonMode)
                     }
                 }
 
