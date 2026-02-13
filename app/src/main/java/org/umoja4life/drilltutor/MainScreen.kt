@@ -223,7 +223,10 @@ fun MainScreen(viewModel: DrillViewModel) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
+private fun DrillTutorTopBar(
+    onMenuClick: () -> Unit,
+    onLessonsClick: () -> Unit
+) {
     CenterAlignedTopAppBar(
         title = {
             Row(
@@ -248,6 +251,16 @@ private fun DrillTutorTopBar(onMenuClick: () -> Unit) {
                 Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.cd_menu))
             }
         },
+        actions = {
+            IconButton(onClick = onLessonsClick) {
+                Icon(
+                    imageVector = Icons.Filled.MenuBook,
+                    contentDescription = stringResource(id = R.string.cd_icon_lessons),
+                    tint = MaterialTheme.colorScheme.onPrimary
+                )
+            }
+        },
+
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.primary,
             titleContentColor = MaterialTheme.colorScheme.onPrimary,
@@ -342,7 +355,7 @@ private fun DrillTutorContent(
         actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu) },
+            topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu, onLessonsClick = {}) },
             bottomBar = {
                 DrillTutorBottomBar(config = config, actions = actions)
             }
@@ -378,7 +391,7 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     RotatedSideBar(sidebarLength) {
-                        DrillTutorTopBar(onMenuClick = actions.onMenu)
+                        DrillTutorTopBar(onMenuClick = actions.onMenu, onLessonsClick = {})
                     }
                 }
 
