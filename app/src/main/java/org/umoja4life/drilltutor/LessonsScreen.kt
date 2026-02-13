@@ -1,23 +1,32 @@
 package org.umoja4life.drilltutor
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.Alignment
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.background
 
 @Composable
 fun LessonsView(
+    lessonData: TopicData,
     modifier: Modifier = Modifier
 ) {
     // --- TEST HARNESS DATA ---
@@ -42,16 +51,16 @@ fun LessonsView(
             .padding(dimensionResource(id = R.dimen.spacing_medium)),
         verticalArrangement = Arrangement.Top
     ) {
-        LessonTitle(title = testTitle)
+        LessonTitle(title = lessonData.lessonTitle)
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
 
-        LessonDescription(lines = testDescription)
+        LessonDescription(lines = lessonData.lessonDescription)
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
 
-        LessonNotes(notes = testNotes)
+        LessonNotes(notes = lessonData.lessonNotes)
     }
 }
 

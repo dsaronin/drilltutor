@@ -74,3 +74,44 @@ object FlashcardDataSerializer : KSerializer<FlashcardData> {
         output.encodeJsonElement(jsonArray)
     }
 }
+
+// --- EXTENSIONS for LESSONS LOGIC ---
+
+/**
+ * Safe accessor for the Lesson Title (Index 0).
+ * Handles null list or empty list by returning empty string.
+ */
+val TopicData.lessonTitle: String
+    get() = descriptions?.getOrNull(0) ?: ""
+
+/**
+ * Safe accessor for the Lesson Body (Index 1..n).
+ * Returns default spacer list if body is missing or list is null.
+ */
+val TopicData.lessonDescription: List<String>
+    get() {
+        val list = descriptions
+        return if (list != null && list.size > 1) {
+            list.drop(1)
+        } else {
+            listOf("", "")
+        }
+    }
+
+/**
+ * Passthrough for Notes (fcData).
+ * Returns empty list if null (though TopicData defaults this to empty).
+ */
+val TopicData.lessonNotes: List<FlashcardData>
+    get() = fcData
+
+/**
+ * Factory to create a safe 'Error' TopicData object.
+ * Places the message in the Title slot (Index 0).
+ */
+fun createErrorLesson(message: String): TopicData {
+    return TopicData(
+        descriptions = listOf(message),
+        fcData = emptyList()
+    )
+}

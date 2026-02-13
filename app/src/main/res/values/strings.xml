@@ -54,4 +54,8 @@
     <string name="normal_text">Normal Text</string>
 
     <string name="bullet_char">&#8226;</string>
+
+    <!-- Error messages -->
+    <string name="error_lessons_missing">Lessons Data is Missing</string>
+
 </resources>

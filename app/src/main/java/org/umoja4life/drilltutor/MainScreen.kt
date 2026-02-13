@@ -58,7 +58,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
@@ -333,6 +332,8 @@ private fun DrillTutorContent(
     ) {
 
         if (config.isLessonMode) {
+            val lessonData = prepLessonCard()
+
             Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Top
@@ -346,7 +347,10 @@ private fun DrillTutorContent(
                         .align(Alignment.CenterHorizontally)
                         .padding(bottom = dimensionResource(id = R.dimen.spacing_small))
                 )
-                LessonsView() // modifier is already handled by parent padding
+                LessonsView(
+                    lessonData = lessonData,
+                    modifier = Modifier.weight(1f)
+                )
             }
         } else {
 
@@ -716,4 +720,23 @@ private fun FlashcardPlayerView(
             )
         }
     }
+}
+
+/**
+ * Helper to fetch the first available lesson or return a stub if data is missing.
+ */
+@Composable
+private fun prepLessonCard(): TopicData {
+    val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
+    val topics = handler.getTopics() // Returns List<String> (keys)
+
+    // 1. Try to fetch the first lesson
+    val firstLesson = if (topics.isNotEmpty()) {
+        handler.getItem(topics[0])
+    } else {
+        null
+    }
+
+    // 2. Return valid data OR generate the standard Error stub
+    return firstLesson ?: createErrorLesson(stringResource(id = R.string.error_lessons_missing))
 }
