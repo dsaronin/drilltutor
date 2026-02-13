@@ -12,6 +12,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.Arrangement
 
 @Composable
 fun LessonsView(
@@ -36,7 +38,8 @@ fun LessonsView(
         modifier = modifier
             .fillMaxSize()
             .verticalScroll(scrollState)
-            .padding(dimensionResource(id = R.dimen.spacing_medium))
+            .padding(dimensionResource(id = R.dimen.spacing_medium)),
+        verticalArrangement = Arrangement.Top
     ) {
         LessonTitle(title = testTitle)
 
@@ -45,7 +48,6 @@ fun LessonsView(
         LessonDescription(lines = testDescription)
 
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
-        HorizontalDivider(thickness = 1.dp, color = MaterialTheme.colorScheme.outlineVariant)
         Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
 
         LessonNotes(notes = testNotes)
@@ -57,7 +59,8 @@ private fun LessonTitle(title: String) {
     Text(
         text = title,
         style = MaterialTheme.typography.headlineSmall,
-        color = MaterialTheme.colorScheme.primary
+        fontWeight = FontWeight.Bold,
+        color = MaterialTheme.colorScheme.onSurface
     )
 }
 
@@ -73,7 +76,7 @@ private fun LessonDescription(lines: List<String>) {
             lines.forEach { line ->
                 Text(
                     text = line,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(vertical = 2.dp)
                 )
             }
@@ -85,11 +88,14 @@ private fun LessonDescription(lines: List<String>) {
 private fun LessonNotes(notes: List<FlashcardData>) {
     Column(verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.spacing_small))) {
         notes.forEach { card ->
-            Row(modifier = Modifier.fillMaxWidth()) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 Text(
                     text = stringResource(id = R.string.bullet_char),
                     modifier = Modifier.padding(end = 8.dp),
-                    color = MaterialTheme.colorScheme.primary
+                    color = MaterialTheme.colorScheme.onSurface
                 )
                 // Using a Row for the Front/Back split
                 Row(modifier = Modifier.fillMaxWidth()) {
