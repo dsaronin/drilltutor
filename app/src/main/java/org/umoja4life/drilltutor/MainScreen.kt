@@ -224,7 +224,7 @@ fun MainScreen(viewModel: DrillViewModel) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun DrillTutorTopBar(
-    onMenuClick: () -> Unit,
+    actions: DrillActions,
     onLessonsClick: () -> Unit
 ) {
     CenterAlignedTopAppBar(
@@ -247,7 +247,7 @@ private fun DrillTutorTopBar(
             }
         },
         navigationIcon = {
-            IconButton(onClick = onMenuClick) {
+            IconButton(onClick = actions.onMenu) {
                 Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.cd_menu))
             }
         },
@@ -355,7 +355,7 @@ private fun DrillTutorContent(
         actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(onMenuClick = actions.onMenu, onLessonsClick = {}) },
+            topBar = { DrillTutorTopBar(actions = actions, onLessonsClick = {}) },
             bottomBar = {
                 DrillTutorBottomBar(config = config, actions = actions)
             }
@@ -391,7 +391,7 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     RotatedSideBar(sidebarLength) {
-                        DrillTutorTopBar(onMenuClick = actions.onMenu, onLessonsClick = {})
+                        DrillTutorTopBar(actions = actions, onLessonsClick = {})
                     }
                 }
 
