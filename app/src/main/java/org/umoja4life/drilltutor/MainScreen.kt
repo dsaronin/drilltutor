@@ -331,17 +331,33 @@ private fun DrillTutorContent(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Orientation subheading at the top of the workspace
-        Text(
-            text = config.appTitle,
-            style = MaterialTheme.typography.labelSmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
-        )
 
         if (config.isLessonMode) {
-            LessonsView(modifier = Modifier.padding(config.paddingValues))
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Top
+            ) {
+                // Orientation subheading
+                Text(
+                    text = config.appTitle,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .padding(bottom = dimensionResource(id = R.dimen.spacing_small))
+                )
+                LessonsView() // modifier is already handled by parent padding
+            }
         } else {
+
+            // Orientation subheading at the top of the workspace
+            Text(
+                text = config.appTitle,
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.spacing_small))
+            )
+
             // The Logic Switch
             if (config.isListMode) {
                 FlashcardListView(
