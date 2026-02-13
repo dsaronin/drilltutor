@@ -107,7 +107,8 @@ data class DrillActions(
     val onPrevGroup: () -> Unit,
     val onReset: () -> Unit,
     val onMenu: () -> Unit,
-    val onToggleList: () -> Unit
+    val onToggleList: () -> Unit,
+    val onLessonsClick: () -> Unit
 )
 // *****************************************************************
 // *****************************************************************
@@ -183,7 +184,8 @@ fun MainScreen(viewModel: DrillViewModel) {
         onPrevGroup = { viewModel.onPrevGroupClick() },
         onReset = { viewModel.onResetClick() },
         onMenu = { scope.launch { drawerState.open() } },
-        onToggleList = { viewModel.onToggleListMode() }
+        onToggleList = { viewModel.onToggleListMode() },
+        onLessonsClick = { Environment.logInfo("Lessons Clicked") }
     )
     // ********************************************************
 
@@ -223,10 +225,7 @@ fun MainScreen(viewModel: DrillViewModel) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DrillTutorTopBar(
-    actions: DrillActions,
-    onLessonsClick: () -> Unit
-) {
+private fun DrillTutorTopBar(actions: DrillActions) {
     CenterAlignedTopAppBar(
         title = {
             Row(
@@ -252,7 +251,7 @@ private fun DrillTutorTopBar(
             }
         },
         actions = {
-            IconButton(onClick = onLessonsClick) {
+            IconButton(onClick = actions.onLessonsClick) {
                 Icon(
                     imageVector = Icons.Filled.MenuBook,
                     contentDescription = stringResource(id = R.string.cd_icon_lessons),
@@ -355,7 +354,7 @@ private fun DrillTutorContent(
         actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(actions = actions, onLessonsClick = {}) },
+            topBar = { DrillTutorTopBar(actions = actions) },
             bottomBar = {
                 DrillTutorBottomBar(config = config, actions = actions)
             }
@@ -391,7 +390,7 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     RotatedSideBar(sidebarLength) {
-                        DrillTutorTopBar(actions = actions, onLessonsClick = {})
+                        DrillTutorTopBar(actions = actions)
                     }
                 }
 
