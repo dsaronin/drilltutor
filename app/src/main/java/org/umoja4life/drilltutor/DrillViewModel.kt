@@ -29,6 +29,10 @@ class DrillViewModel : ViewModel() {
     // --- LIST VIEW STATE ---
     private val _isListMode = MutableStateFlow(false)
     val isListMode: StateFlow<Boolean> = _isListMode.asStateFlow()
+    // --- LESSON MODE STATE ---
+    private val _isLessonMode = MutableStateFlow(false)
+    val isLessonMode: StateFlow<Boolean> = _isLessonMode.asStateFlow()
+
 
     private val _isListIconVisible = MutableStateFlow(false)
     val isListIconVisible: StateFlow<Boolean> = _isListIconVisible.asStateFlow()
@@ -85,6 +89,10 @@ class DrillViewModel : ViewModel() {
     // ***********************************************************************
     // *****  PUBLIC ACTIONS  ***********************************************
     // ***********************************************************************
+    fun onToggleLessonMode() {
+        _isLessonMode.value = !_isLessonMode.value
+    }
+
 
     fun onNextClick() {
         // Guard: Do nothing if manager isn't ready
@@ -197,6 +205,7 @@ class DrillViewModel : ViewModel() {
             Environment.settings.settingState.collect { state ->
                 // RESET UI STATE
                 _isListMode.value = false
+                _isLessonMode.value = false // <--- Force reset to Flashcard Player
 
                 // Determine icon visibility
                 // List View is NOT available for Dictionary

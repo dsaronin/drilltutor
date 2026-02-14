@@ -153,7 +153,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val isListIconVisible by viewModel.isListIconVisible.collectAsState()
     val listData by viewModel.listData.collectAsState()
     val isTextMode by viewModel.isTextMode.collectAsState()
-    var isLessonMode by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val isLessonMode by viewModel.isLessonMode.collectAsState()
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -186,7 +186,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         onReset = { viewModel.onResetClick() },
         onMenu = { scope.launch { drawerState.open() } },
         onToggleList = { viewModel.onToggleListMode() },
-        onLessonsClick = { isLessonMode = !isLessonMode }
+        onLessonsClick = { viewModel.onToggleLessonMode() }
     )
     // ********************************************************
 
