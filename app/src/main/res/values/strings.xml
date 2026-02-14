@@ -23,6 +23,7 @@
     <string name="cd_icon_lessons">Lessons Icon</string>
     <string name="cd_icon_lists">Lists Icon</string>
     <string name="cd_back">Back</string>
+    <string name="cd_select_lesson">Select Lesson</string>
 
     <!-- About Screen -->
     <string name="about_screen_title">About</string>
@@ -43,6 +44,7 @@
     <string name="settings_label_side">Side to Display</string>
     <string name="settings_label_language">App Language</string>
     <string name="settings_label_none">None</string>
+
 
     <string name="btn_cancel">Cancel</string>
     <string name="btn_start">Start »</string>

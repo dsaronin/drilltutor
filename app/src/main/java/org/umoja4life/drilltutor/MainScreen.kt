@@ -569,17 +569,7 @@ private fun AppDrawer(
                     selectedIconColor = MaterialTheme.colorScheme.primary
                 )
             )
-
-            NavigationDrawerItem(
-                icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.cd_icon_lessons)) },
-                label = { Text(stringResource(id = R.string.menu_lessons), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
-                selected = false,
-                onClick = { /*TODO*/ },
-                colors = NavigationDrawerItemDefaults.colors(
-                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
-                    selectedIconColor = MaterialTheme.colorScheme.primary
-                )
-            )
+            
             NavigationDrawerItem(
                 icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
                 label = { Text(stringResource(id = R.string.menu_about), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
@@ -796,7 +786,7 @@ private fun LessonDropdownSelector(
             )
             Icon(
                 imageVector = if (expanded) Icons.Filled.ArrowDropUp else Icons.Filled.ArrowDropDown,
-                contentDescription = "Select Lesson", // Hardcoded for safety; add to strings.xml later if desired
+                contentDescription = stringResource(id = R.string.cd_select_lesson),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(start = 4.dp)
             )
