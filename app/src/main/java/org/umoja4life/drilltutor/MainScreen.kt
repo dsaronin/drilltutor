@@ -337,6 +337,7 @@ private fun DrillTutorContent(
             var selectedLessonKey by androidx.compose.runtime.remember(globalTopic) {
                 androidx.compose.runtime.mutableStateOf(prepLessonKey(globalTopic))
             }
+            val allLessonKeys = androidx.compose.runtime.remember { getLessonKeys() }
             // val validKey = prepLessonKey(targetKey = globalTopic)
             val lessonData = prepLessonCard(selectedLessonKey)
 
@@ -757,4 +758,14 @@ private fun prepLessonCard(vettedKey: String): TopicData {
     // Return data if key exists and fetch succeeds; otherwise return Error Stub
     return vettedKey.takeIf { it.isNotEmpty() }?.let { handler.getItem(it) }
         ?: createErrorLesson(stringResource(id = R.string.error_lessons_missing))
+}
+
+/**
+ * getLessonKeys
+ * Returns a sorted list of all available Lesson Keys.
+ * Used to populate the navigation dropdown.
+ */
+private fun getLessonKeys(): List<String> {
+    val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
+    return handler.getTopics().sorted()
 }
