@@ -334,8 +334,11 @@ private fun DrillTutorContent(
         if (config.isLessonMode) {
                 // Fetch Key from Global State
             val globalTopic = Environment.settings.settingState.value.topic
-            val validKey = prepLessonKey(targetKey = globalTopic)
-            val lessonData = prepLessonCard(vettedKey = validKey)
+            var selectedLessonKey by androidx.compose.runtime.remember(globalTopic) {
+                androidx.compose.runtime.mutableStateOf(prepLessonKey(globalTopic))
+            }
+            // val validKey = prepLessonKey(targetKey = globalTopic)
+            val lessonData = prepLessonCard(selectedLessonKey)
 
             Column(
                 modifier = Modifier.fillMaxSize(),
