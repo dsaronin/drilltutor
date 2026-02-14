@@ -1,4 +1,21 @@
 {
+  "intro": {
+    "descriptions": [
+      "Data for DrillTutor",
+      "vocabulary.json is the minimum data file to provide.",
+      "Its list of topics is universal for all other flashcard data files."
+    ],
+    "level": "A1",
+    "fc_data": [
+      ["Vocabulary:", "Vocabulary words."],
+      ["Sentences:","Example sentences."],
+      ["Opposites:","Pairs of opposites."],
+      ["Phrases:","Common phrases."],
+      ["Dialogs:","Short Dialogs."],
+      ["Readings:","Brief story vignettes."],
+      ["Glossaries:","Themed lists of words."]
+    ]
+  },
   "adverbs": {
     "descriptions": [
       "Lesson: Adverbs (Zarflar)",

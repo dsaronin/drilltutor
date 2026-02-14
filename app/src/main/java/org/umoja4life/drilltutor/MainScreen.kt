@@ -78,6 +78,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.icons.filled.ArrowDropDown
+import androidx.compose.material.icons.filled.ArrowDropUp
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
 
 // *****************************************************************
@@ -345,15 +350,13 @@ private fun DrillTutorContent(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Top
             ) {
-                // Orientation subheading
-                Text(
-                    text = config.appTitle,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier
-                        .align(Alignment.CenterHorizontally)
-                        .padding(bottom = dimensionResource(id = R.dimen.spacing_small))
+                // Header: Interactive Dropdown
+                LessonDropdownSelector(
+                    currentSelection = selectedLessonKey,
+                    allOptions = allLessonKeys,
+                    onSelectionChange = { newKey -> selectedLessonKey = newKey }
                 )
+
                 LessonsView(
                     lessonData = lessonData,
                     modifier = Modifier.weight(1f)
@@ -769,3 +772,57 @@ private fun getLessonKeys(): List<String> {
     val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
     return handler.getTopics().sorted()
 }
+
+@Composable
+private fun LessonDropdownSelector(
+    currentSelection: String,
+    allOptions: List<String>,
+    onSelectionChange: (String) -> Unit
+) {
+    var expanded by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+
+    Box(modifier = Modifier.wrapContentSize(Alignment.TopEnd)) {
+        // The Trigger: Clickable Row with Text + Arrow
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .clickable { expanded = true }
+                .padding(bottom = dimensionResource(id = R.dimen.spacing_small))
+        ) {
+            Text(
+                text = currentSelection,
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Icon(
+                imageVector = if (expanded) Icons.Filled.ArrowDropUp else Icons.Filled.ArrowDropDown,
+                contentDescription = "Select Lesson", // Hardcoded for safety; add to strings.xml later if desired
+                tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(start = 4.dp)
+            )
+        }
+
+        // The Dropdown Menu
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false }
+        ) {
+            allOptions.forEach { key ->
+                DropdownMenuItem(
+                    text = {
+                        Text(
+                            text = key,
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontWeight = if (key == currentSelection) FontWeight.Bold else FontWeight.Normal
+                        )
+                    },
+                    onClick = {
+                        onSelectionChange(key)
+                        expanded = false
+                    }
+                )
+            }
+        }
+    }
+}
+
