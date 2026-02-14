@@ -332,7 +332,9 @@ private fun DrillTutorContent(
     ) {
 
         if (config.isLessonMode) {
-            val lessonData = prepLessonCard()
+                // Fetch Key from Global State
+            val currentTopicKey = Environment.settings.settingState.value.topic
+            val lessonData = prepLessonCard(targetKey = currentTopicKey)
 
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -726,17 +728,15 @@ private fun FlashcardPlayerView(
  * Helper to fetch the first available lesson or return a stub if data is missing.
  */
 @Composable
-private fun prepLessonCard(): TopicData {
+private fun prepLessonCard(targetKey: String): TopicData {
     val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
     val topics = handler.getTopics() // Returns List<String> (keys)
 
-    // 1. Try to fetch the first lesson
-    val firstLesson = if (topics.isNotEmpty()) {
-        handler.getItem(topics[0])
-    } else {
-        null
-    }
+    // Determine which key to use
+    // Priority: Explicit Target -> First Available -> Null
+    val keyToUse = if (targetKey in topics) targetKey else topics.firstOrNull()
 
-    // 2. Return valid data OR generate the standard Error stub
-    return firstLesson ?: createErrorLesson(stringResource(id = R.string.error_lessons_missing))
+    // Fetch Data: If key is null OR getItem returns null -> Return Error Stub
+    return keyToUse?.let { handler.getItem(it) }  ?:
+        createErrorLesson(stringResource(id = R.string.error_lessons_missing))
 }
