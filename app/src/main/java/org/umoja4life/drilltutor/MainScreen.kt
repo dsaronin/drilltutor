@@ -333,8 +333,9 @@ private fun DrillTutorContent(
 
         if (config.isLessonMode) {
                 // Fetch Key from Global State
-            val currentTopicKey = Environment.settings.settingState.value.topic
-            val lessonData = prepLessonCard(targetKey = currentTopicKey)
+            val globalTopic = Environment.settings.settingState.value.topic
+            val validKey = prepLessonKey(targetKey = globalTopic)
+            val lessonData = prepLessonCard(vettedKey = validKey)
 
             Column(
                 modifier = Modifier.fillMaxSize(),
@@ -725,18 +726,32 @@ private fun FlashcardPlayerView(
 }
 
 /**
- * Helper to fetch the first available lesson or return a stub if data is missing.
+ * prepLessonKey
+ * Helpers to fetch the first available lesson or return a stub if data is missing.
+ * Validates a requested key against the available Lesson topics.
+ * Returns the target if valid, the first available if not, or empty string if no lessons exist.
  */
-@Composable
-private fun prepLessonCard(targetKey: String): TopicData {
+private fun prepLessonKey(targetKey: String): String {
     val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
     val topics = handler.getTopics() // Returns List<String> (keys)
 
-    // Determine which key to use
-    // Priority: Explicit Target -> First Available -> Null
-    val keyToUse = if (targetKey in topics) targetKey else topics.firstOrNull()
+    return when {
+        targetKey in topics -> targetKey
+        topics.isNotEmpty() -> topics[0]
+        else -> ""
+    }
+}
 
-    // Fetch Data: If key is null OR getItem returns null -> Return Error Stub
-    return keyToUse?.let { handler.getItem(it) }  ?:
-        createErrorLesson(stringResource(id = R.string.error_lessons_missing))
+/**
+ * prepLessonCard
+ * Fetches the Lesson Data for a vetted key.
+ * If the key is empty or fetch fails, returns a standard Error Stub.
+ */
+@Composable
+private fun prepLessonCard(vettedKey: String): TopicData {
+    val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.LESSONS)
+
+    // Return data if key exists and fetch succeeds; otherwise return Error Stub
+    return vettedKey.takeIf { it.isNotEmpty() }?.let { handler.getItem(it) }
+        ?: createErrorLesson(stringResource(id = R.string.error_lessons_missing))
 }
