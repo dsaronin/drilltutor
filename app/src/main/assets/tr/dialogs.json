@@ -596,6 +596,7 @@
     ],
     "level": "A2",
     "recording": "dialog-klinikta_hasta.ogg",
+    "has_glossary": "health",
     "topics": [
       "health",
       "medical"
@@ -693,6 +694,7 @@
       "talking with friend about music"
     ],
     "level": "A2",
+    "has_glossary": "müzik",
     "topics": [
       "friends",
       "music"
@@ -1044,6 +1046,7 @@
     ],
     "level": "A2",
     "recording": "dialog-adverbs.ogg",
+    "has_glossary": "adverbs",
     "topics": [
       "adverbs",
       "technology"

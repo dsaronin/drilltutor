@@ -205,24 +205,34 @@ class DrillViewModel : ViewModel() {
         _appTitle.value = formatTitle()
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
 
-        // --- STEP 5 TEST HARNESS -------------------------------------------
-        // 1. Fetch current Data Object based on Settings
+        // --- STEP 5 TEST HARNESS (SURGICAL) --------------------------------
         val state = Environment.settings.settingState.value
         val handler = FlashcardTypeSelection.selectCardType(state.source)
-        // Topic is stored in Settings, but if we are in a session, it matches the Settings
-        val dataObj = handler.getItem(state.topic)
+        val lookupKey = if (state.entryKey.isNotEmpty()) state.entryKey else state.topic
+        val dataObj = handler.getItem(lookupKey)
 
         if (dataObj != null) {
-            // 2. Check for Aux
-            val aux = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
+            // 1. Check Raw Property
+            Environment.logInfo("STEP 5 DEBUG: dataObj.hasGlossary = ${dataObj.hasGlossary}")
+            Environment.logInfo("STEP 5 DEBUG: dataObj.belongsTo = ${dataObj.belongsTo}")
 
-            if (aux != null) {
-                Environment.logInfo("STEP 5: AUX DETECTED -> Source: ${aux.source}, Topic: ${aux.topic}")
-            } else {
-                Environment.logInfo("STEP 5: No Aux detected for ${state.topic}")
+            // 2. Check Lookup Function
+            if (dataObj.hasGlossary != null) {
+                val foundGlossary = getGlossary(dataObj)
+                Environment.logInfo("STEP 5 DEBUG: getGlossary() result = ${if (foundGlossary != null) "SUCCESS" else "NULL"}")
             }
-        }
 
+            // 3. Final Logic
+            val aux = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
+            if (aux != null) {
+                Environment.logInfo("STEP 5: AUX DETECTED for $lookupKey -> Target: [${aux.source} : ${aux.topic}]")
+            } else {
+                Environment.logInfo("STEP 5: No Aux detected for $lookupKey")
+            }
+        } else {
+            Environment.logInfo("STEP 5: ERROR - TopicData is NULL for lookupKey: $lookupKey")
+        }
+        // -------------------------------------------------------------------
     }
 
     // ***********************************************************************
@@ -349,14 +359,15 @@ class DrillViewModel : ViewModel() {
 
         // Ruby: source = Glossaries.find_glossary( obj.has_glossary )
         // We cast to GlossaryType to access the specific findGlossary method
-        val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.GLOSSARIES) as? GlossaryType
-        val glossaryObj = handler?.findGlossary(glossaryKey)
+        val handler = FlashcardTypeSelection.selectCardType(FlashcardSource.GLOSSARIES)
+        val glossaryObj = handler.getItem(glossaryKey)
 
         if (glossaryObj != null) {
             return glossaryObj
         }
 
         // TODO:  "Glossary <#{obj.has_glossary}> not found; typo?"
+        Environment.logWarn("Glossary [$glossaryKey] not found; typo?")
         return null
     }
 

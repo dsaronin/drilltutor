@@ -24,11 +24,4 @@ class GlossaryType(
         return source
     }
 
-    fun findGlossary(key: String): TopicData? {
-        // Get the Wrapper (AbstractFlashcardType)
-        val instance = database[key] ?: return null
-
-        // Return the Raw Data (TopicData)
-        return instance.topicData
-    }
 }
