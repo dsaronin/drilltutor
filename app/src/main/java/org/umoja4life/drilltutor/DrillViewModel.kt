@@ -145,6 +145,28 @@ class DrillViewModel : ViewModel() {
         prepCardDisplay(manager.resetCards() )
     }
 
+    fun onAuxClick() {
+        // Guard: Ensure we actually have a valid target
+        val target = _auxTarget.value ?: return
+
+        Environment.logInfo("DrillVM: Switching Context to Aux Target -> Source: ${target.source}, Topic: ${target.topic}")
+
+        // Retrieve current settings
+        val currentState = Environment.settings.settingState.value
+
+        // Create new settings state targeting the Aux destination.
+        // We reset the entryKey so it doesn't try to look up a Dialog entry in a Glossary.
+        val newState = currentState.copy(
+            source = target.source,
+            topic = target.topic,
+            entryKey = SettingsRepository.DEFAULT_ITEMKEY
+        )
+
+        // Dispatch the change to the Repository.
+        // Because DrillViewModel observes settings, this will automatically trigger rebuildManager().
+        Environment.settings.updateSettings(newState)
+    }
+
     // ***********************************************************************
     // --- LIFECYCLE ---
     // ***********************************************************************

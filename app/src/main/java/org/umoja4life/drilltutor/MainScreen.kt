@@ -115,7 +115,8 @@ data class DrillActions(
     val onReset: () -> Unit,
     val onMenu: () -> Unit,
     val onToggleList: () -> Unit,
-    val onLessonsClick: () -> Unit
+    val onLessonsClick: () -> Unit,
+    val onAuxClick: () -> Unit
 )
 // *****************************************************************
 // *****************************************************************
@@ -194,7 +195,8 @@ fun MainScreen(viewModel: DrillViewModel) {
         onReset = { viewModel.onResetClick() },
         onMenu = { scope.launch { drawerState.open() } },
         onToggleList = { viewModel.onToggleListMode() },
-        onLessonsClick = { viewModel.onToggleLessonMode() }
+        onLessonsClick = { viewModel.onToggleLessonMode() },
+        onAuxClick = { viewModel.onAuxClick() }
     )
     // ********************************************************
 
@@ -264,7 +266,7 @@ private fun DrillTutorTopBar(config: ScreenConfiguration, actions: DrillActions)
         actions = {
             // AUX icon button
             if (config.isAuxVisible) {
-                IconButton(onClick = { /* TODO */ }) {
+                IconButton(onClick = actions.onAuxClick) {
                     Icon(
                         imageVector = Icons.Default.Category,
                         contentDescription = stringResource(id = R.string.cd_aux_link),
