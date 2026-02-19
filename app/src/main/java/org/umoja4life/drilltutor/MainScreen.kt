@@ -81,6 +81,7 @@ import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.ArrowDropUp
+import androidx.compose.material.icons.filled.Category
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
@@ -94,6 +95,7 @@ data class ScreenConfiguration(
     val isListMode: Boolean = false,
     val isLessonMode: Boolean = false,
     val isListIconVisible: Boolean = false,
+    val isAuxVisible: Boolean = false,
     val isTextMode: Boolean = false,
     val fontSize: DrillViewModel.CardFontSize = DrillViewModel.CardFontSize.NORMAL,
     val paddingValues: PaddingValues = PaddingValues(0.dp), // Default to 0; updated by Scaffold
@@ -201,6 +203,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         isListMode = isListMode,
         isLessonMode = isLessonMode,
         isListIconVisible = isListIconVisible,
+        isAuxVisible = true,  // <--- TEST HARNESS: Force True
         isTextMode = isTextMode,
         fontSize = fontSize,
         currentCard = currentCard,
@@ -232,7 +235,7 @@ fun MainScreen(viewModel: DrillViewModel) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun DrillTutorTopBar(actions: DrillActions, isLessonMode: Boolean) {
+private fun DrillTutorTopBar(config: ScreenConfiguration, actions: DrillActions) {
     CenterAlignedTopAppBar(
         title = {
             Row(
@@ -258,11 +261,22 @@ private fun DrillTutorTopBar(actions: DrillActions, isLessonMode: Boolean) {
             }
         },
         actions = {
+            // AUX icon button
+            if (config.isAuxVisible) {
+                IconButton(onClick = { /* TODO */ }) {
+                    Icon(
+                        imageVector = Icons.Default.Category,
+                        contentDescription = stringResource(id = R.string.cd_aux_link),
+                        tint = MaterialTheme.colorScheme.onPrimary
+                    )
+                }
+            }
+
             IconButton(onClick = actions.onLessonsClick) {
                 Icon(
                     imageVector = Icons.Filled.MenuBook,
                     contentDescription = stringResource(id = R.string.cd_icon_lessons),
-                    tint = if (isLessonMode)
+                    tint = if (config.isLessonMode)
                             MaterialTheme.colorScheme.tertiary
                         else
                             MaterialTheme.colorScheme.onPrimary
@@ -396,7 +410,7 @@ private fun DrillTutorContent(
         actions: DrillActions
     ) {
         Scaffold(
-            topBar = { DrillTutorTopBar(actions = actions, isLessonMode = config.isLessonMode) },
+            topBar = { DrillTutorTopBar(config = config, actions = actions) },
             bottomBar = {
                 DrillTutorBottomBar(config = config, actions = actions)
             }
@@ -432,7 +446,7 @@ private fun DrillTutorContent(
                     contentAlignment = Alignment.Center
                 ) {
                     RotatedSideBar(sidebarLength) {
-                        DrillTutorTopBar(actions = actions, isLessonMode = config.isLessonMode)
+                        DrillTutorTopBar(config = config, actions = actions)
                     }
                 }
 

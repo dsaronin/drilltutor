@@ -7,6 +7,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+// --- AUXILIARY NAVIGATION TARGET ---
+data class AuxTarget(
+    val source: FlashcardSource,
+    val topic: String
+)
+
 class DrillViewModel : ViewModel() {
 
     // ***********************************************************************
@@ -39,6 +45,10 @@ class DrillViewModel : ViewModel() {
 
     private val _listData = MutableStateFlow<List<FlashcardData>>(emptyList())
     val listData: StateFlow<List<FlashcardData>> = _listData.asStateFlow()
+
+    // Holds the target context if an auxiliary link exists
+    private val _auxTarget = MutableStateFlow<AuxTarget?>(null)
+    val auxTarget: StateFlow<AuxTarget?> = _auxTarget.asStateFlow()
 
     private val _isTextMode = MutableStateFlow(false)
     val isTextMode: StateFlow<Boolean> = _isTextMode.asStateFlow()
@@ -194,6 +204,25 @@ class DrillViewModel : ViewModel() {
         // Update the title to reflect the new Source/Topic
         _appTitle.value = formatTitle()
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
+
+        // --- STEP 5 TEST HARNESS -------------------------------------------
+        // 1. Fetch current Data Object based on Settings
+        val state = Environment.settings.settingState.value
+        val handler = FlashcardTypeSelection.selectCardType(state.source)
+        // Topic is stored in Settings, but if we are in a session, it matches the Settings
+        val dataObj = handler.getItem(state.topic)
+
+        if (dataObj != null) {
+            // 2. Check for Aux
+            val aux = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
+
+            if (aux != null) {
+                Environment.logInfo("STEP 5: AUX DETECTED -> Source: ${aux.source}, Topic: ${aux.topic}")
+            } else {
+                Environment.logInfo("STEP 5: No Aux detected for ${state.topic}")
+            }
+        }
+
     }
 
     // ***********************************************************************
@@ -289,7 +318,7 @@ class DrillViewModel : ViewModel() {
      * getParentSourcePath
      * Returns "SOURCE__KEY" string if the passed TopicData object has a valid parent.
      */
-    private fun getParentSourcePath(obj: TopicData): String? {
+    private fun getParentSourcePath(obj: TopicData): AuxTarget? {
         val list = obj.belongsTo
         if (list.isNullOrEmpty() || list.size < 2) return null
 
@@ -306,7 +335,7 @@ class DrillViewModel : ViewModel() {
         // Ruby: Module.const_get(source).get_item(key).nil?
         if (FlashcardTypeSelection.selectCardType(parentSource).getItem(parentKey) == null) return null
 
-        return "${parentSourceName}__$parentKey"
+        return AuxTarget(parentSource, parentKey)
     }
 
     /**
@@ -335,10 +364,12 @@ class DrillViewModel : ViewModel() {
      * getGlossaryPath
      * Returns "Glossaries__KEY" string if the passed TopicData object has a valid glossary.
      */
-    private fun getGlossaryPath(obj: TopicData): String? {
-        return getGlossary(obj)?.let {
-            "Glossaries__${obj.hasGlossary}"
+    private fun getGlossaryPath(obj: TopicData): AuxTarget? {
+        // Verify existence using the existing helper
+        if (getGlossary(obj) == null || obj.hasGlossary.isNullOrEmpty()) {
+            return null
         }
+        return AuxTarget(FlashcardSource.GLOSSARIES, obj.hasGlossary)
     }
 
     /**

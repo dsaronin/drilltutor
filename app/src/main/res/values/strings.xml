@@ -24,6 +24,7 @@
     <string name="cd_icon_lists">Lists Icon</string>
     <string name="cd_back">Back</string>
     <string name="cd_select_lesson">Select Lesson</string>
+    <string name="cd_aux_link">Auxiliary Related Context</string>
 
     <!-- About Screen -->
     <string name="about_screen_title">About</string>
