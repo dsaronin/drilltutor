@@ -161,6 +161,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val listData by viewModel.listData.collectAsState()
     val isTextMode by viewModel.isTextMode.collectAsState()
     val isLessonMode by viewModel.isLessonMode.collectAsState()
+    val auxTarget by viewModel.auxTarget.collectAsState()
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -203,7 +204,7 @@ fun MainScreen(viewModel: DrillViewModel) {
         isListMode = isListMode,
         isLessonMode = isLessonMode,
         isListIconVisible = isListIconVisible,
-        isAuxVisible = true,  // <--- TEST HARNESS: Force True
+        isAuxVisible = (auxTarget != null),
         isTextMode = isTextMode,
         fontSize = fontSize,
         currentCard = currentCard,

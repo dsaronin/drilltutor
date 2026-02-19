@@ -205,34 +205,18 @@ class DrillViewModel : ViewModel() {
         _appTitle.value = formatTitle()
         prepCardDisplay(flashManager?.currentCard() ?: FlashcardData())  // preps currentCard for display refresh
 
-        // --- STEP 5 TEST HARNESS (SURGICAL) --------------------------------
+        // --- UPDATE AUXILIARY TARGET STATE ---
         val state = Environment.settings.settingState.value
         val handler = FlashcardTypeSelection.selectCardType(state.source)
         val lookupKey = if (state.entryKey.isNotEmpty()) state.entryKey else state.topic
         val dataObj = handler.getItem(lookupKey)
 
         if (dataObj != null) {
-            // 1. Check Raw Property
-            Environment.logInfo("STEP 5 DEBUG: dataObj.hasGlossary = ${dataObj.hasGlossary}")
-            Environment.logInfo("STEP 5 DEBUG: dataObj.belongsTo = ${dataObj.belongsTo}")
-
-            // 2. Check Lookup Function
-            if (dataObj.hasGlossary != null) {
-                val foundGlossary = getGlossary(dataObj)
-                Environment.logInfo("STEP 5 DEBUG: getGlossary() result = ${if (foundGlossary != null) "SUCCESS" else "NULL"}")
-            }
-
-            // 3. Final Logic
-            val aux = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
-            if (aux != null) {
-                Environment.logInfo("STEP 5: AUX DETECTED for $lookupKey -> Target: [${aux.source} : ${aux.topic}]")
-            } else {
-                Environment.logInfo("STEP 5: No Aux detected for $lookupKey")
-            }
+            _auxTarget.value = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
         } else {
-            Environment.logInfo("STEP 5: ERROR - TopicData is NULL for lookupKey: $lookupKey")
+            _auxTarget.value = null
         }
-        // -------------------------------------------------------------------
+        // ----------------------------------------
     }
 
     // ***********************************************************************
