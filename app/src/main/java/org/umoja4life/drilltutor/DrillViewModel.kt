@@ -10,7 +10,8 @@ import kotlinx.coroutines.launch
 // --- AUXILIARY NAVIGATION TARGET ---
 data class AuxTarget(
     val source: FlashcardSource,
-    val topic: String
+    val topic: String = Environment.DEFAULT_TOPIC,
+    val entryKey: String = ""
 )
 
 class DrillViewModel : ViewModel() {
@@ -159,7 +160,7 @@ class DrillViewModel : ViewModel() {
         val newState = currentState.copy(
             source = target.source,
             topic = target.topic,
-            entryKey = SettingsRepository.DEFAULT_ITEMKEY
+            entryKey = target.entryKey
         )
 
         // Dispatch the change to the Repository.
@@ -234,7 +235,20 @@ class DrillViewModel : ViewModel() {
         val dataObj = handler.getItem(lookupKey)
 
         if (dataObj != null) {
-            _auxTarget.value = getParentSourcePath(dataObj) ?: getGlossaryPath(dataObj)
+            val parentAux = getParentSourcePath(dataObj)
+
+            if (parentAux != null) {
+                // Caller supplies the missing topic context
+                _auxTarget.value = parentAux.copy(topic = state.topic)
+            } else {
+                // getGlossaryPath already knows its target topic, entryKey defaults to ""
+                _auxTarget.value = getGlossaryPath(dataObj)
+            }
+
+            // Temporary test harness for Step 2
+            _auxTarget.value?.let { target ->
+                Environment.logInfo("DrillVM: AuxTarget -> Source: ${target.source}, Topic: ${target.topic}, Entry: ${target.entryKey}")
+            }
         } else {
             _auxTarget.value = null
         }
@@ -351,7 +365,7 @@ class DrillViewModel : ViewModel() {
         // Ruby: Module.const_get(source).get_item(key).nil?
         if (FlashcardTypeSelection.selectCardType(parentSource).getItem(parentKey) == null) return null
 
-        return AuxTarget(parentSource, parentKey)
+        return AuxTarget(source = parentSource, entryKey = parentKey)
     }
 
     /**

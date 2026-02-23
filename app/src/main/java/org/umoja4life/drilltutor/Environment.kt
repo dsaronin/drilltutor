@@ -23,6 +23,7 @@ object Environment {
     val IS_DEBUG: Boolean = BuildConfig.DEBUG
 
     const val LIST_CLAMP = 80  // max length for list view
+    const val DEFAULT_TOPIC = "default"    // standard missing topic value
 
     // --- LOGGING ---
     private const val LOG_TAG = "App" + APP_NAME
