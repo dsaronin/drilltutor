@@ -24,6 +24,7 @@ object Environment {
 
     const val LIST_CLAMP = 80  // max length for list view
     const val DEFAULT_TOPIC = "default"    // standard missing topic value
+    val REGEX_DEFAULT = Regex("^(?i)def(ault)?$")
 
     // --- LOGGING ---
     private const val LOG_TAG = "App" + APP_NAME

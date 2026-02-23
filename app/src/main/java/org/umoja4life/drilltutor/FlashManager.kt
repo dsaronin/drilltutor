@@ -77,8 +77,8 @@ class FlashManager (
         // VALIDATE & FALLBACK to first item in list
         // Condition A: Request is "def" or "default" (Explicit default)
         // Condition B: Request is not in the Master List (Invalid/Stale topic)
-        if (topic.matches(Regex("^(?i)def(ault)?$")) || !availableTopics.contains(topic)) {
-            val fallback = availableTopics.firstOrNull() ?: "default"
+        if (topic.matches(Environment.REGEX_DEFAULT) || !availableTopics.contains(topic)) {
+            val fallback = availableTopics.firstOrNull() ?: Environment.DEFAULT_TOPIC
             Environment.logInfo("FLASHMGR: Topic '$topic' invalid/default. Falling back to '$fallback'")
             topic = fallback
         }
