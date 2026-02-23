@@ -39,11 +39,23 @@ object Environment {
         private set
     lateinit var playerState: PlayerStateRepository
 
+    lateinit var emptyFlashcardData: List<FlashcardData>
+        private set
+
+
     // --- INITIALIZATION ---
     fun init(context: Context) {
         // PREVENT MEMORY LEAK:
         // We ensure we only hold the Application Context, not an Activity Context.
         val appContext = context.applicationContext
+
+        // Initialize fallback data using string resources
+        emptyFlashcardData = listOf(
+            FlashcardData(
+                front = appContext.getString(R.string.missing_front),
+                back = appContext.getString(R.string.missing_back)
+            )
+        )
 
         logInfo("Environment Initializing...")
         logInfo("Version: $VERSION_NAME (Build $VERSION_CODE)")

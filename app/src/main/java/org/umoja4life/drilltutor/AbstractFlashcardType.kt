@@ -12,10 +12,6 @@ abstract class AbstractFlashcardType(
     val source: FlashcardSource
 ) {
 
-    companion object {
-        val EMPTY_DATA = listOf(FlashcardData("boş", "tupu"))
-    }
-
     // IDENTITY
     abstract fun getSourceName(): FlashcardSource
 
@@ -129,7 +125,7 @@ abstract class AbstractFlashcardType(
      * Accessor for the card list.
      */
     fun fcData(): List<FlashcardData> {
-        return topicData?.fcData ?: EMPTY_DATA
+        return topicData?.fcData ?: Environment.emptyFlashcardData
     }
 
     /**
@@ -143,7 +139,7 @@ abstract class AbstractFlashcardType(
      */
     fun getDataAtIndex(index: Int, side: String = "front"): FlashcardData {
         val list = fcData()
-        if (list.isEmpty()) return EMPTY_DATA[0]
+        if (list.isEmpty()) return Environment.emptyFlashcardData[0]
 
         val clamped = clampIndex(index, list.size)
         val card = list[clamped]

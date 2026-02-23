@@ -50,6 +50,12 @@
     <string name="btn_cancel">Cancel</string>
     <string name="btn_start">Start »</string>
 
+    <!-- Missing topic card -->
+    <string name="missing_front">Topic Error?</string>
+    <string name="missing_back">Missing: Check source JSON data.</string>
+
+
+    <string name="lesson_title">Lesson</string>
 
     <!-- Dummy content for cards -->
     <string name="huge_text">Huge Text</string>
