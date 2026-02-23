@@ -116,7 +116,8 @@ data class DrillActions(
     val onMenu: () -> Unit,
     val onToggleList: () -> Unit,
     val onLessonsClick: () -> Unit,
-    val onAuxClick: () -> Unit
+    val onAuxClick: () -> Unit,
+    val onSettingsClick: () -> Unit
 )
 // *****************************************************************
 // *****************************************************************
@@ -196,7 +197,8 @@ fun MainScreen(viewModel: DrillViewModel) {
         onMenu = { scope.launch { drawerState.open() } },
         onToggleList = { viewModel.onToggleListMode() },
         onLessonsClick = { viewModel.onToggleLessonMode() },
-        onAuxClick = { viewModel.onAuxClick() }
+        onAuxClick = { viewModel.onAuxClick() },
+        onSettingsClick = { navController.navigate("settings") }
     )
     // ********************************************************
 
@@ -286,7 +288,7 @@ private fun DrillTutorTopBar(config: ScreenConfiguration, actions: DrillActions)
                 )
             }
 
-            IconButton(onClick = { /* Wire up in next step */ }) {
+            IconButton(onClick = actions.onSettingsClick ) {
                 Icon(
                     imageVector = Icons.Filled.Settings,
                     contentDescription = stringResource(id = R.string.cd_icon_settings),
