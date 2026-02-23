@@ -285,6 +285,16 @@ private fun DrillTutorTopBar(config: ScreenConfiguration, actions: DrillActions)
                             MaterialTheme.colorScheme.onPrimary
                 )
             }
+
+            IconButton(onClick = { /* Wire up in next step */ }) {
+                Icon(
+                    imageVector = Icons.Filled.Settings,
+                    contentDescription = stringResource(id = R.string.cd_icon_settings),
+                    tint = MaterialTheme.colorScheme.onPrimary
+                )
+            }
+
+
         },
 
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
