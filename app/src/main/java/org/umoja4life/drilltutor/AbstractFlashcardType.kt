@@ -54,7 +54,7 @@ abstract class AbstractFlashcardType(
      * load
      * Reads raw JSON data via DataSource, converts it to Instances, and fills the Database.
      */
-    suspend fun load(dataSource: FlashcardDataSource, languageCode: String) {
+    open suspend fun load(dataSource: FlashcardDataSource, languageCode: String) {
 
         Environment.logDebug("AbstractType: Loading ${source.sourceName} for $languageCode...")
 
@@ -131,13 +131,13 @@ abstract class AbstractFlashcardType(
     /**
      * listSize
      */
-    fun listSize(): Int = fcData().size
+    open fun listSize(): Int = fcData().size
 
     /**
      * getDataAtIndex
      * Returns the formatted tuple (Front/Back/Shuffled).
      */
-    fun getDataAtIndex(index: Int, side: String = "front"): FlashcardData {
+    open fun getDataAtIndex(index: Int, side: String = "front"): FlashcardData {
         val list = fcData()
         if (list.isEmpty()) return Environment.emptyFlashcardData[0]
 
@@ -150,7 +150,7 @@ abstract class AbstractFlashcardType(
     /**
      * clampIndex
      */
-    private fun clampIndex(index: Int, length: Int): Int {
+    protected fun clampIndex(index: Int, length: Int): Int {
         var idx = index
         if (idx < 0) idx = 0
         if (idx >= length) idx = length - 1
@@ -161,7 +161,7 @@ abstract class AbstractFlashcardType(
      * sideConversion
      * Handles Front/Back swapping or Shuffling.
      */
-    private fun sideConversion(card: FlashcardData, side: String): FlashcardData {
+    protected fun sideConversion(card: FlashcardData, side: String): FlashcardData {
         if (side == "back" || (side == "shuffle" && Random.nextBoolean())) {
             return card.flip()
         }
@@ -174,7 +174,7 @@ abstract class AbstractFlashcardType(
      * of the key in a Flashcard's "front" text.
      * Returns a List containing the single match, or empty list.
      */
-    fun mineExamples(key: String): List<String> {
+    open fun mineExamples(key: String): List<String> {
         // Ruby: keyrex = Regexp.new("^(#{key})|\\s(#{key})", Regexp::IGNORECASE)
         // Kotlin: Matches start of string OR whitespace, followed by the key.
         // We use Regex.escape(key) to ensure special chars in the key don't break the regex.

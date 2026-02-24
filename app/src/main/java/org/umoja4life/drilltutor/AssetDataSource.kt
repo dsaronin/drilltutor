@@ -53,6 +53,30 @@ class AssetDataSource(private val context: Context) : FlashcardDataSource {
         }
     }
 
+    override suspend fun loadTextFile(languageCode: String, sourceType: FlashcardSource): String? {
+        return withContext(Dispatchers.IO) {
+            val filename = "${sourceType.sourceName.lowercase()}.txt"
+            val path = "$languageCode/$filename"
+
+            Environment.logDebug("$TAG: Attempting to load text file: $path")
+
+            try {
+                context.assets.open(path).use { inputStream ->
+                    val text = inputStream.bufferedReader().use { it.readText() }
+                    Environment.logInfo("$TAG: SUCCESS: Loaded text file $path.")
+                    return@withContext text
+                }
+            } catch (_: IOException) {
+                Environment.logWarn("$TAG: Text file not found (Optional): $path")
+                null
+            } catch (e: Exception) {
+                Environment.logError("$TAG: ERROR reading text file $path: ${e.message}")
+                e.printStackTrace()
+                null
+            }
+        }
+    }
+
     override suspend fun getAvailableLanguages(): List<String> {
         return withContext(Dispatchers.IO) {
             try {

@@ -8,4 +8,10 @@ interface FlashcardDataSource {
      */
     suspend fun loadFile(languageCode: String, sourceType: FlashcardSource): Map<String, TopicData>?
     suspend fun getAvailableLanguages(): List<String>
+
+    /**
+     * Loads raw text from a file.
+     * Used for non-JSON data sources like TSV dictionaries.
+     */
+    suspend fun loadTextFile(languageCode: String, sourceType: FlashcardSource): String?
 }
