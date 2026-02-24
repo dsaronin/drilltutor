@@ -44,6 +44,8 @@ object Environment {
     lateinit var emptyFlashcardData: List<FlashcardData>
         private set
 
+    lateinit var storage: StorageStateRepository
+        private set
 
     // --- INITIALIZATION ---
     fun init(context: Context) {
@@ -71,6 +73,9 @@ object Environment {
         // Instantiate PlayerState subsystem
         playerState = PlayerStateRepository(appContext)
 
+        // Instantiate Storage subsystem
+        storage = StorageStateRepository(appContext)
+
         scope.launch {
             getSettingsAndLoadData()  // get the settings, load the data
         }
@@ -86,6 +91,10 @@ object Environment {
      */
     private suspend fun getSettingsAndLoadData() {
         logInfo("Environment: Waiting for saved settings...")
+
+        // Add these two lines to test the new Storage State:
+        val currentStorage = storage.loadStorageState()
+        logInfo("Environment: Active Storage URI: [${currentStorage.storageUri}]")
 
         // Suspend until DataStore is ready (approx 20-50ms)
         val savedLanguage = settings.awaitLanguageLoad()
