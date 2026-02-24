@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 class SettingsViewModel : ViewModel() {
 
@@ -22,6 +24,9 @@ class SettingsViewModel : ViewModel() {
     val availableTopics: List<String>
         get() = flashcardRepo.getTopics(FlashcardSource.VOCABULARY)
 
+    private val _availableLanguages = MutableStateFlow<List<String>>(emptyList())
+    val availableLanguages: StateFlow<List<String>> = _availableLanguages.asStateFlow()
+
     // --- ACTIONS ---
     // The UI calls these methods when the user changes a setting.
 
@@ -34,7 +39,13 @@ class SettingsViewModel : ViewModel() {
     val availableSelectors = SelectorType.entries
     val availableSides = CardSide.entries
     val availableSizes = SettingsRepository.VALID_GROUP_SIZES
-    val availableLanguages = listOf("en", "sw", "tr")
+
+    init {
+        viewModelScope.launch {
+            _availableLanguages.value = flashcardRepo.getAvailableLanguages()
+        }
+    }
+
 
     /**
      * availableSelections

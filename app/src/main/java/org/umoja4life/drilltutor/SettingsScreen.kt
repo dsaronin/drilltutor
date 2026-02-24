@@ -50,6 +50,9 @@ fun SettingsScreen(
     // Observe the Unified State Object
     val state by viewModel.settings.collectAsState()
 
+    // observe the dynamic language list
+    val availableLanguages by viewModel.availableLanguages.collectAsState()
+
     val largeFontSize: TextUnit = with(LocalDensity.current) {
         // Correct syntax: value.toSp()
 
@@ -229,7 +232,7 @@ fun SettingsScreen(
             SimpleDropdown(
                 label = stringResource(R.string.settings_label_language),
                 currentValue = state.language.uppercase(),
-                options = viewModel.availableLanguages,
+                options = availableLanguages,
                 optionLabel = { it.uppercase() },
                 onOptionSelected = { viewModel.setLanguage(it) },
                 fontSize = largeFontSize
