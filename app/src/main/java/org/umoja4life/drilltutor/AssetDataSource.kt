@@ -3,80 +3,28 @@ package org.umoja4life.drilltutor
 import android.content.Context
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.json.Json
 import java.io.IOException
+import java.io.InputStream
 
-class AssetDataSource(private val context: Context) : FlashcardDataSource {
+class AssetDataSource(private val context: Context) : AbstractDataSource() {
 
-    companion object {
-        private const val TAG = "AssetDataSource"
-    }
+    override val TAG = "AssetDataSource"
 
-    // Configure JSON parser
-    private val jsonParser = Json {
-        ignoreUnknownKeys = true // Don't crash on extra fields
-        isLenient = true         // Allow slightly malformed JSON
-    }
-
-    override suspend fun loadFile(languageCode: String, sourceType: FlashcardSource): Map<String, TopicData>? {
-        return withContext(Dispatchers.IO) {
-            // Map Enum to filename: VOCABULARY -> "vocabulary.json"
-            val filename = "${sourceType.sourceName.lowercase()}.json"
-            val path = "$languageCode/$filename"
-
-            Environment.logDebug("$TAG: Attempting to load: $path")
-
-            try {
-                // Open the file from assets
-                context.assets.open(path).use { inputStream ->
-                    val jsonString = inputStream.bufferedReader().use { it.readText() }
-
-                    // Parse as a Map of "TopicString" -> TopicData
-                    val data = jsonParser.decodeFromString<Map<String, TopicData>>(jsonString)
-
-                    // LOGGING: Calculate total records for verification
-                    val totalRecords = data.values.sumOf { it.fcData.size }
-                    Environment.logInfo("$TAG: SUCCESS: Loaded $path. Found ${data.size} topics, $totalRecords total cards.")
-
-                    return@withContext data
-                }
-            } catch (_: IOException) {
-                // Expected for optional files (e.g. if dictionary.json doesn't exist)
-                Environment.logWarn("$TAG: File not found (Optional): $path")
-                null
-            } catch (e: Exception) {
-                // This is an actual error (e.g. malformed JSON)
-                Environment.logError("$TAG: ERROR parsing $path: ${e.message}")
-                e.printStackTrace()
-                null
-            }
+    /**
+     * Provides the InputStream from the Android Assets folder.
+     */
+    override suspend fun getInputStream(path: String): InputStream? {
+        return try {
+            context.assets.open(path)
+        } catch (e: IOException) {
+            // Return null if the file doesn't exist, letting the parent handle the warning
+            null
         }
     }
 
-    override suspend fun loadTextFile(languageCode: String, sourceType: FlashcardSource): String? {
-        return withContext(Dispatchers.IO) {
-            val filename = "${sourceType.sourceName.lowercase()}.txt"
-            val path = "$languageCode/$filename"
-
-            Environment.logDebug("$TAG: Attempting to load text file: $path")
-
-            try {
-                context.assets.open(path).use { inputStream ->
-                    val text = inputStream.bufferedReader().use { it.readText() }
-                    Environment.logInfo("$TAG: SUCCESS: Loaded text file $path.")
-                    return@withContext text
-                }
-            } catch (_: IOException) {
-                Environment.logWarn("$TAG: Text file not found (Optional): $path")
-                null
-            } catch (e: Exception) {
-                Environment.logError("$TAG: ERROR reading text file $path: ${e.message}")
-                e.printStackTrace()
-                null
-            }
-        }
-    }
-
+    /**
+     * Scans the root assets folder for two-letter language directories.
+     */
     override suspend fun getAvailableLanguages(): List<String> {
         return withContext(Dispatchers.IO) {
             try {
