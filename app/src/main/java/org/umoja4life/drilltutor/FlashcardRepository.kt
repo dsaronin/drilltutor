@@ -55,4 +55,8 @@ class FlashcardRepository @Inject constructor(
         return handler.getTopics()
     }
 
+    suspend fun getAvailableLanguages(): List<String> {
+        return dataSource.getAvailableLanguages()
+    }
+
 }
