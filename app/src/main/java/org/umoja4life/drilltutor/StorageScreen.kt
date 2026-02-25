@@ -90,13 +90,9 @@ fun StorageScreen(
         ) {
 
             // 1. Status Display
-            val currentPath = if (state.storageUri.isEmpty()) {
-                stringResource(R.string.storage_internal_default)
-            } else {
-                // Decode the URI for slightly better readability in the UI
-                Uri.decode(state.storageUri)
-            }
-
+            val defaultText = stringResource(R.string.storage_internal_default)
+            val currentPath = formatUriForDisplay(state.storageUri, defaultText)
+            
             OutlinedTextField(
                 value = currentPath,
                 onValueChange = {},
@@ -130,5 +126,27 @@ fun StorageScreen(
                 )
             }
         }
+    }
+}
+
+private fun formatUriForDisplay(uriString: String, defaultText: String): String {
+    if (uriString.isEmpty()) return defaultText
+
+    return try {
+        val decodedUri = Uri.decode(uriString)
+        // SAF URIs typically look like: content://com.android.externalstorage.documents/tree/primary:drilltutor
+        val treePart = decodedUri.substringAfter("/tree/", "")
+
+        if (treePart.isEmpty()) return decodedUri // Fallback if the format is unexpected
+
+        val parts = treePart.split(":", limit = 2)
+        if (parts.size == 2) {
+            val path = parts[1]
+            if (path.isEmpty()) "Root Directory (${parts[0]})" else path
+        } else {
+            treePart
+        }
+    } catch (e: Exception) {
+        uriString // Fallback to raw string if parsing fails
     }
 }
