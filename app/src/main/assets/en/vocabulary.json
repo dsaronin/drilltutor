@@ -1,0 +1,18 @@
+{
+  "welcome": {
+    "fc_data": [
+      [
+        "Welcome… tap»",
+        "Yay! You just flipped a card."
+      ],
+      [
+        "Tap Lessons icon",
+        "For further instructions"
+      ],
+      [
+        "Flashcard",
+        "Data comes from your notes."
+      ]
+    ]
+  }
+}

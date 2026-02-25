@@ -1,0 +1,15 @@
+{
+  "welcome": {
+    "descriptions": [
+      "Using DrillTutor",
+      "Basic Navigation",
+      "Getting Started"
+    ],
+    "level": "A1",
+    "fc_data": [
+      "Tap Menu icon: Settings, Files, About, Help",
+      "Files: to select folder containing your flashcard source data (json files).",
+      "Settings: to choose which a source for flashcard drills."
+    ]
+  }
+}
