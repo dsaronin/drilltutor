@@ -677,7 +677,7 @@ private fun DrillTutorNavHost(
         }
 
         composable("storage") {
-            Text("Placeholder for StorageScreen. Use Back button to return.", modifier = Modifier.padding(32.dp))
+            StorageScreen(onNavigateBack = { navController.popBackStack() })
         }
     }
 }
