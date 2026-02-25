@@ -46,9 +46,16 @@
     <string name="settings_label_language">App Language</string>
     <string name="settings_label_none">None</string>
 
-
     <string name="btn_cancel">Cancel</string>
     <string name="btn_start">Start »</string>
+
+    <!-- storage management nomenclature -->
+    <string name="nav_files">Files</string>
+    <string name="storage_title">Data File Management</string>
+    <string name="storage_label_current">Current File Folder</string>
+    <string name="storage_btn_choose">Choose File Folder</string>
+    <string name="storage_btn_internal">Use Internal Files</string>
+    <string name="storage_internal_default">Internal Defaults</string>
 
     <!-- Missing topic card -->
     <string name="missing_front">Topic Error?</string>

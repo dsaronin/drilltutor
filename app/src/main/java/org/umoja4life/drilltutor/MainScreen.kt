@@ -598,6 +598,20 @@ private fun AppDrawer(
                     selectedIconColor = MaterialTheme.colorScheme.primary
                 )
             )
+
+            NavigationDrawerItem(
+                icon = { Icon(Icons.Default.MenuBook, contentDescription = stringResource(id = R.string.nav_files)) }, // Reusing MenuBook icon for now, or use a folder icon if preferred
+                label = { Text(stringResource(id = R.string.nav_files), modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_drawer_icon_text)), style = MaterialTheme.typography.titleLarge) },
+                selected = false,
+                onClick = {
+                    scope.launch { drawerState.close() }
+                    navController.navigate("storage") // The new route name
+                },
+                colors = NavigationDrawerItemDefaults.colors(
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurface,
+                    selectedIconColor = MaterialTheme.colorScheme.primary
+                )
+            )
             
             NavigationDrawerItem(
                 icon = { Icon(Icons.Default.Info, contentDescription = stringResource(id = R.string.menu_about)) },
@@ -660,6 +674,10 @@ private fun DrillTutorNavHost(
         }
         composable("settings") {
             SettingsScreen(onNavigateBack = { navController.popBackStack() })
+        }
+
+        composable("storage") {
+            Text("Placeholder for StorageScreen. Use Back button to return.", modifier = Modifier.padding(32.dp))
         }
     }
 }
