@@ -7,9 +7,9 @@
     ],
     "level": "A1",
     "fc_data": [
-      "Tap Menu icon: Settings, Files, About, Help",
-      "Files: to select folder containing your flashcard source data (json files).",
-      "Settings: to choose which a source for flashcard drills."
+      ["Tap Menu icon:", "Settings, Files, About, Help"],
+      ["Files:", "select folder with flashcard source data (json files)."],
+      ["Settings:", "choose which source for flashcard drills."]
     ]
   }
 }

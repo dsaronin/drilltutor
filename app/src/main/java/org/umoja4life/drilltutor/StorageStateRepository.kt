@@ -21,7 +21,8 @@ private val Context.storageDataStore: DataStore<Preferences> by preferencesDataS
  */
 @Serializable
 data class StorageState(
-    var storageUri: String = "" // Empty string implies default internal assets
+    var storageUri: String = "", // Empty string implies default internal assets
+    val lastError: String = "" // Tracks the reason for a fallback/state change
 )
 
 class StorageStateRepository(private val context: Context) {
@@ -47,7 +48,7 @@ class StorageStateRepository(private val context: Context) {
                 StorageState() // Return Defaults
             } else {
                 val storageState = json.decodeFromString<StorageState>(jsonString)
-                Environment.logInfo("StorageState: LoadStorageState: URI=[${storageState.storageUri}]")
+                Environment.logInfo("StorageState: LoadStorageState: URI=[${storageState.storageUri}], Error=[${storageState.lastError}]")
                 storageState
             }
         } catch (e: Exception) {
@@ -61,7 +62,7 @@ class StorageStateRepository(private val context: Context) {
      * Serializes object to JSON, writes to disk.
      */
     suspend fun saveStorageState(state: StorageState) {
-        Environment.logInfo("StorageState: SaveStorageState: URI=[${state.storageUri}]")
+        Environment.logInfo("StorageState: SaveStorageState: URI=[${state.storageUri}], Error=[${state.lastError}]")
 
         try {
             val jsonString = json.encodeToString(state)
