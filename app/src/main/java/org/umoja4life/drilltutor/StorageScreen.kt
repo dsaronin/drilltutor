@@ -92,7 +92,7 @@ fun StorageScreen(
             // 1. Status Display
             val defaultText = stringResource(R.string.storage_internal_default)
             val currentPath = formatUriForDisplay(state.storageUri, defaultText)
-            
+
             OutlinedTextField(
                 value = currentPath,
                 onValueChange = {},
