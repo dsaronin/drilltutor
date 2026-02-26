@@ -89,6 +89,7 @@ object Environment {
         }
 
         logInfo("Environment Initialized.")
+        toastInfo("Environment Initialized.")
     }
 
 
@@ -97,4 +98,52 @@ object Environment {
     fun logDebug(msg: String) { if (IS_DEBUG) Log.d(LOG_TAG, "DEBUG: $msg") }
     fun logWarn(msg: String) = Log.w(LOG_TAG, "WARN: $msg")
     fun logError(msg: String) = Log.e(LOG_TAG, "ERROR: $msg")
+
+    // --- TOAST UTILITIES ---
+    fun toastInfo(msg: String) {
+        scope.launch(Dispatchers.Main) {
+            android.widget.Toast.makeText(appContext, msg, android.widget.Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun toastWarn(msg: String) {
+        scope.launch(Dispatchers.Main) {
+            val prefixedMsg = "Warn: $msg"
+            val spannable = android.text.SpannableString(prefixedMsg)
+
+            // Apply Dark Blue Color
+            spannable.setSpan(
+                android.text.style.ForegroundColorSpan(android.graphics.Color.parseColor("#FF00267F")),
+                0, prefixedMsg.length, 0
+            )
+            // Apply Boldface
+            spannable.setSpan(
+                android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+                0, prefixedMsg.length, 0
+            )
+
+            android.widget.Toast.makeText(appContext, spannable, android.widget.Toast.LENGTH_LONG).show()
+        }
+    }
+
+    fun toastError(msg: String) {
+        scope.launch(Dispatchers.Main) {
+            val prefixedMsg = "Err: $msg"
+            val spannable = android.text.SpannableString(prefixedMsg)
+
+            // Apply Red Color
+            spannable.setSpan(
+                android.text.style.ForegroundColorSpan(android.graphics.Color.parseColor("#FFE30A17")),
+                0, prefixedMsg.length, 0
+            )
+            // Apply Boldface
+            spannable.setSpan(
+                android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+                0, prefixedMsg.length, 0
+            )
+
+            android.widget.Toast.makeText(appContext, spannable, android.widget.Toast.LENGTH_LONG).show()
+        }
+    }
+
 }
