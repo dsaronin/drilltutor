@@ -77,6 +77,7 @@ class FlashcardRepository(
         // Suspend until DataStore is ready (approx 20-50ms)
         var myLanguage = Environment.settings.awaitLanguageLoad()
 
+
         // Execute the validation pipeline
         dataSource = validateState(currentStorage.storageUri, myLanguage)
 
@@ -96,10 +97,22 @@ class FlashcardRepository(
 
     /**
      * validateSource
-     * Validates the selected storage directory.
+     * Validates the selected storage directory and returns the appropriate data source.
      */
     private suspend fun validateSource(storageUri: String): FlashcardDataSource {
-        // TEST HARNESS: Bypassing SAF logic to test structural flow against internal assets.
+        // If empty, return default internal assets immediately
+        if (storageUri.isBlank()) {
+            return AssetDataSource(appContext)
+        }
+
+        // If a custom URI exists, validate it via FileDataSource
+        if (FileDataSource.isValidSource(appContext, storageUri)) {
+            // Note: FileDataSource constructor will need to accept appContext and storageUri
+            return FileDataSource(appContext, storageUri)
+        }
+
+        // Fallback: URI exists but is invalid/inaccessible
+        Environment.storage.resetToDefaultWithError("Custom folder is missing or inaccessible.")
         return AssetDataSource(appContext)
     }
 

@@ -17,6 +17,23 @@ class FileDataSource(
     private val rootUri: Uri = Uri.parse(storageUriString)
     private val rootDocument: DocumentFile? = DocumentFile.fromTreeUri(context, rootUri)
 
+    companion object {
+        /**
+         * isValidSource
+         * Validates if the provided SAF URI string represents an accessible directory.
+         */
+        fun isValidSource(context: Context, uriString: String): Boolean {
+            return try {
+                val uri = android.net.Uri.parse(uriString)
+                val documentFile = androidx.documentfile.provider.DocumentFile.fromTreeUri(context, uri)
+                documentFile != null && documentFile.isDirectory && documentFile.canRead()
+            } catch (e: Exception) {
+                Environment.logError("FileDataSource: Validation failed for URI: $uriString. ${e.message}")
+                false
+            }
+        }
+    }
+
     /**
      * Traverses the DocumentFile tree to locate the requested file and opens an InputStream.
      * @param path Example: "tr/vocabulary.json"
