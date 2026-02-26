@@ -67,40 +67,20 @@ object Environment {
         // Instantiate Settings subsystem
         settings = SettingsRepository(appContext)
 
-        // Instantiate Flashcard data subsystem
-        flashcards = FlashcardRepository(AssetDataSource(appContext))
-
         // Instantiate PlayerState subsystem
         playerState = PlayerStateRepository(appContext)
 
         // Instantiate Storage subsystem
         storage = StorageStateRepository(appContext)
 
+        // Instantiate Flashcard data subsystem
+        flashcards = FlashcardRepository(appContext)
+
         scope.launch {
-            getSettingsAndLoadData()  // get the settings, load the data
+            flashcards.bootup()  // get the settings, load the data
         }
 
         logInfo("Environment Initialized.")
-    }
-
-    /**
-     * getSettingsAndLoadData
-     * Sequential startup logic:
-     * 1. Waists for Settings to be read from disk.
-     * 2. Loads the correct Flashcard data based on the saved language.
-     */
-    private suspend fun getSettingsAndLoadData() {
-        logInfo("Environment: Waiting for saved settings...")
-
-        // Add these two lines to test the new Storage State:
-        val currentStorage = storage.loadStorageState()
-        logInfo("Environment: Active Storage URI: [${currentStorage.storageUri}]")
-
-        // Suspend until DataStore is ready (approx 20-50ms)
-        val savedLanguage = settings.awaitLanguageLoad()
-
-        logInfo("Environment: Settings loaded ($savedLanguage). Triggering data load...")
-        flashcards.loadFlashcardData(savedLanguage)
     }
 
 

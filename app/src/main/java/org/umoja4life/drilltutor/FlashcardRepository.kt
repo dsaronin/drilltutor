@@ -1,10 +1,11 @@
 package org.umoja4life.drilltutor
 
-import javax.inject.Inject
-import javax.inject.Singleton
+import android.content.Context
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import org.umoja4life.drilltutor.Environment.logInfo
+import javax.inject.Singleton
 
 // --- STATUS ENUM ---
 enum class DataStatus {
@@ -13,10 +14,11 @@ enum class DataStatus {
     Ready       // Data loaded and available
 }
 @Singleton
-class FlashcardRepository @Inject constructor(
-    private val dataSource: FlashcardDataSource
+class FlashcardRepository(
+    private val appContext: Context
 ) {
     private val TAG = "FlashcardRepo"
+    private lateinit var dataSource: FlashcardDataSource
 
     // --- State Monitoring ---
     // Start as Idle. DrillViewModel observes this to know when to rebuild.
@@ -58,5 +60,29 @@ class FlashcardRepository @Inject constructor(
     suspend fun getAvailableLanguages(): List<String> {
         return dataSource.getAvailableLanguages()
     }
+
+    /**
+     * bootup
+     * Sequential startup logic:
+     * 1. Waists for Settings to be read from disk.
+     * 2. Loads the correct Flashcard data based on the saved language.
+     */
+     suspend fun bootup() {
+        logInfo("$TAG: Waiting for saved settings...")
+
+        // Add these two lines to test the new Storage State:
+        val currentStorage = Environment.storage.loadStorageState()
+        logInfo("$TAG: Previous Storage URI: [${currentStorage.storageUri}]")
+
+        // Suspend until DataStore is ready (approx 20-50ms)
+        val savedLanguage = Environment.settings.awaitLanguageLoad()
+
+        // TEMPORARY: Hardcoded structural test
+        dataSource = AssetDataSource(appContext)
+
+        logInfo("$TAG: Settings loaded ($savedLanguage). Triggering data load...")
+        loadFlashcardData(savedLanguage)
+    }
+
 
 }
