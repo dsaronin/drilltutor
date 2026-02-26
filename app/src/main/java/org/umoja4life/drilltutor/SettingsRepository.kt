@@ -131,4 +131,16 @@ class SettingsRepository(context: Context) {
         }
     }
 
+    /**
+     * updateLanguage
+     * Mutates only the language parameter of the current state and triggers persistence.
+     */
+    fun updateLanguage(newLanguage: String) {
+        val currentState = _settingState.value
+        if (currentState.language != newLanguage) {
+            val newState = currentState.copy(language = newLanguage)
+            updateSettings(newState)
+        }
+    }
+
 }

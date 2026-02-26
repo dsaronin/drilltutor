@@ -73,4 +73,14 @@ class StorageStateRepository(private val context: Context) {
             Environment.logError("StorageState: Save failed. ${e.message}")
         }
     }
+
+    /**
+     * resetToDefaultWithError
+     * Reverts to internal assets and records the reason for the fallback.
+     */
+    suspend fun resetToDefaultWithError(errorMessage: String) {
+        Environment.logWarn("StorageState: Reset to default due to error: $errorMessage")
+        val fallbackState = StorageState(storageUri = "", lastError = errorMessage)
+        saveStorageState(fallbackState)
+    }
 }
