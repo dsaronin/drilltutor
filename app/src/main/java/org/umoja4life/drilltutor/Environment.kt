@@ -26,6 +26,11 @@ object Environment {
     const val DEFAULT_TOPIC = "default"    // standard missing topic value
     val REGEX_DEFAULT = Regex("^(?i)def(ault)?$")
 
+    // --- DATA SOURCE VALIDATION CONSTANTS ---
+    val REGEX_LANG_DIR = Regex("^[a-z]{2}$")
+    const val FILE_VOCABULARY = "vocabulary.json"
+    const val FILE_LESSONS = "lessons.json"
+
     // --- LOGGING ---
     private const val LOG_TAG = "App" + APP_NAME
 
