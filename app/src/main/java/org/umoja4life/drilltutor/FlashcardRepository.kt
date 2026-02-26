@@ -49,6 +49,9 @@ class FlashcardRepository(
 
         // NOTIFY: Tell listeners data is fresh and ready to use
         _dataState.value = DataStatus.Ready
+
+        // TOAST: Notify user of successful data load
+        Environment.toastInfo("Loaded DrillTutor data for: $languageCode")
     }
     // --- Accessors (Delegates to the Factory) ---
 
@@ -111,8 +114,11 @@ class FlashcardRepository(
             return FileDataSource(appContext, storageUri)
         }
 
+        // TOAST: Notify user of the failure and fallback
+        Environment.toastWarn("Invalid: missing language or data files")
+
         // Fallback: URI exists but is invalid/inaccessible
-        Environment.storage.resetToDefaultWithError("Custom folder is invalid or inaccessible.")
+        Environment.storage.resetToDefaultWithError("folder is invalid or inaccessible.")
         Environment.settings.resetToDefaults()
         Environment.playerState.resetToDefaults()
         return AssetDataSource(appContext)

@@ -89,7 +89,7 @@ object Environment {
         }
 
         logInfo("Environment Initialized.")
-        toastInfo("Environment Initialized.")
+        // toastInfo("Environment Initialized.")
     }
 
 
