@@ -75,4 +75,13 @@ class PlayerStateRepository(private val context: Context) {
             Environment.logError("PlayerState: Save failed. ${e.message}")
         }
     }
+
+    /**
+     * resetToDefaults
+     * Clears saved player progress, returning to a fresh state.
+     */
+    suspend fun resetToDefaults() {
+        Environment.logWarn("PlayerState: Resetting state to defaults.")
+        savePlayerState(PlayerState())
+    }
 }

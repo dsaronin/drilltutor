@@ -112,7 +112,9 @@ class FlashcardRepository(
         }
 
         // Fallback: URI exists but is invalid/inaccessible
-        Environment.storage.resetToDefaultWithError("Custom folder is missing or inaccessible.")
+        Environment.storage.resetToDefaultWithError("Custom folder is invalid or inaccessible.")
+        Environment.settings.resetToDefaults()
+        Environment.playerState.resetToDefaults()
         return AssetDataSource(appContext)
     }
 

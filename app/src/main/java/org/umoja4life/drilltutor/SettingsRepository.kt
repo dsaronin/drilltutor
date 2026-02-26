@@ -154,4 +154,15 @@ class SettingsRepository(context: Context) {
         }
     }
 
+    /**
+     * resetToDefaults
+     * Wipes current settings and reverts to system defaults.
+     */
+    fun resetToDefaults() {
+        Environment.logWarn("$TAG: Resetting all settings to defaults.")
+        updateSettings(SettingState())
+    }
+
+
+
 }
