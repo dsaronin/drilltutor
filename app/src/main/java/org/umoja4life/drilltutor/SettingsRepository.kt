@@ -132,14 +132,25 @@ class SettingsRepository(context: Context) {
     }
 
     /**
+     * validLanguage
+     * Returns the currently active, guaranteed valid language from the unified state.
+     */
+    fun validLanguage(): String {
+        return _settingState.value.language
+    }
+
+    /**
      * updateLanguage
      * Mutates only the language parameter of the current state and triggers persistence.
      */
     fun updateLanguage(newLanguage: String) {
-        val currentState = _settingState.value
-        if (currentState.language != newLanguage) {
-            val newState = currentState.copy(language = newLanguage)
-            updateSettings(newState)
+        val currentLanguage = validLanguage()
+
+        if (currentLanguage != newLanguage) {
+            Environment.logInfo("$TAG: Updating language from '${currentLanguage}' to '$newLanguage'.")
+            updateSettings(
+                _settingState.value.copy(language = newLanguage)
+            )
         }
     }
 

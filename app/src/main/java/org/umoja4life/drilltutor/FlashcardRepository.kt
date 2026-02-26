@@ -75,13 +75,65 @@ class FlashcardRepository(
         logInfo("$TAG: Previous Storage URI: [${currentStorage.storageUri}]")
 
         // Suspend until DataStore is ready (approx 20-50ms)
-        val savedLanguage = Environment.settings.awaitLanguageLoad()
+        var myLanguage = Environment.settings.awaitLanguageLoad()
 
-        // TEMPORARY: Hardcoded structural test
-        dataSource = AssetDataSource(appContext)
+        // Execute the validation pipeline
+        dataSource = validateState(currentStorage.storageUri, myLanguage)
 
-        logInfo("$TAG: Settings loaded ($savedLanguage). Triggering data load...")
-        loadFlashcardData(savedLanguage)
+        // Fetch the guaranteed valid language (in case validation changed it)
+        myLanguage = Environment.settings.validLanguage()
+
+        loadFlashcardData(myLanguage)
+    }
+
+    /**
+     * validateState
+     * Orchestrates the validation pipeline via functional composition.
+     */
+    private suspend fun validateState(storageUri: String, savedLanguage: String): FlashcardDataSource {
+        return validateLanguage(savedLanguage, validateSource(storageUri))
+    }
+
+    /**
+     * validateSource
+     * Validates the selected storage directory.
+     */
+    private suspend fun validateSource(storageUri: String): FlashcardDataSource {
+        // TEST HARNESS: Bypassing SAF logic to test structural flow against internal assets.
+        return AssetDataSource(appContext)
+    }
+
+    /**
+     * validateLanguage
+     * Verifies language exists in the data source. Mutates SettingsState if necessary.
+     */
+    private suspend fun validateLanguage(savedLanguage: String, dataSource: FlashcardDataSource): FlashcardDataSource {
+        // Delegate state check and mutation entirely to SettingsRepository
+        Environment.settings.updateLanguage(
+            isAvailableLanguage(savedLanguage, dataSource)
+        )
+
+        return dataSource
+    }
+
+    /**
+     * isAvailableLanguage
+     * Core logic for determining fallback languages if the requested one is missing.
+     */
+    private suspend fun isAvailableLanguage(lang: String, dataSource: FlashcardDataSource): String {
+        val langList = dataSource.getAvailableLanguages()
+
+        if (langList.isNullOrEmpty()) {
+            Environment.logError("$TAG: Data source contains no valid languages. Reverting to default.")
+            return SettingsRepository.DEFAULT_LANGUAGE
+        }
+
+        if (!langList.contains(lang)) {
+            Environment.logWarn("$TAG: Requested language '$lang' not found. Falling back to '${langList[0]}'.")
+            return langList[0]
+        }
+
+        return lang
     }
 
 
