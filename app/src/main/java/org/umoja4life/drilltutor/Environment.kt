@@ -40,6 +40,9 @@ object Environment {
 
     // --- SUBSYSTEMS ---
     // The "lateinit" means we promise to initialize this in init() before using it.
+    lateinit var appContext: Context
+        private set
+
     lateinit var settings: SettingsRepository
         private set
     lateinit var flashcards: FlashcardRepository
@@ -56,7 +59,7 @@ object Environment {
     fun init(context: Context) {
         // PREVENT MEMORY LEAK:
         // We ensure we only hold the Application Context, not an Activity Context.
-        val appContext = context.applicationContext
+        appContext = context.applicationContext
 
         // Initialize fallback data using string resources
         emptyFlashcardData = listOf(
