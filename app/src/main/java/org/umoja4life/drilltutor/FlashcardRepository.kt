@@ -25,6 +25,44 @@ class FlashcardRepository(
     private val _dataState = MutableStateFlow<DataStatus>(DataStatus.Idle)
     val dataState: StateFlow<DataStatus> = _dataState.asStateFlow()
 
+    /**
+     * executeDataLoad
+     * Universal pipeline for loading or reloading data.
+     * Ensures UI is suspended, data sources are validated, and databases are repopulated cleanly.
+     */
+    suspend fun executeDataLoad(requestedUri: String, requestedLang: String) {
+        // NOTIFY: Tell listeners we are busy (suspends UI)
+        _dataState.value = DataStatus.Loading
+
+        Environment.logInfo("$TAG: Executing data load for URI: [$requestedUri], Lang: $requestedLang")
+
+        // Execute the validation pipeline
+        dataSource = validateState(requestedUri, requestedLang)
+
+        // Fetch the guaranteed valid language (in case validation triggered a fallback)
+        val validLang = Environment.settings.validLanguage()
+
+        Environment.logInfo("$TAG: Loading Master Data for $validLang...")
+
+        FlashcardSource.entries.forEach { source ->
+            if (source != FlashcardSource.UNKNOWN) {
+                val handler = FlashcardTypeSelection.selectCardType(source)
+                try {
+                    handler.load(dataSource, validLang)
+                } catch (e: Exception) {
+                    Environment.logError("$TAG: Failed to load ${source.sourceName}: ${e.message}")
+                }
+            }
+        }
+        Environment.logInfo("$TAG: Load Complete.")
+
+        // NOTIFY: Tell listeners data is fresh and ready to use
+        _dataState.value = DataStatus.Ready
+
+        // TOAST: Notify user of successful data load
+        Environment.toastInfo("Loaded DrillTutor for: $validLang")
+    }
+
     suspend fun loadFlashcardData(languageCode: String) {
         // NOTIFY: Tell listeners we are busy
         _dataState.value = DataStatus.Loading
@@ -71,23 +109,18 @@ class FlashcardRepository(
      * 2. Loads the correct Flashcard data based on the saved language.
      */
      suspend fun bootup() {
-        logInfo("$TAG: Waiting for saved settings...")
+        logInfo("$TAG: Bootup data starting...")
 
         // Add these two lines to test the new Storage State:
         val currentStorage = Environment.storage.loadStorageState()
         logInfo("$TAG: Previous Storage URI: [${currentStorage.storageUri}]")
 
         // Suspend until DataStore is ready (approx 20-50ms)
-        var myLanguage = Environment.settings.awaitLanguageLoad()
-
-
-        // Execute the validation pipeline
-        dataSource = validateState(currentStorage.storageUri, myLanguage)
-
-        // Fetch the guaranteed valid language (in case validation changed it)
-        myLanguage = Environment.settings.validLanguage()
-
-        loadFlashcardData(myLanguage)
+        // Delegate to the universal pipeline
+        executeDataLoad(
+            currentStorage.storageUri,
+            Environment.settings.awaitLanguageLoad()
+        )
     }
 
     /**
