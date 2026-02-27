@@ -26,7 +26,7 @@ class FlashcardRepository(
     val dataState: StateFlow<DataStatus> = _dataState.asStateFlow()
 
     suspend fun loadFlashcardData(languageCode: String) {
-// NOTIFY: Tell listeners we are busy
+        // NOTIFY: Tell listeners we are busy
         _dataState.value = DataStatus.Loading
 
         Environment.logInfo("$TAG: Loading Master Data for $languageCode...")

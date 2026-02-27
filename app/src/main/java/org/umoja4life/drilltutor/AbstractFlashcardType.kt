@@ -58,7 +58,10 @@ abstract class AbstractFlashcardType(
 
         Environment.logDebug("AbstractType: Loading ${source.sourceName} for $languageCode...")
 
-        // 1. Get raw data (Map<String, TopicData>) from AssetDataSource
+        // Clear existing data to prevent stale data retention across storage/language changes
+        database.clear()
+
+        // Get raw data (Map<String, TopicData>) from AssetDataSource
         val rawData = dataSource.loadFile(languageCode, source)
 
         if (rawData == null) {
@@ -66,7 +69,7 @@ abstract class AbstractFlashcardType(
             return
         }
 
-        // 2. Process and Store
+        // Process and Store
         // Transform the raw TopicData structs into active Worker Objects
         database = processData(rawData)
 
