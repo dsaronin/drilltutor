@@ -97,7 +97,10 @@ class SettingsViewModel : ViewModel() {
 
         // Trigger the data load (using global scope to prevent cancellation)
         Environment.scope.launch {
-            flashcardRepo.loadFlashcardData(newVal)
+            flashcardRepo.executeDataLoad(
+                Environment.storage.loadStorageState().storageUri,
+                newVal
+            )
         }
     }
 
