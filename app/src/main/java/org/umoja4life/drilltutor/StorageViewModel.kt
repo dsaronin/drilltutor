@@ -34,9 +34,14 @@ class StorageViewModel : ViewModel() {
 
         viewModelScope.launch {
             storageRepo.saveStorageState(newState) // Async persistence
+        }
 
-            // Note: Once the router is built, we will likely trigger
-            // Environment.flashcards.loadFlashcardData() from here.
+        // Trigger the universal data load (using global scope to prevent cancellation)
+        Environment.scope.launch {
+            Environment.flashcards.executeDataLoad(
+                newUri,
+                Environment.settings.validLanguage()
+            )
         }
     }
 }

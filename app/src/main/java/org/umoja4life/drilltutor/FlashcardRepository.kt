@@ -63,34 +63,6 @@ class FlashcardRepository(
         Environment.toastInfo("Loaded DrillTutor for: $validLang")
     }
 
-    suspend fun loadFlashcardData(languageCode: String) {
-        // NOTIFY: Tell listeners we are busy
-        _dataState.value = DataStatus.Loading
-
-        Environment.logInfo("$TAG: Loading Master Data for $languageCode...")
-
-        FlashcardSource.entries.forEach { source ->
-            if (source != FlashcardSource.UNKNOWN) {
-                // Get the Singleton Handler from the Factory
-                val handler = FlashcardTypeSelection.selectCardType(source)
-
-                try {
-                    // Load data into that Handler instance
-                    // Now this effectively waits because the function is suspend
-                    handler.load(dataSource, languageCode)
-                } catch (e: Exception) {
-                    Environment.logError("$TAG: Failed to load ${source.sourceName}: ${e.message}")
-                }
-            }
-        }
-        Environment.logInfo("$TAG: Load Complete.")
-
-        // NOTIFY: Tell listeners data is fresh and ready to use
-        _dataState.value = DataStatus.Ready
-
-        // TOAST: Notify user of successful data load
-        Environment.toastInfo("Loaded DrillTutor data for: $languageCode")
-    }
     // --- Accessors (Delegates to the Factory) ---
 
     fun getTopics(source: FlashcardSource): List<String> {
