@@ -102,7 +102,16 @@ fun StorageScreen(
                 textStyle = MaterialTheme.typography.bodyLarge
             )
 
-            // 2. Primary Action: Choose Folder
+            if (state.lastError.isNotEmpty()) {
+                Text(
+                    text = state.lastError,
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(start = dimensionResource(id = R.dimen.spacing_small))
+                )
+            }
+
+            // Primary Action: Choose Folder
             Button(
                 onClick = { directoryLauncher.launch(null) },
                 modifier = Modifier.fillMaxWidth()
