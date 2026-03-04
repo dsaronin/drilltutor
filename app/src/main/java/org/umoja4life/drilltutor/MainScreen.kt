@@ -277,17 +277,6 @@ private fun DrillTutorTopBar(config: ScreenConfiguration, actions: DrillActions)
                 }
             }
 
-            IconButton(onClick = actions.onLessonsClick) {
-                Icon(
-                    imageVector = Icons.Filled.MenuBook,
-                    contentDescription = stringResource(id = R.string.cd_icon_lessons),
-                    tint = if (config.isLessonMode)
-                            MaterialTheme.colorScheme.tertiary
-                        else
-                            MaterialTheme.colorScheme.onPrimary
-                )
-            }
-
             IconButton(onClick = actions.onSettingsClick ) {
                 Icon(
                     imageVector = Icons.Filled.Settings,
@@ -346,6 +335,17 @@ private fun DrillTutorBottomBar(
                         tint = tint
                     )
                 }
+            }
+
+            // --- MOVED: Lessons Icon (Far Right) ---
+            val lessonTint = if (config.isLessonMode) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+
+            IconButton(onClick = actions.onLessonsClick) {
+                Icon(
+                    imageVector = Icons.Filled.MenuBook,
+                    contentDescription = stringResource(id = R.string.cd_icon_lessons),
+                    tint = lessonTint
+                )
             }
 
         }
