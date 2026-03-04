@@ -42,6 +42,12 @@ class FlashcardRepository(
         // Fetch the guaranteed valid language (in case validation triggered a fallback)
         val validLang = Environment.settings.validLanguage()
 
+        // --- State RESETS ---
+        Environment.playerState.resetToDefaults()  // Reset Player progress
+
+        // Reset Settings, preserve lang
+        Environment.settings.updateSettings(SettingState(language = validLang))
+
         Environment.logInfo("$TAG: Loading Master Data for $validLang...")
 
         FlashcardSource.entries.forEach { source ->

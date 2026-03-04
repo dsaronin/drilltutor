@@ -86,16 +86,8 @@ class SettingsViewModel : ViewModel() {
     fun setGroupSize(newVal: Int)    = updateSettings { it.copy(groupSize = newVal) }
     fun setCardSide(newVal: CardSide) = updateSettings { it.copy(cardSide = newVal) }
     fun setLanguage(newVal: String) {
-        // RESET LOGIC:
-        // Instead of 'it.copy()' (which keeps old junk), we create a FRESH State object.
-        // Because SettingState has default values in its constructor,
-        // this resets topic, source, groupSize, etc. to their defaults.
-        val resetState = SettingState(language = newVal)
-
-        // Save this fresh state to persistence
-        updateSettings { resetState }
-
         // Trigger the data load (using global scope to prevent cancellation)
+        // Note, this will also reset Settings, PlayerState.
         Environment.scope.launch {
             flashcardRepo.executeDataLoad(
                 Environment.storage.loadStorageState().storageUri,
