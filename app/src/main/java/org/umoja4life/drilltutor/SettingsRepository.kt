@@ -23,7 +23,7 @@ import kotlinx.serialization.json.Json
 @Serializable
 data class SettingState(
     val language: String = SettingsRepository.DEFAULT_LANGUAGE,
-    val topic: String = SettingsRepository.DEFAULT_TOPIC,
+    val topic: String = Environment.DEFAULT_TOPIC,
     val entryKey: String = SettingsRepository.DEFAULT_ITEMKEY,
     val source: FlashcardSource = SettingsRepository.DEFAULT_SOURCE,
     val selector: SelectorType = SettingsRepository.DEFAULT_SELECTOR,
@@ -37,8 +37,7 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 class SettingsRepository(context: Context) {
     companion object {
-        const val DEFAULT_LANGUAGE = "tr"
-        const val DEFAULT_TOPIC = "default"
+        const val DEFAULT_LANGUAGE = "en"
         const val DEFAULT_ITEMKEY = ""
         val DEFAULT_SOURCE = FlashcardSource.VOCABULARY
         val DEFAULT_SELECTOR = SelectorType.ORDERED

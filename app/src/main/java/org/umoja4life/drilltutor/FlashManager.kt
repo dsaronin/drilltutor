@@ -81,6 +81,13 @@ class FlashManager (
             val fallback = availableTopics.firstOrNull() ?: Environment.DEFAULT_TOPIC
             Environment.logInfo("FLASHMGR: Topic '$topic' invalid/default. Falling back to '$fallback'")
             topic = fallback
+
+            // --- Synchronize the fallback topic back to global Settings ---
+            // This ensures the UI Dropdowns display the actual loaded topic.
+            if (mySettings.topic != topic) {
+                mySettings = mySettings.copy(topic = topic)
+                Environment.settings.updateSettings(mySettings)
+            }
         }
 
         // UPDATE STATE

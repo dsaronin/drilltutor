@@ -270,13 +270,13 @@ class DrillViewModel : ViewModel() {
                 // List View is NOT available for Dictionary
                 _isListIconVisible.value = (state.source != FlashcardSource.DICTIONARY)
 
-                // 1. Initialize tracker on first run
+                // Initialize tracker on first run
                 if (currentLanguage.isNullOrEmpty()) {
                     currentLanguage = state.language
                     // Do not return; let the logic below decide if we need to build
                 }
 
-                // 2. CRITICAL FIX: IGNORE LANGUAGE CHANGES
+                // CRITICAL FIX: IGNORE LANGUAGE CHANGES
                 // If the language changed, a heavy Data Load is incoming.
                 // We MUST wait for 'monitorRepository' (DataStatus.Ready) to trigger the rebuild.
                 // If we rebuild now, we will be using the OLD data with the NEW settings.
@@ -286,11 +286,11 @@ class DrillViewModel : ViewModel() {
                     return@collect
                 }
 
-                // 3. Handle Standard Config Changes (Topic, Size, etc.)
+                // Handle Standard Config Changes (Topic, Size, etc.)
                 // These are safe to apply immediately because the Data is unchanged.
                 // [GUARD] Only rebuild if the Data is actually Ready.
-                // 1. Prevents double-build on App Startup (avoids racing monitorRepository).
-                // 2. Ensures we don't try to build a FlashManager with empty/loading data.
+                // Prevents double-build on App Startup (avoids racing monitorRepository).
+                // Ensures we don't try to build a FlashManager with empty/loading data.
                 if (Environment.flashcards.dataState.value == DataStatus.Ready) {
                     Environment.logInfo("DrillVM: Settings changed ($state).")
                     rebuildManager(isConfigurationChange = true)
