@@ -29,7 +29,7 @@ class StorageViewModel : ViewModel() {
      * An empty string implies reverting to the default internal assets.
      */
     fun updateStorageUri(newUri: String) {
-        val newState = _storageState.value.copy(storageUri = newUri)
+        val newState = _storageState.value.copy(storageUri = newUri, lastError = "")
         _storageState.value = newState // Instant UI update
 
         viewModelScope.launch {
