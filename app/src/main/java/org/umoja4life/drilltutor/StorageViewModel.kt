@@ -42,6 +42,10 @@ class StorageViewModel : ViewModel() {
                 newUri,
                 Environment.settings.validLanguage()
             )
+
+            // Refresh state from persistence after load sequence ---
+            // Captures any fallback errors written by the validation pipeline.
+            _storageState.value = storageRepo.loadStorageState()
         }
     }
 }
