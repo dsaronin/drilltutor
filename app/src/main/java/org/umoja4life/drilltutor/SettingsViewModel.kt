@@ -85,6 +85,7 @@ class SettingsViewModel : ViewModel() {
     fun setSelector(newVal: SelectorType)  = updateSettings { it.copy(selector = newVal) }
     fun setGroupSize(newVal: Int)    = updateSettings { it.copy(groupSize = newVal) }
     fun setCardSide(newVal: CardSide) = updateSettings { it.copy(cardSide = newVal) }
+    fun setShowExamples(newVal: Boolean) = updateSettings { it.copy(showExamples = newVal) }
     fun setLanguage(newVal: String) {
         // Trigger the data load (using global scope to prevent cancellation)
         // Note, this will also reset Settings, PlayerState.

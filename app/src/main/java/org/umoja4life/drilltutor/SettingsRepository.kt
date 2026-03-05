@@ -28,7 +28,8 @@ data class SettingState(
     val source: FlashcardSource = SettingsRepository.DEFAULT_SOURCE,
     val selector: SelectorType = SettingsRepository.DEFAULT_SELECTOR,
     val groupSize: Int = SettingsRepository.DEFAULT_SIZE,
-    val cardSide: CardSide = SettingsRepository.DEFAULT_SIDE
+    val cardSide: CardSide = SettingsRepository.DEFAULT_SIDE,
+    val showExamples: Boolean = false
 )
 
 // ****************************************************************

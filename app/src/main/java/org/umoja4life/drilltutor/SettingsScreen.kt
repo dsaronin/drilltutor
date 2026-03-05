@@ -36,6 +36,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.unit.dp
+import androidx.compose.material3.Switch
+import androidx.compose.foundation.layout.Row
+import androidx.compose.ui.Alignment
 
 //import org.umoja4life.drilltutor.ui.theme.Gray050
 //import org.umoja4life.drilltutor.ui.theme.TurkiyeRed
@@ -237,6 +240,23 @@ fun SettingsScreen(
                 onOptionSelected = { viewModel.setLanguage(it) },
                 fontSize = largeFontSize
             )
+
+            // --- NEW: 7. Show Examples Toggle ---
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_label_show_examples),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontSize = largeFontSize)
+                )
+                Switch(
+                    checked = state.showExamples,
+                    onCheckedChange = { viewModel.setShowExamples(it) }
+                )
+            }
+            // ------------------------------------
 
         }
     }
