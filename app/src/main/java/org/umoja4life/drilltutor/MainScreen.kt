@@ -101,7 +101,8 @@ data class ScreenConfiguration(
     val fontSize: DrillViewModel.CardFontSize = DrillViewModel.CardFontSize.NORMAL,
     val paddingValues: PaddingValues = PaddingValues(0.dp), // Default to 0; updated by Scaffold
     val currentCard: FlashcardData = FlashcardData(),
-    val listData: List<FlashcardData> = emptyList()
+    val listData: List<FlashcardData> = emptyList(),
+    val cardExamples: List<String> = emptyList()
 )
 // *****************************************************************
 // the Actions Container
@@ -165,6 +166,7 @@ fun MainScreen(viewModel: DrillViewModel) {
     val isTextMode by viewModel.isTextMode.collectAsState()
     val isLessonMode by viewModel.isLessonMode.collectAsState()
     val auxTarget by viewModel.auxTarget.collectAsState()
+    val cardExamples by viewModel.cardExamples.collectAsState()
 
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -213,7 +215,8 @@ fun MainScreen(viewModel: DrillViewModel) {
         isTextMode = isTextMode,
         fontSize = fontSize,
         currentCard = currentCard,
-        listData = listData
+        listData = listData,
+        cardExamples = cardExamples
     )
     // ********************************************************
 
@@ -757,12 +760,8 @@ private fun FlashcardPlayerView(
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center
                     )
 
-                    // EXAMPLES
-                    // Temporarily observe the setting directly for UI testing
-                    val showExamples = Environment.settings.settingState.collectAsState().value.showExamples
-                    val testExamples = listOf("This is test example 1.", "This is test example 2.")
-
-                    if (showExamples && isLandscape && testExamples.isNotEmpty()) {
+                    // DISPLAY EXAMPLES conditional
+                    if (config.cardExamples.isNotEmpty() && isLandscape) {
                         HorizontalDivider(
                             modifier = Modifier.padding(
                                 vertical = dimensionResource(id = R.dimen.spacing_large),
@@ -771,7 +770,7 @@ private fun FlashcardPlayerView(
                             thickness = 1.dp,
                             color = MaterialTheme.colorScheme.outlineVariant
                         )
-                        testExamples.forEach { example ->
+                        config.cardExamples.forEach { example ->
                             Text(
                                 text = example,
                                 style = MaterialTheme.typography.bodyMedium, // Normal text size

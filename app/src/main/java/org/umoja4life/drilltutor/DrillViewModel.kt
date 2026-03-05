@@ -21,6 +21,10 @@ class DrillViewModel : ViewModel() {
     // The specific card content to display
     private val _currentCard = MutableStateFlow(FlashcardData("", ""))
     val currentCard: StateFlow<FlashcardData> = _currentCard.asStateFlow()
+
+    // --- Mined Examples State ---
+    private val _cardExamples = MutableStateFlow<List<String>>(emptyList())
+    val cardExamples: StateFlow<List<String>> = _cardExamples.asStateFlow()
     // Window Title State
     private val _appTitle = MutableStateFlow("")
     val appTitle: StateFlow<String> = _appTitle.asStateFlow()
@@ -202,6 +206,9 @@ class DrillViewModel : ViewModel() {
         // variable font size card display
         _fontSize.value = CardFontSize.lengthToFontSize(formattedCard.front)
         _currentCard.value = formattedCard
+
+        // --- Mine examples if the setting is enabled ---
+        _cardExamples.value = if (Environment.settings.settingState.value.showExamples) mineExamples(formattedCard) else emptyList()
     }
 
     private suspend fun rebuildManager(isConfigurationChange: Boolean) {
