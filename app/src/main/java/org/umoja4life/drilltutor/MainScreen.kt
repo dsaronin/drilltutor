@@ -85,6 +85,7 @@ import androidx.compose.material.icons.filled.Category
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import org.umoja4life.drilltutor.ui.theme.DrillTutorTheme
+import androidx.compose.material3.HorizontalDivider
 
 // *****************************************************************
 // The Screen UI Configuration Object
@@ -742,7 +743,6 @@ private fun FlashcardPlayerView(
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     // Raw display of Front Data
-                    // We will tackle dynamic font sizing in Step 1.2
                     Text(
                         text = config.currentCard.front,
                         // Direct access to the encapsulated ID
@@ -756,6 +756,33 @@ private fun FlashcardPlayerView(
                         // style = MaterialTheme.typography.displayMedium,
                         textAlign = androidx.compose.ui.text.style.TextAlign.Center
                     )
+
+                    // EXAMPLES
+                    // Temporarily observe the setting directly for UI testing
+                    val showExamples = Environment.settings.settingState.collectAsState().value.showExamples
+                    val testExamples = listOf("This is test example 1.", "This is test example 2.")
+
+                    if (showExamples && isLandscape && testExamples.isNotEmpty()) {
+                        HorizontalDivider(
+                            modifier = Modifier.padding(
+                                vertical = dimensionResource(id = R.dimen.spacing_large),
+                                horizontal = dimensionResource(id = R.dimen.spacing_large)
+                            ),
+                            thickness = 1.dp,
+                            color = MaterialTheme.colorScheme.outlineVariant
+                        )
+                        testExamples.forEach { example ->
+                            Text(
+                                text = example,
+                                style = MaterialTheme.typography.bodyMedium, // Normal text size
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                                modifier = Modifier.padding(bottom = 4.dp, start = 8.dp, end = 8.dp)
+                            )
+                        }
+                    }
+                    // ----------------------------------
+
                 }
             }
         }
