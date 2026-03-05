@@ -16,5 +16,13 @@ enum class FlashcardSource(val sourceName: String) {
         fun fromSourceName(sourceName: String): FlashcardSource = entries.find { it.sourceName.equals(sourceName, ignoreCase = true) } ?: UNKNOWN
 
         fun getSourceList(): List<FlashcardSource> = entries.filter { it != LESSONS && it != UNKNOWN }
+
+        // --- NEW: Sources valid for mining examples ---
+        fun getMiningSources(): List<FlashcardSource> = entries.filter {
+            it != VOCABULARY &&
+                    it != OPPOSITES &&
+                    it != LESSONS &&
+                    it != UNKNOWN
+        }
     }
 }

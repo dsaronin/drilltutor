@@ -343,7 +343,7 @@ class FlashManager (
         }
         // Case 2: Standard Study Mode - Mine ALL sources for examples.
         else {
-            FlashcardSource.entries.forEach { source ->
+            FlashcardSource.getMiningSources().forEach { source ->
                 val handler = FlashcardTypeSelection.selectCardType(source)
                 // We accumulate examples from every source (Sentences, Phrases, etc.)
                 list.addAll(handler.mineExamples(key))
