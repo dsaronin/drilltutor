@@ -48,6 +48,27 @@ android {
         resValue("string", "build_time", buildDateStamp)
     }
 
+    // Define the Signing Configuration
+    signingConfigs {
+        create("release") {
+            // Read from local.properties
+            val props = Properties() // Simplified: uses your import from line 2
+            val propFile = file("${project.rootDir}/local.properties")
+            
+            if (propFile.exists()) {
+                propFile.inputStream().use { stream ->
+                    props.load(stream)
+                }
+            }
+
+            // Using the properties to set the signing credentials
+            storeFile = file(props.getProperty("signing.store.file") ?: "")
+            storePassword = props.getProperty("signing.store.password")
+            keyAlias = props.getProperty("signing.key.alias")
+            keyPassword = props.getProperty("signing.key.password")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -55,6 +76,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // This line links your local credentials to the build
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
