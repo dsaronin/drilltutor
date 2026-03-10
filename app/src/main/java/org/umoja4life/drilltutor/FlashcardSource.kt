@@ -2,6 +2,7 @@ package org.umoja4life.drilltutor
 
 enum class FlashcardSource(val sourceName: String) {
     VOCABULARY("Vocabulary"),
+    VERBS("Verbs"),
     SENTENCES("Sentences"),
     OPPOSITES("Opposites"),
     PHRASES("Phrases"),
@@ -20,6 +21,7 @@ enum class FlashcardSource(val sourceName: String) {
         // --- NEW: Sources valid for mining examples ---
         fun getMiningSources(): List<FlashcardSource> = entries.filter {
             it != VOCABULARY &&
+                    it != VERBS &&
                     it != OPPOSITES &&
                     it != LESSONS &&
                     it != UNKNOWN
